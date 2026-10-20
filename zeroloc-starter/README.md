@@ -2,7 +2,7 @@
 
 本地优先的嵌套 JSON 本地化质量门禁。MIT 核心通过可替换适配器复用 FormatJS、i18next-cli、Ollama HTTP、Playwright 和 axe-core；不要求账号、凭证或托管服务。结构匹配不代表语义翻译正确。
 
-当前发布候选为 **v0.1.0-beta.1**，`package.json` 保持 private 防止误发 npm。尚无 GitHub remote；见 [Release Notes 草稿](docs/RELEASE_NOTES_v0.1.0-beta.1.md)、[首次发布流程](docs/FIRST_GITHUB_PUBLICATION_CN.md) 和 [发布审查](docs/PUBLICATION_READINESS_CN.md)。
+当前发布候选为 **v0.1.0-beta.1**，公开仓库为 [fangyuxu658-star/zeroloc-gate](https://github.com/fangyuxu658-star/zeroloc-gate)，`package.json` 保持 private 防止误发 npm。[首次 main CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39347428254) 已通过。测试 PR、最新状态和发布限制见 [STATUS](STATUS.md)、[验收日志](docs/BETA_RELEASE_ACCEPTANCE_CN.md) 与 [Release Notes](docs/RELEASE_NOTES_v0.1.0-beta.1.md)。尚无正式 tag/Release。
 
 ## 初始化
 
@@ -66,15 +66,15 @@ node bin/zeroloc.mjs visual --url http://127.0.0.1:4173 --output artifacts/my-ap
 
 ## CI、许可证与发布
 
-[实际仓库根 CI workflow](../.github/workflows/ci.yml) 配置为在 PR（含 fork PR）/main 上运行 Node 22/24、Linux/Windows 回归及 Linux 浏览器矩阵；尚未在 GitHub 实际执行。只授予 contents:read，无 secrets 引用，checkout 不保留凭证；Actions 固定提交，npm 使用 lockfile 和 ignore-scripts。SARIF 作为 artifact 保存，不申请安全事件写权限。
+[实际仓库根 CI workflow](../.github/workflows/ci.yml) 配置为在 PR（含 fork PR）/main 上运行 Node 22/24、Linux/Windows 回归及 Linux 浏览器矩阵；[首次真实运行](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39347428254) 的 5 个 jobs 已全部成功。只授予 contents:read，无 secrets 引用，checkout 不保留凭证；Actions 固定提交，npm 使用 lockfile 和 ignore-scripts。SARIF 作为 artifact 保存，不申请安全事件写权限。
 
 ## GitHub remote usage 与 PR flow
 
-当前 Git 根在本目录的上一层，源码是 `zeroloc-starter/` 子目录。已准备根 workflow、README 和 PR 模板；拟建 public `fangyuxu658-star/zeroloc-gate`，账号已核实，等待最后批准，尚未创建或配置 origin。获准创建空仓库后再设置真实 origin，用 `git remote -v` 和 `git ls-remote origin` 验证，审核 noreply 作者、文件与初始无父提交后才 push。下面的 OWNER/REPOSITORY 是通用示例占位符；不要 force push 非空仓库。
+Git 根在本目录上一层，源码位于 zeroloc-starter/。origin 已配置为 https://github.com/fangyuxu658-star/zeroloc-gate.git，main 首次提交为 4a64f6d6350ed5e80c1738ffa145a8dba46da66f。从最新 main 创建测试/文档分支，经本地检查后 push 并建立 Draft PR，观察 PR Checks 后由维护者决定合并；禁止直接改 main 或合并故意失败代码。分支保护当前未启用，不将 CI 红灯误称为服务端已禁止合并。
 
 ```sh
-git clone https://github.com/OWNER/REPOSITORY.git
-cd REPOSITORY/zeroloc-starter
+git clone https://github.com/fangyuxu658-star/zeroloc-gate.git
+cd zeroloc-gate/zeroloc-starter
 npm ci --ignore-scripts
 npm test
 npm run check:example

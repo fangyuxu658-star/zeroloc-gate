@@ -1,5 +1,7 @@
 # GitHub remote、PR 与 Actions
 
+> 本文件保留首次创建时的计划/审查记录；仓库与首次 push 已完成。本轮 PR 验收的当前状态以 [BETA_RELEASE_ACCEPTANCE_CN.md](BETA_RELEASE_ACCEPTANCE_CN.md) 和 [STATUS](../STATUS.md) 为准。
+
 ## 当前布局与准备边界
 
 本机 Git 根是 `本地化开源项目/`，源码在 `zeroloc-starter/`，根仓库当前无提交、无 remote，分支名为 master。已补齐根 README、根 `.github/workflows/ci.yml` 和 PR 模板。根 workflow 通过 `defaults.run.working-directory: zeroloc-starter` 运行 npm，artifact 路径也指向子目录；它才是当前布局的 GitHub 入口。子目录中的 `.github/workflows/ci.yml` 保留为“把子目录单独建仓”的模板，当前布局不会发现它。

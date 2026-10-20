@@ -1,5 +1,7 @@
 # v0.1.0-beta.1 首次公开发布审查
 
+> 本文件保留首次创建时的计划/审查记录；仓库与首次 push 已完成。本轮 PR 验收的当前状态以 [BETA_RELEASE_ACCEPTANCE_CN.md](BETA_RELEASE_ACCEPTANCE_CN.md) 和 [STATUS](../STATUS.md) 为准。
+
 日期：2026-10-19。状态：**本地准备完成，GitHub 账号已核实；等待最后明确批准**。没有远端写入、仓库创建、push、PR、tag、Release 或分支保护修改。
 
 ## 仓库、历史与公开范围
