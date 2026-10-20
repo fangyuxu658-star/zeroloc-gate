@@ -1,26 +1,24 @@
-# ZeroLoc beta verification status
+# ZeroLoc v0.1.0-beta.1 verification status
 
-目标 v0.1.0-beta.1；功能冻结，只做验收和文档修正。仓库：[fangyuxu658-star/zeroloc-gate](https://github.com/fangyuxu658-star/zeroloc-gate)。main 基线 4a64f6d6350ed5e80c1738ffa145a8dba46da66f；本分支未合并，未直接修改 main，也未创建 tag/Release。
+当前真实 main：d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a，来自 [PR #1 Squash Merge](https://github.com/fangyuxu658-star/zeroloc-gate/pull/1)；[main CI 5/5](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284)，commit d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a。本文件属于 main 派生的文档收尾分支，尚未合并；未直接 push main，未创建 Tag/Release，规则未应用。旧 initial main 是 4a64f6d，不再作为最新状态。
 
 ## Fully verified
 
-- [首次 main GitHub CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39347428254) 5/5 jobs 成功：Ubuntu/Windows × Node 22/24 各 21/21；Linux Chromium/Firefox × 3 locales × 2 viewports 共 12 组通过，故意溢出/无名称按钮检出。
-- 下载核验四份 JSON/SARIF/SBOM，JSON 0 errors、SARIF 0 results；Linux 安装树 97 个组件、Windows 96 个，不混淆安装平台范围。
-- 格式门禁、i18next 真实提取、独立本地 HTTP provider 安全负例与真实 Ollama 0.40.6/qwen2.5:0.5b CPU E2E 已验证。原目标/人工字段未改，候选仍需人审。
-- [正常 Draft PR #1](https://github.com/fangyuxu658-star/zeroloc-gate/pull/1)；[真实 PR CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349812116)：success，5/5 jobs 通过，4 个系统/Node 组合各 21/21，视觉 12 组通过。记录运行的 head=8817f1b2f4ea4beecd01f6122783dca098f3468f。
-- [负例 Draft PR #2](https://github.com/fangyuxu658-star/zeroloc-gate/pull/2)；[故意失败 CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349987984)：failure。移除合成德语 greeting 的 name 后，直接 CLI 退出 1 并定位 app.greeting / PLACEHOLDER_MISMATCH；远端检查失败。PR 已关闭且未合并，合成错误未进入 main。
-- 核心 MIT、107 项锁定 npm 许可清单与原始声明已检查。现有 Actions SHA 固定、contents:read、无 secrets 引用、checkout 不保留凭证。
+- PR #1 最终 head 4de289b 的 [PR CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39350314338) 5/5；Squash 后 main CI 独立完成 5/5，四个 Ubuntu/Windows × Node 22/24 组合各 21/21；Linux Chromium/Firefox × 3 locales × 2 viewports 共 12 组，故意溢出/无名称按钮正确检出。
+- main 四份 JSON/SARIF 报告均 0 errors/results；SBOM Linux 97、Windows 96 个组件；13 张截图已下载核验。main 日志实际 Contents:read，无 secrets 引用，checkout 不保留凭证。
+- main squash commit 作者是官方 noreply，committer GitHub noreply，GitHub 签名验证通过；树与已审核 PR head 完全一致。仅合并获授权 PR #1，负例 [PR #2](https://github.com/fangyuxu658-star/zeroloc-gate/pull/2) 保持 CLOSED/未合并，CLI 退出 1 的错误证据保留。
+- 107 项锁定依赖许可与原始声明检查通过；本轮本地/远端 audit 为 0 漏洞。核心 MIT、第三方清单、CycloneDX 已复核；扫描无秘密发现，启发式检查不代表绝对保证。
+- 格式门禁、真实 i18next 提取、本地 HTTP provider 安全负例、独立缓存 Firefox 与真实 Ollama 0.40.6/qwen2.5:0.5b CPU E2E 的既有证据保留。人工译文未覆盖，候选需人审。
 
 ## Partially verified
 
-- Fork PR：静态 workflow 与只读默认 token 配置已核对；真实外部 fork 事件尚未测试，没有第二个可用贡献者场景。不能用同仓测试 PR 代替。
-- CI 门禁会检测错误，但 main 当前 protected=false、rulesets 为空，不能保证失败 CI 在服务器端阻止管理员/有写权限者合并。Draft 的不可合并状态也不是 CI 保护的证明。
-- Windows 原默认 Firefox 缓存有 mozglue 激活问题；项目独立缓存及 Linux CI 可运行。小模型把 Continue 原样返回，结构通过不代表翻译完整或语义正确。
-- 本分支文档最后修订会再次触发 CI；以正常 PR Checks 的最新 head 为准，历史成功 run 不替代新提交检查。
+- main protected=false、rulesets=[]、effective rules=[]；public/admin 资格及规则草案已核查，但未应用、未动态验证阻断。CI 红灯不等于服务器强制阻止合并。
+- Fork PR 静态安全审查通过；真实外部 Fork 尚未运行，同仓 PR 不能冒充该证据。
+- Windows 原默认 Firefox 缓存 mozglue 问题仍披露，独立缓存与 Linux CI 可运行；小模型把 Continue 原样返回，结构成功不代表翻译语义质量。
 
 ## Not yet verified / not authorized
 
-- 外部 fork PR 的实际权限/secret 行为；GPU/其他模型及真实客户应用；完整语义质量、完整无障碍与像素基线。
-- main 保护规则执行效果；正常 PR 合并后的最终 main CI；正式 beta tag/Release。远端设置、合并、tag 与发布均需维护者再次批准。
+- 外部 Fork 实际权限/secret 行为、GPU/其他模型/真实客户应用、完整无障碍/语义/像素质量。
+- 本次文档 PR 合并及其 resulting main CI；Ruleset 应用与 read-back；正式 Tag 和 GitHub Pre-release。仅 PR #1 合并获准，其他 PR 不自动合并。
 
-当前判断：工程候选可继续人审；正式发布 **NO-GO**，直到维护者批准并合并正常 PR、验证合并后 main，并启用保护或明确接受其未启用风险。详见 [验收日志](docs/BETA_RELEASE_ACCEPTANCE_CN.md)、[checklist](docs/RELEASE_CHECKLIST_CN.md) 和 [环境复现](docs/STABILIZATION_ENVIRONMENT_CN.md)。
+判断：已验证 main 的工程检查 **GO**；对外发布执行仍 **NO-GO（待批准）**。见 [收尾研发日志](docs/RELEASE_CLOSEOUT_CN.md)、[Checklist](docs/RELEASE_CHECKLIST_CN.md)、[Release Notes](docs/RELEASE_NOTES_v0.1.0-beta.1.md)。

@@ -1,5 +1,7 @@
 # ZeroLoc Gate
 
+> 最新收尾：PR #1 已 Squash Merge，main d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a 的 [CI 5/5 成功](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284)。保护规则、Tag 和 Pre-release 尚未执行；本轮文档更新尚未合并。见 [收尾记录](docs/RELEASE_CLOSEOUT_CN.md)。
+
 本地优先的嵌套 JSON 本地化质量门禁。MIT 核心通过可替换适配器复用 FormatJS、i18next-cli、Ollama HTTP、Playwright 和 axe-core；不要求账号、凭证或托管服务。结构匹配不代表语义翻译正确。
 
 当前发布候选为 **v0.1.0-beta.1**，公开仓库为 [fangyuxu658-star/zeroloc-gate](https://github.com/fangyuxu658-star/zeroloc-gate)，`package.json` 保持 private 防止误发 npm。[首次 main CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39347428254) 已通过。测试 PR、最新状态和发布限制见 [STATUS](STATUS.md)、[验收日志](docs/BETA_RELEASE_ACCEPTANCE_CN.md) 与 [Release Notes](docs/RELEASE_NOTES_v0.1.0-beta.1.md)。尚无正式 tag/Release。

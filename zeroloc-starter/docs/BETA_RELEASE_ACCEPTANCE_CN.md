@@ -1,5 +1,7 @@
 # Beta release engineering acceptance
 
+> 以下是前轮 PR 验收历史。后续用户已授权并完成 PR #1 Ready/Squash Merge，实际 main d498d4a 的独立 CI 5/5 成功。旧的未授权/未合并措辞不再代表当前状态，最新见 [RELEASE_CLOSEOUT_CN.md](RELEASE_CLOSEOUT_CN.md)。
+
 目标 v0.1.0-beta.1；基线 4a64f6d6350ed5e80c1738ffa145a8dba46da66f；仓库 [fangyuxu658-star/zeroloc-gate](https://github.com/fangyuxu658-star/zeroloc-gate)。维护者仅授权两个指定测试分支/两个 Draft PR、相关修复与验证、关闭负例和更新文档；没有合并、main 修改、tag/Release 或规则设置授权。
 
 ## 研发日志与真实证据
