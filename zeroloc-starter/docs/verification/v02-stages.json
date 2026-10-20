@@ -1,0 +1,117 @@
+{
+  "version": "0.2.0-dev.0",
+  "base": "bcb542a7dc672c97be34289cbaf86667cceff118",
+  "branch": "codex/v0.2-safe-apply",
+  "stages": [
+    {
+      "stage": 1,
+      "commit": "0a67dcb",
+      "tests": 27,
+      "passed": 27
+    },
+    {
+      "stage": 2,
+      "commit": "0c7d8f9",
+      "tests": 31,
+      "passed": 31
+    },
+    {
+      "stage": 3,
+      "commit": "4b1f4c8",
+      "tests": 34,
+      "passed": 34
+    },
+    {
+      "stage": 4,
+      "commit": "8e82871",
+      "tests": 37,
+      "passed": 37
+    },
+    {
+      "stage": 5,
+      "tests": 41,
+      "passed": 41,
+      "realReactScenarios": [
+        {
+          "name": "success",
+          "passed": true,
+          "rolledBack": false,
+          "externalEditPreserved": false
+        },
+        {
+          "name": "unit-failure",
+          "passed": true,
+          "rolledBack": true,
+          "externalEditPreserved": false
+        },
+        {
+          "name": "ui-failure",
+          "passed": true,
+          "rolledBack": true,
+          "externalEditPreserved": false
+        },
+        {
+          "name": "timeout",
+          "passed": true,
+          "rolledBack": true,
+          "externalEditPreserved": false
+        },
+        {
+          "name": "conflict",
+          "passed": true,
+          "rolledBack": false,
+          "externalEditPreserved": true
+        }
+      ],
+      "browsers": [
+        "chromium",
+        "firefox"
+      ],
+      "uiCases": 8
+    }
+  ],
+  "licenses": {
+    "lockedPackages": 112,
+    "newLibraries": [
+      {
+        "name": "fast-json-patch",
+        "version": "3.1.1",
+        "license": "MIT"
+      },
+      {
+        "name": "franc-min",
+        "version": "6.2.0",
+        "license": "MIT",
+        "licenseGitHead": "3f9f0b51a96c5df32a407dad865a3011ac0fa2d1"
+      }
+    ]
+  },
+  "audit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "sbom": {
+    "format": "CycloneDX",
+    "components": 101
+  },
+  "ci": {
+    "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39383958891",
+    "testedCommit": "031c7e9c1383765b1bbe4a84887d66c139c8b07a",
+    "conclusion": "success",
+    "jobs": 5,
+    "testsPerRegressionJob": 41,
+    "pr": "https://github.com/fangyuxu658-star/zeroloc-gate/pull/6",
+    "note": "Latest follow-up commit requires its own PR checks."
+  },
+  "limitations": [
+    "Single target per transaction; no cross-file database atomicity or guaranteed power-loss directory durability",
+    "No hostile same-user filesystem/approved-test OS sandbox",
+    "Language/terms/length checks are heuristic; manual review always required",
+    "Real acceptance covers one installed small local model and synthetic business data in actual React/i18next SSR",
+    "No v0.2 tag, release, merge or Ruleset change"
+  ]
+}

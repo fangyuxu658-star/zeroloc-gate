@@ -1,0 +1,89 @@
+{
+  "provider": "real-local-ollama",
+  "version": "0.40.6",
+  "model": "qwen2.5:0.5b",
+  "modelDigest": "a8b0c51577010a279d933d14c2a8ab4b268079d44c5c8830c0a93900f1827c67",
+  "modelLicenseSha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+  "runs": [
+    {
+      "id": "react",
+      "planId": "1b34e7428b2f82af7cb4365b3637b76fc3cd3ba5e8fe2b190c8bb66d08479765",
+      "configSha256": "4a79a703aa6761c5e0a03606feeb0ccbd582b827d10251b09f4949751338e3b0",
+      "candidates": [
+        {
+          "key": "review.greeting",
+          "value": "Hallo {{name}}"
+        }
+      ],
+      "originalSha256": "47266f3fa76382e6df78dd2830846360cc2cf38fd284a3973c3fb76c12ed7a9d",
+      "generationMs": 2560,
+      "setupMs": 4199,
+      "quality": {
+        "passed": true,
+        "issues": [
+          {
+            "code": "LANGUAGE_INSUFFICIENT_EVIDENCE",
+            "level": "info",
+            "key": "review.greeting",
+            "locale": "de",
+            "message": "Short text: no reliable language inference; human review required",
+            "requiresHumanReview": true
+          }
+        ],
+        "requiresHumanReview": true,
+        "limitations": "Literal/length/statistical heuristics can produce false positives and negatives; no semantic correctness guarantee.",
+        "policy": {
+          "allowSourceKeys": [],
+          "allowedSourceTexts": [],
+          "brands": [],
+          "terms": [],
+          "minLengthRatio": 0.25,
+          "maxLengthRatio": 4,
+          "blockWarnings": false
+        }
+      },
+      "lockfileSha256": "2e7493841a81479d01f72dc9bc095dbf3501dcc1084893b90ad4f6f076921a7f"
+    },
+    {
+      "id": "next",
+      "planId": "402e6370a71f6888daf0c0f83e9c3c2573b20afdf46f3bb1d73da32495fd69e1",
+      "configSha256": "71c74b271097fc2fe1ddda6e554d7771537b3fd11747c2b2d3489e1dec6ffe8f",
+      "candidates": [
+        {
+          "key": "review.greeting",
+          "value": "Hallo {{name}}"
+        }
+      ],
+      "originalSha256": "a95f8338be984c4c4dd4a8fcf4860a78d211f71a62b614046821cf855706f5b0",
+      "generationMs": 386,
+      "setupMs": 1967,
+      "quality": {
+        "passed": true,
+        "issues": [
+          {
+            "code": "LANGUAGE_INSUFFICIENT_EVIDENCE",
+            "level": "info",
+            "key": "review.greeting",
+            "locale": "de",
+            "message": "Short text: no reliable language inference; human review required",
+            "requiresHumanReview": true
+          }
+        ],
+        "requiresHumanReview": true,
+        "limitations": "Literal/length/statistical heuristics can produce false positives and negatives; no semantic correctness guarantee.",
+        "policy": {
+          "allowSourceKeys": [],
+          "allowedSourceTexts": [],
+          "brands": [],
+          "terms": [],
+          "minLengthRatio": 0.25,
+          "maxLengthRatio": 4,
+          "blockWarnings": false
+        }
+      },
+      "lockfileSha256": "1b9c13fb207b85d46977555ac6d1eb53e9c9b4f83c328a14295ee0db81138d6a",
+      "originalModelCandidate": "Hallo {{name}}, ",
+      "humanCorrection": "Removed an unwarranted trailing comma and space after independent German review; regenerated approval ID."
+    }
+  ]
+}

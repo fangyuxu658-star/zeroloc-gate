@@ -1,0 +1,26 @@
+✖ lock cleanup failure returns the applied state and recovery evidence instead of masking it (88.6286ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 362.2747
+
+✖ failing tests:
+
+test at test\independent-hardening.test.mjs:173:1
+✖ lock cleanup failure returns the applied state and recovery evidence instead of masking it (88.6286ms)
+  Error: EPERM: operation not permitted, unlink 'C:\Users\15084\AppData\Local\Temp\zeroloc-independent-bo8jj1\de.json.zeroloc.lock'
+      at async unlink (node:internal/fs/promises:1068:10)
+      at async applyProposal (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/apply.mjs:95:14)
+      at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/independent-hardening.test.mjs:175:16
+      at async fixture (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/independent-hardening.test.mjs:23:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'unlink',
+    path: 'C:\\Users\\15084\\AppData\\Local\\Temp\\zeroloc-independent-bo8jj1\\de.json.zeroloc.lock'
+  }

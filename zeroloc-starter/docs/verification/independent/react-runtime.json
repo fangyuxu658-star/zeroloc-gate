@@ -1,0 +1,100 @@
+{
+  "validation": {
+    "passed": true,
+    "checks": [
+      {
+        "kind": "unit",
+        "file": "zeroloc-review.test.mjs",
+        "passed": true,
+        "exitCode": 0,
+        "timedOut": false,
+        "outputLimited": false,
+        "outputSha256": "a286973652dfaf0cd1d327582728210f66af9560597057ba25aecd57a7504032"
+      }
+    ],
+    "configSha256": "4a79a703aa6761c5e0a03606feeb0ccbd582b827d10251b09f4949751338e3b0",
+    "planId": "1b34e7428b2f82af7cb4365b3637b76fc3cd3ba5e8fe2b190c8bb66d08479765"
+  },
+  "localeProbe": {
+    "urlConvention": "/?locale=de",
+    "browserLocale": "en-US",
+    "rendered": "Hello Ada",
+    "canonicalGermanUrl": "/?lng=de"
+  },
+  "render": [
+    {
+      "browser": "chromium",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    },
+    {
+      "browser": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    },
+    {
+      "browser": "firefox",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    },
+    {
+      "browser": "firefox",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    }
+  ],
+  "visual": {
+    "passed": true,
+    "runs": [
+      {
+        "browser": "chromium",
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "findings": []
+      },
+      {
+        "browser": "chromium",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "findings": []
+      },
+      {
+        "browser": "firefox",
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "findings": []
+      },
+      {
+        "browser": "firefox",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "findings": []
+      }
+    ]
+  },
+  "executionMs": 22948
+}

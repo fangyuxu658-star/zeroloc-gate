@@ -1,0 +1,40 @@
+✔ publish rejects alternate, multiple and rewritten push destinations before transport (8114.2565ms)
+✔ publish refuses a commit introduced during remote preflight; no unreviewed HEAD is pushed (8329.853ms)
+﹣ atomic replacement preserves POSIX access mode on apply and byte restoration (0.3488ms) # SKIP
+✔ JSON Patch adversarial sequences cannot erase parent objects or overwrite human text (85.3201ms)
+✔ unsafe paths, linked backups, corrupt recovery and occupied locks preserve original evidence (135.1471ms)
+✔ source-retention quality gate recognizes invisible padding without blocking normal joined scripts (0.9544ms)
+✔ duplicate JSON names, including escaped aliases, cannot conceal a human translation (36.6597ms)
+✖ two real processes coordinate through the lock; loser cannot modify files or remove winner lock (687.199ms)
+✔ process death after replacement retains backup/journal/lock; explicit recovery restores exact CRLF bytes (426.026ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 18096.0044
+
+✖ failing tests:
+
+test at test\independent-hardening.test.mjs:131:1
+✖ two real processes coordinate through the lock; loser cannot modify files or remove winner lock (687.199ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'CONFLICT: stale source or target proposal'
+  - 'EEXIST'
+
+      at file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/independent-hardening.test.mjs:137:54
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async fixture (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/independent-hardening.test.mjs:22:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'CONFLICT: stale source or target proposal',
+    expected: 'EEXIST',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

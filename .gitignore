@@ -4,6 +4,8 @@ artifacts/
 .local-models/
 test-results/
 playwright-report/
+.review-external/
+.review-tmp/
 .env
 .env.*
 !.env.example

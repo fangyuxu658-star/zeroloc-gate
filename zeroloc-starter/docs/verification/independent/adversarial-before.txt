@@ -1,0 +1,68 @@
+✖ publish rejects alternate, multiple and rewritten push destinations before transport (4975.9559ms)
+✖ publish refuses a commit introduced during remote preflight; no unreviewed HEAD is pushed (6644.7211ms)
+﹣ atomic replacement preserves POSIX access mode on apply and byte restoration (0.9876ms) # SKIP
+✔ JSON Patch adversarial sequences cannot erase parent objects or overwrite human text (106.1842ms)
+✔ unsafe paths, linked backups, corrupt recovery and occupied locks preserve original evidence (146.1796ms)
+✖ source-retention quality gate recognizes invisible padding without blocking normal joined scripts (2.0603ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 2
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 12251.2967
+
+✖ failing tests:
+
+test at test\independent-hardening.test.mjs:39:1
+✖ publish rejects alternate, multiple and rewritten push destinations before transport (4975.9559ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/independent-hardening.test.mjs:47:5
+      at async repository (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/independent-hardening.test.mjs:35:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /push|destination/i,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at test\independent-hardening.test.mjs:53:1
+✖ publish refuses a commit introduced during remote preflight; no unreviewed HEAD is pushed (6644.7211ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/independent-hardening.test.mjs:65:3
+      at async repository (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/independent-hardening.test.mjs:35:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /changed|review/i,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at test\independent-hardening.test.mjs:105:1
+✖ source-retention quality gate recognizes invisible padding without blocking normal joined scripts (2.0603ms)
+  AssertionError [ERR_ASSERTION]: "Continue​"
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/independent-hardening.test.mjs:107:88)
+      at Test.runInAsyncScope (node:async_hooks:213:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,41 @@
+{
+  "provider": "ollama",
+  "target": "C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\react-app\\public\\locales\\de\\translation.json",
+  "dryRun": false,
+  "applied": false,
+  "candidates": [
+    {
+      "key": "review.greeting",
+      "value": "Hallo {{name}}"
+    }
+  ],
+  "patch": [
+    {
+      "op": "test",
+      "path": "",
+      "value": {
+        "title": "Willkommen zu react und react-i18next",
+        "description": {
+          "part1": "Um loszulegen, ändere <1>src/App(DE).js</1> und speichere um neuzuladen.",
+          "part2": "Wechsle die Sprache zwischen deutsch und englisch mit Hilfe der beiden Schalter."
+        }
+      }
+    },
+    {
+      "op": "add",
+      "path": "/review",
+      "value": {}
+    },
+    {
+      "op": "add",
+      "path": "/review/greeting",
+      "value": "Hallo {{name}}"
+    }
+  ],
+  "requiresHumanReview": true,
+  "sourceSha256": "301cf2d809085fc291169a754dccbcf85f159d78eb9bb83bc7459974425de4e3",
+  "targetSha256": "47266f3fa76382e6df78dd2830846360cc2cf38fd284a3973c3fb76c12ed7a9d",
+  "messageFormat": "i18next",
+  "sourceLocale": "en",
+  "targetLocale": "de"
+}

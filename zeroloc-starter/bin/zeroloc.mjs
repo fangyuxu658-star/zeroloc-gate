@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 import { checkFiles } from '../src/check.mjs';
 import { toSarif } from '../src/report.mjs';
+import { VERSION } from '../src/version.mjs';
 
-const help = `ZeroLoc Gate v0.1.0-beta.1
+const help = `ZeroLoc Gate ${VERSION}
 
 Usage:
   node bin/zeroloc.mjs check --source <en.json> --targets <de.json,fr.json>
@@ -10,6 +11,17 @@ Usage:
   node bin/zeroloc.mjs extract --project <dir> --locales en,de --dry-run
   node bin/zeroloc.mjs translate --provider ollama --model <installed-local-model> --source <en.json> --target <de.json> --source-locale en --target-locale de --message-format i18next --dry-run
   node bin/zeroloc.mjs visual --url http://127.0.0.1:4173 --output artifacts/visual
+  node bin/zeroloc.mjs quality --source en.json --target de.json --target-locale de --message-format i18next
+  node bin/zeroloc.mjs apply --root <project> --source en.json --target de.json --proposal proposal.json --validation-config validation.json
+  node bin/zeroloc.mjs apply <same options> --write --approve <planId> --allow-validation <config-sha256>
+  node bin/zeroloc.mjs recover --root <project> --journal <recovery.json> --approve <current-target-sha256>
+  node bin/zeroloc.mjs pr-prepare --root <git-root> --report report.json
+  node bin/zeroloc.mjs pr-prepare <same options> --prepare --approve <previewId>
+  node bin/zeroloc.mjs pr-publish --root <git-root> --repo owner/repo --body body.md
+  node bin/zeroloc.mjs pr-publish <same options> --publish --approve <previewId>
+
+Apply and PR commands preview by default. Each mutation requires its own exact approval.
+Legacy proposals need explicit --bind-legacy review; short-text quality heuristics are not semantic guarantees.
 
 Options:
   --source <file>       Required. Source JSON catalog.
@@ -30,6 +42,37 @@ function option(args, name) {
 async function main() {
   const args = process.argv.slice(2);
   if (args.includes('--help') || args.length === 0) { console.log(help); return; }
+  if(args.includes('--dry-run')&&(args.includes('--write')||args.includes('--prepare')||args.includes('--publish')))throw new Error('Conflicting dry-run and mutation flags');
+  if(args[0]==='recover'&&args.includes('--dry-run'))throw new Error('recover does not support --dry-run; no files changed. Inspect the recovery record before approving restoration.');
+  if(['pr-prepare','pr-publish'].includes(args[0])) {
+    const {preparePr,publishPr}=await import('../src/pull-request.mjs');
+    const root=option(args,'--root')??'.';
+    const result=args[0]==='pr-prepare'?await preparePr({root,reportPath:option(args,'--report'),branch:option(args,'--branch'),prepare:args.includes('--prepare'),approve:option(args,'--approve')}):await publishPr({root,repo:option(args,'--repo'),bodyPath:option(args,'--body'),title:option(args,'--title'),publish:args.includes('--publish'),approve:option(args,'--approve'),gh:option(args,'--gh')??'gh'});
+    console.log(JSON.stringify(result,null,2));return;
+  }
+  if(args[0]==='quality') {
+    const {readResource,parseJson}=await import('../src/safe-files.mjs');
+    const {checkQuality}=await import('../src/quality.mjs');
+    const root=option(args,'--root')??'.',load=async p=>parseJson((await readResource(root,p)).bytes);
+    const result=checkQuality({source:await load(option(args,'--source')),target:await load(option(args,'--target')),targetLocale:option(args,'--target-locale'),messageFormat:option(args,'--message-format')??'i18next',policy:option(args,'--policy')?await load(option(args,'--policy')):{}});
+    console.log(JSON.stringify(result,null,2));if(!result.passed)process.exitCode=1;return;
+  }
+  if (args[0] === 'apply' || args[0] === 'recover') {
+    const { readResource, parseJson } = await import('../src/safe-files.mjs');
+    const { applyProposal, recoverApply } = await import('../src/apply.mjs');
+    const root=option(args,'--root')??'.';
+    let result;
+    if(args[0]==='recover') result=await recoverApply({root,journal:option(args,'--journal'),approve:option(args,'--approve')});
+    else {
+      const proposal=parseJson((await readResource(root,option(args,'--proposal'))).bytes);
+      const policy=option(args,'--policy')?parseJson((await readResource(root,option(args,'--policy'))).bytes):{};
+      const validator=option(args,'--validation-config')?await (await import('../src/validation.mjs')).configuredValidator({root,configPath:option(args,'--validation-config'),approval:option(args,'--allow-validation')}):null;
+      if(args.includes('--write')&&!validator)throw new Error('--validation-config is required for writes');
+      if(args.includes('--write')&&validator)validator.assertApproved();
+      result=await applyProposal({root,source:option(args,'--source'),target:option(args,'--target'),proposal,policy,validationBinding:validator?.binding??null,validate:validator?plan=>validator.run(plan):undefined,targetLocale:option(args,'--target-locale')??proposal.targetLocale,messageFormat:option(args,'--message-format')??proposal.messageFormat,bindLegacy:args.includes('--bind-legacy'),write:args.includes('--write'),approve:option(args,'--approve')});
+    }
+    console.log(JSON.stringify(result,null,2));if(result.passed===false)process.exitCode=1;return;
+  }
   if (args[0] === 'visual') {
     const { visualQA } = await import('../src/checks/visual.mjs');
     const result = await visualQA({url:option(args,'--url'),outputDir:option(args,'--output') ?? 'artifacts/visual'});

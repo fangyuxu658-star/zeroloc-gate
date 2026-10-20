@@ -1,0 +1,662 @@
+{
+  "id": "react",
+  "validation": {
+    "passed": true,
+    "checks": [
+      {
+        "kind": "unit",
+        "file": "zeroloc-review.test.mjs",
+        "passed": true,
+        "exitCode": 0,
+        "timedOut": false,
+        "outputLimited": false,
+        "outputSha256": "a286973652dfaf0cd1d327582728210f66af9560597057ba25aecd57a7504032"
+      }
+    ],
+    "configSha256": "4a79a703aa6761c5e0a03606feeb0ccbd582b827d10251b09f4949751338e3b0",
+    "planId": "1b34e7428b2f82af7cb4365b3637b76fc3cd3ba5e8fe2b190c8bb66d08479765"
+  },
+  "localeProbe": {
+    "urlConvention": "/?locale=de",
+    "browserLocale": "en-US",
+    "rendered": "Hello Ada",
+    "canonicalGermanUrl": "/?lng=de"
+  },
+  "render": [
+    {
+      "browser": "chromium",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    },
+    {
+      "browser": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    },
+    {
+      "browser": "firefox",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    },
+    {
+      "browser": "firefox",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    }
+  ],
+  "visual": {
+    "passed": true,
+    "runs": [
+      {
+        "browser": "chromium",
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "findings": []
+      },
+      {
+        "browser": "chromium",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "findings": []
+      },
+      {
+        "browser": "firefox",
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "findings": []
+      },
+      {
+        "browser": "firefox",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "findings": []
+      }
+    ]
+  },
+  "executionMs": 22948
+}
+{
+  "id": "next",
+  "validation": {
+    "passed": true,
+    "checks": [
+      {
+        "kind": "unit",
+        "file": "zeroloc-review.test.mjs",
+        "passed": true,
+        "exitCode": 0,
+        "timedOut": false,
+        "outputLimited": false,
+        "outputSha256": "ff6518789b12143155762a0ce6bfafdcd02c8ec04dc97caf5f9cf31816fba4f0"
+      }
+    ],
+    "configSha256": "71c74b271097fc2fe1ddda6e554d7771537b3fd11747c2b2d3489e1dec6ffe8f",
+    "planId": "402e6370a71f6888daf0c0f83e9c3c2573b20afdf46f3bb1d73da32495fd69e1"
+  },
+  "localeProbe": {
+    "urlConvention": "/?locale=de",
+    "browserLocale": "en-US",
+    "rendered": "Hello Ada",
+    "canonicalGermanUrl": "/de"
+  },
+  "render": [
+    {
+      "browser": "chromium",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    },
+    {
+      "browser": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    },
+    {
+      "browser": "firefox",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    },
+    {
+      "browser": "firefox",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    }
+  ],
+  "visual": {
+    "passed": false,
+    "runs": [
+      {
+        "browser": "chromium",
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "findings": [
+          {
+            "code": "PAGE_OVERFLOW",
+            "level": "error"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "h1"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "div"
+          },
+          {
+            "code": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodes": [
+              [
+                ".card:nth-child(1) > .card-text"
+              ],
+              [
+                ".card:nth-child(1) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(2) > .card-text"
+              ],
+              [
+                ".card:nth-child(2) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(3) > .card-text"
+              ],
+              [
+                ".card:nth-child(3) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(4) > .card-text"
+              ],
+              [
+                ".card:nth-child(4) > .card-text > a"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          },
+          {
+            "code": "image-alt",
+            "impact": "critical",
+            "help": "Images must have alternative text",
+            "nodes": [
+              [
+                ".card:nth-child(2) > a > img"
+              ],
+              [
+                ".card:nth-child(3) > a > img"
+              ],
+              [
+                ".card:nth-child(4) > a > img"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          },
+          {
+            "code": "link-in-text-block",
+            "impact": "serious",
+            "help": "Links must be distinguishable without relying on color",
+            "nodes": [
+              [
+                ".card:nth-child(1) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(3) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(4) > .card-text > a"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          },
+          {
+            "code": "link-name",
+            "impact": "serious",
+            "help": "Links must have discernible text",
+            "nodes": [
+              [
+                ".github"
+              ],
+              [
+                ".card:nth-child(2) > a"
+              ],
+              [
+                ".card:nth-child(3) > a"
+              ],
+              [
+                ".card:nth-child(4) > a"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          }
+        ]
+      },
+      {
+        "browser": "chromium",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "findings": [
+          {
+            "code": "PAGE_OVERFLOW",
+            "level": "error"
+          },
+          {
+            "code": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodes": [
+              [
+                ".card:nth-child(1) > .card-text"
+              ],
+              [
+                ".card:nth-child(1) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(2) > .card-text"
+              ],
+              [
+                ".card:nth-child(2) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(3) > .card-text"
+              ],
+              [
+                ".card:nth-child(3) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(4) > .card-text"
+              ],
+              [
+                ".card:nth-child(4) > .card-text > a"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          },
+          {
+            "code": "image-alt",
+            "impact": "critical",
+            "help": "Images must have alternative text",
+            "nodes": [
+              [
+                ".card:nth-child(2) > a > img"
+              ],
+              [
+                ".card:nth-child(3) > a > img"
+              ],
+              [
+                ".card:nth-child(4) > a > img"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          },
+          {
+            "code": "link-in-text-block",
+            "impact": "serious",
+            "help": "Links must be distinguishable without relying on color",
+            "nodes": [
+              [
+                ".card:nth-child(1) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(3) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(4) > .card-text > a"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          },
+          {
+            "code": "link-name",
+            "impact": "serious",
+            "help": "Links must have discernible text",
+            "nodes": [
+              [
+                ".github"
+              ],
+              [
+                ".card:nth-child(2) > a"
+              ],
+              [
+                ".card:nth-child(3) > a"
+              ],
+              [
+                ".card:nth-child(4) > a"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          }
+        ]
+      },
+      {
+        "browser": "firefox",
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "findings": [
+          {
+            "code": "PAGE_OVERFLOW",
+            "level": "error"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "h1"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "a"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "a"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "a"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "a"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "div"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "a"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "a"
+          },
+          {
+            "code": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodes": [
+              [
+                ".card:nth-child(1) > .card-text"
+              ],
+              [
+                ".card:nth-child(1) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(2) > .card-text"
+              ],
+              [
+                ".card:nth-child(2) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(3) > .card-text"
+              ],
+              [
+                ".card:nth-child(3) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(4) > .card-text"
+              ],
+              [
+                ".card:nth-child(4) > .card-text > a"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          },
+          {
+            "code": "image-alt",
+            "impact": "critical",
+            "help": "Images must have alternative text",
+            "nodes": [
+              [
+                ".card:nth-child(2) > a > img"
+              ],
+              [
+                ".card:nth-child(3) > a > img"
+              ],
+              [
+                ".card:nth-child(4) > a > img"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          },
+          {
+            "code": "link-in-text-block",
+            "impact": "serious",
+            "help": "Links must be distinguishable without relying on color",
+            "nodes": [
+              [
+                ".card:nth-child(1) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(3) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(4) > .card-text > a"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          },
+          {
+            "code": "link-name",
+            "impact": "serious",
+            "help": "Links must have discernible text",
+            "nodes": [
+              [
+                ".github"
+              ],
+              [
+                ".card:nth-child(2) > a"
+              ],
+              [
+                ".card:nth-child(3) > a"
+              ],
+              [
+                ".card:nth-child(4) > a"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          }
+        ]
+      },
+      {
+        "browser": "firefox",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "findings": [
+          {
+            "code": "PAGE_OVERFLOW",
+            "level": "error"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "a"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "a"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "a"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "a"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "a"
+          },
+          {
+            "code": "ELEMENT_OVERFLOW",
+            "level": "error",
+            "element": "a"
+          },
+          {
+            "code": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "nodes": [
+              [
+                ".card:nth-child(1) > .card-text"
+              ],
+              [
+                ".card:nth-child(1) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(2) > .card-text"
+              ],
+              [
+                ".card:nth-child(2) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(3) > .card-text"
+              ],
+              [
+                ".card:nth-child(3) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(4) > .card-text"
+              ],
+              [
+                ".card:nth-child(4) > .card-text > a"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          },
+          {
+            "code": "image-alt",
+            "impact": "critical",
+            "help": "Images must have alternative text",
+            "nodes": [
+              [
+                ".card:nth-child(2) > a > img"
+              ],
+              [
+                ".card:nth-child(3) > a > img"
+              ],
+              [
+                ".card:nth-child(4) > a > img"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          },
+          {
+            "code": "link-in-text-block",
+            "impact": "serious",
+            "help": "Links must be distinguishable without relying on color",
+            "nodes": [
+              [
+                ".card:nth-child(1) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(3) > .card-text > a"
+              ],
+              [
+                ".card:nth-child(4) > .card-text > a"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          },
+          {
+            "code": "link-name",
+            "impact": "serious",
+            "help": "Links must have discernible text",
+            "nodes": [
+              [
+                ".github"
+              ],
+              [
+                ".card:nth-child(2) > a"
+              ],
+              [
+                ".card:nth-child(3) > a"
+              ],
+              [
+                ".card:nth-child(4) > a"
+              ]
+            ],
+            "level": "error",
+            "category": "a11y"
+          }
+        ]
+      }
+    ]
+  },
+  "executionMs": 36956
+}

@@ -1,0 +1,26 @@
+✖ duplicate JSON names, including escaped aliases, cannot conceal a human translation (42.079ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 347.9986
+
+✖ failing tests:
+
+test at test\independent-hardening.test.mjs:111:1
+✖ duplicate JSON names, including escaped aliases, cannot conceal a human translation (42.079ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/independent-hardening.test.mjs:116:5
+      at async fixture (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/independent-hardening.test.mjs:21:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /duplicate/i,
+    operator: 'rejects',
+    diff: 'simple'
+  }

@@ -1,0 +1,313 @@
+{
+  "head": "6ffeb8bb6c22916c43c6ae8866117973fc6b9b13",
+  "runId": 39477670058,
+  "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39477670058",
+  "jobs": [
+    {
+      "id": 118817732026,
+      "name": "visual",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T18:46:29Z",
+      "completedAt": "2026-10-20T18:47:36Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci --ignore-scripts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx --no-install playwright install --with-deps chromium firefox",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run test:visual -- --all-browsers",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run test:workflow",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run test:network",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118817732040,
+      "name": "regression (ubuntu-latest, 24)",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T18:46:29Z",
+      "completedAt": "2026-10-20T18:46:43Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci --ignore-scripts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run check:example",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run licenses:check",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm audit --audit-level=high",
+          "conclusion": "success"
+        },
+        {
+          "name": "Structured reports and SBOM",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118817732047,
+      "name": "regression (ubuntu-latest, 22)",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T18:46:29Z",
+      "completedAt": "2026-10-20T18:46:44Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci --ignore-scripts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run check:example",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run licenses:check",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm audit --audit-level=high",
+          "conclusion": "success"
+        },
+        {
+          "name": "Structured reports and SBOM",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118817732252,
+      "name": "regression (windows-latest, 24)",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T18:46:29Z",
+      "completedAt": "2026-10-20T18:47:05Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci --ignore-scripts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run check:example",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run licenses:check",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm audit --audit-level=high",
+          "conclusion": "success"
+        },
+        {
+          "name": "Structured reports and SBOM",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118817732483,
+      "name": "regression (windows-latest, 22)",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T18:46:29Z",
+      "completedAt": "2026-10-20T18:47:17Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci --ignore-scripts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run check:example",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run licenses:check",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm audit --audit-level=high",
+          "conclusion": "success"
+        },
+        {
+          "name": "Structured reports and SBOM",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}

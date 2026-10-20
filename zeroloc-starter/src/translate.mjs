@@ -1,16 +1,18 @@
 import { readFile } from 'node:fs/promises';
 import { flattenMessages, compareCatalogs } from './check.mjs';
 import { messageSignature } from './formats.mjs';
+import { createHash } from 'node:crypto';
 
 const pointer = parts => '/' + parts.map(p => p.replaceAll('~', '~0').replaceAll('/', '~1')).join('/');
 export async function translateFiles({ sourcePath, targetPath, sourceLocale, targetLocale, messageFormat, provider, dryRun = true, concurrency = 2 }) {
   if (!['plain', 'i18next', 'icu'].includes(messageFormat)) throw new Error('Configure --message-format plain|i18next|icu');
   if (!sourceLocale || !targetLocale) throw new Error('Source and target locales are required');
   if (!Number.isInteger(concurrency) || concurrency < 1 || concurrency > 4) throw new Error('Concurrency must be 1–4');
-  const source = flattenMessages(JSON.parse(await readFile(sourcePath, 'utf8')));
+  const sourceBytes=await readFile(sourcePath),targetBytes=await readFile(targetPath);
+  const source = flattenMessages(JSON.parse(sourceBytes.toString('utf8')));
   if (!Object.keys(source).length) throw new Error('Source catalog is empty');
   const signatures = new Map(Object.entries(source).map(([key,text]) => [key,messageSignature(text,messageFormat)]));
-  const original = JSON.parse(await readFile(targetPath, 'utf8'));
+  const original = JSON.parse(targetBytes.toString('utf8'));
   const target = flattenMessages(original);
   const entries = Object.entries(source).filter(([key]) => !Object.hasOwn(target, key) || !target[key].trim());
   const candidates = new Array(entries.length);
@@ -48,5 +50,6 @@ export async function translateFiles({ sourcePath, targetPath, sourceLocale, tar
     patch.push({op:Object.hasOwn(node, leaf) ? 'replace' : 'add', path:pointer(parts), value});
     Object.defineProperty(node, leaf, {value, enumerable:true, configurable:true});
   }
-  return { provider:'ollama', target:targetPath, dryRun, applied:false, candidates, patch, requiresHumanReview:true };
+  return { provider:'ollama', target:targetPath, dryRun, applied:false, candidates, patch, requiresHumanReview:true,
+    sourceSha256:createHash('sha256').update(sourceBytes).digest('hex'),targetSha256:createHash('sha256').update(targetBytes).digest('hex'),messageFormat,sourceLocale,targetLocale };
 }

@@ -1,0 +1,68 @@
+
+> zeroloc-gate@0.2.0-dev.0 test
+> node --test "test/*.test.mjs"
+
+✔ actual CLI preview -> independent config consent -> exact write approval; conflicting flags fail (2055.4057ms)
+✔ safe apply defaults offline/dry-run, requires exact approval and preserves human translations (289.5933ms)
+✔ stale source, target bytes and invalid root tests fail before writing (62.004ms)
+✔ rejects destructive RFC operations, prototype pollution, human overwrite and invalid candidates (78.6882ms)
+✔ validation failure restores exact bytes; concurrent edit is retained rather than clobbered (373.5787ms)
+✔ symlinks and hardlink aliases are rejected (38.3453ms)
+✔ legacy root-test proposals require explicit review-time binding (48.5322ms)
+✔ missing nested parents apply safely, target formatting edits invalidate proposal, stale locks are retained (173.0973ms)
+✔ nested JSON keys are flattened (2.8157ms)
+✔ i18next and simple ICU placeholders are detected (0.9969ms)
+✔ detects missing, empty, placeholder mismatch and extra keys (1.3443ms)
+✔ rejects unsupported JSON shapes instead of ignoring them (0.9966ms)
+✔ passes good example catalogs (22.6393ms)
+✔ strict-extra turns extra-key warning into gate failure (6.3601ms)
+✔ real pinned i18next extraction returns catalog and diff without writing (17163.4819ms)
+✔ unknown, ambiguous and Paraglide projects fail explicitly (38.6637ms)
+✔ invalid source produces a failure, never a partial successful extraction (2447.5315ms)
+✔ ICU nested plural/select, quoting, tags and locale plural categories (5.8604ms)
+✔ ICU rejects missing other, broken syntax, mixed placeholders and tags (1.4553ms)
+✔ ICU detects missing variables, changed argument roles and missing tags (0.578ms)
+✔ explicit syntax, nested catalogs, empty values and invalid source (1.5735ms)
+✔ publish rejects alternate, multiple and rewritten push destinations before transport (9649.1424ms)
+✔ publish refuses a commit introduced during remote preflight; no unreviewed HEAD is pushed (10892.2703ms)
+﹣ atomic replacement preserves POSIX access mode on apply and byte restoration (0.1969ms) # SKIP
+✔ JSON Patch adversarial sequences cannot erase parent objects or overwrite human text (103.8843ms)
+✔ unsafe paths, linked backups, corrupt recovery and occupied locks preserve original evidence (162.1925ms)
+✔ source-retention quality gate recognizes invisible padding without blocking normal joined scripts (1.83ms)
+✔ duplicate JSON names, including escaped aliases, cannot conceal a human translation (42.9071ms)
+✔ two real processes coordinate through the lock; loser cannot modify files or remove winner lock (816.1342ms)
+✔ process death after replacement retains backup/journal/lock; explicit recovery restores exact CRLF bytes (512.9189ms)
+✔ validation trust boundary includes transitive imports; entrypoint hashes alone are not a sandbox (379.7173ms)
+✔ lock cleanup failure returns the applied state and recovery evidence instead of masking it (108.7044ms)
+✔ recover --dry-run cannot restore a resource even with a valid approval hash (309.5045ms)
+✔ publish rejects unrelated files hidden by add-then-delete commits in branch history (6068.4416ms)
+✔ license gate accepts reviewed expressions and rejects copyleft service code or unknown licenses (2.5188ms)
+✔ local PR preview is inert; explicit approval creates only dedicated branch/expected commit, hooks disabled (10802.1328ms)
+✔ unrelated staged or tracked changes never enter a prepared PR (3117.2547ms)
+✔ Git clean filters cannot change approved translation bytes during preparation (3648.9724ms)
+✔ Git baseline duplicate names cannot conceal an earlier human translation (2974.1331ms)
+✔ remote preparation is offline by default; approved publish only pushes topic branch and creates Draft, never merges (16718.4954ms)
+✔ untranslated candidates fail; explicit brands/proper-name/source retention exemptions are narrow (7.9524ms)
+✔ literal terminology and placeholder requirements are independently enforced (0.8077ms)
+✔ statistical language and length warnings are reported without claiming semantic accuracy (5.5949ms)
+✔ ICU plural/tag structures still use FormatJS, exemptions do not bypass structural checks (5.1706ms)
+✔ real React/i18next source-change -> missing key -> approved apply -> rendered translation, preserves human title (262.1471ms)
+✔ real CLI success and failure gates with parseable JSON and SARIF (865.151ms)
+✔ rejects prototype-related keys without polluting object prototypes (0.8772ms)
+✔ dry-run stays offline; real local HTTP candidates produce patch and preserve human text (226.9089ms)
+✔ rejects external origins, cloud models, mismatched variables and HTML payloads (44.732ms)
+✔ validates source syntax even when every target message already has human text (32.0253ms)
+✔ redirects fail with redacted errors instead of contacting an external origin (18.4905ms)
+✔ hung local HTTP server is timed out; oversized and malformed responses are rejected (89.7864ms)
+✔ only exact configured/approved scripts run; passing unit validation accepts the candidate (615.5525ms)
+✔ failed and timed-out unit validation restore exact pre-apply bytes (1965.1752ms)
+✔ configuration cannot request a shell/build hook or silently change approved tests (53.5598ms)
+✔ approved entrypoint filenames cannot become Node CLI flags (480.0676ms)
+ℹ tests 56
+ℹ suites 0
+ℹ pass 55
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 38029.5557

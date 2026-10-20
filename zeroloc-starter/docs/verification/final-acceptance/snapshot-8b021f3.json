@@ -1,0 +1,660 @@
+{
+  "reviewedHead": "8b021f3c7990d2df5ab32b4e51819059a42107c9",
+  "base": "bcb542a7dc672c97be34289cbaf86667cceff118",
+  "reviewDate": "2026-10-20",
+  "diff": {
+    "sha256": "41e6921d24f9c2c1fba9d5f20feb8e5a14694a2c4bc6b779ffd0c130f2d84937",
+    "bytes": 734252,
+    "changedFileCount": 115,
+    "localMatchesGitHub": true,
+    "files": [
+      ".github/workflows/ci.yml",
+      ".gitignore",
+      "README.md",
+      "V02_INDEPENDENT_REVIEW.md",
+      "zeroloc-starter/AGENTS.md",
+      "zeroloc-starter/CONTRIBUTING.md",
+      "zeroloc-starter/README.md",
+      "zeroloc-starter/STATUS.md",
+      "zeroloc-starter/bin/zeroloc.mjs",
+      "zeroloc-starter/docs/LICENSE_REVIEW_CN.md",
+      "zeroloc-starter/docs/THIRD_PARTY_NOTICES.md",
+      "zeroloc-starter/docs/V02_ENGINEERING_CN.md",
+      "zeroloc-starter/docs/V02_PR_BODY.md",
+      "zeroloc-starter/docs/V02_SAFE_APPLY_CN.md",
+      "zeroloc-starter/docs/dependency-licenses.json",
+      "zeroloc-starter/docs/sbom.cdx.json",
+      "zeroloc-starter/docs/vendor-licenses/franc-min-6.2.0-LICENSE",
+      "zeroloc-starter/docs/verification/independent/adversarial-after.txt",
+      "zeroloc-starter/docs/verification/independent/adversarial-before.txt",
+      "zeroloc-starter/docs/verification/independent/adversarial-processes.txt",
+      "zeroloc-starter/docs/verification/independent/baseline-tests-native.txt",
+      "zeroloc-starter/docs/verification/independent/baseline-tests-workspace-tmp.txt",
+      "zeroloc-starter/docs/verification/independent/baseline-tests.txt",
+      "zeroloc-starter/docs/verification/independent/baseline-visual-installed.txt",
+      "zeroloc-starter/docs/verification/independent/baseline-visual-isolated.txt",
+      "zeroloc-starter/docs/verification/independent/baseline-visual-native.txt",
+      "zeroloc-starter/docs/verification/independent/baseline-visual.txt",
+      "zeroloc-starter/docs/verification/independent/duplicate-before.txt",
+      "zeroloc-starter/docs/verification/independent/environment.json",
+      "zeroloc-starter/docs/verification/independent/external-apply.txt",
+      "zeroloc-starter/docs/verification/independent/external-results.json",
+      "zeroloc-starter/docs/verification/independent/external-runtime.txt",
+      "zeroloc-starter/docs/verification/independent/external-setup.json",
+      "zeroloc-starter/docs/verification/independent/external-setup.txt",
+      "zeroloc-starter/docs/verification/independent/filters-before.txt",
+      "zeroloc-starter/docs/verification/independent/final-audit.txt",
+      "zeroloc-starter/docs/verification/independent/final-example.txt",
+      "zeroloc-starter/docs/verification/independent/final-licenses.txt",
+      "zeroloc-starter/docs/verification/independent/final-visual.txt",
+      "zeroloc-starter/docs/verification/independent/final-windows-tests.txt",
+      "zeroloc-starter/docs/verification/independent/final-workflow.txt",
+      "zeroloc-starter/docs/verification/independent/git-duplicate-before.txt",
+      "zeroloc-starter/docs/verification/independent/gitleaks-history.txt",
+      "zeroloc-starter/docs/verification/independent/gitleaks-staged.txt",
+      "zeroloc-starter/docs/verification/independent/hardened-tests-1.txt",
+      "zeroloc-starter/docs/verification/independent/hardened-tests-2.txt",
+      "zeroloc-starter/docs/verification/independent/hardened-tests-3.txt",
+      "zeroloc-starter/docs/verification/independent/history-before.txt",
+      "zeroloc-starter/docs/verification/independent/linux-install.txt",
+      "zeroloc-starter/docs/verification/independent/linux-v22.23.3-tests.txt",
+      "zeroloc-starter/docs/verification/independent/linux-v24.22.0-tests.txt",
+      "zeroloc-starter/docs/verification/independent/lock-cleanup-before-native.txt",
+      "zeroloc-starter/docs/verification/independent/lock-cleanup-before.txt",
+      "zeroloc-starter/docs/verification/independent/network-after.txt",
+      "zeroloc-starter/docs/verification/independent/network-before.txt",
+      "zeroloc-starter/docs/verification/independent/network.json",
+      "zeroloc-starter/docs/verification/independent/network.txt",
+      "zeroloc-starter/docs/verification/independent/next-build-after.txt",
+      "zeroloc-starter/docs/verification/independent/next-build-before.txt",
+      "zeroloc-starter/docs/verification/independent/next-i18next-MIT.txt",
+      "zeroloc-starter/docs/verification/independent/next-install.txt",
+      "zeroloc-starter/docs/verification/independent/next-mobile.png",
+      "zeroloc-starter/docs/verification/independent/next-original-model-proposal.json",
+      "zeroloc-starter/docs/verification/independent/next-package-lock.json",
+      "zeroloc-starter/docs/verification/independent/next-prepare.txt",
+      "zeroloc-starter/docs/verification/independent/next-prepared.json",
+      "zeroloc-starter/docs/verification/independent/next-preview.json",
+      "zeroloc-starter/docs/verification/independent/next-proposal.json",
+      "zeroloc-starter/docs/verification/independent/next-resume.txt",
+      "zeroloc-starter/docs/verification/independent/next-runtime.json",
+      "zeroloc-starter/docs/verification/independent/next-server.txt",
+      "zeroloc-starter/docs/verification/independent/next-typecheck-after.txt",
+      "zeroloc-starter/docs/verification/independent/posix-mode-before.json",
+      "zeroloc-starter/docs/verification/independent/react-build-after.txt",
+      "zeroloc-starter/docs/verification/independent/react-build-before.txt",
+      "zeroloc-starter/docs/verification/independent/react-i18next-MIT.txt",
+      "zeroloc-starter/docs/verification/independent/react-install.txt",
+      "zeroloc-starter/docs/verification/independent/react-mobile.png",
+      "zeroloc-starter/docs/verification/independent/react-preview.json",
+      "zeroloc-starter/docs/verification/independent/react-proposal.json",
+      "zeroloc-starter/docs/verification/independent/react-runtime.json",
+      "zeroloc-starter/docs/verification/independent/react-server.txt",
+      "zeroloc-starter/docs/verification/independent/recover-dry-run-before.txt",
+      "zeroloc-starter/docs/verification/independent/remote-ci.json",
+      "zeroloc-starter/docs/verification/independent/remote-log-summaries.json",
+      "zeroloc-starter/docs/verification/independent/screenshots.json",
+      "zeroloc-starter/docs/verification/v02-real-model.json",
+      "zeroloc-starter/docs/verification/v02-stages.json",
+      "zeroloc-starter/examples/react-i18next/README.md",
+      "zeroloc-starter/examples/react-i18next/locales/de.json",
+      "zeroloc-starter/examples/react-i18next/locales/en.json",
+      "zeroloc-starter/examples/react-i18next/server.mjs",
+      "zeroloc-starter/examples/react-i18next/verify.test.mjs",
+      "zeroloc-starter/package-lock.json",
+      "zeroloc-starter/package.json",
+      "zeroloc-starter/qa/independent-apps.mjs",
+      "zeroloc-starter/qa/independent-network.mjs",
+      "zeroloc-starter/qa/workflow-e2e.mjs",
+      "zeroloc-starter/scripts/licenses.mjs",
+      "zeroloc-starter/src/apply.mjs",
+      "zeroloc-starter/src/check.mjs",
+      "zeroloc-starter/src/checks/visual.mjs",
+      "zeroloc-starter/src/pull-request.mjs",
+      "zeroloc-starter/src/quality.mjs",
+      "zeroloc-starter/src/safe-files.mjs",
+      "zeroloc-starter/src/translate.mjs",
+      "zeroloc-starter/src/validation.mjs",
+      "zeroloc-starter/src/version.mjs",
+      "zeroloc-starter/test/apply-cli.test.mjs",
+      "zeroloc-starter/test/apply.test.mjs",
+      "zeroloc-starter/test/independent-hardening.test.mjs",
+      "zeroloc-starter/test/pull-request.test.mjs",
+      "zeroloc-starter/test/quality.test.mjs",
+      "zeroloc-starter/test/react-app.test.mjs",
+      "zeroloc-starter/test/validation.test.mjs"
+    ]
+  },
+  "nodeTestCount": 56,
+  "testInventory": [
+    {
+      "file": "zeroloc-starter/test/apply-cli.test.mjs",
+      "line": 11,
+      "name": "actual CLI preview -> independent config consent -> exact write approval; conflicting flags fail"
+    },
+    {
+      "file": "zeroloc-starter/test/apply.test.mjs",
+      "line": 18,
+      "name": "safe apply defaults offline/dry-run, requires exact approval and preserves human translations"
+    },
+    {
+      "file": "zeroloc-starter/test/apply.test.mjs",
+      "line": 28,
+      "name": "stale source, target bytes and invalid root tests fail before writing"
+    },
+    {
+      "file": "zeroloc-starter/test/apply.test.mjs",
+      "line": 36,
+      "name": "rejects destructive RFC operations, prototype pollution, human overwrite and invalid candidates"
+    },
+    {
+      "file": "zeroloc-starter/test/apply.test.mjs",
+      "line": 43,
+      "name": "validation failure restores exact bytes; concurrent edit is retained rather than clobbered"
+    },
+    {
+      "file": "zeroloc-starter/test/apply.test.mjs",
+      "line": 54,
+      "name": "symlinks and hardlink aliases are rejected"
+    },
+    {
+      "file": "zeroloc-starter/test/apply.test.mjs",
+      "line": 60,
+      "name": "legacy root-test proposals require explicit review-time binding"
+    },
+    {
+      "file": "zeroloc-starter/test/apply.test.mjs",
+      "line": 65,
+      "name": "missing nested parents apply safely, target formatting edits invalidate proposal, stale locks are retained"
+    },
+    {
+      "file": "zeroloc-starter/test/check.test.mjs",
+      "line": 5,
+      "name": "nested JSON keys are flattened"
+    },
+    {
+      "file": "zeroloc-starter/test/check.test.mjs",
+      "line": 9,
+      "name": "i18next and simple ICU placeholders are detected"
+    },
+    {
+      "file": "zeroloc-starter/test/check.test.mjs",
+      "line": 13,
+      "name": "detects missing, empty, placeholder mismatch and extra keys"
+    },
+    {
+      "file": "zeroloc-starter/test/check.test.mjs",
+      "line": 23,
+      "name": "rejects unsupported JSON shapes instead of ignoring them"
+    },
+    {
+      "file": "zeroloc-starter/test/check.test.mjs",
+      "line": 28,
+      "name": "passes good example catalogs"
+    },
+    {
+      "file": "zeroloc-starter/test/check.test.mjs",
+      "line": 37,
+      "name": "strict-extra turns extra-key warning into gate failure"
+    },
+    {
+      "file": "zeroloc-starter/test/extract.test.mjs",
+      "line": 8,
+      "name": "real pinned i18next extraction returns catalog and diff without writing"
+    },
+    {
+      "file": "zeroloc-starter/test/extract.test.mjs",
+      "line": 18,
+      "name": "unknown, ambiguous and Paraglide projects fail explicitly"
+    },
+    {
+      "file": "zeroloc-starter/test/extract.test.mjs",
+      "line": 30,
+      "name": "invalid source produces a failure, never a partial successful extraction"
+    },
+    {
+      "file": "zeroloc-starter/test/formats.test.mjs",
+      "line": 6,
+      "name": "ICU nested plural/select, quoting, tags and locale plural categories"
+    },
+    {
+      "file": "zeroloc-starter/test/formats.test.mjs",
+      "line": 12,
+      "name": "ICU rejects missing other, broken syntax, mixed placeholders and tags"
+    },
+    {
+      "file": "zeroloc-starter/test/formats.test.mjs",
+      "line": 18,
+      "name": "ICU detects missing variables, changed argument roles and missing tags"
+    },
+    {
+      "file": "zeroloc-starter/test/formats.test.mjs",
+      "line": 23,
+      "name": "explicit syntax, nested catalogs, empty values and invalid source"
+    },
+    {
+      "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+      "line": 42,
+      "name": "publish rejects alternate, multiple and rewritten push destinations before transport"
+    },
+    {
+      "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+      "line": 56,
+      "name": "publish refuses a commit introduced during remote preflight; no unreviewed HEAD is pushed"
+    },
+    {
+      "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+      "line": 72,
+      "name": "atomic replacement preserves POSIX access mode on apply and byte restoration"
+    },
+    {
+      "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+      "line": 81,
+      "name": "JSON Patch adversarial sequences cannot erase parent objects or overwrite human text"
+    },
+    {
+      "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+      "line": 93,
+      "name": "unsafe paths, linked backups, corrupt recovery and occupied locks preserve original evidence"
+    },
+    {
+      "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+      "line": 108,
+      "name": "source-retention quality gate recognizes invisible padding without blocking normal joined scripts"
+    },
+    {
+      "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+      "line": 114,
+      "name": "duplicate JSON names, including escaped aliases, cannot conceal a human translation"
+    },
+    {
+      "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+      "line": 133,
+      "name": "two real processes coordinate through the lock; loser cannot modify files or remove winner lock"
+    },
+    {
+      "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+      "line": 147,
+      "name": "process death after replacement retains backup/journal/lock; explicit recovery restores exact CRLF bytes"
+    },
+    {
+      "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+      "line": 163,
+      "name": "validation trust boundary includes transitive imports; entrypoint hashes alone are not a sandbox"
+    },
+    {
+      "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+      "line": 174,
+      "name": "lock cleanup failure returns the applied state and recovery evidence instead of masking it"
+    },
+    {
+      "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+      "line": 185,
+      "name": "recover --dry-run cannot restore a resource even with a valid approval hash"
+    },
+    {
+      "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+      "line": 192,
+      "name": "publish rejects unrelated files hidden by add-then-delete commits in branch history"
+    },
+    {
+      "file": "zeroloc-starter/test/licenses.test.mjs",
+      "line": 4,
+      "name": "license gate accepts reviewed expressions and rejects copyleft service code or unknown licenses"
+    },
+    {
+      "file": "zeroloc-starter/test/pull-request.test.mjs",
+      "line": 27,
+      "name": "local PR preview is inert; explicit approval creates only dedicated branch/expected commit, hooks disabled"
+    },
+    {
+      "file": "zeroloc-starter/test/pull-request.test.mjs",
+      "line": 36,
+      "name": "unrelated staged or tracked changes never enter a prepared PR"
+    },
+    {
+      "file": "zeroloc-starter/test/pull-request.test.mjs",
+      "line": 41,
+      "name": "Git clean filters cannot change approved translation bytes during preparation"
+    },
+    {
+      "file": "zeroloc-starter/test/pull-request.test.mjs",
+      "line": 52,
+      "name": "Git baseline duplicate names cannot conceal an earlier human translation"
+    },
+    {
+      "file": "zeroloc-starter/test/pull-request.test.mjs",
+      "line": 59,
+      "name": "remote preparation is offline by default; approved publish only pushes topic branch and creates Draft, never merges"
+    },
+    {
+      "file": "zeroloc-starter/test/quality.test.mjs",
+      "line": 5,
+      "name": "untranslated candidates fail; explicit brands/proper-name/source retention exemptions are narrow"
+    },
+    {
+      "file": "zeroloc-starter/test/quality.test.mjs",
+      "line": 13,
+      "name": "literal terminology and placeholder requirements are independently enforced"
+    },
+    {
+      "file": "zeroloc-starter/test/quality.test.mjs",
+      "line": 18,
+      "name": "statistical language and length warnings are reported without claiming semantic accuracy"
+    },
+    {
+      "file": "zeroloc-starter/test/quality.test.mjs",
+      "line": 25,
+      "name": "ICU plural/tag structures still use FormatJS, exemptions do not bypass structural checks"
+    },
+    {
+      "file": "zeroloc-starter/test/react-app.test.mjs",
+      "line": 10,
+      "name": "real React/i18next source-change -> missing key -> approved apply -> rendered translation, preserves human title"
+    },
+    {
+      "file": "zeroloc-starter/test/reliability.test.mjs",
+      "line": 9,
+      "name": "real CLI success and failure gates with parseable JSON and SARIF"
+    },
+    {
+      "file": "zeroloc-starter/test/reliability.test.mjs",
+      "line": 21,
+      "name": "rejects prototype-related keys without polluting object prototypes"
+    },
+    {
+      "file": "zeroloc-starter/test/translate.test.mjs",
+      "line": 18,
+      "name": "dry-run stays offline; real local HTTP candidates produce patch and preserve human text"
+    },
+    {
+      "file": "zeroloc-starter/test/translate.test.mjs",
+      "line": 42,
+      "name": "rejects external origins, cloud models, mismatched variables and HTML payloads"
+    },
+    {
+      "file": "zeroloc-starter/test/translate.test.mjs",
+      "line": 51,
+      "name": "validates source syntax even when every target message already has human text"
+    },
+    {
+      "file": "zeroloc-starter/test/translate.test.mjs",
+      "line": 58,
+      "name": "redirects fail with redacted errors instead of contacting an external origin"
+    },
+    {
+      "file": "zeroloc-starter/test/translate.test.mjs",
+      "line": 66,
+      "name": "hung local HTTP server is timed out; oversized and malformed responses are rejected"
+    },
+    {
+      "file": "zeroloc-starter/test/validation.test.mjs",
+      "line": 24,
+      "name": "only exact configured/approved scripts run; passing unit validation accepts the candidate"
+    },
+    {
+      "file": "zeroloc-starter/test/validation.test.mjs",
+      "line": 33,
+      "name": "failed and timed-out unit validation restore exact pre-apply bytes"
+    },
+    {
+      "file": "zeroloc-starter/test/validation.test.mjs",
+      "line": 42,
+      "name": "configuration cannot request a shell/build hook or silently change approved tests"
+    },
+    {
+      "file": "zeroloc-starter/test/validation.test.mjs",
+      "line": 52,
+      "name": "approved entrypoint filenames cannot become Node CLI flags"
+    }
+  ],
+  "fixRegressionMap": [
+    {
+      "id": "F1",
+      "issue": "Duplicate JSON names in worktree and Git baseline",
+      "tests": [
+        {
+          "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+          "line": 114,
+          "name": "duplicate JSON names, including escaped aliases, cannot conceal a human translation"
+        },
+        {
+          "file": "zeroloc-starter/test/pull-request.test.mjs",
+          "line": 52,
+          "name": "Git baseline duplicate names cannot conceal an earlier human translation"
+        }
+      ]
+    },
+    {
+      "id": "F2",
+      "issue": "recover --dry-run writes",
+      "tests": [
+        {
+          "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+          "line": 185,
+          "name": "recover --dry-run cannot restore a resource even with a valid approval hash"
+        }
+      ]
+    },
+    {
+      "id": "F3",
+      "issue": "Alternate/multiple/rewritten push destinations",
+      "tests": [
+        {
+          "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+          "line": 42,
+          "name": "publish rejects alternate, multiple and rewritten push destinations before transport"
+        }
+      ]
+    },
+    {
+      "id": "F4",
+      "issue": "HEAD change during remote preflight",
+      "tests": [
+        {
+          "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+          "line": 56,
+          "name": "publish refuses a commit introduced during remote preflight; no unreviewed HEAD is pushed"
+        }
+      ]
+    },
+    {
+      "id": "F5",
+      "issue": "Git clean filter changes reviewed bytes",
+      "tests": [
+        {
+          "file": "zeroloc-starter/test/pull-request.test.mjs",
+          "line": 41,
+          "name": "Git clean filters cannot change approved translation bytes during preparation"
+        }
+      ]
+    },
+    {
+      "id": "F6",
+      "issue": "Hidden historical files",
+      "tests": [
+        {
+          "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+          "line": 192,
+          "name": "publish rejects unrelated files hidden by add-then-delete commits in branch history"
+        }
+      ]
+    },
+    {
+      "id": "F7",
+      "issue": "Cross-origin HTTP redirect",
+      "qa": {
+        "file": "zeroloc-starter/qa/independent-network.mjs",
+        "command": "npm run test:network",
+        "ciJob": "visual",
+        "assertions": [
+          "redirectRejected === true",
+          "http/websocket/serviceWorker witness hits === 0"
+        ],
+        "countedIn56NodeTests": false
+      }
+    },
+    {
+      "id": "F8",
+      "issue": "POSIX mode after replacement/rollback",
+      "tests": [
+        {
+          "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+          "line": 72,
+          "name": "atomic replacement preserves POSIX access mode on apply and byte restoration"
+        }
+      ],
+      "windowsSkipExpected": true
+    },
+    {
+      "id": "F9",
+      "issue": "Invisible padding bypasses source retention",
+      "tests": [
+        {
+          "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+          "line": 108,
+          "name": "source-retention quality gate recognizes invisible padding without blocking normal joined scripts"
+        }
+      ]
+    },
+    {
+      "id": "F10",
+      "issue": "Lock cleanup masks actual applied state",
+      "tests": [
+        {
+          "file": "zeroloc-starter/test/independent-hardening.test.mjs",
+          "line": 174,
+          "name": "lock cleanup failure returns the applied state and recovery evidence instead of masking it"
+        }
+      ]
+    }
+  ],
+  "localRecheck": {
+    "platform": "Windows x64 Node25.2.0",
+    "tests": 56,
+    "passed": 55,
+    "failed": 0,
+    "skipped": 1,
+    "skipReason": "POSIX-only access-mode test",
+    "log": "local-recheck-8b021f3.txt"
+  },
+  "checks": [
+    {
+      "id": 118819511027,
+      "name": "regression (windows-latest, 24)",
+      "head": "8b021f3c7990d2df5ab32b4e51819059a42107c9",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 118819510815,
+      "name": "regression (ubuntu-latest, 22)",
+      "head": "8b021f3c7990d2df5ab32b4e51819059a42107c9",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 118819510646,
+      "name": "regression (ubuntu-latest, 24)",
+      "head": "8b021f3c7990d2df5ab32b4e51819059a42107c9",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 118819510499,
+      "name": "regression (windows-latest, 22)",
+      "head": "8b021f3c7990d2df5ab32b4e51819059a42107c9",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 118819510223,
+      "name": "visual",
+      "head": "8b021f3c7990d2df5ab32b4e51819059a42107c9",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "legacyStatuses": [],
+  "workflow": {
+    "id": 39478179598,
+    "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39478179598",
+    "conclusion": "success",
+    "logSummaries": [
+      {
+        "job": "visual",
+        "summary": [
+          "2026-10-20T18:50:51.7202659Z PASS: 12 browser/locale/viewport cases; negative fixture caught overflow and unnamed button.",
+          "2026-10-20T18:50:51.9093217Z Workflow acceptance: success (local HTTP stub)",
+          "2026-10-20T18:50:59.8471322Z Workflow acceptance: unit-failure (local HTTP stub)",
+          "2026-10-20T18:50:59.9589265Z Workflow acceptance: ui-failure (local HTTP stub)",
+          "2026-10-20T18:51:00.9203752Z Workflow acceptance: timeout (local HTTP stub)",
+          "2026-10-20T18:51:01.4410386Z Workflow acceptance: conflict (local HTTP stub)",
+          "2026-10-20T18:51:04.6911857Z {\"observed\":{\"http\":0,\"websocket\":0,\"serviceWorker\":0},\"redirectRejected\":true}",
+          "2026-10-20T18:51:04.6924780Z   \"crossOriginHttpHits\": 0,",
+          "2026-10-20T18:51:04.6925020Z   \"websocketUpgradeHits\": 0,",
+          "2026-10-20T18:51:04.6925273Z   \"serviceWorkerScriptHits\": 0,",
+          "2026-10-20T18:51:04.6925468Z   \"redirectRejected\": true,"
+        ]
+      },
+      {
+        "job": "regression (windows-latest, 22)",
+        "summary": [
+          "2026-10-20T18:50:43.1695925Z # tests 56",
+          "2026-10-20T18:50:43.1696259Z # pass 55",
+          "2026-10-20T18:50:43.1696421Z # fail 0",
+          "2026-10-20T18:50:43.1696765Z # skipped 1"
+        ]
+      },
+      {
+        "job": "regression (ubuntu-latest, 24)",
+        "summary": [
+          "2026-10-20T18:50:10.9883155Z ℹ tests 56",
+          "2026-10-20T18:50:10.9883929Z ℹ pass 56",
+          "2026-10-20T18:50:10.9884468Z ℹ fail 0",
+          "2026-10-20T18:50:10.9885233Z ℹ skipped 0"
+        ]
+      },
+      {
+        "job": "regression (ubuntu-latest, 22)",
+        "summary": [
+          "2026-10-20T18:50:15.7775008Z # tests 56",
+          "2026-10-20T18:50:15.7775484Z # pass 56",
+          "2026-10-20T18:50:15.7775715Z # fail 0",
+          "2026-10-20T18:50:15.7778404Z # skipped 0"
+        ]
+      },
+      {
+        "job": "regression (windows-latest, 24)",
+        "summary": [
+          "2026-10-20T18:50:40.1927224Z ℹ tests 56",
+          "2026-10-20T18:50:40.1927618Z ℹ pass 55",
+          "2026-10-20T18:50:40.1927787Z ℹ fail 0",
+          "2026-10-20T18:50:40.1928148Z ℹ skipped 1"
+        ]
+      }
+    ]
+  },
+  "readyTransition": {
+    "head": "8b021f3c7990d2df5ab32b4e51819059a42107c9",
+    "draft": false,
+    "merged": false,
+    "state": "open",
+    "githubUpdatedAt": "2026-10-20T23:30:45Z",
+    "method": "Existing authenticated GitHub CLI; connector GraphQL rejected with Resource not accessible by integration"
+  },
+  "sourceChangedSinceSecurityFix": false,
+  "sourceFixCommit": "6ffeb8bb6c22916c43c6ae8866117973fc6b9b13",
+  "conclusion": "No reintroduced P0/P1 identified in reviewed code under the documented trusted-workspace model. Not an absence-of-vulnerabilities proof.",
+  "unresolved": [
+    "React overlap false negative",
+    "Next.js visual validation failure",
+    "Semantic candidate false negative",
+    "TOCTOU against non-cooperating writers",
+    "Trusted imports/tests/Git configuration; no OS sandbox",
+    "Power-loss and Windows ACL/xattr limitations"
+  ],
+  "humanAcceptanceSigned": false,
+  "mergeAuthorized": false,
+  "betaReleaseAuthorized": false
+}

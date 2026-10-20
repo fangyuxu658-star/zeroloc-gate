@@ -1,0 +1,290 @@
+
+> zeroloc-gate@0.2.0-dev.0 test
+> node --test "test/*.test.mjs"
+
+✖ actual CLI preview -> independent config consent -> exact write approval; conflicting flags fail (2342.2044ms)
+✖ safe apply defaults offline/dry-run, requires exact approval and preserves human translations (477.8535ms)
+✔ stale source, target bytes and invalid root tests fail before writing (340.8455ms)
+✔ rejects destructive RFC operations, prototype pollution, human overwrite and invalid candidates (185.9788ms)
+✖ validation failure restores exact bytes; concurrent edit is retained rather than clobbered (167.7032ms)
+✖ symlinks and hardlink aliases are rejected (49.3434ms)
+✔ legacy root-test proposals require explicit review-time binding (77.3359ms)
+✖ missing nested parents apply safely, target formatting edits invalidate proposal, stale locks are retained (136.221ms)
+✔ nested JSON keys are flattened (3.9198ms)
+✔ i18next and simple ICU placeholders are detected (0.8652ms)
+✔ detects missing, empty, placeholder mismatch and extra keys (1.3481ms)
+✔ rejects unsupported JSON shapes instead of ignoring them (1.0344ms)
+✔ passes good example catalogs (195.1683ms)
+✔ strict-extra turns extra-key warning into gate failure (12.044ms)
+✖ real pinned i18next extraction returns catalog and diff without writing (3273.9425ms)
+✔ unknown, ambiguous and Paraglide projects fail explicitly (36.6229ms)
+✔ invalid source produces a failure, never a partial successful extraction (2652.3406ms)
+✔ ICU nested plural/select, quoting, tags and locale plural categories (7.8201ms)
+✔ ICU rejects missing other, broken syntax, mixed placeholders and tags (1.6658ms)
+✔ ICU detects missing variables, changed argument roles and missing tags (0.6094ms)
+✔ explicit syntax, nested catalogs, empty values and invalid source (2.0271ms)
+✔ license gate accepts reviewed expressions and rejects copyleft service code or unknown licenses (2.6634ms)
+✖ local PR preview is inert; explicit approval creates only dedicated branch/expected commit, hooks disabled (563.3735ms)
+✖ unrelated staged or tracked changes never enter a prepared PR (489.5078ms)
+✖ remote preparation is offline by default; approved publish only pushes topic branch and creates Draft, never merges (342.2094ms)
+✔ untranslated candidates fail; explicit brands/proper-name/source retention exemptions are narrow (4.8455ms)
+✔ literal terminology and placeholder requirements are independently enforced (0.9318ms)
+✔ statistical language and length warnings are reported without claiming semantic accuracy (11.1127ms)
+✔ ICU plural/tag structures still use FormatJS, exemptions do not bypass structural checks (5.036ms)
+✖ real React/i18next source-change -> missing key -> approved apply -> rendered translation, preserves human title (332.0219ms)
+✔ real CLI success and failure gates with parseable JSON and SARIF (1210.3753ms)
+✔ rejects prototype-related keys without polluting object prototypes (1.0118ms)
+✖ dry-run stays offline; real local HTTP candidates produce patch and preserve human text (162.5342ms)
+✔ rejects external origins, cloud models, mismatched variables and HTML payloads (66.2073ms)
+✔ validates source syntax even when every target message already has human text (74.4127ms)
+✔ redirects fail with redacted errors instead of contacting an external origin (12.8488ms)
+✔ hung local HTTP server is timed out; oversized and malformed responses are rejected (25.689ms)
+✖ only exact configured/approved scripts run; passing unit validation accepts the candidate (280.0263ms)
+✖ failed and timed-out unit validation restore exact pre-apply bytes (191.7863ms)
+✔ configuration cannot request a shell/build hook or silently change approved tests (94.721ms)
+✖ approved entrypoint filenames cannot become Node CLI flags (110.1744ms)
+ℹ tests 41
+ℹ suites 0
+ℹ pass 27
+ℹ fail 14
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6506.8193
+
+✖ failing tests:
+
+test at test\apply-cli.test.mjs:11:1
+✖ actual CLI preview -> independent config consent -> exact write approval; conflicting flags fail (2342.2044ms)
+  Error: Command failed: C:\Program Files\nodejs\node.exe C:\Users\15084\Documents\ChatGPT\本地化开源项目\zeroloc-starter\bin\zeroloc.mjs apply --root C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-cli-apply-xJy8st --source en.json --target de.json --proposal proposal.json --validation-config validation.json --write --approve 78157ab2fd6fc2a2e7b4ce384d44d1d93d58ffac45e3dcdb0cf3307a6149646e --allow-validation add02d254b91835159b95e5477ccb1aa8f82afdf85ea3bf5aeb7fd1e843491fe
+  ZeroLoc Gate error: EPERM: operation not permitted, rename 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-cli-apply-xJy8st\.de.json.zeroloc-5aff65e8-ee89-4e62-9f15-a4131176e840.tmp' -> 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-cli-apply-xJy8st\de.json'
+
+      at genericNodeError (node:internal/errors:998:15)
+      at wrappedFn (node:internal/errors:543:14)
+      at ChildProcess.exithandler (node:child_process:417:12)
+      at ChildProcess.emit (node:events:508:28)
+      at maybeClose (node:internal/child_process:1085:16)
+      at ChildProcess._handle.onexit (node:internal/child_process:304:5) {
+    code: 2,
+    killed: false,
+    signal: null,
+    cmd: 'C:\\Program Files\\nodejs\\node.exe C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\zeroloc-starter\\bin\\zeroloc.mjs apply --root C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-cli-apply-xJy8st --source en.json --target de.json --proposal proposal.json --validation-config validation.json --write --approve 78157ab2fd6fc2a2e7b4ce384d44d1d93d58ffac45e3dcdb0cf3307a6149646e --allow-validation add02d254b91835159b95e5477ccb1aa8f82afdf85ea3bf5aeb7fd1e843491fe',
+    stdout: '',
+    stderr: "ZeroLoc Gate error: EPERM: operation not permitted, rename 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-cli-apply-xJy8st\\.de.json.zeroloc-5aff65e8-ee89-4e62-9f15-a4131176e840.tmp' -> 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-cli-apply-xJy8st\\de.json'\n"
+  }
+
+test at test\apply.test.mjs:18:1
+✖ safe apply defaults offline/dry-run, requires exact approval and preserves human translations (477.8535ms)
+  Error: EPERM: operation not permitted, rename 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-apply-xL7Fo8\.de.json.zeroloc-74da49e1-69d7-4ffc-8b25-f7cb0b30e46d.tmp' -> 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-apply-xL7Fo8\de.json'
+      at async rename (node:internal/fs/promises:786:10)
+      at async atomicReplace (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/safe-files.mjs:45:5)
+      at async applyProposal (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/apply.mjs:76:5)
+      at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/apply.test.mjs:22:17
+      at async fixture (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/apply.test.mjs:16:8)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'rename',
+    path: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-apply-xL7Fo8\\.de.json.zeroloc-74da49e1-69d7-4ffc-8b25-f7cb0b30e46d.tmp',
+    dest: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-apply-xL7Fo8\\de.json'
+  }
+
+test at test\apply.test.mjs:43:1
+✖ validation failure restores exact bytes; concurrent edit is retained rather than clobbered (167.7032ms)
+  Error: EPERM: operation not permitted, rename 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-apply-ZFmks1\.de.json.zeroloc-395a991f-9210-48fa-b491-ef2c1bd8b300.tmp' -> 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-apply-ZFmks1\de.json'
+      at async rename (node:internal/fs/promises:786:10)
+      at async atomicReplace (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/safe-files.mjs:45:5)
+      at async applyProposal (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/apply.mjs:76:5)
+      at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/apply.test.mjs:45:16
+      at async fixture (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/apply.test.mjs:16:8)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'rename',
+    path: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-apply-ZFmks1\\.de.json.zeroloc-395a991f-9210-48fa-b491-ef2c1bd8b300.tmp',
+    dest: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-apply-ZFmks1\\de.json'
+  }
+
+test at test\apply.test.mjs:54:1
+✖ symlinks and hardlink aliases are rejected (49.3434ms)
+  Error: EPERM: operation not permitted, symlink 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-apply-J7GJly' -> 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-apply-J7GJly\alias-dir'
+      at async symlink (node:internal/fs/promises:1009:10)
+      at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/apply.test.mjs:55:40
+      at async fixture (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/apply.test.mjs:16:8)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'symlink',
+    path: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-apply-J7GJly',
+    dest: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-apply-J7GJly\\alias-dir'
+  }
+
+test at test\apply.test.mjs:65:1
+✖ missing nested parents apply safely, target formatting edits invalidate proposal, stale locks are retained (136.221ms)
+  Error: EPERM: operation not permitted, rename 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-apply-CDzfgT\.de.json.zeroloc-ce7967d9-0e19-48b3-b7cd-3288548d2116.tmp' -> 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-apply-CDzfgT\de.json'
+      at async rename (node:internal/fs/promises:786:10)
+      at async atomicReplace (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/safe-files.mjs:45:5)
+      at async applyProposal (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/apply.mjs:76:5)
+      at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/apply.test.mjs:68:40
+      at async fixture (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/apply.test.mjs:16:8)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'rename',
+    path: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-apply-CDzfgT\\.de.json.zeroloc-ce7967d9-0e19-48b3-b7cd-3288548d2116.tmp',
+    dest: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-apply-CDzfgT\\de.json'
+  }
+
+test at test\extract.test.mjs:8:1
+✖ real pinned i18next extraction returns catalog and diff without writing (3273.9425ms)
+  Error: i18next extraction failed (check source syntax and optional i18next-cli installation)
+      at file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/adapters/i18next.mjs:31:26
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async extractProject (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/adapters/i18next.mjs:27:22)
+      at async TestContext.<anonymous> (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/extract.test.mjs:11:18)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)
+
+test at test\pull-request.test.mjs:27:1
+✖ local PR preview is inert; explicit approval creates only dedicated branch/expected commit, hooks disabled (563.3735ms)
+  Error: Command failed: git init -b main
+  error: could not write config file C:/Users/15084/AppData/Local/Packages/sandbox.{13222404-4f44-4928-bd93-bdd485adc174}/AC/Temp/zeroloc-pr-test-nv0mFk/.git/config: Permission denied
+  fatal: could not set 'core.repositoryformatversion' to '0'
+
+      at genericNodeError (node:internal/errors:998:15)
+      at wrappedFn (node:internal/errors:543:14)
+      at ChildProcess.exithandler (node:child_process:417:12)
+      at ChildProcess.emit (node:events:508:28)
+      at maybeClose (node:internal/child_process:1085:16)
+      at ChildProcess._handle.onexit (node:internal/child_process:304:5) {
+    code: 128,
+    killed: false,
+    signal: null,
+    cmd: 'git init -b main',
+    stdout: '',
+    stderr: "error: could not write config file C:/Users/15084/AppData/Local/Packages/sandbox.{13222404-4f44-4928-bd93-bdd485adc174}/AC/Temp/zeroloc-pr-test-nv0mFk/.git/config: Permission denied\nfatal: could not set 'core.repositoryformatversion' to '0'\n"
+  }
+
+test at test\pull-request.test.mjs:36:1
+✖ unrelated staged or tracked changes never enter a prepared PR (489.5078ms)
+  Error: Command failed: git init -b main
+  error: could not write config file C:/Users/15084/AppData/Local/Packages/sandbox.{13222404-4f44-4928-bd93-bdd485adc174}/AC/Temp/zeroloc-pr-test-z28Om6/.git/config: Permission denied
+  fatal: could not set 'core.repositoryformatversion' to '0'
+
+      at genericNodeError (node:internal/errors:998:15)
+      at wrappedFn (node:internal/errors:543:14)
+      at ChildProcess.exithandler (node:child_process:417:12)
+      at ChildProcess.emit (node:events:508:28)
+      at maybeClose (node:internal/child_process:1085:16)
+      at ChildProcess._handle.onexit (node:internal/child_process:304:5) {
+    code: 128,
+    killed: false,
+    signal: null,
+    cmd: 'git init -b main',
+    stdout: '',
+    stderr: "error: could not write config file C:/Users/15084/AppData/Local/Packages/sandbox.{13222404-4f44-4928-bd93-bdd485adc174}/AC/Temp/zeroloc-pr-test-z28Om6/.git/config: Permission denied\nfatal: could not set 'core.repositoryformatversion' to '0'\n"
+  }
+
+test at test\pull-request.test.mjs:40:1
+✖ remote preparation is offline by default; approved publish only pushes topic branch and creates Draft, never merges (342.2094ms)
+  Error: Command failed: git init -b main
+  error: could not write config file C:/Users/15084/AppData/Local/Packages/sandbox.{13222404-4f44-4928-bd93-bdd485adc174}/AC/Temp/zeroloc-pr-test-Hoopio/.git/config: Permission denied
+  fatal: could not set 'core.repositoryformatversion' to '0'
+
+      at genericNodeError (node:internal/errors:998:15)
+      at wrappedFn (node:internal/errors:543:14)
+      at ChildProcess.exithandler (node:child_process:417:12)
+      at ChildProcess.emit (node:events:508:28)
+      at maybeClose (node:internal/child_process:1085:16)
+      at ChildProcess._handle.onexit (node:internal/child_process:304:5) {
+    code: 128,
+    killed: false,
+    signal: null,
+    cmd: 'git init -b main',
+    stdout: '',
+    stderr: "error: could not write config file C:/Users/15084/AppData/Local/Packages/sandbox.{13222404-4f44-4928-bd93-bdd485adc174}/AC/Temp/zeroloc-pr-test-Hoopio/.git/config: Permission denied\nfatal: could not set 'core.repositoryformatversion' to '0'\n"
+  }
+
+test at test\react-app.test.mjs:10:1
+✖ real React/i18next source-change -> missing key -> approved apply -> rendered translation, preserves human title (332.0219ms)
+  Error: EPERM: operation not permitted, rename 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-react-test-ZV7reD\locales\.de.json.zeroloc-045e509a-4f29-4ff0-8952-862e9f4685c2.tmp' -> 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-react-test-ZV7reD\locales\de.json'
+      at async rename (node:internal/fs/promises:786:10)
+      at async atomicReplace (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/safe-files.mjs:45:5)
+      at async applyProposal (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/apply.mjs:76:5)
+      at async TestContext.<anonymous> (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/react-app.test.mjs:19:18)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'rename',
+    path: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-react-test-ZV7reD\\locales\\.de.json.zeroloc-045e509a-4f29-4ff0-8952-862e9f4685c2.tmp',
+    dest: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-react-test-ZV7reD\\locales\\de.json'
+  }
+
+test at test\translate.test.mjs:18:1
+✖ dry-run stays offline; real local HTTP candidates produce patch and preserve human text (162.5342ms)
+  Error: Local translation request failed (response details redacted)
+      at OllamaProvider.translate (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/providers/ollama.mjs:39:21)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/translate.mjs:29:21
+      at async Promise.all (index 0)
+      at async translateFiles (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/translate.mjs:20:3)
+      at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/translate.test.mjs:34:18
+      at async fixture (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/translate.test.mjs:15:9)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)
+
+test at test\validation.test.mjs:24:1
+✖ only exact configured/approved scripts run; passing unit validation accepts the candidate (280.0263ms)
+  Error: EPERM: operation not permitted, rename 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-validation-test-eOQdWE\.de.json.zeroloc-cbdeca5d-0f6c-4855-b75a-9a70e94c1ff4.tmp' -> 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-validation-test-eOQdWE\de.json'
+      at async rename (node:internal/fs/promises:786:10)
+      at async atomicReplace (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/safe-files.mjs:45:5)
+      at async applyProposal (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/apply.mjs:76:5)
+      at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/validation.test.mjs:28:18
+      at async run (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/validation.test.mjs:16:7)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'rename',
+    path: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-validation-test-eOQdWE\\.de.json.zeroloc-cbdeca5d-0f6c-4855-b75a-9a70e94c1ff4.tmp',
+    dest: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-validation-test-eOQdWE\\de.json'
+  }
+
+test at test\validation.test.mjs:33:1
+✖ failed and timed-out unit validation restore exact pre-apply bytes (191.7863ms)
+  Error: EPERM: operation not permitted, rename 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-validation-test-HjmDyC\.de.json.zeroloc-31e9ff22-9c0d-47fe-9b68-e156a5ea4ba0.tmp' -> 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-validation-test-HjmDyC\de.json'
+      at async rename (node:internal/fs/promises:786:10)
+      at async atomicReplace (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/safe-files.mjs:45:5)
+      at async applyProposal (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/apply.mjs:76:5)
+      at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/validation.test.mjs:37:48
+      at async run (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/validation.test.mjs:16:7)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'rename',
+    path: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-validation-test-HjmDyC\\.de.json.zeroloc-31e9ff22-9c0d-47fe-9b68-e156a5ea4ba0.tmp',
+    dest: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-validation-test-HjmDyC\\de.json'
+  }
+
+test at test\validation.test.mjs:52:1
+✖ approved entrypoint filenames cannot become Node CLI flags (110.1744ms)
+  Error: EPERM: operation not permitted, rename 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-validation-test-GC0EBR\.de.json.zeroloc-1096a4f5-85a8-4d2c-9f8d-886f3d09e239.tmp' -> 'C:\Users\15084\AppData\Local\Packages\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\AC\Temp\zeroloc-validation-test-GC0EBR\de.json'
+      at async rename (node:internal/fs/promises:786:10)
+      at async atomicReplace (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/safe-files.mjs:45:5)
+      at async applyProposal (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/apply.mjs:76:5)
+      at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/validation.test.mjs:57:46
+      at async run (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/test/validation.test.mjs:16:7)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'rename',
+    path: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-validation-test-GC0EBR\\.de.json.zeroloc-1096a4f5-85a8-4d2c-9f8d-886f3d09e239.tmp',
+    dest: 'C:\\Users\\15084\\AppData\\Local\\Packages\\sandbox.{13222404-4f44-4928-bd93-bdd485adc174}\\AC\\Temp\\zeroloc-validation-test-GC0EBR\\de.json'
+  }

@@ -1,0 +1,139 @@
+{
+  "source": "public/locales/en/common.json",
+  "target": "public/locales/de/common.json",
+  "messageFormat": "i18next",
+  "targetLocale": "de",
+  "policy": {
+    "allowSourceKeys": [],
+    "allowedSourceTexts": [],
+    "brands": [],
+    "terms": [],
+    "minLengthRatio": 0.25,
+    "maxLengthRatio": 4,
+    "blockWarnings": false
+  },
+  "validationBinding": "71c74b271097fc2fe1ddda6e554d7771537b3fd11747c2b2d3489e1dec6ffe8f",
+  "rootBinding": "aac7b4b5fef33f51252dc5722df364c6cddb684a1ae91ef8081df994acfc1d04",
+  "sourceSha256": "810661530c8d5bb9953936cf96ce93699b2c84ce75d23f26d8562a1bf7818e8e",
+  "targetSha256": "a95f8338be984c4c4dd4a8fcf4860a78d211f71a62b614046821cf855706f5b0",
+  "resultSha256": "6188535cd6cfcc614ee02aa45910f56e7eff76fc7fa2862e1ae277f68222fb75",
+  "patch": [
+    {
+      "op": "test",
+      "path": "",
+      "value": {
+        "h1": "Ein einfaches Beispiel",
+        "change-locale": "Sprache wechseln zu \"{{changeTo}}\"",
+        "to-second-page": "Zur zweiten Seite",
+        "error-with-status": "Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten",
+        "error-without-status": "Auf dem Server ist ein Fehler aufgetreten",
+        "title": "Hauptseite | next-i18next",
+        "blog": {
+          "v16": {
+            "question": "Was ist neu in next-i18next v16?",
+            "answer": "Schau dir <1>den Blogbeitrag</1> für die ganze Geschichte an.",
+            "link": "https://www.locize.com/blog/next-i18next-v16"
+          },
+          "appDir": {
+            "question": "Verwendest du den Next.js App Router?",
+            "answer": "Dann schau dir <1>diesen Blogbeitrag</1> an.",
+            "link": "https://www.locize.com/blog/i18n-next-app-router"
+          },
+          "optimized": {
+            "question": "Möchtest du einige Superkräfte entfesseln, um für alle Seiten optimierte Übersetzungen zu haben?",
+            "answer": "Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.",
+            "link": "https://www.locize.com/blog/next-i18next"
+          },
+          "ssg": {
+            "question": "Möchtest du SSG (next export) verwenden?",
+            "answer": "Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.",
+            "link": "https://www.locize.com/blog/next-i18n-static"
+          }
+        }
+      }
+    },
+    {
+      "op": "add",
+      "path": "/review",
+      "value": {}
+    },
+    {
+      "op": "add",
+      "path": "/review/greeting",
+      "value": "Hallo {{name}}"
+    }
+  ],
+  "planId": "402e6370a71f6888daf0c0f83e9c3c2573b20afdf46f3bb1d73da32495fd69e1",
+  "candidate": {
+    "h1": "Ein einfaches Beispiel",
+    "change-locale": "Sprache wechseln zu \"{{changeTo}}\"",
+    "to-second-page": "Zur zweiten Seite",
+    "error-with-status": "Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten",
+    "error-without-status": "Auf dem Server ist ein Fehler aufgetreten",
+    "title": "Hauptseite | next-i18next",
+    "blog": {
+      "v16": {
+        "question": "Was ist neu in next-i18next v16?",
+        "answer": "Schau dir <1>den Blogbeitrag</1> für die ganze Geschichte an.",
+        "link": "https://www.locize.com/blog/next-i18next-v16"
+      },
+      "appDir": {
+        "question": "Verwendest du den Next.js App Router?",
+        "answer": "Dann schau dir <1>diesen Blogbeitrag</1> an.",
+        "link": "https://www.locize.com/blog/i18n-next-app-router"
+      },
+      "optimized": {
+        "question": "Möchtest du einige Superkräfte entfesseln, um für alle Seiten optimierte Übersetzungen zu haben?",
+        "answer": "Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.",
+        "link": "https://www.locize.com/blog/next-i18next"
+      },
+      "ssg": {
+        "question": "Möchtest du SSG (next export) verwenden?",
+        "answer": "Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.",
+        "link": "https://www.locize.com/blog/next-i18n-static"
+      }
+    },
+    "review": {
+      "greeting": "Hallo {{name}}"
+    }
+  },
+  "changed": [
+    "review.greeting"
+  ],
+  "beforeIssues": [
+    {
+      "level": "error",
+      "code": "MISSING_KEY",
+      "locale": "public/locales/de/common.json",
+      "key": "review.greeting",
+      "message": "Translation key is missing"
+    }
+  ],
+  "issues": [],
+  "quality": {
+    "passed": true,
+    "issues": [
+      {
+        "code": "LANGUAGE_INSUFFICIENT_EVIDENCE",
+        "level": "info",
+        "key": "review.greeting",
+        "locale": "de",
+        "message": "Short text: no reliable language inference; human review required",
+        "requiresHumanReview": true
+      }
+    ],
+    "requiresHumanReview": true,
+    "limitations": "Literal/length/statistical heuristics can produce false positives and negatives; no semantic correctness guarantee.",
+    "policy": {
+      "allowSourceKeys": [],
+      "allowedSourceTexts": [],
+      "brands": [],
+      "terms": [],
+      "minLengthRatio": 0.25,
+      "maxLengthRatio": 4,
+      "blockWarnings": false
+    }
+  },
+  "legacyBound": false,
+  "requiresHumanReview": true
+}

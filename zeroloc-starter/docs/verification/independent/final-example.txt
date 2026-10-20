@@ -1,0 +1,7 @@
+
+> zeroloc-gate@0.2.0-dev.0 check:example
+> node bin/zeroloc.mjs check --source examples/locales/en.json --targets examples/locales/de.json,examples/locales/fr.json,examples/locales/ja.json
+
+ZeroLoc Gate | 4 source keys | 3 target locales
+PASS — 0 error(s), 0 warning(s)
+Note: this does NOT check translation quality or UI layout.

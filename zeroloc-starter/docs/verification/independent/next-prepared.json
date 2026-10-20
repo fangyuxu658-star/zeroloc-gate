@@ -1,0 +1,17 @@
+{
+  "prepared": true,
+  "previewId": "7f59428276046cda7162076354d5401cd220433c71f5405f085e5e9708f0941b",
+  "head": "8aa3beff65d6bf669296bf877ed2eba5dc2bd2fc",
+  "branch": "codex/zeroloc-402e6370a71f6888",
+  "files": [
+    "public/locales/de/common.json",
+    "zeroloc-report.json"
+  ],
+  "reportSha256": "782f1894d0fbd1304cdaeb1d3b7e4f73916356e031aba948f666ebc75165a430",
+  "resultSha256": "6188535cd6cfcc614ee02aa45910f56e7eff76fc7fa2862e1ae277f68222fb75",
+  "body": "Translation candidates for human review\n\nChanged: review.greeting\nFiles: public/locales/de/common.json\nReason: fill only empty/missing translations; preserve human text.\nPlan: 402e6370a71f6888daf0c0f83e9c3c2573b20afdf46f3bb1d73da32495fd69e1\nStructural check: passed. Quality risks: none detected (heuristics only)\nValidation: [{\"kind\":\"unit\",\"passed\":true,\"exitCode\":0,\"timedOut\":false}]\n\nSemantic quality and screenshots require human review. Never auto-merge.\n",
+  "commit": "538141fd97d06cf052337ba9ff691e7a7161e988",
+  "remotePublished": false,
+  "mainUnchanged": true,
+  "noRemotes": true
+}

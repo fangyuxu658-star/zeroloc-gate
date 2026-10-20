@@ -1,0 +1,199 @@
+
+> zeroloc-gate@0.2.0-dev.0 test:workflow
+> node qa/workflow-e2e.mjs
+
+Workflow acceptance: success (local HTTP stub)
+Workflow acceptance: unit-failure (local HTTP stub)
+Workflow acceptance: ui-failure (local HTTP stub)
+Workflow acceptance: timeout (local HTTP stub)
+Workflow acceptance: conflict (local HTTP stub)
+{
+  "passed": true,
+  "provider": "local-HTTP-protocol-stub (not real model)",
+  "modelMetadata": null,
+  "results": [
+    {
+      "scenario": "success",
+      "passed": true,
+      "sourceChangeDetected": true,
+      "candidate": {
+        "key": "app.newGreeting",
+        "value": "Hallo {{name}}"
+      },
+      "validation": {
+        "passed": true,
+        "checks": [
+          {
+            "kind": "unit",
+            "file": "verify.test.mjs",
+            "passed": true,
+            "exitCode": 0,
+            "timedOut": false,
+            "outputLimited": false,
+            "outputSha256": "2598b113274f4070dc251ca47b96188993cd822fa3205b963657726e4c81ce1b"
+          },
+          {
+            "kind": "ui",
+            "passed": true,
+            "cases": 8,
+            "findings": [],
+            "screenshots": [
+              {
+                "file": "chromium-en-375x812.png",
+                "sha256": "6055aa974d5706e3af057e1e73ae29a9d387918c767ffe8ebc4cd4b5e662ea10"
+              },
+              {
+                "file": "chromium-en-1280x800.png",
+                "sha256": "c68726ecb2814b3a19fc52093d7c0e9e41a386c5f889fb946c99fa4230b0ec09"
+              },
+              {
+                "file": "chromium-de-375x812.png",
+                "sha256": "401c471416764df59e72d13c8a76537fb564718efa73530921e064e296ad30ad"
+              },
+              {
+                "file": "chromium-de-1280x800.png",
+                "sha256": "0221c59846019a75e80a74a537a280f881fc1839ec50218c76b95637a7f58d94"
+              },
+              {
+                "file": "firefox-en-375x812.png",
+                "sha256": "654dedf7ac8426a77955afed0d3cca5aaabed9e40a737367f6d16c75a3b45c17"
+              },
+              {
+                "file": "firefox-en-1280x800.png",
+                "sha256": "104c08cf08639ab7b3b19d6a859a5870648772eb7d9552d051dadbe6be7b22d8"
+              },
+              {
+                "file": "firefox-de-375x812.png",
+                "sha256": "4a1b2836f3c241178ee5f78028f4b506ce8a97ae8317f4f732ab51ec4b249595"
+              },
+              {
+                "file": "firefox-de-1280x800.png",
+                "sha256": "0ffa74e118e8e161e8b3e6bfeb913642124390106b3711ac8f4808e0066a0910"
+              }
+            ],
+            "privateArtifactId": "zeroloc-validation-vwBbWE"
+          }
+        ],
+        "configSha256": "4fd9870e208d46af33da1f32eff7cfb987cc9809d28cd0af531f6d060d4db4cb",
+        "planId": "4668107304083e2ae718d64a6a48213c10c8579240266891f102dd7bfe54e8c4"
+      },
+      "preparedBranch": "codex/zeroloc-4668107304083e2a",
+      "preparedFiles": [
+        "locales/de.json",
+        "report.json"
+      ],
+      "mainUnchanged": true
+    },
+    {
+      "scenario": "unit-failure",
+      "passed": true,
+      "rolledBack": true,
+      "originalBytesRestored": true,
+      "validation": {
+        "passed": false,
+        "checks": [
+          {
+            "kind": "unit",
+            "file": "verify.test.mjs",
+            "passed": false,
+            "exitCode": 1,
+            "timedOut": false,
+            "outputLimited": false,
+            "outputSha256": "77d4a4bce9586a51acd66a982095d57abf2cdda369285a5e78e40761833c073e"
+          }
+        ],
+        "configSha256": "2d001230a175c8d8e6841eb7ff42747a7dd0a6de4718cfdac5549d63cf2a3bab"
+      }
+    },
+    {
+      "scenario": "ui-failure",
+      "passed": true,
+      "rolledBack": true,
+      "originalBytesRestored": true,
+      "validation": {
+        "passed": false,
+        "checks": [
+          {
+            "kind": "unit",
+            "file": "verify.test.mjs",
+            "passed": true,
+            "exitCode": 0,
+            "timedOut": false,
+            "outputLimited": false,
+            "outputSha256": "28bf5881ee846af796a355d5e2841d5542f8d900cfe2293e69647fd2815f05e4"
+          },
+          {
+            "kind": "ui",
+            "passed": false,
+            "cases": 1,
+            "findings": [
+              {
+                "code": "PAGE_OVERFLOW",
+                "level": "error"
+              },
+              {
+                "code": "ELEMENT_OVERFLOW",
+                "level": "error",
+                "element": "div"
+              },
+              {
+                "code": "ELEMENT_OVERFLOW",
+                "level": "error",
+                "element": "p"
+              },
+              {
+                "code": "button-name",
+                "impact": "critical",
+                "help": "Buttons must have discernible text",
+                "nodes": [
+                  [
+                    "div > button"
+                  ]
+                ],
+                "level": "error",
+                "category": "a11y"
+              }
+            ],
+            "screenshots": [
+              {
+                "file": "chromium-de-375x812.png",
+                "sha256": "a465c041e5752b490f5db4860939e4dadb5aaf27905942f0bce2cd40576b68e4"
+              }
+            ],
+            "privateArtifactId": "zeroloc-validation-GycT9S"
+          }
+        ],
+        "configSha256": "8221c293ba5642c6520db17018f07a5d035fa0aa993e92e977106158d10a65de",
+        "planId": "82334de4fbbdd34a326ba83c227d7509aac6359865e2bf4f7355eb88b474d47f"
+      }
+    },
+    {
+      "scenario": "timeout",
+      "passed": true,
+      "rolledBack": true,
+      "originalBytesRestored": true,
+      "validation": {
+        "passed": false,
+        "checks": [
+          {
+            "kind": "unit",
+            "file": "verify.test.mjs",
+            "passed": false,
+            "exitCode": 1,
+            "timedOut": true,
+            "outputLimited": false,
+            "outputSha256": "56c2ee9b96e30edabc9643a41e456850b099a15f315a1b0f51c29a4d1df84a5c"
+          }
+        ],
+        "configSha256": "b1b1806dcc26d8104fdd49b22f3bd22aadecc428c697b4323d7a59dec5f284c4"
+      }
+    },
+    {
+      "scenario": "conflict",
+      "passed": true,
+      "staleProposalRejected": true,
+      "externalEditPreserved": true
+    }
+  ],
+  "limitations": "Synthetic business data in a real React/i18next SSR application; language heuristics do not prove semantics. No remote push/PR or main modification in this harness."
+}
