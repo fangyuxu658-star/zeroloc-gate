@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "ZeroLoc",
-    "greeting": "Hallo {{name}}",
+    "greeting": "Hallo",
     "items": "Du hast {count} Elemente",
     "continue": "Weiter"
   }
