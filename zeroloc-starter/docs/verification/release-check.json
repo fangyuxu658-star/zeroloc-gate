@@ -1,0 +1,13 @@
+{
+  "tool": "ZeroLoc Gate",
+  "version": "0.1.0-beta.1",
+  "source": "test/fixtures/icu-source.json",
+  "sourceKeys": 1,
+  "targetCount": 1,
+  "issues": [],
+  "errors": 0,
+  "warnings": 0,
+  "passed": true,
+  "messageFormat": "icu",
+  "limitations": "Structural checks only; not translation meaning, rendered HTML safety, UI layout, or cultural appropriateness. Legacy mode only supports simple placeholders. Configure ICU/i18next explicitly."
+}

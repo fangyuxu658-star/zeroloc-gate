@@ -1,0 +1,22 @@
+
+> zeroloc-gate@0.1.0 test:visual
+> node qa/run.mjs --all-browsers
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+browserType.launch: spawn UNKNOWN
+Call log:
+  - <launching> <USERPROFILE>\AppData\Local\ms-playwright\firefox-1555\firefox\firefox.exe -no-remote -headless -profile <USERPROFILE>\AppData\Local\Temp\playwright_firefoxdev_profile-2Dg7qd -juggler-pipe -silent
+
+    at visualQA (<USERPROFILE>\Documents\ChatGPT\本地化开源项目\zeroloc-starter\src\checks\visual.mjs:17:44)
+    at async file:///<USERPROFILE>/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/qa/run.mjs:9:14 {
+  log: [
+    '  - <launching> <USERPROFILE>\\AppData\\Local\\ms-playwright\\firefox-1555\\firefox\\firefox.exe -no-remote -headless -profile <USERPROFILE>\\AppData\\Local\\Temp\\playwright_firefoxdev_profile-2Dg7qd -juggler-pipe -silent'
+  ],
+  name: 'Error',
+  code: 'UNKNOWN'
+}
+
+Node.js v25.2.0

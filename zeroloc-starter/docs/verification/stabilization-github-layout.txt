@@ -1,0 +1,1 @@
+PASS: repository-root workflow parsed; subdirectory working directory/artifact paths correct; read-only/no-secrets/all SHA pinned; root MIT license matches.

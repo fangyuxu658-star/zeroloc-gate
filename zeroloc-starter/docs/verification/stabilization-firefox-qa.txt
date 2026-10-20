@@ -1,0 +1,1 @@
+PASS: Firefox 6 locale/viewport cases; negative overflow and button-name caught.

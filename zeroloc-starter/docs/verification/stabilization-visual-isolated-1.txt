@@ -1,0 +1,5 @@
+
+> zeroloc-gate@0.1.0 test:visual
+> node qa/run.mjs --all-browsers
+
+PASS: 12 browser/locale/viewport cases; negative fixture caught overflow and unnamed button.

@@ -1,0 +1,8 @@
+{
+  "app": {
+    "title": "ZeroLoc",
+    "greeting": "Bonjour {{name}}",
+    "items": "Vous avez {count} éléments",
+    "continue": "Continuer"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "app": {
+    "title": "ZeroLoc",
+    "greeting": "こんにちは、{{name}}さん",
+    "items": "アイテムは{count}件あります",
+    "continue": "続行"
+  }
+}

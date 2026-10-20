@@ -1,0 +1,1 @@
+{"workflow":"valid YAML; all Actions SHA pinned; read-only; no secrets","sbomComponents":96,"vulnerabilities":0,"translationPreviewMessages":3}

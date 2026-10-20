@@ -1,0 +1,4021 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:***",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-19T18:37:09.042Z",
+    "lifecycles": [
+      {
+        "phase": "build"
+      }
+    ],
+    "tools": [
+      {
+        "vendor": "npm",
+        "name": "cli",
+        "version": "11.6.2"
+      }
+    ],
+    "component": {
+      "bom-ref": "zeroloc-gate@0.1.0-beta.1",
+      "type": "library",
+      "name": "zeroloc-starter",
+      "version": "0.1.0-beta.1",
+      "scope": "required",
+      "description": "Local-first localization quality gate with optional ecosystem adapters",
+      "purl": "pkg:npm/zeroloc-gate@0.1.0-beta.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:private",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "@babel/runtime@7.29.10",
+      "type": "library",
+      "name": "@babel/runtime",
+      "version": "7.29.10",
+      "scope": "optional",
+      "author": "The Babel Team (https://babel.dev/team)",
+      "description": "babel's modular runtime helpers",
+      "purl": "pkg:npm/%40babel/runtime@7.29.10",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.29.10.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/babel/babel.git"
+        },
+        {
+          "type": "website",
+          "url": "https://babel.dev/docs/en/next/babel-runtime"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "369ba04f36ca806acd7b8e548b7d9c37cbc214533156d3fff6bb5fc2fd273f91510c08ef601c4970b569600f66af58f13fa727213ef1f4b533b834db59860d44"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@croct/json@2.1.0",
+      "type": "library",
+      "name": "@croct/json",
+      "version": "2.1.0",
+      "scope": "optional",
+      "author": "croct",
+      "description": "Strong JSON typing for TypeScript.",
+      "purl": "pkg:npm/%40croct/json@2.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@croct/json/-/json-2.1.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/croct-tech/json-js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/croct-tech/json-js"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/croct-tech/json-js/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "52b59f8cd415941c4df8e55c1701e6923011316e79301374e04f4a7c669cf1a73ccf5427155ba238e16d3165c2937530b3246a86c35a16860b642fb1c6ab158d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@croct/json5-parser@0.2.2",
+      "type": "library",
+      "name": "@croct/json5-parser",
+      "version": "0.2.2",
+      "scope": "optional",
+      "author": "Croct",
+      "description": "A lossless JSON5 tokenizer and parser for Node.js that maintains indentation, spacing, and comments.",
+      "purl": "pkg:npm/%40croct/json5-parser@0.2.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@croct/json5-parser/-/json5-parser-0.2.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/croct-tech/json5-parser-js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/croct-tech/json5-parser-js"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/croct-tech/json5-parser-js/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "d0d24c2eb6de2db434782563dd4a07fe41b641c91480e0127f099f0d38f25b5c4060fc933495dc5954ff76cb0975325dd2945c856faa1745455901dcc6cd4e57"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@formatjs/icu-messageformat-parser@3.5.21",
+      "type": "library",
+      "name": "@formatjs/icu-messageformat-parser",
+      "version": "3.5.21",
+      "scope": "required",
+      "purl": "pkg:npm/%40formatjs/icu-messageformat-parser@3.5.21",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@formatjs/icu-messageformat-parser/-/icu-messageformat-parser-3.5.21.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/formatjs/formatjs.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "56797b20e4b231168fe0f8efe3c7ad913da795c230ce1e105886b785ec331a56593c16dfb7e4db322af83228e90d588e2cdff586f9060b5d2860cba296c1be7f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@formatjs/icu-skeleton-parser@2.1.12",
+      "type": "library",
+      "name": "@formatjs/icu-skeleton-parser",
+      "version": "2.1.12",
+      "scope": "required",
+      "purl": "pkg:npm/%40formatjs/icu-skeleton-parser@2.1.12",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@formatjs/icu-skeleton-parser/-/icu-skeleton-parser-2.1.12.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/formatjs/formatjs.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "71aeed64c2e97c75f7b140fb84fea013faabe88abcf440dddd92de4616ec07baf4503e790c626afad9852f3ac6ae7c794ad6a151ebd0990415b5b0d11ec7c31c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/ansi@2.0.9",
+      "type": "library",
+      "name": "@inquirer/ansi",
+      "version": "2.0.9",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "purl": "pkg:npm/%40inquirer/ansi@2.0.9",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/ansi/-/ansi-2.0.9.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/ansi/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "d18c2ddd2f2da8ce9359472c465045435c7e5f7fe8f2492d5f46622809c1c986fd1850e49e73a1b1ed4f56d7e20f60573c8f1aafe056c7d3d5f51d2540873283"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/checkbox@5.2.6",
+      "type": "library",
+      "name": "@inquirer/checkbox",
+      "version": "5.2.6",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Inquirer checkbox prompt",
+      "purl": "pkg:npm/%40inquirer/checkbox@5.2.6",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/checkbox/-/checkbox-5.2.6.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/checkbox/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5e439aadd722177b68c36354958ebf42393542a61afba5a99952d3a715e5f7b52fe1eadccc3119fb18358fa2ea05fd1e91c452522202400e274171c7915290f7"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/confirm@6.3.3",
+      "type": "library",
+      "name": "@inquirer/confirm",
+      "version": "6.3.3",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Inquirer confirm prompt",
+      "purl": "pkg:npm/%40inquirer/confirm@6.3.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/confirm/-/confirm-6.3.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/confirm/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "22638182997fb094c5a7c9da79290dbb84b449ff05f29c6fdff094c7e2e8040750bc256a173eab481d80fe8658b0981edfeca985b103c4491f691358ab5394d0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/core@12.0.4",
+      "type": "library",
+      "name": "@inquirer/core",
+      "version": "12.0.4",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Core Inquirer prompt API",
+      "purl": "pkg:npm/%40inquirer/core@12.0.4",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/core/-/core-12.0.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/core/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "3397c1ebbcbb8cf39b238e6f843f3646c916c024a6d2c70ebde9d5fc8e8af2d222da07ebf435ea42a27e8b0f968ba4a06a98a474e88989b633cf5816e3b7ec0e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/editor@5.3.4",
+      "type": "library",
+      "name": "@inquirer/editor",
+      "version": "5.3.4",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Inquirer multiline editor prompt",
+      "purl": "pkg:npm/%40inquirer/editor@5.3.4",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/editor/-/editor-5.3.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/editor/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8a6cf14037f0dba36970902e6cc8ff744e518d4f4ca7cd08713f85cec0fa628c5798bf0bd5062700574236fedc7065a1fffef7fb460ffb591f8709c4c5d97655"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/expand@5.1.6",
+      "type": "library",
+      "name": "@inquirer/expand",
+      "version": "5.1.6",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Inquirer checkbox prompt",
+      "purl": "pkg:npm/%40inquirer/expand@5.1.6",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/expand/-/expand-5.1.6.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/expand/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "25f88b2a2eea1ae1e67103bf0ea475d14144a74e7863515765ab333f96447c78601deb85a13e673454085c585e77fe7fa74ed26ec576b48245c06fdd839f8d99"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/external-editor@3.0.6",
+      "type": "library",
+      "name": "@inquirer/external-editor",
+      "version": "3.0.6",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Edit a string with the users preferred text editor using $VISUAL or $ENVIRONMENT",
+      "purl": "pkg:npm/%40inquirer/external-editor@3.0.6",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/external-editor/-/external-editor-3.0.6.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/external-editor/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "ad69b0e961bc259ecb327fecad71329581a12fa1175c9791384effe31e0644487a360cea2410db220a4d1ac6282cf7e86de6f8559b446333c69d3e4414d62189"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/figures@2.0.9",
+      "type": "library",
+      "name": "@inquirer/figures",
+      "version": "2.0.9",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Vendored version of figures, for CJS compatibility",
+      "purl": "pkg:npm/%40inquirer/figures@2.0.9",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/figures/-/figures-2.0.9.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1005a0513190fd49a081ae75744dc1d8f5076ee7ee5daac37e0f3ab958284a034734d427c8529c3ab40b595a9832086e4b21e1f3ed87507d09b3d7130b558076"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/input@5.1.7",
+      "type": "library",
+      "name": "@inquirer/input",
+      "version": "5.1.7",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Inquirer input text prompt",
+      "purl": "pkg:npm/%40inquirer/input@5.1.7",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/input/-/input-5.1.7.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/input/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "21caecf6db8c042c4623e94560d3bbd5514e9ea18ef0822b2c81aa9d31a1d3b5fc8d9da56bd40b018c577229076508e356121952d536c721fcf4354dfe93e156"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/number@4.2.4",
+      "type": "library",
+      "name": "@inquirer/number",
+      "version": "4.2.4",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Inquirer number prompt",
+      "purl": "pkg:npm/%40inquirer/number@4.2.4",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/number/-/number-4.2.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/number/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "0ba83cd14e14dbec365716b5081d0c3776b65a74087f32d2506d2576e3b702ef46b22ac9b0a0136643b064f2bebd9d41940973fbf6793daadf4024bd134b2f9a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/password@5.2.3",
+      "type": "library",
+      "name": "@inquirer/password",
+      "version": "5.2.3",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Inquirer password prompt",
+      "purl": "pkg:npm/%40inquirer/password@5.2.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/password/-/password-5.2.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/password/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "d54a36a9f2362b7c176dfba7329bf0033a193c851fe621044f00c6a9155bb30a28ad71aa61027f6df20915e2e3fa9c63abe7b65053cd3a6c7e7ec225e14ae283"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/prompts@8.7.3",
+      "type": "library",
+      "name": "@inquirer/prompts",
+      "version": "8.7.3",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Inquirer prompts, combined in a single package",
+      "purl": "pkg:npm/%40inquirer/prompts@8.7.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/prompts/-/prompts-8.7.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/prompts/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "0c72b6d243be1f993f5dc250a47414a5541b3181c78597219465a1655314578588b91b815b9ef8e218a93adae2135bcca8f2e09c8c9714c1d62a421b4dea5ae1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/rawlist@5.3.6",
+      "type": "library",
+      "name": "@inquirer/rawlist",
+      "version": "5.3.6",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Inquirer rawlist prompt",
+      "purl": "pkg:npm/%40inquirer/rawlist@5.3.6",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/rawlist/-/rawlist-5.3.6.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/rawlist/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "d9ec44c61439c5306a7cdfeb465664bccd469b76f47a22dc59ed8dab15b17bba989a75383378ff9fd4f0cdf3d46fe43b740033f53981b43596745de36e9e192c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/search@4.3.4",
+      "type": "library",
+      "name": "@inquirer/search",
+      "version": "4.3.4",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Inquirer search prompt",
+      "purl": "pkg:npm/%40inquirer/search@4.3.4",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/search/-/search-4.3.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/search/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c6c93451e14fd388ec6c47853338218d4687d9a1d7cadf96ca449a8d0ceaffcab204d1ec80660779afec170bf94f4f245bb4a9f8a0d7f1a175db8ccf508b355b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/select@5.2.6",
+      "type": "library",
+      "name": "@inquirer/select",
+      "version": "5.2.6",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Inquirer select/list prompt",
+      "purl": "pkg:npm/%40inquirer/select@5.2.6",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/select/-/select-5.2.6.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/select/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8c5bbb08582196bd2fa62ff7dba6b8c33e811a4247f57dc7fe222ef9a87257625ae7692da901377c2f4160fe3b24a7923d060652fe71aae136569f4f6dea59de"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@inquirer/type@4.2.0",
+      "type": "library",
+      "name": "@inquirer/type",
+      "version": "4.2.0",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Inquirer core TS types",
+      "purl": "pkg:npm/%40inquirer/type@4.2.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@inquirer/type/-/type-4.2.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "dab9c75fc44fa38825258aa715cfefde741e2210dc8f2451c9a4fb30671f2fff31bfff0ad37497628036b57d3a59548acb058e13f9dc6c6dddb6eccb8d1e5309"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@jridgewell/sourcemap-codec@1.6.0",
+      "type": "library",
+      "name": "@jridgewell/sourcemap-codec",
+      "version": "1.6.0",
+      "scope": "optional",
+      "author": "Justin Ridgewell <justin@ridgewell.name>",
+      "description": "Encode/decode sourcemap mappings",
+      "purl": "pkg:npm/%40jridgewell/sourcemap-codec@1.6.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.6.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jridgewell/sourcemaps.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/jridgewell/sourcemaps/tree/main/packages/sourcemap-codec"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4fb8dffb9ce0b191f0349e25bd0eff69ecdbca4d27357fb32555a998703b558b04c7b6bbaabe5183921bb4916a920cdee58dacaeeab545463c43cdfb39dee217"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@playwright/test@1.64.1",
+      "type": "library",
+      "name": "@playwright/test",
+      "version": "1.64.1",
+      "scope": "optional",
+      "author": "Microsoft Corporation",
+      "description": "A high-level API to automate web browsers",
+      "purl": "pkg:npm/%40playwright/test@1.64.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@playwright/test/-/test-1.64.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/microsoft/playwright.git"
+        },
+        {
+          "type": "website",
+          "url": "https://playwright.dev"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "21a6069a5fe748e89959139f3edb882fb9debaef6a0ce6774cdbcd963508ae10ccc6219380f8f38ff83da7d471a52dad49ea4f0d163e53001a11e88ab54bc802"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@sec-ant/readable-stream@0.4.1",
+      "type": "library",
+      "name": "@sec-ant/readable-stream",
+      "version": "0.4.1",
+      "scope": "optional",
+      "author": "Ze-Zheng Wu",
+      "description": "A tiny, zero-dependency yet spec-compliant asynchronous iterator polyfill/ponyfill for ReadableStreams.",
+      "purl": "pkg:npm/%40sec-ant/readable-stream@0.4.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@sec-ant/readable-stream/-/readable-stream-0.4.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/Sec-ant/readable-stream.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/Sec-ant/readable-stream"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/Sec-ant/readable-stream/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f37d6aa24f6bdadf009712e4a38d32d9e6e048385e9de9c26ad2d5796fee06d9c73f28473af1b40bb4ef7e079c57ec07cc89b9294202833995a564be20c1007a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@sindresorhus/merge-streams@4.0.0",
+      "type": "library",
+      "name": "@sindresorhus/merge-streams",
+      "version": "4.0.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Merge multiple streams into a unified stream",
+      "purl": "pkg:npm/%40sindresorhus/merge-streams@4.0.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@sindresorhus/merge-streams/-/merge-streams-4.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b65a98f71ab9ba4c53519066a0ea7e9bad5cab0403e691c9b45637327f0203ca6ceb28212c7fc7c3c50f76a83838b9855b720595c5e740d9a8fdd87c1f35d821"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@swc/core@1.16.18",
+      "type": "library",
+      "name": "@swc/core",
+      "version": "1.16.18",
+      "scope": "optional",
+      "author": "강동윤 <kdy1997.dev@gmail.com>",
+      "description": "Super-fast alternative for babel",
+      "purl": "pkg:npm/%40swc/core@1.16.18",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@swc/core/-/core-1.16.18.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/swc-project/swc.git"
+        },
+        {
+          "type": "website",
+          "url": "https://swc.rs"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/swc-project/swc/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "d1c6102e4a5cc149e0839e530f0a70aeb54e53e07ace1d4d15ba7ea12edd545866624cda0117a5c2e828fdbccf261d45adc9e9a6617e293aa2a021b0caa6dc13"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@swc/core-win32-x64-msvc@1.16.18",
+      "type": "library",
+      "name": "@swc/core-win32-x64-msvc",
+      "version": "1.16.18",
+      "scope": "optional",
+      "author": "강동윤 <kdy1997.dev@gmail.com>",
+      "description": "Super-fast alternative for babel",
+      "purl": "pkg:npm/%40swc/core-win32-x64-msvc@1.16.18",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.16.18.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/swc-project/swc.git"
+        },
+        {
+          "type": "website",
+          "url": "https://swc.rs"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/swc-project/swc/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "ecbb15ac82020195926a35d3e83c0eecf6124e75bd99a6a6382c90ca568e875dd58a9b6b822ffb865f5f3fbe528877be92c71a25a8465dca2b82de0c38e87fd7"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0 AND MIT"
+        }
+      ]
+    },
+    {
+      "bom-ref": "@swc/counter@0.1.3",
+      "type": "library",
+      "name": "@swc/counter",
+      "version": "0.1.3",
+      "scope": "optional",
+      "author": "강동윤 <kdy1997.dev@gmail.com>",
+      "description": "Downloade counter for the swc project",
+      "purl": "pkg:npm/%40swc/counter@0.1.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@swc/counter/-/counter-0.1.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/swc-project/pkgs.git"
+        },
+        {
+          "type": "website",
+          "url": "https://swc.rs"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/swc-project/swc/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "7b6051e25b09924465299fea0873f0f59692c5cd0c55477b82d6ed681eda32f1de25561ef2c381f0305990fd83b4848719292ef6c08ae93e9c9d8d02b57ace09"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@swc/types@0.1.28",
+      "type": "library",
+      "name": "@swc/types",
+      "version": "0.1.28",
+      "scope": "optional",
+      "author": "강동윤 <kdy1997.dev@gmail.com>",
+      "description": "Typings for the swc project.",
+      "purl": "pkg:npm/%40swc/types@0.1.28",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@swc/types/-/types-0.1.28.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/swc-project/swc.git"
+        },
+        {
+          "type": "website",
+          "url": "https://swc.rs"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/swc-project/swc/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "57a3279a5f2fd3d4002f1e8ad1e949ee8f4afcc9150ed5b7b7a2feecebbf25c5ad6f7c7021dd801f815e39c7b249dd8968ef3b20cc38fbabd26712e6df82cf6f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "ansi-regex@6.4.0",
+      "type": "library",
+      "name": "ansi-regex",
+      "version": "6.4.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Regular expression for matching ANSI escape codes",
+      "purl": "pkg:npm/ansi-regex@6.4.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.4.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "2b34d5936b425801ed62bbefbda3fc6c9289ab6a558a784b70611076d2c860f6e634637261ef10c0d693518429d89effbc8b142ade500aa01f5246321bd0e43b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "axe-core@4.14.0",
+      "type": "library",
+      "name": "axe-core",
+      "version": "4.14.0",
+      "scope": "optional",
+      "description": "Accessibility engine for automated Web UI testing",
+      "purl": "pkg:npm/axe-core@4.14.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/axe-core/-/axe-core-4.14.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/dequelabs/axe-core.git"
+        },
+        {
+          "type": "website",
+          "url": "https://www.deque.com/axe/"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f564d9c448ec67b6f5dd31fc24f99b576cfc0876e5f34ff6866dd73c41b826035d40b2bcd480515e64b11df3003a44aa41e4714ffd1dc0d0f3d863a6df3ce971"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MPL-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "balanced-match@4.0.4",
+      "type": "library",
+      "name": "balanced-match",
+      "version": "4.0.4",
+      "scope": "optional",
+      "description": "Match balanced character pairs, like \"{\" and \"}\"",
+      "purl": "pkg:npm/balanced-match@4.0.4",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/balanced-match/-/balanced-match-4.0.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/juliangruber/balanced-match.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "04bae011c453c17da8ea01b118e08dc8cbc64a9df96287ee633c3d87520c4d198aaadb40659554ebb6dd6fd3ebdaf50703cfa3de2dad25f8cee82ebee26c864c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "brace-expansion@5.0.12",
+      "type": "library",
+      "name": "brace-expansion",
+      "version": "5.0.12",
+      "scope": "optional",
+      "description": "Brace expansion as known from sh/bash",
+      "purl": "pkg:npm/brace-expansion@5.0.12",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-5.0.12.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/juliangruber/brace-expansion.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "628bd0debce168b308ac38cd0cc90d4b4d6d79af77aa11211b9c72f1febe47497e770dca8bee6c0a822823de368ae2d94c75a881692d830543854d3d88d12299"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "chalk@5.6.2",
+      "type": "library",
+      "name": "chalk",
+      "version": "5.6.2",
+      "scope": "optional",
+      "description": "Terminal string styling done right",
+      "purl": "pkg:npm/chalk@5.6.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/chalk/-/chalk-5.6.2.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "ecdcc12f4acde9f3145be7fb03a228e21e34a90946fb11a6b4cc5f6e71ff2bb4c0b6df094165502beea0d145ca31e549a3257912490db04ad0f29543ddb2c76c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "chardet@2.2.0",
+      "type": "library",
+      "name": "chardet",
+      "version": "2.2.0",
+      "scope": "optional",
+      "author": "Dmitry Shirokov <deadrunk@gmail.com>",
+      "description": "Character encoding detector",
+      "purl": "pkg:npm/chardet@2.2.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/chardet/-/chardet-2.2.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/runk/node-chardet.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/runk/node-chardet"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "http://github.com/runk/node-chardet/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "add75e95660d3d1ad7aba3ed3443764b77fab7d20bcefa9a379a55822e24aadf631d06972226a5f4fce70798923d595048b35a687db622d5b3dc426d435d3e38"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "chokidar@5.0.0",
+      "type": "library",
+      "name": "chokidar",
+      "version": "5.0.0",
+      "scope": "optional",
+      "author": "Paul Miller (https://paulmillr.com)",
+      "description": "Minimal and efficient cross-platform file watching library",
+      "purl": "pkg:npm/chokidar@5.0.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/chokidar/-/chokidar-5.0.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/paulmillr/chokidar.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/paulmillr/chokidar"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/paulmillr/chokidar/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4d0326737c3ee40c63a4bf22222c1e6c5ef77510c5e1f04889e02a1a7f5118259a115c10e856f67067b7d589ecd11448ce28b982827563bc5b330a354f132997"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "cli-cursor@5.0.0",
+      "type": "library",
+      "name": "cli-cursor",
+      "version": "5.0.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Toggle the CLI cursor",
+      "purl": "pkg:npm/cli-cursor@5.0.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/cli-cursor/-/cli-cursor-5.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "6828f83b9c0acacce33260d3e2d663f77931cb274dfcae733d64827baff4015fc0035a6a7b9641230d1ad997cf415ee52f9ff26f91ec52b789e94140175b4443"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "cli-spinners@3.4.0",
+      "type": "library",
+      "name": "cli-spinners",
+      "version": "3.4.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Spinners for use in the terminal",
+      "purl": "pkg:npm/cli-spinners@3.4.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/cli-spinners/-/cli-spinners-3.4.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "6d77ce0b841c4f5b4a5c6a2bc4bdf06c99ba5c93c3a849e28f6810da6ec4490b84fbfcfd6052169e5ff94694e22966ccab7115291e1f44b2469fa0d57eed26a7"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "cli-width@4.1.0",
+      "type": "library",
+      "name": "cli-width",
+      "version": "4.1.0",
+      "scope": "optional",
+      "author": "Ilya Radchenko <knownasilya@gmail.com>",
+      "description": "Get stdout window width, with two fallbacks, tty and then a default.",
+      "purl": "pkg:npm/cli-width@4.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/cli-width/-/cli-width-4.1.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git@github.com:knownasilya/cli-width.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/knownasilya/cli-width"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/knownasilya/cli-width/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a2eb99778fdd9b64b0e469aacba6c6c8d34d7b5aadf51a66c6f78b48eeca720b139d4ed15dfb30fbf6ee9161a8d5a6e006230089cd3af2b72566c3b82169a6c5"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "commander@15.0.0",
+      "type": "library",
+      "name": "commander",
+      "version": "15.0.0",
+      "scope": "optional",
+      "author": "TJ Holowaychuk <tj@vision-media.ca>",
+      "description": "the complete solution for node.js command-line programs",
+      "purl": "pkg:npm/commander@15.0.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/commander/-/commander-15.0.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/tj/commander.js.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "cfaeeee1987308bfd3c9dbb5949011b4465859b59a37ba182c76ecbb3a1cafacb837a59901a806dd1438156eb5575ff4fa3226a63dbddd77eb7189ddd6ac6d3e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "execa@10.2.0",
+      "type": "library",
+      "name": "execa",
+      "version": "10.2.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)",
+      "description": "Process execution for humans",
+      "purl": "pkg:npm/execa@10.2.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/execa/-/execa-10.2.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8f5a45395c5ac9b315093347481b8848bd8a41c0d2dca204d70066529e27d97fb5160690236643255cbd4d8c43c8c0b36288d120c87d3bc5ff528599b714c977"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "fast-string-truncated-width@3.0.3",
+      "type": "library",
+      "name": "fast-string-truncated-width",
+      "version": "3.0.3",
+      "scope": "optional",
+      "description": "A fast function for calculating where a string should be truncated, given an optional width limit and an ellipsis string.",
+      "purl": "pkg:npm/fast-string-truncated-width@3.0.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/fast-string-truncated-width/-/fast-string-truncated-width-3.0.3.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "d238e32042fafb48da8379765d65a2cceeb8fda655b69886137b74660ab1bf40cfbb188c8ef077336e1f0b285950ee0aa262503e3dcb4d25270cfdc6a5dc02d2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "fast-string-width@3.0.2",
+      "type": "library",
+      "name": "fast-string-width",
+      "version": "3.0.2",
+      "scope": "optional",
+      "description": "A fast function for calculating the visual width of a string once printed to the terminal.",
+      "purl": "pkg:npm/fast-string-width@3.0.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/fast-string-width/-/fast-string-width-3.0.2.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "817f0baed34423986af035547d140c6ebe65a5a4b89cc21657eed711b5e4d9bf24890222ce09e5af5d81e1d037644c77df4f337b43b843547e707b6cf24c9426"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "fast-wrap-ansi@0.2.2",
+      "type": "library",
+      "name": "fast-wrap-ansi",
+      "version": "0.2.2",
+      "scope": "optional",
+      "author": "James Garbutt (https://github.com/43081j)",
+      "description": "A tiny and fast text wrap library which takes ANSI escapes into account.",
+      "purl": "pkg:npm/fast-wrap-ansi@0.2.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/fast-wrap-ansi/-/fast-wrap-ansi-0.2.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/43081j/fast-wrap-ansi.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/43081j/fast-wrap-ansi#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/43081j/fast-wrap-ansi/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "ec5d8597e4e34527a72ea954dd48d21f48b2aa8a6aa1922eede655a448ab3f68351ad59ad86fde704981760cf7d7e331afe10b725820eaca24a52148422674d9"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "figures@6.1.0",
+      "type": "library",
+      "name": "figures",
+      "version": "6.1.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Unicode symbols with fallbacks for older terminals",
+      "purl": "pkg:npm/figures@6.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/figures/-/figures-6.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "77e977ab18d27ac4f857bbf67e1f909e6167516bfd952a636ab85284d4e004e7c0d2db5e8db4140251cb8ad6e39284620ee956d0e3e840f6081a1202f2885e8e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "get-east-asian-width@1.7.0",
+      "type": "library",
+      "name": "get-east-asian-width",
+      "version": "1.7.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Determine the East Asian Width of a Unicode character",
+      "purl": "pkg:npm/get-east-asian-width@1.7.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/get-east-asian-width/-/get-east-asian-width-1.7.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5e31f50040b17f48222f6575694f2f2b2451da9a5151be5cd04bd3ef3b894e8910ef86cda39db33ad821a9d588aab8540fbf5fa37c7459f29974eab117a2c6d5"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "get-stream@9.0.1",
+      "type": "library",
+      "name": "get-stream",
+      "version": "9.0.1",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Get a stream as a string, Buffer, ArrayBuffer or array",
+      "purl": "pkg:npm/get-stream@9.0.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/get-stream/-/get-stream-9.0.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "9150b13c5def40cfcdd01d4f9a8a9552a8073fe11e5639994909fed680913f17763f6d4fd85d7d94881b4771c1a2c6c1d4f521380a1cb499df127d866cdd9e64"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "glob@13.0.6",
+      "type": "library",
+      "name": "glob",
+      "version": "13.0.6",
+      "scope": "optional",
+      "author": "Isaac Z. Schlueter <i@izs.me> (https://blog.izs.me/)",
+      "description": "the most correct and second fastest glob implementation in JavaScript",
+      "purl": "pkg:npm/glob@13.0.6",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/glob/-/glob-13.0.6.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git@github.com:isaacs/node-glob.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5a3972ae89669bcb83a66fe8806c976576f567e09ad81f0d6c9c2a0558346b12bd19b05ea12ef2195eaf8d79d87469ba5f9de27a112ec716f288aa7c42637857"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "html-parse-stringify@4.0.1",
+      "type": "library",
+      "name": "html-parse-stringify",
+      "version": "4.0.1",
+      "scope": "optional",
+      "author": "Henrik Joreteg <henrik@joreteg.com>",
+      "description": "Parses well-formed HTML (meaning all tags closed) into an AST and back. quickly.",
+      "purl": "pkg:npm/html-parse-stringify@4.0.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/html-parse-stringify/-/html-parse-stringify-4.0.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/i18next/html-parse-stringify.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/i18next/html-parse-stringify"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/i18next/html-parse-stringify/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "d331ec649acaed2dcad9ab9c5d62fac9ca1827f88db487051c2fe76108059253edaefe4ba4972d222482ae859959eba85efbb215dce9e8ace3250f8e4f931f17"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "human-signals@8.0.1",
+      "type": "library",
+      "name": "human-signals",
+      "version": "8.0.1",
+      "scope": "optional",
+      "author": "ehmicky <ehmicky@gmail.com> (https://github.com/ehmicky)",
+      "description": "Human-friendly process signals",
+      "purl": "pkg:npm/human-signals@8.0.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/human-signals/-/human-signals-8.0.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/ehmicky/human-signals.git"
+        },
+        {
+          "type": "website",
+          "url": "https://www.github.com/ehmicky/human-signals"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/ehmicky/human-signals/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "78a09ae9bc27261bf18f5e24664e4d08f73a1dbe8176c53d0d970e9e640a4a73b554aadf574cc2bedb6d3d952c06f8e63439fcae97097e9c126271c18dcf7931"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "i18next@26.5.0",
+      "type": "library",
+      "name": "i18next",
+      "version": "26.5.0",
+      "scope": "optional",
+      "author": "Jan Mühlemann <jan.muehlemann@gmail.com> (https://github.com/jamuhl)",
+      "description": "i18next internationalization framework",
+      "purl": "pkg:npm/i18next@26.5.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/i18next/-/i18next-26.5.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/i18next/i18next.git"
+        },
+        {
+          "type": "website",
+          "url": "https://www.i18next.com"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "3b01450f7111fc1496b2fe34b5e0ed9211bb7f082771dedcab5097ede974d8810d5bd662c1f58b9cc8ec4060ffab7484c6bc69d3e431c14a972fc17d04abb9fb"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "i18next-cli@1.77.0",
+      "type": "library",
+      "name": "i18next-cli",
+      "version": "1.77.0",
+      "scope": "optional",
+      "description": "A unified, high-performance i18next CLI.",
+      "purl": "pkg:npm/i18next-cli@1.77.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/i18next-cli/-/i18next-cli-1.77.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/i18next/i18next-cli.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/i18next/i18next-cli"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/i18next/i18next-cli/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "ee09ffd8fe10166ee96ffb16bc183d42beebf1f672a28ce127d32f818b813d7fda3d4ae788c2a78404f68991c0bfef9883ac1126a9cfeca209b221dc3f732df0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "i18next-resources-for-ts@2.1.1",
+      "type": "library",
+      "name": "i18next-resources-for-ts",
+      "version": "2.1.1",
+      "scope": "optional",
+      "description": "This package helps to transform resources to be used in a typesafe i18next project.",
+      "purl": "pkg:npm/i18next-resources-for-ts@2.1.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/i18next-resources-for-ts/-/i18next-resources-for-ts-2.1.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git@github.com:i18next/i18next-resources-for-ts.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/i18next/i18next-resources-for-ts"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/i18next/i18next-resources-for-ts/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5e1cfc4bc76d3483dac33796766b2c9ec208d4962c6ef3d638b9acb496a435c80a4852c29de03ec4deea6a38ffce59399dff6cc752860d3c7c44d67bde1ebcb7"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "iconv-lite@0.7.3",
+      "type": "library",
+      "name": "iconv-lite",
+      "version": "0.7.3",
+      "scope": "optional",
+      "author": "Alexander Shtuchkin <ashtuchkin@gmail.com>",
+      "description": "Convert character encodings in pure javascript.",
+      "purl": "pkg:npm/iconv-lite@0.7.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.7.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/pillarjs/iconv-lite.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/pillarjs/iconv-lite"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "20a5e9bc8ce39c2f574c051b54170c7c64b410f6885ed5babfecebf91469fa1a942c4a68d28c196b1eb0c91c0f3896d66f38d8b29430bac4ec7d5af489f878b9"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "inquirer@14.2.3",
+      "type": "library",
+      "name": "inquirer",
+      "version": "14.2.3",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "A collection of common interactive command line user interfaces.",
+      "purl": "pkg:npm/inquirer@14.2.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/inquirer/-/inquirer-14.2.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/SBoudrias/Inquirer.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/packages/inquirer/README.md"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "78a51c1341ff89ec178c43cdbc80d7629eb172014fc94764dcccbf1d64202fc585ee32c224475052c43ee56bd742cf058f8887de6242ccb5f525bb2825296253"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "is-interactive@2.0.0",
+      "type": "library",
+      "name": "is-interactive",
+      "version": "2.0.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Check if stdout or stderr is interactive",
+      "purl": "pkg:npm/is-interactive@2.0.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/is-interactive/-/is-interactive-2.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a8fd6fa3341123e04c38f723173ae35ee42f75a936a47354319a1e1b67916e24aacaf6c47ffc10b44393397d60ba4e84deddfa4646aa892b7c03fe981253712d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "is-plain-obj@4.1.0",
+      "type": "library",
+      "name": "is-plain-obj",
+      "version": "4.1.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Check if a value is a plain object",
+      "purl": "pkg:npm/is-plain-obj@4.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-4.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f8f822faf32e50d909c84c62301b792251683322a7af9ce127852ca73e7c58e841179428219905c8d1c86c102d1f0cd502093946d9dd54db0344deb5fe6983aa"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "is-stream@4.0.1",
+      "type": "library",
+      "name": "is-stream",
+      "version": "4.0.1",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Check if something is a Node.js stream",
+      "purl": "pkg:npm/is-stream@4.0.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/is-stream/-/is-stream-4.0.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "0e7cfdd8d2270ea61c90611426febcf516d18934841c243bc0e55e00b6e43b3f7df58a6a4f8eb2311206b52365da208bd70680652c78d3e879f4d57f130cd5fc"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "is-unicode-supported@2.1.0",
+      "type": "library",
+      "name": "is-unicode-supported",
+      "version": "2.1.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Detect whether the terminal supports Unicode",
+      "purl": "pkg:npm/is-unicode-supported@2.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/is-unicode-supported/-/is-unicode-supported-2.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "984d341a7cdae44101dc3b341df3329656736c1ae62ce5f7bdf5a88fd03d3c49d37eb6ad43f05c6893ae3219e48635ef6f6f85918dd5b87aad006a533e682515"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "jiti@2.7.0",
+      "type": "library",
+      "name": "jiti",
+      "version": "2.7.0",
+      "scope": "optional",
+      "description": "Runtime typescript and ESM support for Node.js",
+      "purl": "pkg:npm/jiti@2.7.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/jiti/-/jiti-2.7.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "002ffb2687c9bd91abae779635a12725e38b531f89946b7bb4d6b4c198913d3e0c635c267ca8eddbee8eda9daecf6fac92597c39966624c36a7a47bb90a6cd81"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "jsonc-parser@3.3.1",
+      "type": "library",
+      "name": "jsonc-parser",
+      "version": "3.3.1",
+      "scope": "optional",
+      "author": "Microsoft Corporation",
+      "description": "Scanner and parser for JSON with comments.",
+      "purl": "pkg:npm/jsonc-parser@3.3.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/jsonc-parser/-/jsonc-parser-3.3.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/node-jsonc-parser"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/microsoft/node-jsonc-parser/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1d4807eb92b27a3ad414fbc714f6ea398d2bb058a9dc1a39c1be2782f762d44a426165100c2e55f98ee6670b3e0cb92be0cfffcd02686a7bb548ffbcec3bf5a1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "log-symbols@7.0.1",
+      "type": "library",
+      "name": "log-symbols",
+      "version": "7.0.1",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Colored symbols for various log levels. Example: `✔︎ Success`",
+      "purl": "pkg:npm/log-symbols@7.0.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/log-symbols/-/log-symbols-7.0.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8dad44df20abf62ff486605568cd1b7f00e39c6cbc23fb3a3cfe03169fb23fe6be9ab1cee119bb0ed9a7a913935241c892a7df0bce1863b01ea97ea8164d1616"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "lru-cache@11.5.3",
+      "type": "library",
+      "name": "lru-cache",
+      "version": "11.5.3",
+      "scope": "optional",
+      "author": "Isaac Z. Schlueter <i@izs.me>",
+      "description": "A cache object that deletes the least-recently-used items.",
+      "purl": "pkg:npm/lru-cache@11.5.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/lru-cache/-/lru-cache-11.5.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+ssh://git@github.com/isaacs/node-lru-cache.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "53837c160ce65b173c935547f0aafa950835f14ec58ef6f2eb05c75515ff659ec8c166d1320ad16cfd16adbe6ae4d5629ebca9e1241a9a91ca76fb5e708b7152"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "magic-string@1.4.3",
+      "type": "library",
+      "name": "magic-string",
+      "version": "1.4.3",
+      "scope": "optional",
+      "author": "Rich Harris",
+      "description": "Modify strings, generate sourcemaps",
+      "purl": "pkg:npm/magic-string@1.4.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/magic-string/-/magic-string-1.4.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/Rich-Harris/magic-string.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "cf5d8ec6668f184d05e3196919d8ee0147248a92e94254c0b809b21a13680fb383a58533bc37efb7151b8ccfe3c339f23f5efca23bbf2837728b6db4c0d27445"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "messageformat@4.1.0",
+      "type": "library",
+      "name": "messageformat",
+      "version": "4.1.0",
+      "scope": "optional",
+      "description": "Intl.MessageFormat / Unicode MessageFormat 2 parser, runtime and polyfill",
+      "purl": "pkg:npm/messageformat@4.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/messageformat/-/messageformat-4.1.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/messageformat/messageformat.git"
+        },
+        {
+          "type": "website",
+          "url": "http://messageformat.github.io/messageformat/"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "64b21dd0161fb0d842ebf311c15170d724cb806f5c6c9c1f4ec8d8492d82e7d3dd7c959546c5fb86d8400efb1779f06d4e0d852aca3454026630924eb6727be7"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "mimic-function@5.0.1",
+      "type": "library",
+      "name": "mimic-function",
+      "version": "5.0.1",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Make a function mimic another one",
+      "purl": "pkg:npm/mimic-function@5.0.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/mimic-function/-/mimic-function-5.0.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "54fefd5d43f15760a28183f78d6c005054a4bb668aa811fbb9301aa4558206abadb1b983a3de8a639a3cba1e94fbf612227e4ec499d7a7bddb795929a8c20684"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "minimatch@10.2.6",
+      "type": "library",
+      "name": "minimatch",
+      "version": "10.2.6",
+      "scope": "optional",
+      "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)",
+      "description": "a glob matcher in javascript",
+      "purl": "pkg:npm/minimatch@10.2.6",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.6.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git@github.com:isaacs/minimatch"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "be92d012cf952c2af59d4d015d2d3b99a628170943007d209e042ebadb71230bad0c510c1ead9b957fbcbe98310dd2b72753f08c22627a9efb3a2b536782e5d4"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "minipass@7.1.3",
+      "type": "library",
+      "name": "minipass",
+      "version": "7.1.3",
+      "scope": "optional",
+      "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+      "description": "minimal implementation of a PassThrough stream",
+      "purl": "pkg:npm/minipass@7.1.3",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/minipass/-/minipass-7.1.3.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b44047a839c8a0cff5ad7304d738246bd83a43695ca029311cbb9cece0c9e41c5b3f977873667970682d5c092ee7ddb4d02c7b762b874ce61f4810fc9fa9a6f0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "mute-stream@3.0.0",
+      "type": "library",
+      "name": "mute-stream",
+      "version": "3.0.0",
+      "scope": "optional",
+      "author": "GitHub Inc.",
+      "description": "Bytes go in, but they don't come out (when muted).",
+      "purl": "pkg:npm/mute-stream@3.0.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/mute-stream/-/mute-stream-3.0.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/npm/mute-stream.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "7641093d5bee9f816bcaa0666792a10e8d0af620d70309f4f2d30b0e29cd75104d3dc6040e2598cac2dc73a9379a34cc95b3fd2b2ca5bd1a5de3016dc2b4fdaf"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "npm-run-path@6.0.0",
+      "type": "library",
+      "name": "npm-run-path",
+      "version": "6.0.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Get your PATH prepended with locally installed binaries",
+      "purl": "pkg:npm/npm-run-path@6.0.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/npm-run-path/-/npm-run-path-6.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f6a9f2ed9f43b1053c3aedfd111b0f5383994254933f8ed2850cee299e8f457a582ed205825fc31016045ca96f7046bef6d1d570af0217cd58d95ef6a9a66158"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "onetime@7.0.0",
+      "type": "library",
+      "name": "onetime",
+      "version": "7.0.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Ensure a function is only called once",
+      "purl": "pkg:npm/onetime@7.0.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/onetime/-/onetime-7.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "55726373cec549c17cf2e69f4b726594382f026f9cfd295fcf4ea5a2b8f6b80637e2b954bb436dfaff30ade88899cae00238c81e9d6b5e94c394b386c36f56c1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "ora@9.4.1",
+      "type": "library",
+      "name": "ora",
+      "version": "9.4.1",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Elegant terminal spinner",
+      "purl": "pkg:npm/ora@9.4.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/ora/-/ora-9.4.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e95954f4c2d76e35500f4e00642317dbc855b40e5b52869dbd4a8eefa3140950348a5c096cc887b084d13dfc959baa7f042d00bff05732e8f1dfd5827b52c4ab"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "parse-ms@4.0.0",
+      "type": "library",
+      "name": "parse-ms",
+      "version": "4.0.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Parse milliseconds into an object",
+      "purl": "pkg:npm/parse-ms@4.0.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/parse-ms/-/parse-ms-4.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4d77ebca2adb9aadf8cbc401c20a8254b8bef28037a16c767809d29fad884f2121118696465559d83bcc33d7996ccb3f45fc4fbbf3cafda04bc868f822ba8c1f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "path-key@4.0.0",
+      "type": "library",
+      "name": "path-key",
+      "version": "4.0.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Get the PATH environment variable key cross-platform",
+      "purl": "pkg:npm/path-key@4.0.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/path-key/-/path-key-4.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "85a444ca9abbc6433b12b7e0232034cfe063e0018a94c49d9501368ef268ea1b960f511d90a615f86fd3e27ab4604176be04d3f24a8c14aa35b879fde74af849"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "path-scurry@2.0.2",
+      "type": "library",
+      "name": "path-scurry",
+      "version": "2.0.2",
+      "scope": "optional",
+      "author": "Isaac Z. Schlueter <i@izs.me> (https://blog.izs.me)",
+      "description": "walk paths fast and efficiently",
+      "purl": "pkg:npm/path-scurry@2.0.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/path-scurry/-/path-scurry-2.0.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/isaacs/path-scurry"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "dcefe2555b0900fb0e9e9c1621e0fe77acffecf9aa029c9078f52d0a77636ad8fff48e4bca51efb79aa5b856814f7239877af57a37d1d39e9cf850aff8d9cd5e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "playwright@1.64.1",
+      "type": "library",
+      "name": "playwright",
+      "version": "1.64.1",
+      "scope": "optional",
+      "author": "Microsoft Corporation",
+      "description": "A high-level API to automate web browsers",
+      "purl": "pkg:npm/playwright@1.64.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/playwright/-/playwright-1.64.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/microsoft/playwright.git"
+        },
+        {
+          "type": "website",
+          "url": "https://playwright.dev"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1c2ad5847af9410bb0628b301141936fb806a79db6c9f95bbff493f27178b05586b8b8d00add7b43f12e6e918648d2989f5b6c4c23d9c6a1e11c27d5511bbb50"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "playwright-core@1.64.1",
+      "type": "library",
+      "name": "playwright-core",
+      "version": "1.64.1",
+      "scope": "optional",
+      "author": "Microsoft Corporation",
+      "description": "A high-level API to automate web browsers",
+      "purl": "pkg:npm/playwright-core@1.64.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.64.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/microsoft/playwright.git"
+        },
+        {
+          "type": "website",
+          "url": "https://playwright.dev"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "042e2cf32e9211503a435ad2c594eda3c848d4a508df15e51c6660bc6a8fe08a8f748fdae855fd1f6f480cdcfbbcaa3d976d5be8b7d8a2c49c3cbe8cdf1c720d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "pretty-ms@9.3.1",
+      "type": "library",
+      "name": "pretty-ms",
+      "version": "9.3.1",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Convert milliseconds to a human readable string: `1337000000` → `15d 11h 23m 20s`",
+      "purl": "pkg:npm/pretty-ms@9.3.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/pretty-ms/-/pretty-ms-9.3.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1f3332dc67aadb79d500b0ff3362e5894f85f8cfa054db2f910596a9e059f070e20a0ce8e983c9fce9ab9adab6e0416b22c9346b712440611dedb0cea3e22118"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "react@19.3.1",
+      "type": "library",
+      "name": "react",
+      "version": "19.3.1",
+      "scope": "optional",
+      "description": "React is a JavaScript library for building user interfaces.",
+      "purl": "pkg:npm/react@19.3.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/react/-/react-19.3.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/react/react.git"
+        },
+        {
+          "type": "website",
+          "url": "https://react.dev/"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "40d85676dee7ae05565901b9f10b86b004778efdc76dee266f8bf3ef0d9cb271dabdc89926075ad423cd6a5745e9e571bfdd2e7778d45e92a51cbebd80edfccb"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "react-dom@19.3.1",
+      "type": "library",
+      "name": "react-dom",
+      "version": "19.3.1",
+      "scope": "optional",
+      "description": "React package for working with the DOM.",
+      "purl": "pkg:npm/react-dom@19.3.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/react-dom/-/react-dom-19.3.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/react/react.git"
+        },
+        {
+          "type": "website",
+          "url": "https://react.dev/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/react/react/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "6346c0473e77961102d4d302012b34fe3f9f681ff3aaddd1f21a6f8357bcfbad59549e142f451d0b87016d77d931c22e86b7e07882d32def9978109abd03ed29"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "react-i18next@17.1.0",
+      "type": "library",
+      "name": "react-i18next",
+      "version": "17.1.0",
+      "scope": "optional",
+      "author": "Jan Mühlemann <jan.muehlemann@gmail.com> (https://github.com/jamuhl)",
+      "description": "Internationalization for react done right. Using the i18next i18n ecosystem.",
+      "purl": "pkg:npm/react-i18next@17.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/react-i18next/-/react-i18next-17.1.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/i18next/react-i18next.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/i18next/react-i18next"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e15a2e3a74c3caf86fa97c7a599facdff7204a268bbad20b75890edcfd4cb3ee2a70a47b02df893f8562ec87879152f2555f8398dd65db73e7ef751cc121863c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "readdirp@5.1.1",
+      "type": "library",
+      "name": "readdirp",
+      "version": "5.1.1",
+      "scope": "optional",
+      "author": "Thorsten Lorenz <thlorenz@gmx.de> (thlorenz.com)",
+      "description": "Recursive version of fs.readdir with small RAM & CPU footprint",
+      "purl": "pkg:npm/readdirp@5.1.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/readdirp/-/readdirp-5.1.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/paulmillr/readdirp.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/paulmillr/readdirp"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/paulmillr/readdirp/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "2a4a3e6395d0e9f33e09edddab79bd606c6769c619625f5c035c198da17755baf2d8bde2d6a560f3e08080d3ec5d102b3cc50c09a391ee86bd36a9ed738dc928"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "restore-cursor@5.1.0",
+      "type": "library",
+      "name": "restore-cursor",
+      "version": "5.1.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Gracefully restore the CLI cursor on exit",
+      "purl": "pkg:npm/restore-cursor@5.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/restore-cursor/-/restore-cursor-5.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a0c03675caf0eaed187f12505e6df8d9b14a5ff138b06f6b6d3ccef69b54711fdef00df7707baf4ad8983b01fb7ecce4665675cffb5af400283e4d85e2a20e1c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "run-async@4.0.6",
+      "type": "library",
+      "name": "run-async",
+      "version": "4.0.6",
+      "scope": "optional",
+      "author": "Simon Boudrias <admin@simonboudrias.com>",
+      "description": "Utility method to run function either synchronously or asynchronously using the common `this.async()` style.",
+      "purl": "pkg:npm/run-async@4.0.6",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/run-async/-/run-async-4.0.6.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "2280e548b4ecdd8ab9f7799bdd9a0a58a5cc36edd4a4e6f186003f5ee89de69e1b6df8b68dd6351e3d26d4afb4fed12e413c4818c8500ea1a329bed1bb11a901"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "safer-buffer@2.1.2",
+      "type": "library",
+      "name": "safer-buffer",
+      "version": "2.1.2",
+      "scope": "optional",
+      "author": "Nikita Skovoroda",
+      "description": "Modern Buffer API polyfill without footguns",
+      "purl": "pkg:npm/safer-buffer@2.1.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/ChALkeR/safer-buffer.git"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/ChALkeR/safer-buffer/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "619a372bcd920fb462ca2d04d4440fa232f3ee4a5ea6749023d2323db1c78355d75debdbe5d248eeda72376003c467106c71bbbdcc911e4d1c6f0a9c42b894b6"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "scheduler@0.28.0",
+      "type": "library",
+      "name": "scheduler",
+      "version": "0.28.0",
+      "scope": "optional",
+      "description": "Cooperative scheduler for the browser environment.",
+      "purl": "pkg:npm/scheduler@0.28.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/scheduler/-/scheduler-0.28.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/react/react.git"
+        },
+        {
+          "type": "website",
+          "url": "https://react.dev/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/react/react/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8eea2b7c2988908c3cb53fa9e415d29ba3c98d017fc9c11898acb3511088b7f45a64884bf8fba56d0f58bb6cf51dd3890dda834e5c40d7ec4a0661d726c73303"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "signal-exit@4.1.0",
+      "type": "library",
+      "name": "signal-exit",
+      "version": "4.1.0",
+      "scope": "optional",
+      "author": "Ben Coe <ben@npmjs.com>",
+      "description": "when you want to fire an event no matter how a process exits.",
+      "purl": "pkg:npm/signal-exit@4.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/signal-exit/-/signal-exit-4.1.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/tapjs/signal-exit.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "6f3c99d5ef3cc3d3b588d25b2a73a5bd84eb58f0e5e3a3b56c6d03dd7227bfef6d90faf1acdf235144e21650e4926296827d4ce827c8035dd2b86a8e6bd2a8af"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "stdin-discarder@0.3.2",
+      "type": "library",
+      "name": "stdin-discarder",
+      "version": "0.3.2",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Discard stdin input except for Ctrl+C",
+      "purl": "pkg:npm/stdin-discarder@0.3.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/stdin-discarder/-/stdin-discarder-0.3.2.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "7823eed6a4713d5925e7ad39393585f16cf8d1be0c7f8e4d6392d09953d0e7df649dfb39421012526f466c9e410cc0ce5e0ae7874c3211dbf398bfff60c970d0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "string-width@8.3.0",
+      "type": "library",
+      "name": "string-width",
+      "version": "8.3.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "purl": "pkg:npm/string-width@8.3.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/string-width/-/string-width-8.3.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "65b9993342428a140df757569f1a22a53d8a384c87a84c9f4575328ee4615bc6ffc67a8f0e8ab88161150294d56bd75bdb037c9a6a229201416e387bd7e70679"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "strip-ansi@7.2.0",
+      "type": "library",
+      "name": "strip-ansi",
+      "version": "7.2.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Strip ANSI escape codes from a string",
+      "purl": "pkg:npm/strip-ansi@7.2.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.2.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c833cc363a785b27d80641e78c844b7dc6b58ba28cc860adb1582829eff3d7eeafba481a10d76018166df9998a3dce206afbc46793a01df1ddadace180dc86ef"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "strip-final-newline@4.0.0",
+      "type": "library",
+      "name": "strip-final-newline",
+      "version": "4.0.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Strip the final newline character from a string or Uint8Array",
+      "purl": "pkg:npm/strip-final-newline@4.0.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/strip-final-newline/-/strip-final-newline-4.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "6ae94525c0fa60af15d46ee2441e6d8a000fe13b0705966b395f298d5fbecdd53099e57cbb36d8ef29fa87d32cc0deb669d4ad35916e088c7885a06746e3036b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "unicorn-magic@0.3.0",
+      "type": "library",
+      "name": "unicorn-magic",
+      "version": "0.3.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Some useful utilities I often need",
+      "purl": "pkg:npm/unicorn-magic@0.3.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/unicorn-magic/-/unicorn-magic-0.3.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f900415c10af89f739e9fb1bbb1650e9289cdf0aaa7375966aac6ce7c82f26b70eb8df371c64c2c33de84b9a61cd4f4bb6144d13d56b2421422d480779e1677c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "use-sync-external-store@1.7.0",
+      "type": "library",
+      "name": "use-sync-external-store",
+      "version": "1.7.0",
+      "scope": "optional",
+      "description": "Backwards compatible shim for React's useSyncExternalStore. Works with any React that supports hooks.",
+      "purl": "pkg:npm/use-sync-external-store@1.7.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.7.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/react/react.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e8bf847a280731085d6883cd20550ac1f5894b058543c8096c9d832ceb39b0321e813c11f5f471be7337b9c8872a3219845cfe280bf67a6856311bc398c718f0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "which-command@0.1.0",
+      "type": "library",
+      "name": "which-command",
+      "version": "0.1.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "Find the absolute path to a command's executable, like the Unix `which` command",
+      "purl": "pkg:npm/which-command@0.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/which-command/-/which-command-0.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5d9ca8179ff9859b578ad230ceb53834a2be5ad6dbf5a07d09ecd4130d90d309582bc354610c42d6b45780db9e60bb41009c1721bfbfb45564e1da3372234930"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "yaml@2.9.1",
+      "type": "library",
+      "name": "yaml",
+      "version": "2.9.1",
+      "scope": "optional",
+      "author": "Eemeli Aro <eemeli@gmail.com>",
+      "description": "JavaScript parser and stringifier for YAML",
+      "purl": "pkg:npm/yaml@2.9.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/yaml/-/yaml-2.9.1.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://eemeli.org/yaml/"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "dcdc4df3eefc39dcdb4fb0bf5a31acc9f3c0b4968ddc5343b16c6fed8ee6703b13fe83a6816f01a72410145067bd91378fd63649dcf550b14b7b32fb11bdb217"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "yoctocolors@2.2.0",
+      "type": "library",
+      "name": "yoctocolors",
+      "version": "2.2.0",
+      "scope": "optional",
+      "author": "Sindre Sorhus",
+      "description": "The smallest and fastest command-line coloring package on the internet",
+      "purl": "pkg:npm/yoctocolors@2.2.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/yoctocolors/-/yoctocolors-2.2.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c58a9d64550afd561accd97fa020d837edd6968590c0c7d9c41a2236deaa37293ec5f39d8b9f7c9ae584e36acd645a7590d3a2a96f77eaae51854767a6a1254a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "zeroloc-gate@0.1.0-beta.1",
+      "dependsOn": [
+        "@formatjs/icu-messageformat-parser@3.5.21",
+        "i18next-cli@1.77.0",
+        "@playwright/test@1.64.1",
+        "axe-core@4.14.0",
+        "react@19.3.1",
+        "react-dom@19.3.1",
+        "i18next@26.5.0"
+      ]
+    },
+    {
+      "ref": "@babel/runtime@7.29.10",
+      "dependsOn": []
+    },
+    {
+      "ref": "@croct/json@2.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@croct/json5-parser@0.2.2",
+      "dependsOn": [
+        "@croct/json@2.1.0"
+      ]
+    },
+    {
+      "ref": "@formatjs/icu-messageformat-parser@3.5.21",
+      "dependsOn": [
+        "@formatjs/icu-skeleton-parser@2.1.12"
+      ]
+    },
+    {
+      "ref": "@formatjs/icu-skeleton-parser@2.1.12",
+      "dependsOn": []
+    },
+    {
+      "ref": "@inquirer/ansi@2.0.9",
+      "dependsOn": []
+    },
+    {
+      "ref": "@inquirer/checkbox@5.2.6",
+      "dependsOn": [
+        "@inquirer/ansi@2.0.9",
+        "@inquirer/core@12.0.4",
+        "@inquirer/figures@2.0.9",
+        "@inquirer/type@4.2.0"
+      ]
+    },
+    {
+      "ref": "@inquirer/confirm@6.3.3",
+      "dependsOn": [
+        "@inquirer/core@12.0.4",
+        "@inquirer/type@4.2.0"
+      ]
+    },
+    {
+      "ref": "@inquirer/core@12.0.4",
+      "dependsOn": [
+        "@inquirer/ansi@2.0.9",
+        "@inquirer/figures@2.0.9",
+        "@inquirer/type@4.2.0",
+        "cli-width@4.1.0",
+        "fast-wrap-ansi@0.2.2",
+        "mute-stream@3.0.0",
+        "signal-exit@4.1.0"
+      ]
+    },
+    {
+      "ref": "@inquirer/editor@5.3.4",
+      "dependsOn": [
+        "@inquirer/core@12.0.4",
+        "@inquirer/external-editor@3.0.6",
+        "@inquirer/type@4.2.0"
+      ]
+    },
+    {
+      "ref": "@inquirer/expand@5.1.6",
+      "dependsOn": [
+        "@inquirer/core@12.0.4",
+        "@inquirer/type@4.2.0"
+      ]
+    },
+    {
+      "ref": "@inquirer/external-editor@3.0.6",
+      "dependsOn": [
+        "chardet@2.2.0",
+        "iconv-lite@0.7.3"
+      ]
+    },
+    {
+      "ref": "@inquirer/figures@2.0.9",
+      "dependsOn": []
+    },
+    {
+      "ref": "@inquirer/input@5.1.7",
+      "dependsOn": [
+        "@inquirer/core@12.0.4",
+        "@inquirer/type@4.2.0"
+      ]
+    },
+    {
+      "ref": "@inquirer/number@4.2.4",
+      "dependsOn": [
+        "@inquirer/core@12.0.4",
+        "@inquirer/type@4.2.0"
+      ]
+    },
+    {
+      "ref": "@inquirer/password@5.2.3",
+      "dependsOn": [
+        "@inquirer/ansi@2.0.9",
+        "@inquirer/core@12.0.4",
+        "@inquirer/type@4.2.0"
+      ]
+    },
+    {
+      "ref": "@inquirer/prompts@8.7.3",
+      "dependsOn": [
+        "@inquirer/checkbox@5.2.6",
+        "@inquirer/confirm@6.3.3",
+        "@inquirer/editor@5.3.4",
+        "@inquirer/expand@5.1.6",
+        "@inquirer/input@5.1.7",
+        "@inquirer/number@4.2.4",
+        "@inquirer/password@5.2.3",
+        "@inquirer/rawlist@5.3.6",
+        "@inquirer/search@4.3.4",
+        "@inquirer/select@5.2.6"
+      ]
+    },
+    {
+      "ref": "@inquirer/rawlist@5.3.6",
+      "dependsOn": [
+        "@inquirer/core@12.0.4",
+        "@inquirer/type@4.2.0"
+      ]
+    },
+    {
+      "ref": "@inquirer/search@4.3.4",
+      "dependsOn": [
+        "@inquirer/core@12.0.4",
+        "@inquirer/figures@2.0.9",
+        "@inquirer/type@4.2.0"
+      ]
+    },
+    {
+      "ref": "@inquirer/select@5.2.6",
+      "dependsOn": [
+        "@inquirer/ansi@2.0.9",
+        "@inquirer/core@12.0.4",
+        "@inquirer/figures@2.0.9",
+        "@inquirer/type@4.2.0"
+      ]
+    },
+    {
+      "ref": "@inquirer/type@4.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@jridgewell/sourcemap-codec@1.6.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@playwright/test@1.64.1",
+      "dependsOn": [
+        "playwright@1.64.1"
+      ]
+    },
+    {
+      "ref": "@sec-ant/readable-stream@0.4.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "@sindresorhus/merge-streams@4.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@swc/core@1.16.18",
+      "dependsOn": [
+        "@swc/counter@0.1.3",
+        "@swc/types@0.1.28",
+        "@swc/core-win32-x64-msvc@1.16.18"
+      ]
+    },
+    {
+      "ref": "@swc/core-win32-x64-msvc@1.16.18",
+      "dependsOn": []
+    },
+    {
+      "ref": "@swc/counter@0.1.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "@swc/types@0.1.28",
+      "dependsOn": [
+        "@swc/counter@0.1.3"
+      ]
+    },
+    {
+      "ref": "ansi-regex@6.4.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "axe-core@4.14.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "balanced-match@4.0.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "brace-expansion@5.0.12",
+      "dependsOn": [
+        "balanced-match@4.0.4"
+      ]
+    },
+    {
+      "ref": "chalk@5.6.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "chardet@2.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "chokidar@5.0.0",
+      "dependsOn": [
+        "readdirp@5.1.1"
+      ]
+    },
+    {
+      "ref": "cli-cursor@5.0.0",
+      "dependsOn": [
+        "restore-cursor@5.1.0"
+      ]
+    },
+    {
+      "ref": "cli-spinners@3.4.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "cli-width@4.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "commander@15.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "execa@10.2.0",
+      "dependsOn": [
+        "@sindresorhus/merge-streams@4.0.0",
+        "figures@6.1.0",
+        "get-stream@9.0.1",
+        "human-signals@8.0.1",
+        "is-plain-obj@4.1.0",
+        "is-stream@4.0.1",
+        "npm-run-path@6.0.0",
+        "pretty-ms@9.3.1",
+        "signal-exit@4.1.0",
+        "strip-final-newline@4.0.0",
+        "which-command@0.1.0",
+        "yoctocolors@2.2.0"
+      ]
+    },
+    {
+      "ref": "fast-string-truncated-width@3.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "fast-string-width@3.0.2",
+      "dependsOn": [
+        "fast-string-truncated-width@3.0.3"
+      ]
+    },
+    {
+      "ref": "fast-wrap-ansi@0.2.2",
+      "dependsOn": [
+        "fast-string-width@3.0.2"
+      ]
+    },
+    {
+      "ref": "figures@6.1.0",
+      "dependsOn": [
+        "is-unicode-supported@2.1.0"
+      ]
+    },
+    {
+      "ref": "get-east-asian-width@1.7.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "get-stream@9.0.1",
+      "dependsOn": [
+        "@sec-ant/readable-stream@0.4.1",
+        "is-stream@4.0.1"
+      ]
+    },
+    {
+      "ref": "glob@13.0.6",
+      "dependsOn": [
+        "minimatch@10.2.6",
+        "minipass@7.1.3",
+        "path-scurry@2.0.2"
+      ]
+    },
+    {
+      "ref": "html-parse-stringify@4.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "human-signals@8.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "i18next@26.5.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "i18next-cli@1.77.0",
+      "dependsOn": [
+        "@croct/json5-parser@0.2.2",
+        "@formatjs/icu-messageformat-parser@3.5.21",
+        "@swc/core@1.16.18",
+        "chokidar@5.0.0",
+        "commander@15.0.0",
+        "execa@10.2.0",
+        "glob@13.0.6",
+        "i18next@26.5.0",
+        "i18next-resources-for-ts@2.1.1",
+        "inquirer@14.2.3",
+        "jiti@2.7.0",
+        "jsonc-parser@3.3.1",
+        "magic-string@1.4.3",
+        "messageformat@4.1.0",
+        "minimatch@10.2.6",
+        "ora@9.4.1",
+        "react-i18next@17.1.0",
+        "yaml@2.9.1"
+      ]
+    },
+    {
+      "ref": "i18next-resources-for-ts@2.1.1",
+      "dependsOn": [
+        "@babel/runtime@7.29.10",
+        "@swc/core@1.16.18",
+        "chokidar@5.0.0",
+        "yaml@2.9.1"
+      ]
+    },
+    {
+      "ref": "iconv-lite@0.7.3",
+      "dependsOn": [
+        "safer-buffer@2.1.2"
+      ]
+    },
+    {
+      "ref": "inquirer@14.2.3",
+      "dependsOn": [
+        "@inquirer/ansi@2.0.9",
+        "@inquirer/core@12.0.4",
+        "@inquirer/prompts@8.7.3",
+        "@inquirer/type@4.2.0",
+        "mute-stream@3.0.0",
+        "run-async@4.0.6"
+      ]
+    },
+    {
+      "ref": "is-interactive@2.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "is-plain-obj@4.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "is-stream@4.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "is-unicode-supported@2.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "jiti@2.7.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "jsonc-parser@3.3.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "log-symbols@7.0.1",
+      "dependsOn": [
+        "is-unicode-supported@2.1.0",
+        "yoctocolors@2.2.0"
+      ]
+    },
+    {
+      "ref": "lru-cache@11.5.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "magic-string@1.4.3",
+      "dependsOn": [
+        "@jridgewell/sourcemap-codec@1.6.0"
+      ]
+    },
+    {
+      "ref": "messageformat@4.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "mimic-function@5.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "minimatch@10.2.6",
+      "dependsOn": [
+        "brace-expansion@5.0.12"
+      ]
+    },
+    {
+      "ref": "minipass@7.1.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "mute-stream@3.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "npm-run-path@6.0.0",
+      "dependsOn": [
+        "path-key@4.0.0",
+        "unicorn-magic@0.3.0"
+      ]
+    },
+    {
+      "ref": "onetime@7.0.0",
+      "dependsOn": [
+        "mimic-function@5.0.1"
+      ]
+    },
+    {
+      "ref": "ora@9.4.1",
+      "dependsOn": [
+        "chalk@5.6.2",
+        "cli-cursor@5.0.0",
+        "cli-spinners@3.4.0",
+        "is-interactive@2.0.0",
+        "is-unicode-supported@2.1.0",
+        "log-symbols@7.0.1",
+        "stdin-discarder@0.3.2",
+        "string-width@8.3.0"
+      ]
+    },
+    {
+      "ref": "parse-ms@4.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "path-key@4.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "path-scurry@2.0.2",
+      "dependsOn": [
+        "lru-cache@11.5.3",
+        "minipass@7.1.3"
+      ]
+    },
+    {
+      "ref": "playwright@1.64.1",
+      "dependsOn": [
+        "playwright-core@1.64.1"
+      ]
+    },
+    {
+      "ref": "playwright-core@1.64.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pretty-ms@9.3.1",
+      "dependsOn": [
+        "parse-ms@4.0.0"
+      ]
+    },
+    {
+      "ref": "react@19.3.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "react-dom@19.3.1",
+      "dependsOn": [
+        "react@19.3.1",
+        "scheduler@0.28.0"
+      ]
+    },
+    {
+      "ref": "react-i18next@17.1.0",
+      "dependsOn": [
+        "i18next@26.5.0",
+        "react@19.3.1",
+        "@babel/runtime@7.29.10",
+        "html-parse-stringify@4.0.1",
+        "use-sync-external-store@1.7.0"
+      ]
+    },
+    {
+      "ref": "readdirp@5.1.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "restore-cursor@5.1.0",
+      "dependsOn": [
+        "onetime@7.0.0",
+        "signal-exit@4.1.0"
+      ]
+    },
+    {
+      "ref": "run-async@4.0.6",
+      "dependsOn": []
+    },
+    {
+      "ref": "safer-buffer@2.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "scheduler@0.28.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "signal-exit@4.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "stdin-discarder@0.3.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "string-width@8.3.0",
+      "dependsOn": [
+        "get-east-asian-width@1.7.0",
+        "strip-ansi@7.2.0"
+      ]
+    },
+    {
+      "ref": "strip-ansi@7.2.0",
+      "dependsOn": [
+        "ansi-regex@6.4.0"
+      ]
+    },
+    {
+      "ref": "strip-final-newline@4.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "unicorn-magic@0.3.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "use-sync-external-store@1.7.0",
+      "dependsOn": [
+        "react@19.3.1"
+      ]
+    },
+    {
+      "ref": "which-command@0.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "yaml@2.9.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "yoctocolors@2.2.0",
+      "dependsOn": []
+    }
+  ]
+}

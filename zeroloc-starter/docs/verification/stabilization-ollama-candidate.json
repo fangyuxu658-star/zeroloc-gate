@@ -1,0 +1,8 @@
+{
+  "app": {
+    "title": "ZeroLoc – human reviewed",
+    "greeting": "Hallo {{name}}",
+    "items": "Sie haben {{count}} Einträge.",
+    "continue": "Continue"
+  }
+}

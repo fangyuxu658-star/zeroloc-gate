@@ -1,0 +1,1 @@
+{"browser":"firefox","version":"157.0","executable":"<USERPROFILE>\\Documents\\ChatGPT\\本地化开源项目\\zeroloc-starter\\.local-tools\\playwright\\firefox-1555\\firefox\\firefox.exe"}

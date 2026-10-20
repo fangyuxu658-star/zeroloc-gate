@@ -1,0 +1,35 @@
+{
+  "provider": "ollama",
+  "target": "examples/translation/de.json",
+  "dryRun": true,
+  "applied": false,
+  "candidates": [
+    {
+      "key": "app.greeting",
+      "sourceLocale": "en",
+      "targetLocale": "de",
+      "format": "i18next",
+      "signature": [
+        "escaped:name"
+      ]
+    },
+    {
+      "key": "app.items",
+      "sourceLocale": "en",
+      "targetLocale": "de",
+      "format": "i18next",
+      "signature": [
+        "escaped:count"
+      ]
+    },
+    {
+      "key": "app.continue",
+      "sourceLocale": "en",
+      "targetLocale": "de",
+      "format": "i18next",
+      "signature": []
+    }
+  ],
+  "patch": [],
+  "requiresHumanReview": true
+}

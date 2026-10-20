@@ -1,0 +1,1 @@
+ZeroLoc Gate error: Format must be text, json or sarif

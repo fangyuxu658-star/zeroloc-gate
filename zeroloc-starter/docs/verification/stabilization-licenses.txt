@@ -1,0 +1,5 @@
+
+> zeroloc-gate@0.1.0 licenses:check
+> node scripts/licenses.mjs --check
+
+Verified 107 locked third-party packages; no unreviewed license expressions.

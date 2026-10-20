@@ -1,0 +1,66 @@
+name: ZeroLoc CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: zeroloc-starter
+
+jobs:
+  regression:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [22, 24]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: ${{ matrix.node }}
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - run: npm run check:example
+      - run: npm run licenses:check
+      - run: npm audit --audit-level=high
+      - name: Structured reports and SBOM
+        shell: bash
+        run: |
+          mkdir -p artifacts
+          node bin/zeroloc.mjs check --source test/fixtures/icu-source.json --targets test/fixtures/icu-good.json --message-format icu --format json > artifacts/check.json
+          node bin/zeroloc.mjs check --source test/fixtures/icu-source.json --targets test/fixtures/icu-good.json --message-format icu --format sarif > artifacts/check.sarif
+          npm sbom --sbom-format cyclonedx > artifacts/sbom.cdx.json
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: reports-${{ matrix.os }}-node${{ matrix.node }}
+          path: zeroloc-starter/artifacts/
+          retention-days: 7
+
+  visual:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts
+      - run: npx --no-install playwright install --with-deps chromium firefox
+      - run: npm run test:visual -- --all-browsers
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        if: always()
+        with:
+          name: visual-findings
+          path: zeroloc-starter/artifacts/
+          retention-days: 7
+

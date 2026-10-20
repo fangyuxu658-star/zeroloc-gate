@@ -1,0 +1,13 @@
+{
+  "tool": "ZeroLoc Gate",
+  "version": "0.1.0",
+  "source": "<USERPROFILE>\\Documents\\ChatGPT\\本地化开源项目\\zeroloc-starter\\artifacts\\ollama-e2e\\source.json",
+  "sourceKeys": 4,
+  "targetCount": 1,
+  "issues": [],
+  "errors": 0,
+  "warnings": 0,
+  "passed": true,
+  "messageFormat": "i18next",
+  "limitations": "Structural checks only; not translation meaning, rendered HTML safety, UI layout, or cultural appropriateness. Legacy mode only supports simple placeholders. Configure ICU/i18next explicitly."
+}

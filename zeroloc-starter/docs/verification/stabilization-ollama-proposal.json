@@ -1,0 +1,47 @@
+{
+  "provider": "ollama",
+  "target": "<USERPROFILE>\\Documents\\ChatGPT\\本地化开源项目\\zeroloc-starter\\artifacts\\ollama-e2e\\target-original.json",
+  "dryRun": false,
+  "applied": false,
+  "candidates": [
+    {
+      "key": "app.greeting",
+      "value": "Hallo {{name}}"
+    },
+    {
+      "key": "app.items",
+      "value": "Sie haben {{count}} Einträge."
+    },
+    {
+      "key": "app.continue",
+      "value": "Continue"
+    }
+  ],
+  "patch": [
+    {
+      "op": "test",
+      "path": "",
+      "value": {
+        "app": {
+          "title": "ZeroLoc – human reviewed"
+        }
+      }
+    },
+    {
+      "op": "add",
+      "path": "/app/greeting",
+      "value": "Hallo {{name}}"
+    },
+    {
+      "op": "add",
+      "path": "/app/items",
+      "value": "Sie haben {{count}} Einträge."
+    },
+    {
+      "op": "add",
+      "path": "/app/continue",
+      "value": "Continue"
+    }
+  ],
+  "requiresHumanReview": true
+}

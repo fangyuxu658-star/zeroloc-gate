@@ -1,0 +1,17 @@
+node_modules/
+artifacts/
+.local-tools/
+.local-models/
+test-results/
+playwright-report/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.gguf
+*.safetensors
+id_rsa
+id_ed25519

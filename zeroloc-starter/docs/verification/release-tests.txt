@@ -1,0 +1,33 @@
+
+> zeroloc-gate@0.1.0-beta.1 test
+> node --test
+
+✔ nested JSON keys are flattened (2.1273ms)
+✔ i18next and simple ICU placeholders are detected (0.4704ms)
+✔ detects missing, empty, placeholder mismatch and extra keys (0.7016ms)
+✔ rejects unsupported JSON shapes instead of ignoring them (0.5976ms)
+✔ passes good example catalogs (11.5135ms)
+✔ strict-extra turns extra-key warning into gate failure (2.3358ms)
+✔ real pinned i18next extraction returns catalog and diff without writing (2344.3775ms)
+✔ unknown, ambiguous and Paraglide projects fail explicitly (22.2199ms)
+✔ invalid source produces a failure, never a partial successful extraction (2328.822ms)
+✔ ICU nested plural/select, quoting, tags and locale plural categories (5.0113ms)
+✔ ICU rejects missing other, broken syntax, mixed placeholders and tags (0.8625ms)
+✔ ICU detects missing variables, changed argument roles and missing tags (0.3774ms)
+✔ explicit syntax, nested catalogs, empty values and invalid source (1.1871ms)
+✔ license gate accepts reviewed expressions and rejects copyleft service code or unknown licenses (1.8412ms)
+✔ real CLI success and failure gates with parseable JSON and SARIF (470.0983ms)
+✔ rejects prototype-related keys without polluting object prototypes (0.6339ms)
+✔ dry-run stays offline; real local HTTP candidates produce patch and preserve human text (135.7691ms)
+✔ rejects external origins, cloud models, mismatched variables and HTML payloads (24.9478ms)
+✔ validates source syntax even when every target message already has human text (12.5551ms)
+✔ redirects fail with redacted errors instead of contacting an external origin (7.1627ms)
+✔ hung local HTTP server is timed out; oversized and malformed responses are rejected (72.9323ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4954.3685
