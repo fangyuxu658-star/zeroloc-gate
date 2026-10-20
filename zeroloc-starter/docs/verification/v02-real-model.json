@@ -1,0 +1,194 @@
+{
+  "passed": true,
+  "provider": "real-local-ollama",
+  "modelMetadata": {
+    "version": "0.40.6",
+    "model": "qwen2.5:0.5b",
+    "digest": "a8b0c51577010a279d933d14c2a8ab4b268079d44c5c8830c0a93900f1827c67",
+    "size": 397821319,
+    "licenseSha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+  },
+  "results": [
+    {
+      "scenario": "success",
+      "passed": true,
+      "sourceChangeDetected": true,
+      "candidate": {
+        "key": "app.newGreeting",
+        "value": "Hallo {{name}}, "
+      },
+      "validation": {
+        "passed": true,
+        "checks": [
+          {
+            "kind": "unit",
+            "file": "verify.test.mjs",
+            "passed": true,
+            "exitCode": 0,
+            "timedOut": false,
+            "outputLimited": false,
+            "outputSha256": "a6c6eb84ccc221253238ad64d77ca568f6222c63abe728a6148e2059c69f7a66"
+          },
+          {
+            "kind": "ui",
+            "passed": true,
+            "cases": 8,
+            "findings": [],
+            "screenshots": [
+              {
+                "file": "chromium-en-375x812.png",
+                "sha256": "6055aa974d5706e3af057e1e73ae29a9d387918c767ffe8ebc4cd4b5e662ea10"
+              },
+              {
+                "file": "chromium-en-1280x800.png",
+                "sha256": "c68726ecb2814b3a19fc52093d7c0e9e41a386c5f889fb946c99fa4230b0ec09"
+              },
+              {
+                "file": "chromium-de-375x812.png",
+                "sha256": "34eb22af758c392a9d6764f51a1bf42d34a1e9ceeed7465a8aafe2409ebd902f"
+              },
+              {
+                "file": "chromium-de-1280x800.png",
+                "sha256": "521007ffb99df794c61a200968a3d07dad19bcd011e42716132d1cd1d677102a"
+              },
+              {
+                "file": "firefox-en-375x812.png",
+                "sha256": "654dedf7ac8426a77955afed0d3cca5aaabed9e40a737367f6d16c75a3b45c17"
+              },
+              {
+                "file": "firefox-en-1280x800.png",
+                "sha256": "104c08cf08639ab7b3b19d6a859a5870648772eb7d9552d051dadbe6be7b22d8"
+              },
+              {
+                "file": "firefox-de-375x812.png",
+                "sha256": "f555aba825f8f9949c5b85bf6362fafe14d45410baa38cb25b381959b3132c52"
+              },
+              {
+                "file": "firefox-de-1280x800.png",
+                "sha256": "a284237804b952dfd07bfe6a9fbf375ce382a6c515e2a74da03d986e54cd9893"
+              }
+            ]
+          }
+        ],
+        "configSha256": "db27b99065281e4bcd190635a2d2e2d1a5b2e812a456bf7d80fb5e50069f65b6",
+        "planId": "ecb0eb3a3f843a21f927d68e7b35624c8d2b7ba75700c7e4e794e83d2ae8155d"
+      },
+      "preparedBranch": "codex/zeroloc-ecb0eb3a3f843a21",
+      "preparedFiles": [
+        "locales/de.json",
+        "report.json"
+      ],
+      "mainUnchanged": true
+    },
+    {
+      "scenario": "unit-failure",
+      "passed": true,
+      "rolledBack": true,
+      "originalBytesRestored": true,
+      "validation": {
+        "passed": false,
+        "checks": [
+          {
+            "kind": "unit",
+            "file": "verify.test.mjs",
+            "passed": false,
+            "exitCode": 1,
+            "timedOut": false,
+            "outputLimited": false,
+            "outputSha256": "9ed0ee033aaf675b096f90b1c0ec6b52e06f32c898d4d512d3ffe4cd1390d742"
+          }
+        ],
+        "configSha256": "e7186419a1454915c495fe808c661124e28adc9de4f2b7462cc070c57f083b1e"
+      }
+    },
+    {
+      "scenario": "ui-failure",
+      "passed": true,
+      "rolledBack": true,
+      "originalBytesRestored": true,
+      "validation": {
+        "passed": false,
+        "checks": [
+          {
+            "kind": "unit",
+            "file": "verify.test.mjs",
+            "passed": true,
+            "exitCode": 0,
+            "timedOut": false,
+            "outputLimited": false,
+            "outputSha256": "11ad1adcd3ae61ff2b28d6d4cc77e322ddad6ee854d0a59bfc8fd32f883a569e"
+          },
+          {
+            "kind": "ui",
+            "passed": false,
+            "cases": 1,
+            "findings": [
+              {
+                "code": "PAGE_OVERFLOW",
+                "level": "error"
+              },
+              {
+                "code": "ELEMENT_OVERFLOW",
+                "level": "error",
+                "element": "div"
+              },
+              {
+                "code": "ELEMENT_OVERFLOW",
+                "level": "error",
+                "element": "p"
+              },
+              {
+                "code": "button-name",
+                "impact": "critical",
+                "help": "Buttons must have discernible text",
+                "nodes": [
+                  [
+                    "div > button"
+                  ]
+                ],
+                "level": "error",
+                "category": "a11y"
+              }
+            ],
+            "screenshots": [
+              {
+                "file": "chromium-de-375x812.png",
+                "sha256": "c6c596117f09756c6a86783f6b038ddd87917ebb1a7b5755759ff75515bfd7eb"
+              }
+            ]
+          }
+        ],
+        "configSha256": "1b605372a085c26eb57168d5224503c1c66b541354ccf398a8027971969e1665",
+        "planId": "f9e2214ead76a1bfd81a275cb236de45f74b595e62c525745a0980015e3f8228"
+      }
+    },
+    {
+      "scenario": "timeout",
+      "passed": true,
+      "rolledBack": true,
+      "originalBytesRestored": true,
+      "validation": {
+        "passed": false,
+        "checks": [
+          {
+            "kind": "unit",
+            "file": "verify.test.mjs",
+            "passed": false,
+            "exitCode": 1,
+            "timedOut": true,
+            "outputLimited": false,
+            "outputSha256": "f5b763777201fdb5a4d496b4e1aadc48ea4ff64aab904e7ad011837d8cc551ae"
+          }
+        ],
+        "configSha256": "1bc142dd2f524146731782b0f6be808b8ed8eb248a08edeb7ddbe80be52d5d4e"
+      }
+    },
+    {
+      "scenario": "conflict",
+      "passed": true,
+      "staleProposalRejected": true,
+      "externalEditPreserved": true
+    }
+  ],
+  "limitations": "Synthetic business data in a real React/i18next SSR application; language heuristics do not prove semantics. No remote push/PR or main modification in this harness."
+}

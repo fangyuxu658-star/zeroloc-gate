@@ -58,4 +58,16 @@ test('symlinks and hardlink aliases are rejected',()=>fixture(async o=>{
 test('legacy root-test proposals require explicit review-time binding',()=>fixture(async o=>{
   const legacy={patch:o.proposal.patch};await assert.rejects(planApply({...o,proposal:legacy}),/Legacy/);
   assert.equal((await planApply({...o,proposal:legacy,bindLegacy:true})).legacyBound,true);
+  assert.equal((await planApply({...o,proposal:legacy.patch,bindLegacy:true})).legacyBound,true);
+}));
+test('missing nested parents apply safely, target formatting edits invalidate proposal, stale locks are retained',()=>fixture(async o=>{
+  await writeFile(join(o.root,'de.json'),'{"human":"Menschlich"}');
+  o.proposal=await translateFiles({sourcePath:join(o.root,'en.json'),targetPath:join(o.root,'de.json'),sourceLocale:'en',targetLocale:'de',messageFormat:'i18next',provider:{translate:async()=> 'Hallo {{name}}'},dryRun:false});
+  const plan=await planApply(o),result=await applyProposal({...o,write:true,approve:plan.planId});assert.equal(result.passed,true);
+  await recoverApply({root:o.root,journal:result.journal,approve:plan.resultSha256});
+  const original=await readFile(join(o.root,'de.json'));await writeFile(join(o.root,'de.json'),Buffer.concat([original,Buffer.from('\n')]));
+  await assert.rejects(planApply(o),/CONFLICT/);await writeFile(join(o.root,'de.json'),original);
+  await writeFile(join(o.root,'de.json.zeroloc.lock'),'existing lock');
+  await assert.rejects(applyProposal({...o,write:true,approve:plan.planId}),/EEXIST/);
+  assert.equal(await readFile(join(o.root,'de.json.zeroloc.lock'),'utf8'),'existing lock');assert.deepEqual(await readFile(join(o.root,'de.json')),original);
 }));

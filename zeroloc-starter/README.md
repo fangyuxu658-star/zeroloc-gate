@@ -1,10 +1,9 @@
 # ZeroLoc Gate
 
-> 最新收尾：PR #1 已 Squash Merge，main d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a 的 [CI 5/5 成功](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284)。保护规则、Tag 和 Pre-release 尚未执行；本轮文档更新尚未合并。见 [收尾记录](docs/RELEASE_CLOSEOUT_CN.md)。
 
 本地优先的嵌套 JSON 本地化质量门禁。MIT 核心通过可替换适配器复用 FormatJS、i18next-cli、Ollama HTTP、Playwright 和 axe-core；不要求账号、凭证或托管服务。结构匹配不代表语义翻译正确。
 
-当前发布候选为 **v0.1.0-beta.1**，公开仓库为 [fangyuxu658-star/zeroloc-gate](https://github.com/fangyuxu658-star/zeroloc-gate)，`package.json` 保持 private 防止误发 npm。[首次 main CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39347428254) 已通过。测试 PR、最新状态和发布限制见 [STATUS](STATUS.md)、[验收日志](docs/BETA_RELEASE_ACCEPTANCE_CN.md) 与 [Release Notes](docs/RELEASE_NOTES_v0.1.0-beta.1.md)。尚无正式 tag/Release。
+已发布 beta：[v0.1.0-beta.1](https://github.com/fangyuxu658-star/zeroloc-gate/releases/tag/v0.1.0-beta.1)。本分支为未发布的 **v0.2 Safe Apply 开发版**，参见 [新 CLI/授权/恢复说明](docs/V02_SAFE_APPLY_CN.md)、[真实验收](docs/V02_ENGINEERING_CN.md) 和 [STATUS](STATUS.md)。本地功能免费、自部署、无云端依赖；GitHub 仅为显式选择的远端适配器。
 
 ## 初始化
 
@@ -72,7 +71,7 @@ node bin/zeroloc.mjs visual --url http://127.0.0.1:4173 --output artifacts/my-ap
 
 ## GitHub remote usage 与 PR flow
 
-Git 根在本目录上一层，源码位于 zeroloc-starter/。origin 已配置为 https://github.com/fangyuxu658-star/zeroloc-gate.git，main 首次提交为 4a64f6d6350ed5e80c1738ffa145a8dba46da66f。从最新 main 创建测试/文档分支，经本地检查后 push 并建立 Draft PR，观察 PR Checks 后由维护者决定合并；禁止直接改 main 或合并故意失败代码。分支保护当前未启用，不将 CI 红灯误称为服务端已禁止合并。
+Git 根在本目录上一层，源码位于 zeroloc-starter/。origin 已配置为 https://github.com/fangyuxu658-star/zeroloc-gate.git，main 首次提交为 4a64f6d6350ed5e80c1738ffa145a8dba46da66f。从最新 main 创建测试/文档分支，经本地检查后 push 并建立 Draft PR，观察 PR Checks 后由维护者决定合并；禁止直接改 main 或合并故意失败代码。main Ruleset25455995 已 Active，要求PR、五项必要CI和零强制审批；不得自动合并或绕过。
 
 ```sh
 git clone https://github.com/fangyuxu658-star/zeroloc-gate.git

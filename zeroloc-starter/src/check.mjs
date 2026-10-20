@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { messageSignature } from './formats.mjs';
+import { VERSION } from './version.mjs';
 
 /** Supports nested JSON dictionaries with leaf string values. */
 export function flattenMessages(node, prefix = '') {
@@ -86,7 +87,7 @@ export async function checkFiles({ sourcePath, targetPaths, strictExtra = false,
   const errors = issues.filter(x => x.level === 'error').length;
   const warnings = issues.filter(x => x.level === 'warning').length;
   return {
-    tool: 'ZeroLoc Gate', version: '0.1.0-beta.1', source: sourcePath, sourceKeys: Object.keys(source).length,
+    tool: 'ZeroLoc Gate', version: VERSION, source: sourcePath, sourceKeys: Object.keys(source).length,
     targetCount: targetPaths.length, issues, errors, warnings, passed: errors === 0 && (!strictExtra || warnings === 0),
     messageFormat, limitations: 'Structural checks only; not translation meaning, rendered HTML safety, UI layout, or cultural appropriateness. Legacy mode only supports simple placeholders. Configure ICU/i18next explicitly.'
   };

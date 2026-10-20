@@ -1,10 +1,10 @@
 import { spawn, execFile } from 'node:child_process';
 import { mkdtemp, readFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join, basename } from 'node:path';
+import { join, basename, resolve as resolvePath } from 'node:path';
 import { createHash } from 'node:crypto';
 import { readResource, parseJson, digest } from './safe-files.mjs';
-import { visualQA } from './checks/visual.mjs';
+import { visualQA, visualOrigin } from './checks/visual.mjs';
 
 function stop(child) {
   if(!child.pid)return;
@@ -14,7 +14,7 @@ function stop(child) {
 async function unitTest(root,file,signal) {
   return new Promise(resolve=>{
     const env=Object.fromEntries(['PATH','Path','SystemRoot','SYSTEMROOT','TEMP','TMP','TMPDIR'].filter(k=>process.env[k]!==undefined).map(k=>[k,process.env[k]]));
-    const child=spawn(process.execPath,['--test',file],{cwd:root,env,shell:false,windowsHide:true,detached:process.platform!=='win32',stdio:['ignore','pipe','pipe']});
+    const child=spawn(process.execPath,['--test',resolvePath(root,file)],{cwd:root,env,shell:false,windowsHide:true,detached:process.platform!=='win32',stdio:['ignore','pipe','pipe']});
     const hash=createHash('sha256');let size=0,limited=false;
     for(const stream of [child.stdout,child.stderr])stream.on('data',chunk=>{size+=chunk.length;if(size<=1048576)hash.update(chunk);else{limited=true;stop(child);}});
     const abort=()=>stop(child);signal.addEventListener('abort',abort,{once:true});if(signal.aborted)abort();
@@ -27,11 +27,12 @@ async function unitTest(root,file,signal) {
 /** JSON only. Consent binds config bytes; declared Node test entrypoints bind script bytes. No shell/build hooks. */
 export async function configuredValidator({root='.',configPath,approval}) {
   const file=await readResource(root,configPath),config=parseJson(file.bytes);
-  if(config.schemaVersion!==1||Object.keys(config).some(k=>!['schemaVersion','timeoutMs','unitTests','ui'].includes(k))||!Number.isInteger(config.timeoutMs)||config.timeoutMs<50||config.timeoutMs>120000||!Array.isArray(config.unitTests)||config.unitTests.length>16||(!config.unitTests.length&&!config.ui)) throw new Error('Invalid validation configuration');
+  if(config.schemaVersion!==1||Object.keys(config).some(k=>!['schemaVersion','timeoutMs','unitTests','ui'].includes(k))||!Number.isInteger(config.timeoutMs)||config.timeoutMs<50||config.timeoutMs>120000||!Array.isArray(config.unitTests)||!config.unitTests.length||config.unitTests.length>16) throw new Error('Invalid validation configuration');
   for(const test of config.unitTests) {
     if(!test||Object.keys(test).some(k=>!['path','sha256'].includes(k))||!test.path?.endsWith('.test.mjs')||!/^[a-f0-9]{64}$/.test(test.sha256??'')||(await readResource(root,test.path)).sha256!==test.sha256) throw new Error('Unapproved or changed validation script');
   }
   if(config.ui && (Object.keys(config.ui).some(k=>!['url','browsers','locales','viewports'].includes(k))||!Array.isArray(config.ui.browsers)||config.ui.browsers.length<1||config.ui.browsers.length>3||!Array.isArray(config.ui.locales)||config.ui.locales.length<1||config.ui.locales.length>10||!Array.isArray(config.ui.viewports)||config.ui.viewports.length<1||config.ui.viewports.length>4)) throw new Error('Invalid UI validation');
+  if(config.ui)visualOrigin(config.ui.url);
   const binding=file.sha256;
   return {binding,assertApproved(){if(approval!==binding)throw new Error('Explicit --allow-validation must match config SHA-256');},async run(plan){
     this.assertApproved();

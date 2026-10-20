@@ -15,3 +15,6 @@ ICU parsing now uses FormatJS in src/formats.mjs. Keep it separate from i18next 
 
 ## Optional integration plan
 Before adding third-party libraries or services, read `docs/OPEN_SOURCE_INTEGRATION_PLAN_CN.md`. Implement adapters in discrete PR-sized changes; verify upstream licenses and model/data licensing at the pinned release. Do not copy AGPL/GPL/proprietary-EE source into the MIT core by default.
+
+
+The user has authorized v0.2 development on a topic branch. New mutations require exact per-stage consent: apply plan and validation configuration, local PR preparation, then separate remote publication. Never execute model-provided scripts or merge automatically. Preserve v0.1 flags. Run the expanded tests plus workflow QA; distinguish protocol-stub CI from actual local-model evidence.

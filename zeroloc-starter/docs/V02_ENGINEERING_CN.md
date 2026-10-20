@@ -1,6 +1,6 @@
 # v0.2 development and verification
 
-Base: protected main bcb542a7dc672c97be34289cbaf86667cceff118. Development branch only; no main writes, automatic merges or release. Version metadata remains the released beta until a separately authorized release decision.
+Base: protected main bcb542a7dc672c97be34289cbaf86667cceff118. Development branch only; no main writes, automatic merges or release. Development metadata is 0.2.0-dev.0; the published beta tag is unchanged.
 
 ## Stage 1 — safe apply
 
@@ -29,3 +29,16 @@ Optional Playwright uses the existing local-only visual adapter, bounded paramet
 Local npm test **37/37** including real temporary Git repositories, exact file staging, unchanged main, unrelated-index refusal, offline preview and a mocked GitHub transport asserting Draft creation/no merge/no force. Local Git hooks, fsmonitor and signing hooks are disabled for controlled Git operations; a failing pre-commit hook is explicitly exercised. Remote preview binds HEAD, base, branch, file list, title and full body bytes. Nothing contacts the network until --publish plus matching --approve; live origin/main must still match the reviewed base. Explicit origin identity prevents publishing to a credential-bearing or different URL. Failed publication can leave the approved topic branch pushed; inspect and retry rather than deleting/force-pushing. Remote Github auth remains user-managed, no tokens stored by ZeroLoc.
 
 No testing callbacks or transport injection is accepted through project JSON or CLI. Library injection points are trusted caller code. Validation reports are evidence, not cryptographically signed attestations; resource/quality checks are rerun and exact report bytes are part of local approval. Public reports omit child stdout, secrets and absolute screenshot locations; source/candidate text is repository data and must be reviewed before authorizing publication.
+
+
+## Stage 5 — real application and model
+
+Final local npm test **41/41**. Added real React/i18next rendering to the normal cross-platform unit suite and actual CLI preview/approval/config consent tests, plus stale target bytes, missing-parent patch execution and surviving lock refusal.
+
+[Sanitized real model evidence](verification/v02-real-model.json): existing local Ollama0.40.6, qwen2.5:0.5b digest a8b0c51577010a279d933d14c2a8ab4b268079d44c5c8830c0a93900f1827c67, actual returned candidate {"key":"app.newGreeting","value":"Hallo {{name}}, "}. Source update creates a missing German key, model creates a candidate, exact plan/config approval applies it, real Node tests and Chromium/Firefox8 UI cases pass, then a local topic branch is prepared with main unchanged. Unit failure, actual overflow/a11y UI failure and timeout each restore original bytes; conflict preserves the outside edit. No cloud API/model download.
+
+CI runs the same real React app against a clearly labelled local HTTP protocol stub, not an Ollama model. The visual job retains its existing name and executes both the old12-case matrix and new8-case workflow with rollback controls. The four OS/Node regression jobs execute all41 tests. Actual remote verdicts must be read from the latest Draft PR Checks; no local result is labelled as remote. [CLI and trust boundaries](V02_SAFE_APPLY_CN.md), [stage evidence](verification/v02-stages.json).
+
+Fresh npm audit:0 vulnerabilities;112 locked license entries; local CycloneDX:101 installed components. Dependency/platform counts differ by installation, not licence inventory scope. Dev metadata0.2.0-dev.0 is not a release or tag.
+
+Final security regression: approved filenames beginning with -- are passed as checked absolute Node test entrypoints, never CLI flags. A path resolver/Promise callback naming collision found during validation was fixed; full41/41 and five real-model scenarios were rerun successfully.

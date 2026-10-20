@@ -5,6 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { readResource, parseJson, digest } from './safe-files.mjs';
 import { checkQuality } from './quality.mjs';
+import { flattenMessages } from './check.mjs';
 const exec=promisify(execFile);
 async function command(executable,args,root){
   try{return (await exec(executable,args,{cwd:root,windowsHide:true,timeout:60000,maxBuffer:1048576})).stdout.trim();}
@@ -23,6 +24,10 @@ export async function preparePr({root='.',reportPath,branch,prepare=false,approv
   if(report.type!=='safe-apply'||report.applied!==true||report.passed!==true||report.validation?.passed!==true||!Array.isArray(report.validation.checks)||!report.validation.checks.some(c=>c.kind==='unit'&&c.passed)) throw new Error('Successful applied validation report with unit tests required');
   const source=await readResource(root,plan.source),target=await readResource(root,plan.target);
   if(source.sha256!==plan.sourceSha256||target.sha256!==plan.resultSha256)throw new Error('Stale PR resources');
+  const baseline=flattenMessages(JSON.parse(await git(root,['show',`HEAD:${plan.target}`]))),current=flattenMessages(parseJson(target.bytes));
+  if(Object.entries(baseline).some(([key,value])=>value.trim()&&current[key]!==value))throw new Error('PR would overwrite non-empty human translation in Git baseline');
+  const actualChanged=Object.keys(current).filter(key=>current[key]!==baseline[key]).sort();
+  if(!Array.isArray(plan.changed)||JSON.stringify([...plan.changed].sort())!==JSON.stringify(actualChanged))throw new Error('Report changed-key list does not match Git baseline');
   if(!checkQuality({source:parseJson(source.bytes),target:parseJson(target.bytes),messageFormat:plan.messageFormat,targetLocale:plan.targetLocale,policy:plan.policy,keys:plan.changed}).passed)throw new Error('PR quality gate failed');
   if(await git(root,['diff','--cached','--name-only']))throw new Error('Unrelated staged changes; do not modify index');
   const allowed=new Set([plan.target,reportPath,report.backup,report.journal]);
@@ -58,13 +63,17 @@ export async function publishPr({root='.',repo,bodyPath,title='Review validated 
   if(approve!==previewId)throw new Error('Explicit remote approval must match previewId');
   const remoteMain=await transport('git',['-c','core.hooksPath=/dev/null','ls-remote','origin','refs/heads/main'],root);
   if(remoteMain.split(/\s/)[0]!==base)throw new Error('Remote main changed; fetch/review again');
-  const existing=JSON.parse(await transport(gh,['pr','list','--repo',repo,'--head',branch,'--base','main','--state','open','--json','url,isDraft'],root));
-  if(existing.length>1||existing.some(p=>!p.isDraft))throw new Error('Unexpected existing non-draft PR; manual review required');
+  const existing=JSON.parse(await transport(gh,['pr','list','--repo',repo,'--head',branch,'--base','main','--state','open','--json','url,isDraft,isCrossRepository'],root));
+  if(existing.length>1||existing.some(p=>!p.isDraft||p.isCrossRepository))throw new Error('Unexpected existing non-draft/cross-repository PR; manual review required');
   await transport('git',['-c','core.hooksPath=/dev/null','-c','push.followTags=false','-c','protocol.ext.allow=never','push','origin',`HEAD:refs/heads/${branch}`],root);
   let url=existing[0]?.url;
-  if(!url) {
+  {
     const dir=await mkdtemp(join(tmpdir(),'zeroloc-pr-')),file=join(dir,'body.md');
-    try{await writeFile(file,body.bytes,{mode:0o600});url=await transport(gh,['pr','create','--repo',repo,'--base','main','--head',branch,'--draft','--title',title,'--body-file',file],root);}
+    try{
+      await writeFile(file,body.bytes,{mode:0o600});
+      if(!url)url=await transport(gh,['pr','create','--repo',repo,'--base','main','--head',branch,'--draft','--title',title,'--body-file',file],root);
+      else await transport(gh,['pr','edit',url,'--repo',repo,'--title',title,'--body-file',file],root);
+    }
     finally{await unlink(file);await rmdir(dir);}
   }
   if(!url?.startsWith(`https://github.com/${repo}/pull/`)||!/\/\d+$/.test(url))throw new Error('Unexpected PR response; branch may already be pushed, inspect before retrying');

@@ -45,4 +45,14 @@ test('configuration cannot request a shell/build hook or silently change approve
   await assert.rejects(configuredValidator({root:o.root,configPath:'validation.json',approval:v.binding}),/changed/);
   await writeFile(join(o.root,'validation.json'),JSON.stringify({schemaVersion:1,timeoutMs:5000,unitTests:[],command:'npm run anything'}));
   await assert.rejects(configuredValidator({root:o.root,configPath:'validation.json'}),/Invalid/);
+  const script='console.log("approved");';await writeFile(join(o.root,'verify.test.mjs'),script);
+  await writeFile(join(o.root,'validation.json'),JSON.stringify({schemaVersion:1,timeoutMs:5000,unitTests:[{path:'verify.test.mjs',sha256:digest(script)}],ui:{url:'https://example.com',browsers:['chromium'],locales:['de'],viewports:[{width:375,height:812}]}}));
+  await assert.rejects(configuredValidator({root:o.root,configPath:'validation.json'}),/loopback/);
+}));
+test('approved entrypoint filenames cannot become Node CLI flags',()=>run(async o=>{
+  const path='--import=unapproved.test.mjs',script='console.log("approved literal filename");';
+  await writeFile(join(o.root,path),script);await writeFile(join(o.root,'unapproved.test.mjs'),'throw new Error("must not be imported");');
+  const config=JSON.stringify({schemaVersion:1,timeoutMs:10000,unitTests:[{path,sha256:digest(script)}]});await writeFile(join(o.root,'validation.json'),config);
+  const v=await configuredValidator({root:o.root,configPath:'validation.json',approval:digest(config)}),options={...o,validationBinding:v.binding,validate:p=>v.run(p)};
+  const plan=await planApply(options),result=await applyProposal({...options,write:true,approve:plan.planId});assert.equal(result.passed,true);
 }));

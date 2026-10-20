@@ -23,3 +23,8 @@ axe-core 的 npm 发行包 LICENSE 为 MPL 2.0，未发现附加商业运行条�
 Ollama 使用 localhost HTTP 接口，不链接或分发其软件与模型。Stabilization 在忽略目录中下载了官方 Ollama 0.40.6 与 qwen2.5:0.5b，只用于本地合成资源验证：官方安装包 SHA-256、实际模型 digest 和 `/api/show` 的 Apache-2.0 全文已保存，见 [结果](STABILIZATION_RESULTS_CN.md)。这不向其他模型扩展许可，也不默认授权任意使用场景；使用者必须独立审核所选模型许可并禁用云端。权重、Ollama/浏览器二进制不进入公开源码包。Argos、LibreTranslate、Weblate、Tolgee、Paraglide、Lingui 均未合并或安装。
 
 网络核对来源：[FormatJS](https://github.com/formatjs/formatjs/blob/main/packages/icu-messageformat-parser/package.json)、[i18next-cli](https://github.com/i18next/i18next-cli)、[Playwright LICENSE](https://github.com/microsoft/playwright/blob/main/LICENSE)、[axe LICENSE](https://github.com/dequelabs/axe-core/blob/develop/LICENSE)、[Blue Oak 1.0.0](https://blueoakcouncil.org/license/1.0.0)。这些 main/develop 链接用于来源说明；实施依据为本地固定 npm 版本、lockfile 完整性和已保留的许可文本。
+
+
+## v0.2 development additions
+
+fast-json-patch3.1.1: MIT, original npm LICENSE.txt preserved in notices. franc-min6.2.0 and its three transitive packages: MIT; npm gitHead3f9f0b51a96c5df32a407dad865a3011ac0fa2d1 license copied without modification to vendor-licenses/franc-min-6.2.0-LICENSE (SHA-256 f5e0c5c44706ddda7ac2f9096f848222f1e0e90f88643955041c2735be84592b). Original contributor copyright/email attribution is retained as required notices.112 locked entries verified; no new license allowlist category or model redistribution.

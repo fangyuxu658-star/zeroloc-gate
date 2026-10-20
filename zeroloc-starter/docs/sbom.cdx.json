@@ -5,7 +5,7 @@
   "serialNumber": "urn:uuid:***",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-10-19T18:37:09.042Z",
+    "timestamp": "2026-10-20T06:50:17.727Z",
     "lifecycles": [
       {
         "phase": "build"
@@ -19,13 +19,13 @@
       }
     ],
     "component": {
-      "bom-ref": "zeroloc-gate@0.1.0-beta.1",
+      "bom-ref": "zeroloc-gate@0.2.0-dev.0",
       "type": "library",
       "name": "zeroloc-starter",
-      "version": "0.1.0-beta.1",
+      "version": "0.2.0-dev.0",
       "scope": "required",
       "description": "Local-first localization quality gate with optional ecosystem adapters",
-      "purl": "pkg:npm/zeroloc-gate@0.1.0-beta.1",
+      "purl": "pkg:npm/zeroloc-gate@0.2.0-dev.0",
       "properties": [
         {
           "name": "cdx:npm:package:private",
@@ -1501,6 +1501,36 @@
       ]
     },
     {
+      "bom-ref": "collapse-white-space@2.1.0",
+      "type": "library",
+      "name": "collapse-white-space",
+      "version": "2.1.0",
+      "scope": "required",
+      "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+      "description": "Collapse white space",
+      "purl": "pkg:npm/collapse-white-space@2.1.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/collapse-white-space/-/collapse-white-space-2.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "968293c58d7308eb86e23f5fe843e7bb2c9891fe7c467861593bd1a1912892007e59b7577a17e316f8b2395624ab3116cf5439911899741612e52c316d0630cf"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "commander@15.0.0",
       "type": "library",
       "name": "commander",
@@ -1554,6 +1584,48 @@
         {
           "alg": "SHA-512",
           "content": "8f5a45395c5ac9b315093347481b8848bd8a41c0d2dca204d70066529e27d97fb5160690236643255cbd4d8c43c8c0b36288d120c87d3bc5ff528599b714c977"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "fast-json-patch@3.1.1",
+      "type": "library",
+      "name": "fast-json-patch",
+      "version": "3.1.1",
+      "scope": "required",
+      "author": "Joachim Wester",
+      "description": "Fast implementation of JSON-Patch (RFC-6902) with duplex (observe changes) capabilities",
+      "purl": "pkg:npm/fast-json-patch@3.1.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/fast-json-patch/-/fast-json-patch-3.1.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/Starcounter-Jack/JSON-Patch.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/Starcounter-Jack/JSON-Patch"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/Starcounter-Jack/JSON-Patch/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "bdfe881d45f6481700fb9ffee3cf3776c223a414ea99f0639988962b5b1abf1426164e097c130b6bbca74d83acd51a25a7f4f56deb49c478860f7835327f2551"
         }
       ],
       "licenses": [
@@ -1684,6 +1756,36 @@
         {
           "alg": "SHA-512",
           "content": "77e977ab18d27ac4f857bbf67e1f909e6167516bfd952a636ab85284d4e004e7c0d2db5e8db4140251cb8ad6e39284620ee956d0e3e840f6081a1202f2885e8e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "franc-min@6.2.0",
+      "type": "library",
+      "name": "franc-min",
+      "version": "6.2.0",
+      "scope": "required",
+      "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
+      "description": "Detect the language of text",
+      "purl": "pkg:npm/franc-min@6.2.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/franc-min/-/franc-min-6.2.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "d6e0c81144a551982f25ad8029847f766242ebabff3ef190f6659f23d9ceaff90fa4c172becc0ad203d73b0a582588980f4d3c3e91cb9067c6e7c48f8d0245c7"
         }
       ],
       "licenses": [
@@ -2519,6 +2621,36 @@
       ]
     },
     {
+      "bom-ref": "n-gram@2.0.2",
+      "type": "library",
+      "name": "n-gram",
+      "version": "2.0.2",
+      "scope": "required",
+      "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+      "description": "Get n-grams from text",
+      "purl": "pkg:npm/n-gram@2.0.2",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/n-gram/-/n-gram-2.0.2.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4b6e1a1ac9fe1cb0715065405053b01a92acecb05c1b846e74a53ffde5b3b7f990f7bfcd30a4310d61f21f1eb750d5a4fce39d8a1826ce81139f5b5fe67403cd"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "npm-run-path@6.0.0",
       "type": "library",
       "name": "npm-run-path",
@@ -3280,6 +3412,36 @@
       ]
     },
     {
+      "bom-ref": "trigram-utils@2.0.1",
+      "type": "library",
+      "name": "trigram-utils",
+      "version": "2.0.1",
+      "scope": "required",
+      "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+      "description": "A few language trigram utilities",
+      "purl": "pkg:npm/trigram-utils@2.0.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/trigram-utils/-/trigram-utils-2.0.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "9df5885c711a07e1ddcac9407ccc52a96283766a98f48df68d2ec69eaa5d5909cb1fcf6be80e6c764ddf0d562a1806740ab4fca2f005480a3a1d189671634819"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "unicorn-magic@0.3.0",
       "type": "library",
       "name": "unicorn-magic",
@@ -3439,15 +3601,17 @@
   ],
   "dependencies": [
     {
-      "ref": "zeroloc-gate@0.1.0-beta.1",
+      "ref": "zeroloc-gate@0.2.0-dev.0",
       "dependsOn": [
         "@formatjs/icu-messageformat-parser@3.5.21",
+        "fast-json-patch@3.1.1",
+        "franc-min@6.2.0",
         "i18next-cli@1.77.0",
         "@playwright/test@1.64.1",
         "axe-core@4.14.0",
+        "i18next@26.5.0",
         "react@19.3.1",
-        "react-dom@19.3.1",
-        "i18next@26.5.0"
+        "react-dom@19.3.1"
       ]
     },
     {
@@ -3684,6 +3848,10 @@
       "dependsOn": []
     },
     {
+      "ref": "collapse-white-space@2.1.0",
+      "dependsOn": []
+    },
+    {
       "ref": "commander@15.0.0",
       "dependsOn": []
     },
@@ -3705,6 +3873,10 @@
       ]
     },
     {
+      "ref": "fast-json-patch@3.1.1",
+      "dependsOn": []
+    },
+    {
       "ref": "fast-string-truncated-width@3.0.3",
       "dependsOn": []
     },
@@ -3724,6 +3896,12 @@
       "ref": "figures@6.1.0",
       "dependsOn": [
         "is-unicode-supported@2.1.0"
+      ]
+    },
+    {
+      "ref": "franc-min@6.2.0",
+      "dependsOn": [
+        "trigram-utils@2.0.1"
       ]
     },
     {
@@ -3870,6 +4048,10 @@
       "dependsOn": []
     },
     {
+      "ref": "n-gram@2.0.2",
+      "dependsOn": []
+    },
+    {
       "ref": "npm-run-path@6.0.0",
       "dependsOn": [
         "path-key@4.0.0",
@@ -3994,6 +4176,13 @@
     {
       "ref": "strip-final-newline@4.0.0",
       "dependsOn": []
+    },
+    {
+      "ref": "trigram-utils@2.0.1",
+      "dependsOn": [
+        "collapse-white-space@2.1.0",
+        "n-gram@2.0.2"
+      ]
     },
     {
       "ref": "unicorn-magic@0.3.0",

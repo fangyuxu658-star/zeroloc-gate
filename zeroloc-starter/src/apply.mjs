@@ -14,6 +14,7 @@ function pointerParts(path) {
   return parts;
 }
 export async function planApply({root='.',source,target,proposal,messageFormat=proposal?.messageFormat??'i18next',bindLegacy=false,policy={},targetLocale=proposal?.targetLocale??'und',validationBinding=null}) {
+  if(Array.isArray(proposal))proposal={patch:proposal};
   resourcePath(source);resourcePath(target);
   if(!source.endsWith('.json')||!target.endsWith('.json')||source===target) throw new Error('Distinct JSON source and target required');
   if(!['plain','i18next','icu'].includes(messageFormat)) throw new Error('Explicit message format required');
@@ -49,6 +50,7 @@ export async function planApply({root='.',source,target,proposal,messageFormat=p
   const changed=Object.keys(after).filter(k=>after[k]!==before[k]);
   if(!changed.length) throw new Error('No candidate changes');
   const candidateBytes=jsonBytes(working);
+  if(candidateBytes.length>2*1024*1024)throw new Error('Candidate resource exceeds 2 MiB');
   const quality=checkQuality({source:sourceObject,target:working,targetLocale,messageFormat,policy,keys:changed});
   const binding={source,target,messageFormat,targetLocale,policy:qualityPolicy(policy),validationBinding,rootBinding:digest(await realpath(root)),sourceSha256:a.sha256,targetSha256:b.sha256,resultSha256:digest(candidateBytes),patch};
   return {...binding,planId:digest(JSON.stringify(binding)),candidate:working,changed,beforeIssues,issues,quality,legacyBound:!provenance,requiresHumanReview:true};
@@ -58,7 +60,7 @@ export async function planApply({root='.',source,target,proposal,messageFormat=p
 export async function applyProposal(options) {
   const {root='.',write=false,approve,validate}=options;
   const plan=await planApply(options);
-  if(!write) return {type:'safe-apply',schemaVersion:1,applied:false,dryRun:true,plan};
+  if(!write) return {type:'safe-apply',schemaVersion:1,passed:plan.quality.passed,applied:false,dryRun:true,plan};
   if(approve!==plan.planId) throw new Error('Explicit approval must match the current dry-run planId');
   if(!plan.quality.passed) throw new Error('Quality gate rejected candidate: '+JSON.stringify(plan.quality.issues));
   if(typeof validate!=='function') throw new Error('Approved automated validation is required for writes');
@@ -80,9 +82,11 @@ export async function applyProposal(options) {
   } catch(error) {
     let rolledBack=false,rollbackConflict=false;
     if(committed) {
-      const saved=await readResource(root,backup);
-      if((await readResource(root,plan.target)).sha256===plan.resultSha256 && saved.sha256===plan.targetSha256) {await atomicReplace(root,plan.target,saved.bytes,plan.resultSha256);rolledBack=true;}
-      else rollbackConflict=true;
+      try {
+        const saved=await readResource(root,backup);
+        if((await readResource(root,plan.target)).sha256===plan.resultSha256 && saved.sha256===plan.targetSha256) {await atomicReplace(root,plan.target,saved.bytes,plan.resultSha256);rolledBack=true;}
+        else rollbackConflict=true;
+      } catch {rollbackConflict=true;}
     }
     if(!committed) throw error;
     return {type:'safe-apply',schemaVersion:1,passed:false,applied:false,rolledBack,rollbackConflict,error:error.message,plan,backup,journal,validation,requiresHumanReview:true};
@@ -92,6 +96,7 @@ export async function applyProposal(options) {
 export async function recoverApply({root='.',journal,approve}) {
   const recovery=parseJson((await readResource(root,journal)).bytes);
   if(recovery.schemaVersion!==1||typeof recovery.target!=='string'||typeof recovery.backup!=='string'||!recovery.backup.startsWith(recovery.target+'.zeroloc-')||!recovery.backup.endsWith('.bak')||!/^[a-f0-9]{64}$/.test(recovery.originalSha256??'')||!/^[a-f0-9]{64}$/.test(recovery.appliedSha256??'')) throw new Error('Invalid recovery record');
+  if(journal!==recovery.backup.replace(/\.bak$/,'.recovery.json')||!recovery.target.endsWith('.json'))throw new Error('Recovery path binding mismatch');
   const target=await readResource(root,recovery.target),backup=await readResource(root,recovery.backup);
   flattenMessages(parseJson(backup.bytes));
   if(backup.sha256!==recovery.originalSha256 || target.sha256!==recovery.appliedSha256 || approve!==target.sha256) throw new Error('Recovery conflict or missing explicit current-hash approval');

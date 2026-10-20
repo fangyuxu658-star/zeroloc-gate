@@ -1,6 +1,6 @@
 {
   "name": "zeroloc-gate",
-  "version": "0.1.0-beta.1",
+  "version": "0.2.0-dev.0",
   "private": true,
   "description": "Local-first localization quality gate with optional ecosystem adapters",
   "type": "module",
@@ -12,6 +12,7 @@
     "check:example": "node bin/zeroloc.mjs check --source examples/locales/en.json --targets examples/locales/de.json,examples/locales/fr.json,examples/locales/ja.json",
     "check:json": "node bin/zeroloc.mjs check --source examples/locales/en.json --targets examples/locales/de.json,examples/locales/fr.json,examples/locales/ja.json --format json",
     "test:visual": "node qa/run.mjs",
+    "test:workflow": "node qa/workflow-e2e.mjs",
     "demo": "node demo/server.mjs",
     "licenses": "node scripts/licenses.mjs",
     "licenses:check": "node scripts/licenses.mjs --check",
