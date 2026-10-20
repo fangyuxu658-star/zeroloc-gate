@@ -1,5 +1,7 @@
 # GitHub remote、PR 与 Actions
 
+最新状态：PR #1 已获批准 Squash Merge 为 d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a，[合并后 main CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284) 5/5 成功。以下首轮 run 保留为历史证据；当前状态以 [发布收尾日志](RELEASE_CLOSEOUT_CN.md) 为准。规则、Tag 和 Release 尚未执行，后续文档 PR 不自动合并。
+
 仓库：[fangyuxu658-star/zeroloc-gate](https://github.com/fangyuxu658-star/zeroloc-gate)，公开、main 基线 `4a64f6d6350ed5e80c1738ffa145a8dba46da66f`。origin 已配置，不要重复创建仓库或覆盖已有历史。Git 根在源码目录上一层；根 `.github/workflows/ci.yml` 是实际入口，子目录 workflow 只是独立建仓模板。
 
 ## 克隆与本地验收

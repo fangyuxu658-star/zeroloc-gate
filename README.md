@@ -1,5 +1,7 @@
 # ZeroLoc Gate beta preparation
 
+最新收尾：PR #1 已 Squash Merge，main `d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a` 的 [CI 5/5 成功](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284)。保护规则、Tag 和 Pre-release 尚未执行；收尾文档更新尚未合并，见 [发布收尾记录](zeroloc-starter/docs/RELEASE_CLOSEOUT_CN.md)。
+
 目标版本：**v0.1.0-beta.1**。公开仓库已创建并完成首次 main push，[真实 GitHub CI 已通过](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39347428254)；尚未发布 tag 或 Release。
 
 源码、运行命令与使用说明位于 [zeroloc-starter/](zeroloc-starter/README.md)。
