@@ -20,7 +20,8 @@ export async function inventory({check = false} = {}) {
     const legal=files.filter(f=>/^(licen[cs]e|copying|notice|thirdpartynotices)(\.|$)/i.test(f)).sort();
     const supplements = {
       '@croct/json5-parser@0.2.2':'docs/vendor-licenses/croct-json5-parser-0.2.2-LICENSE',
-      '@swc/counter@0.1.3':'docs/vendor-licenses/swc-counter-0.1.3-LICENSE.txt'
+      '@swc/counter@0.1.3':'docs/vendor-licenses/swc-counter-0.1.3-LICENSE.txt',
+      'franc-min@6.2.0':'docs/vendor-licenses/franc-min-6.2.0-LICENSE'
     };
     if (!legal.length) {
       const supplement = supplements[`${name}@${p.version}`];

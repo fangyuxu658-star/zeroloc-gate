@@ -30,6 +30,13 @@ function option(args, name) {
 async function main() {
   const args = process.argv.slice(2);
   if (args.includes('--help') || args.length === 0) { console.log(help); return; }
+  if(args[0]==='quality') {
+    const {readResource,parseJson}=await import('../src/safe-files.mjs');
+    const {checkQuality}=await import('../src/quality.mjs');
+    const root=option(args,'--root')??'.',load=async p=>parseJson((await readResource(root,p)).bytes);
+    const result=checkQuality({source:await load(option(args,'--source')),target:await load(option(args,'--target')),targetLocale:option(args,'--target-locale'),messageFormat:option(args,'--message-format')??'i18next',policy:option(args,'--policy')?await load(option(args,'--policy')):{}});
+    console.log(JSON.stringify(result,null,2));if(!result.passed)process.exitCode=1;return;
+  }
   if (args[0] === 'apply' || args[0] === 'recover') {
     const { readResource, parseJson } = await import('../src/safe-files.mjs');
     const { applyProposal, recoverApply } = await import('../src/apply.mjs');
@@ -38,7 +45,8 @@ async function main() {
     if(args[0]==='recover') result=await recoverApply({root,journal:option(args,'--journal'),approve:option(args,'--approve')});
     else {
       const proposal=parseJson((await readResource(root,option(args,'--proposal'))).bytes);
-      result=await applyProposal({root,source:option(args,'--source'),target:option(args,'--target'),proposal,messageFormat:option(args,'--message-format')??proposal.messageFormat,bindLegacy:args.includes('--bind-legacy'),write:args.includes('--write'),approve:option(args,'--approve')});
+      const policy=option(args,'--policy')?parseJson((await readResource(root,option(args,'--policy'))).bytes):{};
+      result=await applyProposal({root,source:option(args,'--source'),target:option(args,'--target'),proposal,policy,targetLocale:option(args,'--target-locale')??proposal.targetLocale,messageFormat:option(args,'--message-format')??proposal.messageFormat,bindLegacy:args.includes('--bind-legacy'),write:args.includes('--write'),approve:option(args,'--approve')});
     }
     console.log(JSON.stringify(result,null,2));if(result.passed===false)process.exitCode=1;return;
   }

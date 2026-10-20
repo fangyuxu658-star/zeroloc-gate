@@ -460,6 +460,15 @@
       "dev": false
     },
     {
+      "name": "collapse-white-space",
+      "version": "2.1.0",
+      "license": "MIT",
+      "integrity": "sha512-loKTxY1zCOuG4j9f6EPnuyyYkf58RnhhWTvRoZEokgB+WbdXehfjFviyOVYkqzEWz1Q5kRiZdBYS5SwxbQYwzw==",
+      "source": "https://registry.npmjs.org/collapse-white-space/-/collapse-white-space-2.1.0.tgz",
+      "optional": false,
+      "dev": false
+    },
+    {
       "name": "commander",
       "version": "15.0.0",
       "license": "MIT",
@@ -521,6 +530,19 @@
       "source": "https://registry.npmjs.org/figures/-/figures-6.1.0.tgz",
       "optional": true,
       "dev": false
+    },
+    {
+      "name": "franc-min",
+      "version": "6.2.0",
+      "license": "MIT",
+      "integrity": "sha512-1uDIEUSlUZgvJa2AKYR/dmJC66v/PvGQ9mWfI9nOr/kPpMFyvswK0gPXOwpYJYiYD008PpHLkGfG58SPjQJFxw==",
+      "source": "https://registry.npmjs.org/franc-min/-/franc-min-6.2.0.tgz",
+      "optional": false,
+      "dev": false,
+      "supplementalLicense": {
+        "path": "docs/vendor-licenses/franc-min-6.2.0-LICENSE",
+        "sha256": "f5e0c5c44706ddda7ac2f9096f848222f1e0e90f88643955041c2735be84592b"
+      }
     },
     {
       "name": "get-east-asian-width",
@@ -739,6 +761,15 @@
       "dev": false
     },
     {
+      "name": "n-gram",
+      "version": "2.0.2",
+      "license": "MIT",
+      "integrity": "sha512-S24aGsn+HLBxUGVAUFOwGpKs7LBcG4RudKU//eWzt/mQ97/NMKQxDWHyHx63UNWk/OOdihgmzoETn1tf5nQDzQ==",
+      "source": "https://registry.npmjs.org/n-gram/-/n-gram-2.0.2.tgz",
+      "optional": false,
+      "dev": false
+    },
+    {
       "name": "npm-run-path",
       "version": "6.0.0",
       "license": "MIT",
@@ -934,6 +965,15 @@
       "integrity": "sha512-aulFJcD6YK8V1G7iRB5tigAP4TsHBZZrOV8pjV++zdUwmeV8uzbY7yn6h9MswN62adStNZFuCIx4haBnRuMDaw==",
       "source": "https://registry.npmjs.org/strip-final-newline/-/strip-final-newline-4.0.0.tgz",
       "optional": true,
+      "dev": false
+    },
+    {
+      "name": "trigram-utils",
+      "version": "2.0.1",
+      "license": "MIT",
+      "integrity": "sha512-nfWIXHEaB+HdyslAfMxSqWKDdmqY9I32jS7GnqpdWQnLH89r6A5sdk3fDVYqGAZ0CrT8ovAFSAo6HRiWcWNIGQ==",
+      "source": "https://registry.npmjs.org/trigram-utils/-/trigram-utils-2.0.1.tgz",
+      "optional": false,
       "dev": false
     },
     {

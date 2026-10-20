@@ -3,6 +3,7 @@ import { unlink, realpath } from 'node:fs/promises';
 import { randomUUID } from 'node:crypto';
 import { flattenMessages, compareCatalogs } from './check.mjs';
 import { messageSignature } from './formats.mjs';
+import { checkQuality, qualityPolicy } from './quality.mjs';
 import { readResource, guardedPath, resourcePath, parseJson, jsonBytes, digest, durableNew, atomicReplace } from './safe-files.mjs';
 
 const unsafe = text => /[\u0000-\u0008\u000b\u000c\u000e-\u001f]|[\uD800-\uDFFF]/u.test(text) || /<[^>]*[\s=]|<\/?(?:script|iframe|style|object)\b|&(?:#|lt;|gt;)/i.test(text) || /<[^>]*$/.test(text);
@@ -12,7 +13,7 @@ function pointerParts(path) {
   if(parts.some(p=>!p||p.includes('.')||['__proto__','constructor','prototype'].includes(p))) throw new Error('Unsafe patch key');
   return parts;
 }
-export async function planApply({root='.',source,target,proposal,messageFormat=proposal?.messageFormat??'i18next',bindLegacy=false}) {
+export async function planApply({root='.',source,target,proposal,messageFormat=proposal?.messageFormat??'i18next',bindLegacy=false,policy={},targetLocale=proposal?.targetLocale??'und',validationBinding=null}) {
   resourcePath(source);resourcePath(target);
   if(!source.endsWith('.json')||!target.endsWith('.json')||source===target) throw new Error('Distinct JSON source and target required');
   if(!['plain','i18next','icu'].includes(messageFormat)) throw new Error('Explicit message format required');
@@ -48,8 +49,9 @@ export async function planApply({root='.',source,target,proposal,messageFormat=p
   const changed=Object.keys(after).filter(k=>after[k]!==before[k]);
   if(!changed.length) throw new Error('No candidate changes');
   const candidateBytes=jsonBytes(working);
-  const binding={source,target,messageFormat,rootBinding:digest(await realpath(root)),sourceSha256:a.sha256,targetSha256:b.sha256,resultSha256:digest(candidateBytes),patch};
-  return {...binding,planId:digest(JSON.stringify(binding)),candidate:working,changed,beforeIssues,issues,legacyBound:!provenance,requiresHumanReview:true};
+  const quality=checkQuality({source:sourceObject,target:working,targetLocale,messageFormat,policy,keys:changed});
+  const binding={source,target,messageFormat,targetLocale,policy:qualityPolicy(policy),validationBinding,rootBinding:digest(await realpath(root)),sourceSha256:a.sha256,targetSha256:b.sha256,resultSha256:digest(candidateBytes),patch};
+  return {...binding,planId:digest(JSON.stringify(binding)),candidate:working,changed,beforeIssues,issues,quality,legacyBound:!provenance,requiresHumanReview:true};
 }
 
 /** One file transaction. User-controlled proposals never contain executable validation code. */
@@ -58,6 +60,7 @@ export async function applyProposal(options) {
   const plan=await planApply(options);
   if(!write) return {type:'safe-apply',schemaVersion:1,applied:false,dryRun:true,plan};
   if(approve!==plan.planId) throw new Error('Explicit approval must match the current dry-run planId');
+  if(!plan.quality.passed) throw new Error('Quality gate rejected candidate: '+JSON.stringify(plan.quality.issues));
   const targetPath=await guardedPath(root,plan.target),lock=targetPath+'.zeroloc.lock';
   await durableNew(lock,jsonBytes({planId:plan.planId,pid:process.pid}));
   const token=randomUUID(),backup=plan.target+`.zeroloc-${token}.bak`,journal=plan.target+`.zeroloc-${token}.recovery.json`;
