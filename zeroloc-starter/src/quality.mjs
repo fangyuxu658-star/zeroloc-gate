@@ -2,7 +2,9 @@ import { franc } from 'franc-min';
 import { flattenMessages, compareCatalogs } from './check.mjs';
 
 const iso3={en:'eng',de:'deu',fr:'fra',es:'spa',it:'ita',pt:'por',nl:'nld',ja:'jpn',zh:'cmn',ko:'kor',ru:'rus',ar:'arb'};
-const normalized=text=>text.normalize('NFKC').trim().replace(/\s+/g,' ').toLocaleLowerCase('en');
+// Ignore invisible formatting for comparisons only; retain the actual translation,
+// including legitimate joining/direction controls in languages that need them.
+const normalized=text=>text.normalize('NFKC').replace(/\p{Default_Ignorable_Code_Point}/gu,'').trim().replace(/\s+/g,' ').toLocaleLowerCase('en');
 export function qualityPolicy(value={}) {
   if(!value||Array.isArray(value)||typeof value!=='object') throw new Error('Quality policy must be a JSON object');
   const known=['allowSourceKeys','allowedSourceTexts','brands','terms','minLengthRatio','maxLengthRatio','expectedLanguage','blockWarnings'];

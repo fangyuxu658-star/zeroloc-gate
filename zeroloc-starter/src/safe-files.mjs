@@ -29,17 +29,50 @@ export async function readResource(root, value) {
   if(bytes.length>2*1024*1024) throw new Error('Resource exceeds 2 MiB');
   return {path,bytes,sha256:digest(bytes)};
 }
-export function parseJson(bytes) { return JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes)); }
-export async function durableNew(path, bytes) {
+export function parseJson(bytes) {
+  const text=new TextDecoder('utf-8',{fatal:true}).decode(bytes),value=JSON.parse(text);
+  // JSON.parse silently keeps the last duplicate member. A hidden earlier
+  // translation must never be discarded when we serialize a patched catalog.
+  // Syntax has already been validated; scan only object scopes and string tokens.
+  const scopes=[];
+  for(let i=0;i<text.length;i++) {
+    const c=text[i],scope=scopes.at(-1);
+    if(c==='"') {
+      const start=i;
+      for(i++;i<text.length;i++){if(text[i]==='\\')i++;else if(text[i]==='"')break;}
+      if(scope?.expectKey) {
+        const key=JSON.parse(text.slice(start,i+1));
+        if(scope.keys.has(key))throw new Error('Duplicate JSON member rejected');
+        scope.keys.add(key);scope.expectKey=false;
+      }
+    } else if(c==='{')scopes.push({keys:new Set(),expectKey:true});
+    else if(c==='[')scopes.push(null);
+    else if(c==='}'||c===']')scopes.pop();
+    else if(c===','&&scope)scope.expectKey=true;
+  }
+  return value;
+}
+export async function durableNew(path, bytes, metadata) {
   const file=await open(path,'wx',0o600);
-  try {await file.writeFile(bytes);await file.sync();} finally {await file.close();}
+  try {
+    await file.writeFile(bytes);
+    if(metadata && process.platform!=='win32') {
+      const created=await file.stat();
+      // Refuse the replacement if ownership cannot be retained. Backups and
+      // journals stay private; only the replacement inherits resource access.
+      if(created.uid!==metadata.uid||created.gid!==metadata.gid)await file.chown(metadata.uid,metadata.gid);
+      await file.chmod(metadata.mode&0o777);
+    }
+    await file.sync();
+  } finally {await file.close();}
 }
 export async function atomicReplace(root, target, bytes, expected) {
   const path=await guardedPath(root,target);
+  const metadata=await lstat(path);
   if((await readResource(root,target)).sha256!==expected) throw new Error('CONFLICT: target changed');
   const temp=join(dirname(path),`.${basename(path)}.zeroloc-${randomUUID()}.tmp`);
   try {
-    await durableNew(temp,bytes);
+    await durableNew(temp,bytes,metadata);
     await guardedPath(root,target);
     if((await readResource(root,target)).sha256!==expected) throw new Error('CONFLICT: target changed before rename');
     await rename(temp,path);

@@ -1,0 +1,53 @@
+
+> zeroloc-gate@0.2.0-dev.0 test
+> node --test "test/*.test.mjs"
+
+✔ actual CLI preview -> independent config consent -> exact write approval; conflicting flags fail (1790.1531ms)
+✔ safe apply defaults offline/dry-run, requires exact approval and preserves human translations (166.3246ms)
+✔ stale source, target bytes and invalid root tests fail before writing (41.2227ms)
+✔ rejects destructive RFC operations, prototype pollution, human overwrite and invalid candidates (89.3057ms)
+✔ validation failure restores exact bytes; concurrent edit is retained rather than clobbered (310.8099ms)
+✔ symlinks and hardlink aliases are rejected (29.8404ms)
+✔ legacy root-test proposals require explicit review-time binding (43.429ms)
+✔ missing nested parents apply safely, target formatting edits invalidate proposal, stale locks are retained (153.7976ms)
+✔ nested JSON keys are flattened (2.7596ms)
+✔ i18next and simple ICU placeholders are detected (0.4489ms)
+✔ detects missing, empty, placeholder mismatch and extra keys (0.8638ms)
+✔ rejects unsupported JSON shapes instead of ignoring them (0.9543ms)
+✔ passes good example catalogs (18.6207ms)
+✔ strict-extra turns extra-key warning into gate failure (6.7766ms)
+✔ real pinned i18next extraction returns catalog and diff without writing (2471.1988ms)
+✔ unknown, ambiguous and Paraglide projects fail explicitly (22.6983ms)
+✔ invalid source produces a failure, never a partial successful extraction (2225.0866ms)
+✔ ICU nested plural/select, quoting, tags and locale plural categories (7.254ms)
+✔ ICU rejects missing other, broken syntax, mixed placeholders and tags (1.5644ms)
+✔ ICU detects missing variables, changed argument roles and missing tags (0.5579ms)
+✔ explicit syntax, nested catalogs, empty values and invalid source (1.8875ms)
+✔ license gate accepts reviewed expressions and rejects copyleft service code or unknown licenses (2.4326ms)
+✔ local PR preview is inert; explicit approval creates only dedicated branch/expected commit, hooks disabled (7757.5023ms)
+✔ unrelated staged or tracked changes never enter a prepared PR (2741.8122ms)
+✔ remote preparation is offline by default; approved publish only pushes topic branch and creates Draft, never merges (10530.6293ms)
+✔ untranslated candidates fail; explicit brands/proper-name/source retention exemptions are narrow (4.0342ms)
+✔ literal terminology and placeholder requirements are independently enforced (0.7199ms)
+✔ statistical language and length warnings are reported without claiming semantic accuracy (4.3949ms)
+✔ ICU plural/tag structures still use FormatJS, exemptions do not bypass structural checks (5.5048ms)
+✔ real React/i18next source-change -> missing key -> approved apply -> rendered translation, preserves human title (267.6814ms)
+✔ real CLI success and failure gates with parseable JSON and SARIF (700.182ms)
+✔ rejects prototype-related keys without polluting object prototypes (0.7868ms)
+✔ dry-run stays offline; real local HTTP candidates produce patch and preserve human text (191.9291ms)
+✔ rejects external origins, cloud models, mismatched variables and HTML payloads (36.8119ms)
+✔ validates source syntax even when every target message already has human text (24.3051ms)
+✔ redirects fail with redacted errors instead of contacting an external origin (14.1901ms)
+✔ hung local HTTP server is timed out; oversized and malformed responses are rejected (90.4757ms)
+✔ only exact configured/approved scripts run; passing unit validation accepts the candidate (523.3534ms)
+✔ failed and timed-out unit validation restore exact pre-apply bytes (1655.6446ms)
+✔ configuration cannot request a shell/build hook or silently change approved tests (44.2917ms)
+✔ approved entrypoint filenames cannot become Node CLI flags (404.4089ms)
+ℹ tests 41
+ℹ suites 0
+ℹ pass 41
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 21711.9055

@@ -90,6 +90,8 @@ node bin/zeroloc.mjs apply --root PROJECT --source en.json --target de.json --pr
 
 backup 与 journal 路径在报告内。需要恢复成功应用或进程崩溃后的结果时，先确认相关进程已结束、人工审查残留锁与日志；工具不会自动清除陈旧锁。必要时由维护者显式归档那一个锁文件后运行：
 
+独立审查后补充：JSON 输入拒绝重复成员（含转义同名键），避免隐藏的人工译文在重新序列化时丢失。POSIX 替换保留原文件的 uid/gid 和普通权限位，无法保留则在替换前失败；Windows ACL、扩展属性和特殊权限位不作保留保证。成功应用会规范化为双空格缩进和 LF，失败/恢复则还原原始字节及其 CRLF。锁含随机所有权标记；锁缺失、被替换或不能清理时返回 `passed:false`、`lockCleanupFailed:true` 和真实 `applied`/`recovered` 状态及恢复路径，不能据此假定资源未被写入。`recover --dry-run` 明确拒绝，恢复只使用已审查的当前哈希审批。
+
 ```sh
 node bin/zeroloc.mjs recover --root PROJECT --journal de.json.zeroloc-UUID.recovery.json --approve CURRENT_TARGET_SHA256
 ```
@@ -110,3 +112,7 @@ node bin/zeroloc.mjs pr-publish --root PROJECT --repo OWNER/REPO --body pr-body.
 本地审批后创建 codex/zeroloc-* 分支，仅提交目标和报告；preview 输出 body 可人工保存为 pr-body.md。远端 preview 不联网，审批摘要包含完整正文、文件列表、HEAD/base/分支。只有 --publish + 当前ID 才读取远端、push该分支并创建/更新同仓 Draft PR，需用户自行安装并登录 gh（可用 --gh 指定路径）。origin须精确匹配目标仓库，无凭证URL；main变化则重新fetch/审查。Git hooks/fsmonitor/签名调用禁用；测试代码/依赖仍须可信。
 
 永不 push main、force push、自动 merge、修改Ruleset、发布Release或收费API。远端调用中途失败可能已推送主题分支，检查现场再重试，不自动删除。多次发布只复用相同分支的同仓Draft，拒绝跨仓或Ready PR。五项 main CI 必须通过仍由仓库规则执行。
+
+独立审查后的额外约束：同时核对 origin 的读取地址和唯一有效推送地址（含 pushurl/pushInsteadOf）；远端预检后重新核对审批输入，并推送审批的提交 SHA，而不是可变化的 HEAD。准备 PR 时拒绝目标或报告上的 Git filter/encoding/ident 转换，提交前核对暂存文件列表和完整字节。Git 配置、凭证 helper 和仓库代码仍必须可信；不声称抵御同用户在检查与 Git/rename 调用之间恶意修改配置或文件的竞态。
+
+UI 页面必须使用最终的、无重定向的同源 HTTP URL；所有 HTTP 3xx Location 跳转均拒绝。通用视觉矩阵只添加 `?locale=...`，应用必须自行支持该约定；它不会验证实际语言。标准 react-i18next 语言检测通常使用 `?lng=de`，Next.js 示例使用 `/de`。必须用应用的实际 URL，并额外断言渲染出的译文，不能仅以矩阵标签证明德语覆盖。新网络回归：`npm run test:network`。

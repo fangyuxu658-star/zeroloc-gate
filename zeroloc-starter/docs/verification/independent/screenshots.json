@@ -1,0 +1,66 @@
+[
+  {
+    "file": "artifacts\\independent-apps\\next-chromium-1280.png",
+    "sha256": "367f8293249684f85815750b576103be8f1e15afbc9be348b9a125b59739702f"
+  },
+  {
+    "file": "artifacts\\independent-apps\\next-chromium-375.png",
+    "sha256": "b8255522852685da1c2108b6a4bbcab945f649db0e4cd7919982d83205eff0d6"
+  },
+  {
+    "file": "artifacts\\independent-apps\\next-firefox-1280.png",
+    "sha256": "851dd58c03b47009c1567de1197ced4d1eabebb39974adf972c9cb15417c5750"
+  },
+  {
+    "file": "artifacts\\independent-apps\\next-firefox-375.png",
+    "sha256": "d33fac21443d19e74a72b23f20c5751b687a9bc717d204485f720e65306d35bf"
+  },
+  {
+    "file": "artifacts\\independent-apps\\react-chromium-1280.png",
+    "sha256": "0edbece2583efc036d1fe954ba2aefeb9c5c566ed2b74f826cd663987a5df5c7"
+  },
+  {
+    "file": "artifacts\\independent-apps\\react-chromium-375.png",
+    "sha256": "fe90d0c04a9df58a60aa6ba75f73b6ecd6ecef80b2b592c5826d9bc21ad31924"
+  },
+  {
+    "file": "artifacts\\independent-apps\\react-firefox-1280.png",
+    "sha256": "e2dd719618c03bba06b85d1913db5e94f70585b5b70ddbde1ec35fa51f138d52"
+  },
+  {
+    "file": "artifacts\\independent-apps\\react-firefox-375.png",
+    "sha256": "354e81b46552b95037990ac4823c460faae0e0528b790e4fde22a773733d60d1"
+  },
+  {
+    "file": "artifacts\\independent-apps\\next\\chromium-de-1280x800.png",
+    "sha256": "367f8293249684f85815750b576103be8f1e15afbc9be348b9a125b59739702f"
+  },
+  {
+    "file": "artifacts\\independent-apps\\next\\chromium-de-375x812.png",
+    "sha256": "b8255522852685da1c2108b6a4bbcab945f649db0e4cd7919982d83205eff0d6"
+  },
+  {
+    "file": "artifacts\\independent-apps\\next\\firefox-de-1280x800.png",
+    "sha256": "851dd58c03b47009c1567de1197ced4d1eabebb39974adf972c9cb15417c5750"
+  },
+  {
+    "file": "artifacts\\independent-apps\\next\\firefox-de-375x812.png",
+    "sha256": "d33fac21443d19e74a72b23f20c5751b687a9bc717d204485f720e65306d35bf"
+  },
+  {
+    "file": "artifacts\\independent-apps\\react\\chromium-de-1280x800.png",
+    "sha256": "8e579c98102cd04fdda8b50bbe3e154fd50049cf32e79a8de5ebb830b0569fd4"
+  },
+  {
+    "file": "artifacts\\independent-apps\\react\\chromium-de-375x812.png",
+    "sha256": "468e0fb13afa0655f2f2bd95df40ff8dbd0b1e08dc5c9849352bd576912003d7"
+  },
+  {
+    "file": "artifacts\\independent-apps\\react\\firefox-de-1280x800.png",
+    "sha256": "b560454b7441bffb63a72e263dc3154ba372663b16967dbcb45cdf699d9ee3ec"
+  },
+  {
+    "file": "artifacts\\independent-apps\\react\\firefox-de-375x812.png",
+    "sha256": "7edfe735a51223c222f3e414a48e4530d0389121d0031e1efbe148b91e5b1e2e"
+  }
+]

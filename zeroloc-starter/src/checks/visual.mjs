@@ -27,7 +27,17 @@ export async function visualQA({ url, outputDir = 'artifacts/visual', locales = 
         const context = await browser.newContext({viewport,locale,colorScheme:'light',reducedMotion:'reduce', serviceWorkers:'block'});
         try {
           // No fonts, analytics or other resources from external origins.
-          await context.route('**/*', route => new URL(route.request().url()).origin === origin.origin ? route.continue() : route.abort());
+          await context.route('**/*', async route => {
+            try {
+              if(new URL(route.request().url()).origin!==origin.origin){await route.abort();return;}
+              // Playwright routes the first request of a redirect chain only.
+              // Fetch without following redirects so a trusted local URL cannot
+              // redirect the browser to an unapproved external origin.
+              const response=await route.fetch({maxRedirects:0,timeout:timeoutMs});
+              if(response.status()>=300&&response.status()<400&&response.headers().location){await route.abort();return;}
+              await route.fulfill({response});
+            } catch {await route.abort().catch(()=>{});}
+          });
           await context.routeWebSocket('**/*',socket=>socket.close());
           const page = await context.newPage();
           const target = new URL(origin); target.searchParams.set('locale',locale);

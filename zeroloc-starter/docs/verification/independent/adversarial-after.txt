@@ -1,0 +1,14 @@
+✔ publish rejects alternate, multiple and rewritten push destinations before transport (8422.6617ms)
+✔ publish refuses a commit introduced during remote preflight; no unreviewed HEAD is pushed (8313.4223ms)
+﹣ atomic replacement preserves POSIX access mode on apply and byte restoration (0.4129ms) # SKIP
+✔ JSON Patch adversarial sequences cannot erase parent objects or overwrite human text (106.7224ms)
+✔ unsafe paths, linked backups, corrupt recovery and occupied locks preserve original evidence (151.3664ms)
+✔ source-retention quality gate recognizes invisible padding without blocking normal joined scripts (2.4628ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 17300.9962

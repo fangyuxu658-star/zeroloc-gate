@@ -1,0 +1,1723 @@
+▲ Next.js 16.4.2 (Turbopack)
+- Local:         http://127.0.0.1:45124
+- Network:       http://127.0.0.1:45124
+✓ Ready in 3.0s
+warn  - experimental.esmExternals is disabled
+⚠ The "experimental.esmExternals" option has been modified. experimental.esmExternals is not recommended to be modified as it may disrupt module resolution. It should be removed from your next.config.js.
+⚠ Warning: Next.js ignored package-lock.json in C:\Users\15084 because it is outside the current Git repository (C:\Users\15084\Documents\ChatGPT\本地化开源项目\.review-external\next-app).
+ To use this directory, set `turbopack.root` in your Next.js config.
+
+✓ Running next.config.js took 142ms
+- Experiments (use with caution):
+  ⨯ esmExternals
+
+⨯ You are using configuration and/or tools that are not yet
+supported by Next.js with Turbopack:
+
+
+- Unsupported Next.js configuration option(s) (next.config.js)
+  Turbopack will ignore the following configuration options:
+    - experimental.esmExternals
+
+
+⚠ Learn more about how to configure Turbopack with Next.js:
+https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack
+i18next::backendConnector: loaded namespace common for language de {
+  h1: 'Ein einfaches Beispiel',
+  'change-locale': 'Sprache wechseln zu "{{changeTo}}"',
+  'to-second-page': 'Zur zweiten Seite',
+  'error-with-status': 'Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten',
+  'error-without-status': 'Auf dem Server ist ein Fehler aufgetreten',
+  title: 'Hauptseite | next-i18next',
+  blog: {
+    v16: {
+      question: 'Was ist neu in next-i18next v16?',
+      answer: 'Schau dir <1>den Blogbeitrag</1> für die ganze Geschichte an.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Verwendest du den Next.js App Router?',
+      answer: 'Dann schau dir <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Möchtest du einige Superkräfte entfesseln, um für alle Seiten optimierte Übersetzungen zu haben?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Möchtest du SSG (next export) verwenden?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hallo {{name}}' }
+}
+i18next::backendConnector: loading namespace common.zeroloc-a6041427-6dce-4ef8-b32a-676da0f4a872.bak for language de failed Error: ENOENT: no such file or directory, open 'C:\Users\15084\Documents\ChatGPT\本地化开源项目\.review-external\next-app\public\locales\de\common.zeroloc-a6041427-6dce-4ef8-b32a-676da0f4a872.bak.json'
+    at getStaticProps (pages\index.tsx:140:37)
+  138 | }) => ({
+  139 |   props: {
+> 140 |     ...(await serverSideTranslations(locale ?? 'en', [
+      |                                     ^
+  141 |       'common',
+  142 |       'footer',
+  143 |     ])), {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales\\de\\common.zeroloc-a6041427-6dce-4ef8-b32a-676da0f4a872.bak.json'
+}
+i18next::backendConnector: loading namespace common.zeroloc-a6041427-6dce-4ef8-b32a-676da0f4a872.recovery.json for language de failed Error: ENOENT: no such file or directory, open 'C:\Users\15084\Documents\ChatGPT\本地化开源项目\.review-external\next-app\public\locales\de\common.zeroloc-a6041427-6dce-4ef8-b32a-676da0f4a872.recovery.json.json'
+    at getStaticProps (pages\index.tsx:140:37)
+  138 | }) => ({
+  139 |   props: {
+> 140 |     ...(await serverSideTranslations(locale ?? 'en', [
+      |                                     ^
+  141 |       'common',
+  142 |       'footer',
+  143 |     ])), {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales\\de\\common.zeroloc-a6041427-6dce-4ef8-b32a-676da0f4a872.recovery.json.json'
+}
+i18next::backendConnector: loaded namespace footer for language de {
+  description: 'Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert',
+  helpLocize: 'Wenn Sie <1>Locize</1> einsetzen, unterstützen Sie direkt die Zukunft von <3>i18next</3>.'
+}
+i18next::backendConnector: loaded namespace second-page for language de {
+  h1: 'Eine zweite Seite, um das Routing zu demonstrieren',
+  'back-to-home': 'Zurück zur Hauptseite',
+  title: 'Zweite Seite | next-i18next'
+}
+i18next::backendConnector: loaded namespace common for language en {
+  h1: 'A simple example',
+  'change-locale': 'Change locale to "{{changeTo}}"',
+  'to-second-page': 'To second page',
+  'error-with-status': 'A {{statusCode}} error occurred on server',
+  'error-without-status': 'An error occurred on the server',
+  title: 'Home | next-i18next',
+  blog: {
+    v16: {
+      question: "What's new in next-i18next v16?",
+      answer: 'Check out <1>the blog post</1> for the full story.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Are you using the Next.js App Router?',
+      answer: 'Then check out <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Do you like to unleash some super powers to have all side optimized translations?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Do you want to use SSG (next export)?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hello {{name}}' }
+}
+i18next::backendConnector: loading namespace common.zeroloc-a6041427-6dce-4ef8-b32a-676da0f4a872.bak for language en failed Error: ENOENT: no such file or directory, open 'C:\Users\15084\Documents\ChatGPT\本地化开源项目\.review-external\next-app\public\locales\en\common.zeroloc-a6041427-6dce-4ef8-b32a-676da0f4a872.bak.json'
+    at getStaticProps (pages\index.tsx:140:37)
+  138 | }) => ({
+  139 |   props: {
+> 140 |     ...(await serverSideTranslations(locale ?? 'en', [
+      |                                     ^
+  141 |       'common',
+  142 |       'footer',
+  143 |     ])), {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales\\en\\common.zeroloc-a6041427-6dce-4ef8-b32a-676da0f4a872.bak.json'
+}
+i18next::backendConnector: loading namespace common.zeroloc-a6041427-6dce-4ef8-b32a-676da0f4a872.recovery.json for language en failed Error: ENOENT: no such file or directory, open 'C:\Users\15084\Documents\ChatGPT\本地化开源项目\.review-external\next-app\public\locales\en\common.zeroloc-a6041427-6dce-4ef8-b32a-676da0f4a872.recovery.json.json'
+    at getStaticProps (pages\index.tsx:140:37)
+  138 | }) => ({
+  139 |   props: {
+> 140 |     ...(await serverSideTranslations(locale ?? 'en', [
+      |                                     ^
+  141 |       'common',
+  142 |       'footer',
+  143 |     ])), {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales\\en\\common.zeroloc-a6041427-6dce-4ef8-b32a-676da0f4a872.recovery.json.json'
+}
+i18next::backendConnector: loaded namespace footer for language en {
+  description: 'This is a non-page component that requires its own namespace',
+  helpLocize: 'With using <1>Locize</1> you directly support the future of <3>i18next</3>.'
+}
+i18next::backendConnector: loaded namespace second-page for language en {
+  h1: 'A second page, to demonstrate routing',
+  'back-to-home': 'Back to home',
+  title: 'Second page | next-i18next'
+}
+i18next: languageChanged de
+i18next: initialized {
+  debug: true,
+  initAsync: false,
+  ns: [
+    'common',
+    'common.zeroloc-a6041427-6dce-4ef8-b32a-676da0f4a872.bak',
+    'common.zeroloc-a6041427-6dce-4ef8-b32a-676da0f4a872.recovery.json',
+    'footer',
+    'second-page'
+  ],
+  defaultNS: 'common',
+  fallbackLng: [ 'en' ],
+  fallbackNS: false,
+  supportedLngs: false,
+  nonExplicitSupportedLngs: false,
+  load: 'currentOnly',
+  preload: [ 'en', 'de' ],
+  keySeparator: '.',
+  nsSeparator: ':',
+  pluralSeparator: '_',
+  contextSeparator: '_',
+  enableSelector: false,
+  partialBundledLanguages: false,
+  saveMissing: false,
+  updateMissing: false,
+  saveMissingTo: 'fallback',
+  saveMissingPlurals: true,
+  missingKeyHandler: false,
+  missingInterpolationHandler: false,
+  postProcess: false,
+  postProcessPassResolved: false,
+  returnNull: false,
+  returnEmptyString: true,
+  returnObjects: false,
+  joinArrays: false,
+  returnedObjectHandler: false,
+  parseMissingKeyHandler: false,
+  appendNamespaceToMissingKey: false,
+  appendNamespaceToCIMode: false,
+  overloadTranslationOptionHandler: [Function: overloadTranslationOptionHandler],
+  interpolation: {
+    escapeValue: false,
+    prefix: '{{',
+    suffix: '}}',
+    formatSeparator: ',',
+    unescapePrefix: '-',
+    nestingPrefix: '$t(',
+    nestingSuffix: ')',
+    nestingOptionsSeparator: ',',
+    maxReplaces: 1000,
+    skipOnVariables: true,
+    format: [Function: bound format]
+  },
+  cacheInBuiltFormats: true,
+  errorStackTraceLimit: 0,
+  initImmediate: false,
+  localeExtension: 'json',
+  localePath: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales',
+  localeStructure: '{{lng}}/{{ns}}',
+  react: { useSuspense: false },
+  reloadOnPrerender: true,
+  serializeConfig: true,
+  use: [],
+  lng: 'de',
+  defaultLocale: 'en',
+  locales: [ 'en', 'de' ],
+  backend: {
+    addPath: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales\\{{lng}}\\{{ns}}.missing.json',
+    loadPath: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales\\{{lng}}\\{{ns}}.json'
+  },
+  ignoreJSONStructure: true
+}
+i18next::backendConnector: loaded namespace common for language de {
+  h1: 'Ein einfaches Beispiel',
+  'change-locale': 'Sprache wechseln zu "{{changeTo}}"',
+  'to-second-page': 'Zur zweiten Seite',
+  'error-with-status': 'Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten',
+  'error-without-status': 'Auf dem Server ist ein Fehler aufgetreten',
+  title: 'Hauptseite | next-i18next',
+  blog: {
+    v16: {
+      question: 'Was ist neu in next-i18next v16?',
+      answer: 'Schau dir <1>den Blogbeitrag</1> für die ganze Geschichte an.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Verwendest du den Next.js App Router?',
+      answer: 'Dann schau dir <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Möchtest du einige Superkräfte entfesseln, um für alle Seiten optimierte Übersetzungen zu haben?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Möchtest du SSG (next export) verwenden?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hallo {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language de {
+  description: 'Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert',
+  helpLocize: 'Wenn Sie <1>Locize</1> einsetzen, unterstützen Sie direkt die Zukunft von <3>i18next</3>.'
+}
+i18next::backendConnector: loaded namespace common for language en {
+  h1: 'A simple example',
+  'change-locale': 'Change locale to "{{changeTo}}"',
+  'to-second-page': 'To second page',
+  'error-with-status': 'A {{statusCode}} error occurred on server',
+  'error-without-status': 'An error occurred on the server',
+  title: 'Home | next-i18next',
+  blog: {
+    v16: {
+      question: "What's new in next-i18next v16?",
+      answer: 'Check out <1>the blog post</1> for the full story.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Are you using the Next.js App Router?',
+      answer: 'Then check out <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Do you like to unleash some super powers to have all side optimized translations?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Do you want to use SSG (next export)?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hello {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language en {
+  description: 'This is a non-page component that requires its own namespace',
+  helpLocize: 'With using <1>Locize</1> you directly support the future of <3>i18next</3>.'
+}
+i18next: languageChanged de
+i18next: initialized {
+  debug: true,
+  initAsync: false,
+  ns: [ 'common', 'footer' ],
+  defaultNS: 'common',
+  fallbackLng: [ 'en' ],
+  fallbackNS: false,
+  supportedLngs: false,
+  nonExplicitSupportedLngs: false,
+  load: 'currentOnly',
+  preload: false,
+  keySeparator: '.',
+  nsSeparator: ':',
+  pluralSeparator: '_',
+  contextSeparator: '_',
+  enableSelector: false,
+  partialBundledLanguages: false,
+  saveMissing: false,
+  updateMissing: false,
+  saveMissingTo: 'fallback',
+  saveMissingPlurals: true,
+  missingKeyHandler: false,
+  missingInterpolationHandler: false,
+  postProcess: false,
+  postProcessPassResolved: false,
+  returnNull: false,
+  returnEmptyString: true,
+  returnObjects: false,
+  joinArrays: false,
+  returnedObjectHandler: false,
+  parseMissingKeyHandler: false,
+  appendNamespaceToMissingKey: false,
+  appendNamespaceToCIMode: false,
+  overloadTranslationOptionHandler: [Function: overloadTranslationOptionHandler],
+  interpolation: {
+    escapeValue: false,
+    prefix: '{{',
+    suffix: '}}',
+    formatSeparator: ',',
+    unescapePrefix: '-',
+    nestingPrefix: '$t(',
+    nestingSuffix: ')',
+    nestingOptionsSeparator: ',',
+    maxReplaces: 1000,
+    skipOnVariables: true,
+    format: [Function: bound format]
+  },
+  cacheInBuiltFormats: true,
+  errorStackTraceLimit: 0,
+  initImmediate: false,
+  localeExtension: 'json',
+  localePath: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales',
+  localeStructure: '{{lng}}/{{ns}}',
+  react: { useSuspense: false },
+  reloadOnPrerender: true,
+  serializeConfig: true,
+  use: [],
+  lng: 'de',
+  defaultLocale: 'en',
+  locales: [ 'en', 'de' ],
+  resources: {
+    de: { common: [Object], footer: [Object] },
+    en: { common: [Object], footer: [Object] }
+  },
+  ignoreJSONStructure: true
+}
+ GET / 200 in 1066ms (next.js: 657ms, application-code: 408ms)
+i18next: languageChanged de
+i18next::backendConnector: loaded namespace common for language de {
+  h1: 'Ein einfaches Beispiel',
+  'change-locale': 'Sprache wechseln zu "{{changeTo}}"',
+  'to-second-page': 'Zur zweiten Seite',
+  'error-with-status': 'Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten',
+  'error-without-status': 'Auf dem Server ist ein Fehler aufgetreten',
+  title: 'Hauptseite | next-i18next',
+  blog: {
+    v16: {
+      question: 'Was ist neu in next-i18next v16?',
+      answer: 'Schau dir <1>den Blogbeitrag</1> für die ganze Geschichte an.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Verwendest du den Next.js App Router?',
+      answer: 'Dann schau dir <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Möchtest du einige Superkräfte entfesseln, um für alle Seiten optimierte Übersetzungen zu haben?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Möchtest du SSG (next export) verwenden?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hallo {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language de {
+  description: 'Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert',
+  helpLocize: 'Wenn Sie <1>Locize</1> einsetzen, unterstützen Sie direkt die Zukunft von <3>i18next</3>.'
+}
+i18next::backendConnector: loaded namespace common for language en {
+  h1: 'A simple example',
+  'change-locale': 'Change locale to "{{changeTo}}"',
+  'to-second-page': 'To second page',
+  'error-with-status': 'A {{statusCode}} error occurred on server',
+  'error-without-status': 'An error occurred on the server',
+  title: 'Home | next-i18next',
+  blog: {
+    v16: {
+      question: "What's new in next-i18next v16?",
+      answer: 'Check out <1>the blog post</1> for the full story.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Are you using the Next.js App Router?',
+      answer: 'Then check out <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Do you like to unleash some super powers to have all side optimized translations?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Do you want to use SSG (next export)?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hello {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language en {
+  description: 'This is a non-page component that requires its own namespace',
+  helpLocize: 'With using <1>Locize</1> you directly support the future of <3>i18next</3>.'
+}
+i18next: languageChanged de
+i18next: initialized {
+  debug: true,
+  initAsync: false,
+  ns: [ 'common', 'footer' ],
+  defaultNS: 'common',
+  fallbackLng: [ 'en' ],
+  fallbackNS: false,
+  supportedLngs: false,
+  nonExplicitSupportedLngs: false,
+  load: 'currentOnly',
+  preload: false,
+  keySeparator: '.',
+  nsSeparator: ':',
+  pluralSeparator: '_',
+  contextSeparator: '_',
+  enableSelector: false,
+  partialBundledLanguages: false,
+  saveMissing: false,
+  updateMissing: false,
+  saveMissingTo: 'fallback',
+  saveMissingPlurals: true,
+  missingKeyHandler: false,
+  missingInterpolationHandler: false,
+  postProcess: false,
+  postProcessPassResolved: false,
+  returnNull: false,
+  returnEmptyString: true,
+  returnObjects: false,
+  joinArrays: false,
+  returnedObjectHandler: false,
+  parseMissingKeyHandler: false,
+  appendNamespaceToMissingKey: false,
+  appendNamespaceToCIMode: false,
+  overloadTranslationOptionHandler: [Function: overloadTranslationOptionHandler],
+  interpolation: {
+    escapeValue: false,
+    prefix: '{{',
+    suffix: '}}',
+    formatSeparator: ',',
+    unescapePrefix: '-',
+    nestingPrefix: '$t(',
+    nestingSuffix: ')',
+    nestingOptionsSeparator: ',',
+    maxReplaces: 1000,
+    skipOnVariables: true,
+    format: [Function: bound format]
+  },
+  cacheInBuiltFormats: true,
+  errorStackTraceLimit: 0,
+  initImmediate: false,
+  localeExtension: 'json',
+  localePath: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales',
+  localeStructure: '{{lng}}/{{ns}}',
+  react: { useSuspense: false },
+  reloadOnPrerender: true,
+  serializeConfig: true,
+  use: [],
+  lng: 'de',
+  defaultLocale: 'en',
+  locales: [ 'en', 'de' ],
+  resources: {
+    de: { common: [Object], footer: [Object] },
+    en: { common: [Object], footer: [Object] }
+  },
+  ignoreJSONStructure: true
+}
+ GET / 200 in 67ms (next.js: 15ms, application-code: 52ms)
+i18next: languageChanged en
+i18next::backendConnector: loaded namespace common for language en {
+  h1: 'A simple example',
+  'change-locale': 'Change locale to "{{changeTo}}"',
+  'to-second-page': 'To second page',
+  'error-with-status': 'A {{statusCode}} error occurred on server',
+  'error-without-status': 'An error occurred on the server',
+  title: 'Home | next-i18next',
+  blog: {
+    v16: {
+      question: "What's new in next-i18next v16?",
+      answer: 'Check out <1>the blog post</1> for the full story.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Are you using the Next.js App Router?',
+      answer: 'Then check out <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Do you like to unleash some super powers to have all side optimized translations?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Do you want to use SSG (next export)?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hello {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language en {
+  description: 'This is a non-page component that requires its own namespace',
+  helpLocize: 'With using <1>Locize</1> you directly support the future of <3>i18next</3>.'
+}
+i18next: languageChanged en
+i18next: initialized {
+  debug: true,
+  initAsync: false,
+  ns: [ 'common', 'footer' ],
+  defaultNS: 'common',
+  fallbackLng: [ 'en' ],
+  fallbackNS: false,
+  supportedLngs: false,
+  nonExplicitSupportedLngs: false,
+  load: 'currentOnly',
+  preload: false,
+  keySeparator: '.',
+  nsSeparator: ':',
+  pluralSeparator: '_',
+  contextSeparator: '_',
+  enableSelector: false,
+  partialBundledLanguages: false,
+  saveMissing: false,
+  updateMissing: false,
+  saveMissingTo: 'fallback',
+  saveMissingPlurals: true,
+  missingKeyHandler: false,
+  missingInterpolationHandler: false,
+  postProcess: false,
+  postProcessPassResolved: false,
+  returnNull: false,
+  returnEmptyString: true,
+  returnObjects: false,
+  joinArrays: false,
+  returnedObjectHandler: false,
+  parseMissingKeyHandler: false,
+  appendNamespaceToMissingKey: false,
+  appendNamespaceToCIMode: false,
+  overloadTranslationOptionHandler: [Function: overloadTranslationOptionHandler],
+  interpolation: {
+    escapeValue: false,
+    prefix: '{{',
+    suffix: '}}',
+    formatSeparator: ',',
+    unescapePrefix: '-',
+    nestingPrefix: '$t(',
+    nestingSuffix: ')',
+    nestingOptionsSeparator: ',',
+    maxReplaces: 1000,
+    skipOnVariables: true,
+    format: [Function: bound format]
+  },
+  cacheInBuiltFormats: true,
+  errorStackTraceLimit: 0,
+  initImmediate: false,
+  localeExtension: 'json',
+  localePath: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales',
+  localeStructure: '{{lng}}/{{ns}}',
+  react: { useSuspense: false },
+  reloadOnPrerender: true,
+  serializeConfig: true,
+  use: [],
+  lng: 'en',
+  defaultLocale: 'en',
+  locales: [ 'en', 'de' ],
+  resources: { en: { common: [Object], footer: [Object] } },
+  ignoreJSONStructure: true
+}
+ GET /?locale=de 200 in 57ms (next.js: 17ms, application-code: 40ms)
+i18next: languageChanged de
+i18next::backendConnector: loaded namespace common for language de {
+  h1: 'Ein einfaches Beispiel',
+  'change-locale': 'Sprache wechseln zu "{{changeTo}}"',
+  'to-second-page': 'Zur zweiten Seite',
+  'error-with-status': 'Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten',
+  'error-without-status': 'Auf dem Server ist ein Fehler aufgetreten',
+  title: 'Hauptseite | next-i18next',
+  blog: {
+    v16: {
+      question: 'Was ist neu in next-i18next v16?',
+      answer: 'Schau dir <1>den Blogbeitrag</1> für die ganze Geschichte an.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Verwendest du den Next.js App Router?',
+      answer: 'Dann schau dir <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Möchtest du einige Superkräfte entfesseln, um für alle Seiten optimierte Übersetzungen zu haben?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Möchtest du SSG (next export) verwenden?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hallo {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language de {
+  description: 'Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert',
+  helpLocize: 'Wenn Sie <1>Locize</1> einsetzen, unterstützen Sie direkt die Zukunft von <3>i18next</3>.'
+}
+i18next::backendConnector: loaded namespace common for language en {
+  h1: 'A simple example',
+  'change-locale': 'Change locale to "{{changeTo}}"',
+  'to-second-page': 'To second page',
+  'error-with-status': 'A {{statusCode}} error occurred on server',
+  'error-without-status': 'An error occurred on the server',
+  title: 'Home | next-i18next',
+  blog: {
+    v16: {
+      question: "What's new in next-i18next v16?",
+      answer: 'Check out <1>the blog post</1> for the full story.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Are you using the Next.js App Router?',
+      answer: 'Then check out <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Do you like to unleash some super powers to have all side optimized translations?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Do you want to use SSG (next export)?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hello {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language en {
+  description: 'This is a non-page component that requires its own namespace',
+  helpLocize: 'With using <1>Locize</1> you directly support the future of <3>i18next</3>.'
+}
+i18next: languageChanged de
+i18next: initialized {
+  debug: true,
+  initAsync: false,
+  ns: [ 'common', 'footer' ],
+  defaultNS: 'common',
+  fallbackLng: [ 'en' ],
+  fallbackNS: false,
+  supportedLngs: false,
+  nonExplicitSupportedLngs: false,
+  load: 'currentOnly',
+  preload: false,
+  keySeparator: '.',
+  nsSeparator: ':',
+  pluralSeparator: '_',
+  contextSeparator: '_',
+  enableSelector: false,
+  partialBundledLanguages: false,
+  saveMissing: false,
+  updateMissing: false,
+  saveMissingTo: 'fallback',
+  saveMissingPlurals: true,
+  missingKeyHandler: false,
+  missingInterpolationHandler: false,
+  postProcess: false,
+  postProcessPassResolved: false,
+  returnNull: false,
+  returnEmptyString: true,
+  returnObjects: false,
+  joinArrays: false,
+  returnedObjectHandler: false,
+  parseMissingKeyHandler: false,
+  appendNamespaceToMissingKey: false,
+  appendNamespaceToCIMode: false,
+  overloadTranslationOptionHandler: [Function: overloadTranslationOptionHandler],
+  interpolation: {
+    escapeValue: false,
+    prefix: '{{',
+    suffix: '}}',
+    formatSeparator: ',',
+    unescapePrefix: '-',
+    nestingPrefix: '$t(',
+    nestingSuffix: ')',
+    nestingOptionsSeparator: ',',
+    maxReplaces: 1000,
+    skipOnVariables: true,
+    format: [Function: bound format]
+  },
+  cacheInBuiltFormats: true,
+  errorStackTraceLimit: 0,
+  initImmediate: false,
+  localeExtension: 'json',
+  localePath: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales',
+  localeStructure: '{{lng}}/{{ns}}',
+  react: { useSuspense: false },
+  reloadOnPrerender: true,
+  serializeConfig: true,
+  use: [],
+  lng: 'de',
+  defaultLocale: 'en',
+  locales: [ 'en', 'de' ],
+  resources: {
+    de: { common: [Object], footer: [Object] },
+    en: { common: [Object], footer: [Object] }
+  },
+  ignoreJSONStructure: true
+}
+ GET / 200 in 60ms (next.js: 15ms, application-code: 45ms)
+i18next: languageChanged de
+i18next::backendConnector: loaded namespace common for language de {
+  h1: 'Ein einfaches Beispiel',
+  'change-locale': 'Sprache wechseln zu "{{changeTo}}"',
+  'to-second-page': 'Zur zweiten Seite',
+  'error-with-status': 'Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten',
+  'error-without-status': 'Auf dem Server ist ein Fehler aufgetreten',
+  title: 'Hauptseite | next-i18next',
+  blog: {
+    v16: {
+      question: 'Was ist neu in next-i18next v16?',
+      answer: 'Schau dir <1>den Blogbeitrag</1> für die ganze Geschichte an.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Verwendest du den Next.js App Router?',
+      answer: 'Dann schau dir <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Möchtest du einige Superkräfte entfesseln, um für alle Seiten optimierte Übersetzungen zu haben?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Möchtest du SSG (next export) verwenden?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hallo {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language de {
+  description: 'Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert',
+  helpLocize: 'Wenn Sie <1>Locize</1> einsetzen, unterstützen Sie direkt die Zukunft von <3>i18next</3>.'
+}
+i18next::backendConnector: loaded namespace common for language en {
+  h1: 'A simple example',
+  'change-locale': 'Change locale to "{{changeTo}}"',
+  'to-second-page': 'To second page',
+  'error-with-status': 'A {{statusCode}} error occurred on server',
+  'error-without-status': 'An error occurred on the server',
+  title: 'Home | next-i18next',
+  blog: {
+    v16: {
+      question: "What's new in next-i18next v16?",
+      answer: 'Check out <1>the blog post</1> for the full story.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Are you using the Next.js App Router?',
+      answer: 'Then check out <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Do you like to unleash some super powers to have all side optimized translations?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Do you want to use SSG (next export)?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hello {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language en {
+  description: 'This is a non-page component that requires its own namespace',
+  helpLocize: 'With using <1>Locize</1> you directly support the future of <3>i18next</3>.'
+}
+i18next: languageChanged de
+i18next: initialized {
+  debug: true,
+  initAsync: false,
+  ns: [ 'common', 'footer' ],
+  defaultNS: 'common',
+  fallbackLng: [ 'en' ],
+  fallbackNS: false,
+  supportedLngs: false,
+  nonExplicitSupportedLngs: false,
+  load: 'currentOnly',
+  preload: false,
+  keySeparator: '.',
+  nsSeparator: ':',
+  pluralSeparator: '_',
+  contextSeparator: '_',
+  enableSelector: false,
+  partialBundledLanguages: false,
+  saveMissing: false,
+  updateMissing: false,
+  saveMissingTo: 'fallback',
+  saveMissingPlurals: true,
+  missingKeyHandler: false,
+  missingInterpolationHandler: false,
+  postProcess: false,
+  postProcessPassResolved: false,
+  returnNull: false,
+  returnEmptyString: true,
+  returnObjects: false,
+  joinArrays: false,
+  returnedObjectHandler: false,
+  parseMissingKeyHandler: false,
+  appendNamespaceToMissingKey: false,
+  appendNamespaceToCIMode: false,
+  overloadTranslationOptionHandler: [Function: overloadTranslationOptionHandler],
+  interpolation: {
+    escapeValue: false,
+    prefix: '{{',
+    suffix: '}}',
+    formatSeparator: ',',
+    unescapePrefix: '-',
+    nestingPrefix: '$t(',
+    nestingSuffix: ')',
+    nestingOptionsSeparator: ',',
+    maxReplaces: 1000,
+    skipOnVariables: true,
+    format: [Function: bound format]
+  },
+  cacheInBuiltFormats: true,
+  errorStackTraceLimit: 0,
+  initImmediate: false,
+  localeExtension: 'json',
+  localePath: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales',
+  localeStructure: '{{lng}}/{{ns}}',
+  react: { useSuspense: false },
+  reloadOnPrerender: true,
+  serializeConfig: true,
+  use: [],
+  lng: 'de',
+  defaultLocale: 'en',
+  locales: [ 'en', 'de' ],
+  resources: {
+    de: { common: [Object], footer: [Object] },
+    en: { common: [Object], footer: [Object] }
+  },
+  ignoreJSONStructure: true
+}
+ GET / 200 in 59ms (next.js: 17ms, application-code: 43ms)
+i18next: languageChanged de
+i18next::backendConnector: loaded namespace common for language de {
+  h1: 'Ein einfaches Beispiel',
+  'change-locale': 'Sprache wechseln zu "{{changeTo}}"',
+  'to-second-page': 'Zur zweiten Seite',
+  'error-with-status': 'Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten',
+  'error-without-status': 'Auf dem Server ist ein Fehler aufgetreten',
+  title: 'Hauptseite | next-i18next',
+  blog: {
+    v16: {
+      question: 'Was ist neu in next-i18next v16?',
+      answer: 'Schau dir <1>den Blogbeitrag</1> für die ganze Geschichte an.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Verwendest du den Next.js App Router?',
+      answer: 'Dann schau dir <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Möchtest du einige Superkräfte entfesseln, um für alle Seiten optimierte Übersetzungen zu haben?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Möchtest du SSG (next export) verwenden?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hallo {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language de {
+  description: 'Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert',
+  helpLocize: 'Wenn Sie <1>Locize</1> einsetzen, unterstützen Sie direkt die Zukunft von <3>i18next</3>.'
+}
+i18next::backendConnector: loaded namespace common for language en {
+  h1: 'A simple example',
+  'change-locale': 'Change locale to "{{changeTo}}"',
+  'to-second-page': 'To second page',
+  'error-with-status': 'A {{statusCode}} error occurred on server',
+  'error-without-status': 'An error occurred on the server',
+  title: 'Home | next-i18next',
+  blog: {
+    v16: {
+      question: "What's new in next-i18next v16?",
+      answer: 'Check out <1>the blog post</1> for the full story.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Are you using the Next.js App Router?',
+      answer: 'Then check out <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Do you like to unleash some super powers to have all side optimized translations?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Do you want to use SSG (next export)?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hello {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language en {
+  description: 'This is a non-page component that requires its own namespace',
+  helpLocize: 'With using <1>Locize</1> you directly support the future of <3>i18next</3>.'
+}
+i18next: languageChanged de
+i18next: initialized {
+  debug: true,
+  initAsync: false,
+  ns: [ 'common', 'footer' ],
+  defaultNS: 'common',
+  fallbackLng: [ 'en' ],
+  fallbackNS: false,
+  supportedLngs: false,
+  nonExplicitSupportedLngs: false,
+  load: 'currentOnly',
+  preload: false,
+  keySeparator: '.',
+  nsSeparator: ':',
+  pluralSeparator: '_',
+  contextSeparator: '_',
+  enableSelector: false,
+  partialBundledLanguages: false,
+  saveMissing: false,
+  updateMissing: false,
+  saveMissingTo: 'fallback',
+  saveMissingPlurals: true,
+  missingKeyHandler: false,
+  missingInterpolationHandler: false,
+  postProcess: false,
+  postProcessPassResolved: false,
+  returnNull: false,
+  returnEmptyString: true,
+  returnObjects: false,
+  joinArrays: false,
+  returnedObjectHandler: false,
+  parseMissingKeyHandler: false,
+  appendNamespaceToMissingKey: false,
+  appendNamespaceToCIMode: false,
+  overloadTranslationOptionHandler: [Function: overloadTranslationOptionHandler],
+  interpolation: {
+    escapeValue: false,
+    prefix: '{{',
+    suffix: '}}',
+    formatSeparator: ',',
+    unescapePrefix: '-',
+    nestingPrefix: '$t(',
+    nestingSuffix: ')',
+    nestingOptionsSeparator: ',',
+    maxReplaces: 1000,
+    skipOnVariables: true,
+    format: [Function: bound format]
+  },
+  cacheInBuiltFormats: true,
+  errorStackTraceLimit: 0,
+  initImmediate: false,
+  localeExtension: 'json',
+  localePath: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales',
+  localeStructure: '{{lng}}/{{ns}}',
+  react: { useSuspense: false },
+  reloadOnPrerender: true,
+  serializeConfig: true,
+  use: [],
+  lng: 'de',
+  defaultLocale: 'en',
+  locales: [ 'en', 'de' ],
+  resources: {
+    de: { common: [Object], footer: [Object] },
+    en: { common: [Object], footer: [Object] }
+  },
+  ignoreJSONStructure: true
+}
+ GET / 200 in 68ms (next.js: 22ms, application-code: 46ms)
+i18next: languageChanged de
+i18next::backendConnector: loaded namespace common for language de {
+  h1: 'Ein einfaches Beispiel',
+  'change-locale': 'Sprache wechseln zu "{{changeTo}}"',
+  'to-second-page': 'Zur zweiten Seite',
+  'error-with-status': 'Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten',
+  'error-without-status': 'Auf dem Server ist ein Fehler aufgetreten',
+  title: 'Hauptseite | next-i18next',
+  blog: {
+    v16: {
+      question: 'Was ist neu in next-i18next v16?',
+      answer: 'Schau dir <1>den Blogbeitrag</1> für die ganze Geschichte an.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Verwendest du den Next.js App Router?',
+      answer: 'Dann schau dir <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Möchtest du einige Superkräfte entfesseln, um für alle Seiten optimierte Übersetzungen zu haben?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Möchtest du SSG (next export) verwenden?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hallo {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language de {
+  description: 'Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert',
+  helpLocize: 'Wenn Sie <1>Locize</1> einsetzen, unterstützen Sie direkt die Zukunft von <3>i18next</3>.'
+}
+i18next::backendConnector: loaded namespace common for language en {
+  h1: 'A simple example',
+  'change-locale': 'Change locale to "{{changeTo}}"',
+  'to-second-page': 'To second page',
+  'error-with-status': 'A {{statusCode}} error occurred on server',
+  'error-without-status': 'An error occurred on the server',
+  title: 'Home | next-i18next',
+  blog: {
+    v16: {
+      question: "What's new in next-i18next v16?",
+      answer: 'Check out <1>the blog post</1> for the full story.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Are you using the Next.js App Router?',
+      answer: 'Then check out <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Do you like to unleash some super powers to have all side optimized translations?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Do you want to use SSG (next export)?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hello {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language en {
+  description: 'This is a non-page component that requires its own namespace',
+  helpLocize: 'With using <1>Locize</1> you directly support the future of <3>i18next</3>.'
+}
+i18next: languageChanged de
+i18next: initialized {
+  debug: true,
+  initAsync: false,
+  ns: [ 'common', 'footer' ],
+  defaultNS: 'common',
+  fallbackLng: [ 'en' ],
+  fallbackNS: false,
+  supportedLngs: false,
+  nonExplicitSupportedLngs: false,
+  load: 'currentOnly',
+  preload: false,
+  keySeparator: '.',
+  nsSeparator: ':',
+  pluralSeparator: '_',
+  contextSeparator: '_',
+  enableSelector: false,
+  partialBundledLanguages: false,
+  saveMissing: false,
+  updateMissing: false,
+  saveMissingTo: 'fallback',
+  saveMissingPlurals: true,
+  missingKeyHandler: false,
+  missingInterpolationHandler: false,
+  postProcess: false,
+  postProcessPassResolved: false,
+  returnNull: false,
+  returnEmptyString: true,
+  returnObjects: false,
+  joinArrays: false,
+  returnedObjectHandler: false,
+  parseMissingKeyHandler: false,
+  appendNamespaceToMissingKey: false,
+  appendNamespaceToCIMode: false,
+  overloadTranslationOptionHandler: [Function: overloadTranslationOptionHandler],
+  interpolation: {
+    escapeValue: false,
+    prefix: '{{',
+    suffix: '}}',
+    formatSeparator: ',',
+    unescapePrefix: '-',
+    nestingPrefix: '$t(',
+    nestingSuffix: ')',
+    nestingOptionsSeparator: ',',
+    maxReplaces: 1000,
+    skipOnVariables: true,
+    format: [Function: bound format]
+  },
+  cacheInBuiltFormats: true,
+  errorStackTraceLimit: 0,
+  initImmediate: false,
+  localeExtension: 'json',
+  localePath: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales',
+  localeStructure: '{{lng}}/{{ns}}',
+  react: { useSuspense: false },
+  reloadOnPrerender: true,
+  serializeConfig: true,
+  use: [],
+  lng: 'de',
+  defaultLocale: 'en',
+  locales: [ 'en', 'de' ],
+  resources: {
+    de: { common: [Object], footer: [Object] },
+    en: { common: [Object], footer: [Object] }
+  },
+  ignoreJSONStructure: true
+}
+ GET / 200 in 70ms (next.js: 16ms, application-code: 54ms)
+i18next: languageChanged de
+i18next::backendConnector: loaded namespace common for language de {
+  h1: 'Ein einfaches Beispiel',
+  'change-locale': 'Sprache wechseln zu "{{changeTo}}"',
+  'to-second-page': 'Zur zweiten Seite',
+  'error-with-status': 'Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten',
+  'error-without-status': 'Auf dem Server ist ein Fehler aufgetreten',
+  title: 'Hauptseite | next-i18next',
+  blog: {
+    v16: {
+      question: 'Was ist neu in next-i18next v16?',
+      answer: 'Schau dir <1>den Blogbeitrag</1> für die ganze Geschichte an.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Verwendest du den Next.js App Router?',
+      answer: 'Dann schau dir <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Möchtest du einige Superkräfte entfesseln, um für alle Seiten optimierte Übersetzungen zu haben?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Möchtest du SSG (next export) verwenden?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hallo {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language de {
+  description: 'Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert',
+  helpLocize: 'Wenn Sie <1>Locize</1> einsetzen, unterstützen Sie direkt die Zukunft von <3>i18next</3>.'
+}
+i18next::backendConnector: loaded namespace common for language en {
+  h1: 'A simple example',
+  'change-locale': 'Change locale to "{{changeTo}}"',
+  'to-second-page': 'To second page',
+  'error-with-status': 'A {{statusCode}} error occurred on server',
+  'error-without-status': 'An error occurred on the server',
+  title: 'Home | next-i18next',
+  blog: {
+    v16: {
+      question: "What's new in next-i18next v16?",
+      answer: 'Check out <1>the blog post</1> for the full story.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Are you using the Next.js App Router?',
+      answer: 'Then check out <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Do you like to unleash some super powers to have all side optimized translations?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Do you want to use SSG (next export)?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hello {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language en {
+  description: 'This is a non-page component that requires its own namespace',
+  helpLocize: 'With using <1>Locize</1> you directly support the future of <3>i18next</3>.'
+}
+i18next: languageChanged de
+i18next: initialized {
+  debug: true,
+  initAsync: false,
+  ns: [ 'common', 'footer' ],
+  defaultNS: 'common',
+  fallbackLng: [ 'en' ],
+  fallbackNS: false,
+  supportedLngs: false,
+  nonExplicitSupportedLngs: false,
+  load: 'currentOnly',
+  preload: false,
+  keySeparator: '.',
+  nsSeparator: ':',
+  pluralSeparator: '_',
+  contextSeparator: '_',
+  enableSelector: false,
+  partialBundledLanguages: false,
+  saveMissing: false,
+  updateMissing: false,
+  saveMissingTo: 'fallback',
+  saveMissingPlurals: true,
+  missingKeyHandler: false,
+  missingInterpolationHandler: false,
+  postProcess: false,
+  postProcessPassResolved: false,
+  returnNull: false,
+  returnEmptyString: true,
+  returnObjects: false,
+  joinArrays: false,
+  returnedObjectHandler: false,
+  parseMissingKeyHandler: false,
+  appendNamespaceToMissingKey: false,
+  appendNamespaceToCIMode: false,
+  overloadTranslationOptionHandler: [Function: overloadTranslationOptionHandler],
+  interpolation: {
+    escapeValue: false,
+    prefix: '{{',
+    suffix: '}}',
+    formatSeparator: ',',
+    unescapePrefix: '-',
+    nestingPrefix: '$t(',
+    nestingSuffix: ')',
+    nestingOptionsSeparator: ',',
+    maxReplaces: 1000,
+    skipOnVariables: true,
+    format: [Function: bound format]
+  },
+  cacheInBuiltFormats: true,
+  errorStackTraceLimit: 0,
+  initImmediate: false,
+  localeExtension: 'json',
+  localePath: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales',
+  localeStructure: '{{lng}}/{{ns}}',
+  react: { useSuspense: false },
+  reloadOnPrerender: true,
+  serializeConfig: true,
+  use: [],
+  lng: 'de',
+  defaultLocale: 'en',
+  locales: [ 'en', 'de' ],
+  resources: {
+    de: { common: [Object], footer: [Object] },
+    en: { common: [Object], footer: [Object] }
+  },
+  ignoreJSONStructure: true
+}
+ GET /?locale=de 200 in 54ms (next.js: 14ms, application-code: 39ms)
+i18next: languageChanged de
+i18next::backendConnector: loaded namespace common for language de {
+  h1: 'Ein einfaches Beispiel',
+  'change-locale': 'Sprache wechseln zu "{{changeTo}}"',
+  'to-second-page': 'Zur zweiten Seite',
+  'error-with-status': 'Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten',
+  'error-without-status': 'Auf dem Server ist ein Fehler aufgetreten',
+  title: 'Hauptseite | next-i18next',
+  blog: {
+    v16: {
+      question: 'Was ist neu in next-i18next v16?',
+      answer: 'Schau dir <1>den Blogbeitrag</1> für die ganze Geschichte an.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Verwendest du den Next.js App Router?',
+      answer: 'Dann schau dir <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Möchtest du einige Superkräfte entfesseln, um für alle Seiten optimierte Übersetzungen zu haben?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Möchtest du SSG (next export) verwenden?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hallo {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language de {
+  description: 'Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert',
+  helpLocize: 'Wenn Sie <1>Locize</1> einsetzen, unterstützen Sie direkt die Zukunft von <3>i18next</3>.'
+}
+i18next::backendConnector: loaded namespace common for language en {
+  h1: 'A simple example',
+  'change-locale': 'Change locale to "{{changeTo}}"',
+  'to-second-page': 'To second page',
+  'error-with-status': 'A {{statusCode}} error occurred on server',
+  'error-without-status': 'An error occurred on the server',
+  title: 'Home | next-i18next',
+  blog: {
+    v16: {
+      question: "What's new in next-i18next v16?",
+      answer: 'Check out <1>the blog post</1> for the full story.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Are you using the Next.js App Router?',
+      answer: 'Then check out <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Do you like to unleash some super powers to have all side optimized translations?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Do you want to use SSG (next export)?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hello {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language en {
+  description: 'This is a non-page component that requires its own namespace',
+  helpLocize: 'With using <1>Locize</1> you directly support the future of <3>i18next</3>.'
+}
+i18next: languageChanged de
+i18next: initialized {
+  debug: true,
+  initAsync: false,
+  ns: [ 'common', 'footer' ],
+  defaultNS: 'common',
+  fallbackLng: [ 'en' ],
+  fallbackNS: false,
+  supportedLngs: false,
+  nonExplicitSupportedLngs: false,
+  load: 'currentOnly',
+  preload: false,
+  keySeparator: '.',
+  nsSeparator: ':',
+  pluralSeparator: '_',
+  contextSeparator: '_',
+  enableSelector: false,
+  partialBundledLanguages: false,
+  saveMissing: false,
+  updateMissing: false,
+  saveMissingTo: 'fallback',
+  saveMissingPlurals: true,
+  missingKeyHandler: false,
+  missingInterpolationHandler: false,
+  postProcess: false,
+  postProcessPassResolved: false,
+  returnNull: false,
+  returnEmptyString: true,
+  returnObjects: false,
+  joinArrays: false,
+  returnedObjectHandler: false,
+  parseMissingKeyHandler: false,
+  appendNamespaceToMissingKey: false,
+  appendNamespaceToCIMode: false,
+  overloadTranslationOptionHandler: [Function: overloadTranslationOptionHandler],
+  interpolation: {
+    escapeValue: false,
+    prefix: '{{',
+    suffix: '}}',
+    formatSeparator: ',',
+    unescapePrefix: '-',
+    nestingPrefix: '$t(',
+    nestingSuffix: ')',
+    nestingOptionsSeparator: ',',
+    maxReplaces: 1000,
+    skipOnVariables: true,
+    format: [Function: bound format]
+  },
+  cacheInBuiltFormats: true,
+  errorStackTraceLimit: 0,
+  initImmediate: false,
+  localeExtension: 'json',
+  localePath: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales',
+  localeStructure: '{{lng}}/{{ns}}',
+  react: { useSuspense: false },
+  reloadOnPrerender: true,
+  serializeConfig: true,
+  use: [],
+  lng: 'de',
+  defaultLocale: 'en',
+  locales: [ 'en', 'de' ],
+  resources: {
+    de: { common: [Object], footer: [Object] },
+    en: { common: [Object], footer: [Object] }
+  },
+  ignoreJSONStructure: true
+}
+ GET /?locale=de 200 in 91ms (next.js: 16ms, application-code: 75ms)
+i18next: languageChanged de
+i18next::backendConnector: loaded namespace common for language de {
+  h1: 'Ein einfaches Beispiel',
+  'change-locale': 'Sprache wechseln zu "{{changeTo}}"',
+  'to-second-page': 'Zur zweiten Seite',
+  'error-with-status': 'Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten',
+  'error-without-status': 'Auf dem Server ist ein Fehler aufgetreten',
+  title: 'Hauptseite | next-i18next',
+  blog: {
+    v16: {
+      question: 'Was ist neu in next-i18next v16?',
+      answer: 'Schau dir <1>den Blogbeitrag</1> für die ganze Geschichte an.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Verwendest du den Next.js App Router?',
+      answer: 'Dann schau dir <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Möchtest du einige Superkräfte entfesseln, um für alle Seiten optimierte Übersetzungen zu haben?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Möchtest du SSG (next export) verwenden?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hallo {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language de {
+  description: 'Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert',
+  helpLocize: 'Wenn Sie <1>Locize</1> einsetzen, unterstützen Sie direkt die Zukunft von <3>i18next</3>.'
+}
+i18next::backendConnector: loaded namespace common for language en {
+  h1: 'A simple example',
+  'change-locale': 'Change locale to "{{changeTo}}"',
+  'to-second-page': 'To second page',
+  'error-with-status': 'A {{statusCode}} error occurred on server',
+  'error-without-status': 'An error occurred on the server',
+  title: 'Home | next-i18next',
+  blog: {
+    v16: {
+      question: "What's new in next-i18next v16?",
+      answer: 'Check out <1>the blog post</1> for the full story.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Are you using the Next.js App Router?',
+      answer: 'Then check out <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Do you like to unleash some super powers to have all side optimized translations?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Do you want to use SSG (next export)?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hello {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language en {
+  description: 'This is a non-page component that requires its own namespace',
+  helpLocize: 'With using <1>Locize</1> you directly support the future of <3>i18next</3>.'
+}
+i18next: languageChanged de
+i18next: initialized {
+  debug: true,
+  initAsync: false,
+  ns: [ 'common', 'footer' ],
+  defaultNS: 'common',
+  fallbackLng: [ 'en' ],
+  fallbackNS: false,
+  supportedLngs: false,
+  nonExplicitSupportedLngs: false,
+  load: 'currentOnly',
+  preload: false,
+  keySeparator: '.',
+  nsSeparator: ':',
+  pluralSeparator: '_',
+  contextSeparator: '_',
+  enableSelector: false,
+  partialBundledLanguages: false,
+  saveMissing: false,
+  updateMissing: false,
+  saveMissingTo: 'fallback',
+  saveMissingPlurals: true,
+  missingKeyHandler: false,
+  missingInterpolationHandler: false,
+  postProcess: false,
+  postProcessPassResolved: false,
+  returnNull: false,
+  returnEmptyString: true,
+  returnObjects: false,
+  joinArrays: false,
+  returnedObjectHandler: false,
+  parseMissingKeyHandler: false,
+  appendNamespaceToMissingKey: false,
+  appendNamespaceToCIMode: false,
+  overloadTranslationOptionHandler: [Function: overloadTranslationOptionHandler],
+  interpolation: {
+    escapeValue: false,
+    prefix: '{{',
+    suffix: '}}',
+    formatSeparator: ',',
+    unescapePrefix: '-',
+    nestingPrefix: '$t(',
+    nestingSuffix: ')',
+    nestingOptionsSeparator: ',',
+    maxReplaces: 1000,
+    skipOnVariables: true,
+    format: [Function: bound format]
+  },
+  cacheInBuiltFormats: true,
+  errorStackTraceLimit: 0,
+  initImmediate: false,
+  localeExtension: 'json',
+  localePath: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales',
+  localeStructure: '{{lng}}/{{ns}}',
+  react: { useSuspense: false },
+  reloadOnPrerender: true,
+  serializeConfig: true,
+  use: [],
+  lng: 'de',
+  defaultLocale: 'en',
+  locales: [ 'en', 'de' ],
+  resources: {
+    de: { common: [Object], footer: [Object] },
+    en: { common: [Object], footer: [Object] }
+  },
+  ignoreJSONStructure: true
+}
+ GET /?locale=de 200 in 78ms (next.js: 23ms, application-code: 55ms)
+i18next: languageChanged de
+i18next::backendConnector: loaded namespace common for language de {
+  h1: 'Ein einfaches Beispiel',
+  'change-locale': 'Sprache wechseln zu "{{changeTo}}"',
+  'to-second-page': 'Zur zweiten Seite',
+  'error-with-status': 'Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten',
+  'error-without-status': 'Auf dem Server ist ein Fehler aufgetreten',
+  title: 'Hauptseite | next-i18next',
+  blog: {
+    v16: {
+      question: 'Was ist neu in next-i18next v16?',
+      answer: 'Schau dir <1>den Blogbeitrag</1> für die ganze Geschichte an.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Verwendest du den Next.js App Router?',
+      answer: 'Dann schau dir <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Möchtest du einige Superkräfte entfesseln, um für alle Seiten optimierte Übersetzungen zu haben?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Möchtest du SSG (next export) verwenden?',
+      answer: 'Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hallo {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language de {
+  description: 'Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert',
+  helpLocize: 'Wenn Sie <1>Locize</1> einsetzen, unterstützen Sie direkt die Zukunft von <3>i18next</3>.'
+}
+i18next::backendConnector: loaded namespace common for language en {
+  h1: 'A simple example',
+  'change-locale': 'Change locale to "{{changeTo}}"',
+  'to-second-page': 'To second page',
+  'error-with-status': 'A {{statusCode}} error occurred on server',
+  'error-without-status': 'An error occurred on the server',
+  title: 'Home | next-i18next',
+  blog: {
+    v16: {
+      question: "What's new in next-i18next v16?",
+      answer: 'Check out <1>the blog post</1> for the full story.',
+      link: 'https://www.locize.com/blog/next-i18next-v16'
+    },
+    appDir: {
+      question: 'Are you using the Next.js App Router?',
+      answer: 'Then check out <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/i18n-next-app-router'
+    },
+    optimized: {
+      question: 'Do you like to unleash some super powers to have all side optimized translations?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18next'
+    },
+    ssg: {
+      question: 'Do you want to use SSG (next export)?',
+      answer: 'Then you may have a look at <1>this blog post</1>.',
+      link: 'https://www.locize.com/blog/next-i18n-static'
+    }
+  },
+  review: { greeting: 'Hello {{name}}' }
+}
+i18next::backendConnector: loaded namespace footer for language en {
+  description: 'This is a non-page component that requires its own namespace',
+  helpLocize: 'With using <1>Locize</1> you directly support the future of <3>i18next</3>.'
+}
+i18next: languageChanged de
+i18next: initialized {
+  debug: true,
+  initAsync: false,
+  ns: [ 'common', 'footer' ],
+  defaultNS: 'common',
+  fallbackLng: [ 'en' ],
+  fallbackNS: false,
+  supportedLngs: false,
+  nonExplicitSupportedLngs: false,
+  load: 'currentOnly',
+  preload: false,
+  keySeparator: '.',
+  nsSeparator: ':',
+  pluralSeparator: '_',
+  contextSeparator: '_',
+  enableSelector: false,
+  partialBundledLanguages: false,
+  saveMissing: false,
+  updateMissing: false,
+  saveMissingTo: 'fallback',
+  saveMissingPlurals: true,
+  missingKeyHandler: false,
+  missingInterpolationHandler: false,
+  postProcess: false,
+  postProcessPassResolved: false,
+  returnNull: false,
+  returnEmptyString: true,
+  returnObjects: false,
+  joinArrays: false,
+  returnedObjectHandler: false,
+  parseMissingKeyHandler: false,
+  appendNamespaceToMissingKey: false,
+  appendNamespaceToCIMode: false,
+  overloadTranslationOptionHandler: [Function: overloadTranslationOptionHandler],
+  interpolation: {
+    escapeValue: false,
+    prefix: '{{',
+    suffix: '}}',
+    formatSeparator: ',',
+    unescapePrefix: '-',
+    nestingPrefix: '$t(',
+    nestingSuffix: ')',
+    nestingOptionsSeparator: ',',
+    maxReplaces: 1000,
+    skipOnVariables: true,
+    format: [Function: bound format]
+  },
+  cacheInBuiltFormats: true,
+  errorStackTraceLimit: 0,
+  initImmediate: false,
+  localeExtension: 'json',
+  localePath: 'C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\.review-external\\next-app\\public\\locales',
+  localeStructure: '{{lng}}/{{ns}}',
+  react: { useSuspense: false },
+  reloadOnPrerender: true,
+  serializeConfig: true,
+  use: [],
+  lng: 'de',
+  defaultLocale: 'en',
+  locales: [ 'en', 'de' ],
+  resources: {
+    de: { common: [Object], footer: [Object] },
+    en: { common: [Object], footer: [Object] }
+  },
+  ignoreJSONStructure: true
+}
+ GET /?locale=de 200 in 55ms (next.js: 11ms, application-code: 44ms)

@@ -1,0 +1,117 @@
+{
+  "id": "react",
+  "passed": true,
+  "exactApproval": "1b34e7428b2f82af7cb4365b3637b76fc3cd3ba5e8fe2b190c8bb66d08479765",
+  "validation": {
+    "passed": true,
+    "checks": [
+      {
+        "kind": "unit",
+        "file": "zeroloc-review.test.mjs",
+        "passed": true,
+        "exitCode": 0,
+        "timedOut": false,
+        "outputLimited": false,
+        "outputSha256": "a286973652dfaf0cd1d327582728210f66af9560597057ba25aecd57a7504032"
+      }
+    ],
+    "configSha256": "4a79a703aa6761c5e0a03606feeb0ccbd582b827d10251b09f4949751338e3b0",
+    "planId": "1b34e7428b2f82af7cb4365b3637b76fc3cd3ba5e8fe2b190c8bb66d08479765"
+  },
+  "render": [
+    {
+      "browser": "chromium",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    },
+    {
+      "browser": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    },
+    {
+      "browser": "firefox",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    },
+    {
+      "browser": "firefox",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "rendered": "Hallo Ada",
+      "passed": true
+    }
+  ],
+  "visual": {
+    "passed": true,
+    "findings": [
+      {
+        "browser": "chromium",
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "findings": []
+      },
+      {
+        "browser": "chromium",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "findings": []
+      },
+      {
+        "browser": "firefox",
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "findings": []
+      },
+      {
+        "browser": "firefox",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "findings": []
+      }
+    ]
+  },
+  "prepared": {
+    "branch": "codex/zeroloc-1b34e7428b2f82af",
+    "commit": "cf5217f5fa8044c6b6dddae27100214247bb7509",
+    "files": [
+      "public/locales/de/translation.json",
+      "zeroloc-report.json"
+    ],
+    "mainUnchanged": true,
+    "noRemotes": true
+  },
+  "executionMs": 28438
+}
+file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/pull-request.mjs:58
+  if([...tracked,...untracked].some(p=>!allowed.has(p)))throw new Error('Unrelated worktree changes; use an isolated checkout');
+                                                              ^
+
+Error: Unrelated worktree changes; use an isolated checkout
+    at preparePr (file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/src/pull-request.mjs:58:63)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/qa/independent-apps.mjs:101:19
+
+Node.js v25.2.0

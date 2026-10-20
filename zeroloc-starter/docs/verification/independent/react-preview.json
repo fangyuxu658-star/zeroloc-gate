@@ -1,0 +1,93 @@
+{
+  "source": "public/locales/en/translation.json",
+  "target": "public/locales/de/translation.json",
+  "messageFormat": "i18next",
+  "targetLocale": "de",
+  "policy": {
+    "allowSourceKeys": [],
+    "allowedSourceTexts": [],
+    "brands": [],
+    "terms": [],
+    "minLengthRatio": 0.25,
+    "maxLengthRatio": 4,
+    "blockWarnings": false
+  },
+  "validationBinding": "4a79a703aa6761c5e0a03606feeb0ccbd582b827d10251b09f4949751338e3b0",
+  "rootBinding": "a7741c64ec80f42a581317a57c0570d855647d529aa1eddf60385671d4fb6fc8",
+  "sourceSha256": "301cf2d809085fc291169a754dccbcf85f159d78eb9bb83bc7459974425de4e3",
+  "targetSha256": "47266f3fa76382e6df78dd2830846360cc2cf38fd284a3973c3fb76c12ed7a9d",
+  "resultSha256": "25ea63fd237cb6750ddf2ee0af783cd1358ef230c052a3f0122ec86b8642f090",
+  "patch": [
+    {
+      "op": "test",
+      "path": "",
+      "value": {
+        "title": "Willkommen zu react und react-i18next",
+        "description": {
+          "part1": "Um loszulegen, ändere <1>src/App(DE).js</1> und speichere um neuzuladen.",
+          "part2": "Wechsle die Sprache zwischen deutsch und englisch mit Hilfe der beiden Schalter."
+        }
+      }
+    },
+    {
+      "op": "add",
+      "path": "/review",
+      "value": {}
+    },
+    {
+      "op": "add",
+      "path": "/review/greeting",
+      "value": "Hallo {{name}}"
+    }
+  ],
+  "planId": "1b34e7428b2f82af7cb4365b3637b76fc3cd3ba5e8fe2b190c8bb66d08479765",
+  "candidate": {
+    "title": "Willkommen zu react und react-i18next",
+    "description": {
+      "part1": "Um loszulegen, ändere <1>src/App(DE).js</1> und speichere um neuzuladen.",
+      "part2": "Wechsle die Sprache zwischen deutsch und englisch mit Hilfe der beiden Schalter."
+    },
+    "review": {
+      "greeting": "Hallo {{name}}"
+    }
+  },
+  "changed": [
+    "review.greeting"
+  ],
+  "beforeIssues": [
+    {
+      "level": "error",
+      "code": "MISSING_KEY",
+      "locale": "public/locales/de/translation.json",
+      "key": "review.greeting",
+      "message": "Translation key is missing"
+    }
+  ],
+  "issues": [],
+  "quality": {
+    "passed": true,
+    "issues": [
+      {
+        "code": "LANGUAGE_INSUFFICIENT_EVIDENCE",
+        "level": "info",
+        "key": "review.greeting",
+        "locale": "de",
+        "message": "Short text: no reliable language inference; human review required",
+        "requiresHumanReview": true
+      }
+    ],
+    "requiresHumanReview": true,
+    "limitations": "Literal/length/statistical heuristics can produce false positives and negatives; no semantic correctness guarantee.",
+    "policy": {
+      "allowSourceKeys": [],
+      "allowedSourceTexts": [],
+      "brands": [],
+      "terms": [],
+      "minLengthRatio": 0.25,
+      "maxLengthRatio": 4,
+      "blockWarnings": false
+    }
+  },
+  "legacyBound": false,
+  "requiresHumanReview": true
+}

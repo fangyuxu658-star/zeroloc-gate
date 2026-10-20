@@ -58,6 +58,7 @@ jobs:
       - run: npx --no-install playwright install --with-deps chromium firefox
       - run: npm run test:visual -- --all-browsers
       - run: npm run test:workflow
+      - run: npm run test:network
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         if: always()
         with:

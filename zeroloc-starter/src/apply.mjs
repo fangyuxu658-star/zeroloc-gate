@@ -7,6 +7,17 @@ import { checkQuality, qualityPolicy } from './quality.mjs';
 import { readResource, guardedPath, resourcePath, parseJson, jsonBytes, digest, durableNew, atomicReplace } from './safe-files.mjs';
 
 const unsafe = text => /[\u0000-\u0008\u000b\u000c\u000e-\u001f]|[\uD800-\uDFFF]/u.test(text) || /<[^>]*[\s=]|<\/?(?:script|iframe|style|object)\b|&(?:#|lt;|gt;)/i.test(text) || /<[^>]*$/.test(text);
+async function releaseLock(root,name,bytes,outcome) {
+  try {
+    const current=await readResource(root,name);
+    if(current.sha256!==digest(bytes))throw new Error('Lock ownership changed');
+    await unlink(current.path);
+  } catch {
+    // A cleanup error must not replace the transaction/recovery result. Keep
+    // the actual applied state and recovery evidence visible, and block PRs.
+    if(outcome){outcome.passed=false;outcome.lockCleanupFailed=true;outcome.error='LOCK_CLEANUP_FAILED';}
+  }
+}
 function pointerParts(path) {
   if(typeof path!=='string'||!path.startsWith('/')||/~(?![01])/u.test(path)) throw new Error('Invalid JSON Pointer');
   const parts=path.slice(1).split('/').map(p=>p.replaceAll('~1','/').replaceAll('~0','~'));
@@ -64,10 +75,11 @@ export async function applyProposal(options) {
   if(approve!==plan.planId) throw new Error('Explicit approval must match the current dry-run planId');
   if(!plan.quality.passed) throw new Error('Quality gate rejected candidate: '+JSON.stringify(plan.quality.issues));
   if(typeof validate!=='function') throw new Error('Approved automated validation is required for writes');
-  const targetPath=await guardedPath(root,plan.target),lock=targetPath+'.zeroloc.lock';
-  await durableNew(lock,jsonBytes({planId:plan.planId,pid:process.pid}));
-  const token=randomUUID(),backup=plan.target+`.zeroloc-${token}.bak`,journal=plan.target+`.zeroloc-${token}.recovery.json`;
-  let committed=false,validation=null,failureCode='POST_APPLY_CHECK_FAILED';
+  const targetPath=await guardedPath(root,plan.target),lockName=plan.target+'.zeroloc.lock',token=randomUUID();
+  const lockBytes=jsonBytes({planId:plan.planId,pid:process.pid,token});
+  await durableNew(targetPath+'.zeroloc.lock',lockBytes);
+  const backup=plan.target+`.zeroloc-${token}.bak`,journal=plan.target+`.zeroloc-${token}.recovery.json`;
+  let committed=false,validation=null,failureCode='POST_APPLY_CHECK_FAILED',outcome;
   try {
     const original=await readResource(root,plan.target);
     if(original.sha256!==plan.targetSha256 || (await readResource(root,plan.source)).sha256!==plan.sourceSha256) throw new Error('CONFLICT: resources changed after review');
@@ -80,7 +92,7 @@ export async function applyProposal(options) {
     if(validate) { validation=await validate(plan); if(validation?.passed!==true) throw new Error('Automated validation failed'); }
     failureCode='RESOURCE_CHANGED_DURING_VALIDATION';
     if((await readResource(root,plan.target)).sha256!==plan.resultSha256 || (await readResource(root,plan.source)).sha256!==plan.sourceSha256) throw new Error('CONFLICT: resources changed during validation');
-    return {type:'safe-apply',schemaVersion:1,passed:true,applied:true,dryRun:false,rolledBack:false,plan,backup,journal,validation,requiresHumanReview:true};
+    return outcome={type:'safe-apply',schemaVersion:1,passed:true,applied:true,dryRun:false,rolledBack:false,plan,backup,journal,validation,requiresHumanReview:true};
   } catch(error) {
     let rolledBack=false,rollbackConflict=false;
     if(committed) {
@@ -91,8 +103,8 @@ export async function applyProposal(options) {
       } catch {rollbackConflict=true;}
     }
     if(!committed) throw error;
-    return {type:'safe-apply',schemaVersion:1,passed:false,applied:false,rolledBack,rollbackConflict,error:failureCode,plan,backup,journal,validation,requiresHumanReview:true};
-  } finally {await unlink(lock);}
+    return outcome={type:'safe-apply',schemaVersion:1,passed:false,applied:false,rolledBack,rollbackConflict,error:failureCode,plan,backup,journal,validation,requiresHumanReview:true};
+  } finally {await releaseLock(root,lockName,lockBytes,outcome);}
 }
 
 export async function recoverApply({root='.',journal,approve}) {
@@ -102,7 +114,8 @@ export async function recoverApply({root='.',journal,approve}) {
   const target=await readResource(root,recovery.target),backup=await readResource(root,recovery.backup);
   flattenMessages(parseJson(backup.bytes));
   if(backup.sha256!==recovery.originalSha256 || target.sha256!==recovery.appliedSha256 || approve!==target.sha256) throw new Error('Recovery conflict or missing explicit current-hash approval');
-  const lock=target.path+'.zeroloc.lock'; await durableNew(lock,jsonBytes({recovery:true,pid:process.pid}));
-  try { await atomicReplace(root,recovery.target,backup.bytes,target.sha256);return {recovered:true,target:recovery.target,sha256:backup.sha256}; }
-  finally {await unlink(lock);}
+  const lockBytes=jsonBytes({recovery:true,pid:process.pid,token:randomUUID()});await durableNew(target.path+'.zeroloc.lock',lockBytes);
+  let outcome;
+  try { await atomicReplace(root,recovery.target,backup.bytes,target.sha256);return outcome={recovered:true,target:recovery.target,sha256:backup.sha256}; }
+  finally {await releaseLock(root,recovery.target+'.zeroloc.lock',lockBytes,outcome);}
 }

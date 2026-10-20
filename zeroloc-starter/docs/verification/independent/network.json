@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "browsers": [
+    "chromium",
+    "firefox"
+  ],
+  "crossOriginHttpHits": 0,
+  "websocketUpgradeHits": 0,
+  "serviceWorkerScriptHits": 0,
+  "redirectRejected": true,
+  "limitations": "Browser request interception is defense in depth, not an OS network sandbox. Approved Node tests retain filesystem/network capabilities."
+}

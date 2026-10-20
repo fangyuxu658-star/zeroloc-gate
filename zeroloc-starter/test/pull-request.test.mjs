@@ -37,6 +37,17 @@ test('unrelated staged or tracked changes never enter a prepared PR',()=>fixture
   await writeFile(join(root,'unrelated.txt'),'keep');await git('add','unrelated.txt');
   await assert.rejects(preparePr({root,reportPath:'report.json'}),/staged/);
 }));
+
+test('Git clean filters cannot change approved translation bytes during preparation',()=>fixture(async({root,git})=>{
+  // A benign project formatter has the same trust problem as a malicious clean
+  // filter: the committed file can differ from the exact reviewed worktree bytes.
+  await git('config','filter.review.clean','node filter.cjs');
+  await writeFile(join(root,'filter.cjs'),`require('fs').writeFileSync('.git/filter-executed','yes');process.stdin.resume();process.stdin.on('end',()=>process.stdout.write('{"greeting":"UNREVIEWED"}'));`);
+  await writeFile(join(root,'.gitattributes'),'de.json filter=review\n');
+  await git('add','filter.cjs','.gitattributes');await git('commit','-m','Configure project filter');
+  await assert.rejects(preparePr({root,reportPath:'report.json'}),/filter/);
+  await assert.rejects(readFile(join(root,'.git/filter-executed')),e=>e.code==='ENOENT');
+}));
 test('remote preparation is offline by default; approved publish only pushes topic branch and creates Draft, never merges',()=>fixture(async({root,git})=>{
   const local=await preparePr({root,reportPath:'report.json'});await preparePr({root,reportPath:'report.json',prepare:true,approve:local.previewId});
   await writeFile(join(root,'body.md'),'Synthetic human review body');

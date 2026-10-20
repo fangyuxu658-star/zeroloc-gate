@@ -1,0 +1,21 @@
+
+> zeroloc-gate@0.2.0-dev.0 test:visual
+> node qa/run.mjs --all-browsers
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.goto: net::ERR_NETWORK_ACCESS_DENIED at http://127.0.0.1:53035/?locale=en
+Call log:
+  - navigating to "http://127.0.0.1:53035/?locale=en", waiting until "networkidle"
+
+    at visualQA (C:\Users\15084\Documents\ChatGPT\本地化开源项目\zeroloc-starter\src\checks\visual.mjs:34:37)
+    at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/qa/run.mjs:9:14 {
+  log: [
+    '  - navigating to "http://127.0.0.1:53035/?locale=en", waiting until "networkidle"'
+  ],
+  name: 'Error'
+}
+
+Node.js v25.2.0

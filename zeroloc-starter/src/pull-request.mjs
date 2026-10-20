@@ -15,6 +15,28 @@ const git=(root,args)=>command('git',['-c','core.hooksPath=/dev/null','-c','core
 async function gitRoot(root){const actual=await realpath(root);if(await realpath(await git(actual,['rev-parse','--show-toplevel']))!==actual)throw new Error('Use the exact Git repository root');return actual;}
 function branchName(branch){if(typeof branch!=='string'||!/^codex\/[a-z0-9][a-z0-9./-]{0,90}$/.test(branch)||branch.includes('..')||branch.endsWith('/'))throw new Error('Dedicated codex/ branch required');return branch;}
 const lines=text=>text.split(/\r?\n/).filter(Boolean);
+async function publicationDestination(root,repo) {
+  const approved=[`https://github.com/${repo}.git`,`https://github.com/${repo}`,`git@github.com:${repo}.git`];
+  const remote=await git(root,['remote','get-url','origin']);
+  if(!approved.includes(remote))throw new Error('Origin must exactly match the approved GitHub repository, without credentials');
+  // get-url --push resolves pushurl and pushInsteadOf, including multiple
+  // destinations. Checking the fetch URL alone does not constrain a push.
+  const destinations=lines(await git(root,['remote','get-url','--push','--all','origin']));
+  if(destinations.length!==1||!approved.includes(destinations[0]))throw new Error('Push destination must exactly match the approved repository');
+  return {remote,pushDestination:destinations[0]};
+}
+async function assertNoGitTransforms(root,files) {
+  const attributes=(await git(root,['check-attr','-z','filter','working-tree-encoding','ident','--',...files])).split('\0');
+  for(let i=0;i+2<attributes.length;i+=3) {
+    if(!['unspecified','unset'].includes(attributes[i+2]))throw new Error('Git filter/encoding/ident transforms are unsupported for approved PR files');
+  }
+}
+async function blobDigest(root,ref) {
+  try {
+    const {stdout}=await exec('git',['-c','core.hooksPath=/dev/null','cat-file','blob',ref],{cwd:root,encoding:'buffer',windowsHide:true,timeout:60000,maxBuffer:3*1024*1024});
+    return digest(stdout);
+  } catch {throw new Error('Cannot verify staged PR bytes');}
+}
 export function prBody(report) {
   return `Translation candidates for human review\n\nChanged: ${report.plan.changed.join(', ')}\nFiles: ${report.plan.target}\nReason: fill only empty/missing translations; preserve human text.\nPlan: ${report.plan.planId}\nStructural check: passed. Quality risks: ${report.plan.quality.issues.filter(i=>i.level!=='info').map(i=>i.code).join(', ')||'none detected (heuristics only)'}\nValidation: ${JSON.stringify(report.validation.checks.map(c=>({kind:c.kind,passed:c.passed,exitCode:c.exitCode,cases:c.cases,timedOut:c.timedOut})))}\n\nSemantic quality and screenshots require human review. Never auto-merge.\n`;
 }
@@ -29,6 +51,7 @@ export async function preparePr({root='.',reportPath,branch,prepare=false,approv
   const actualChanged=Object.keys(current).filter(key=>current[key]!==baseline[key]).sort();
   if(!Array.isArray(plan.changed)||JSON.stringify([...plan.changed].sort())!==JSON.stringify(actualChanged))throw new Error('Report changed-key list does not match Git baseline');
   if(!checkQuality({source:parseJson(source.bytes),target:parseJson(target.bytes),messageFormat:plan.messageFormat,targetLocale:plan.targetLocale,policy:plan.policy,keys:plan.changed}).passed)throw new Error('PR quality gate failed');
+  await assertNoGitTransforms(root,[plan.target,reportPath]);
   if(await git(root,['diff','--cached','--name-only']))throw new Error('Unrelated staged changes; do not modify index');
   const allowed=new Set([plan.target,reportPath,report.backup,report.journal]);
   const tracked=lines(await git(root,['diff','--name-only'])),untracked=lines(await git(root,['ls-files','--others','--exclude-standard']));
@@ -39,10 +62,13 @@ export async function preparePr({root='.',reportPath,branch,prepare=false,approv
   const previewId=digest(JSON.stringify(manifest));
   if(!prepare)return {prepared:false,previewId,...manifest};
   if(approve!==previewId)throw new Error('Explicit local preparation approval must match previewId');
+  await assertNoGitTransforms(root,manifest.files);
   await git(root,['switch','-c',branch]);
   if((await readResource(root,plan.target)).sha256!==target.sha256||(await readResource(root,reportPath)).sha256!==resource.sha256)throw new Error('Files changed after local review; main unchanged, inspect topic branch');
   await git(root,['add','--',...manifest.files]);
-  await git(root,['commit','--only','-m',`Apply reviewed translation candidates ${plan.planId.slice(0,12)}`,'--',...manifest.files]);
+  if(JSON.stringify(lines(await git(root,['diff','--cached','--name-only'])).sort())!==JSON.stringify([...manifest.files].sort())||await blobDigest(root,`:${plan.target}`)!==target.sha256||await blobDigest(root,`:${reportPath}`)!==resource.sha256)throw new Error('Staged files differ from approved PR bytes; inspect topic branch/index');
+  if(await git(root,['rev-parse','HEAD'])!==head||await git(root,['branch','--show-current'])!==branch)throw new Error('Git state changed during preparation; inspect topic branch/index');
+  await git(root,['commit','-m',`Apply reviewed translation candidates ${plan.planId.slice(0,12)}`]);
   return {prepared:true,previewId,...manifest,commit:await git(root,['rev-parse','HEAD']),remotePublished:false};
 }
 
@@ -53,11 +79,13 @@ export async function publishPr({root='.',repo,bodyPath,title='Review validated 
   const branch=branchName(await git(root,['branch','--show-current']));
   if(await git(root,['diff','--name-only'])||await git(root,['diff','--cached','--name-only']))throw new Error('Commit tracked changes before remote preview');
   const head=await git(root,['rev-parse','HEAD']),base=await git(root,['rev-parse','refs/remotes/origin/main']);
-  const remote=await git(root,['remote','get-url','origin']);
-  if(![`https://github.com/${repo}.git`,`https://github.com/${repo}`,`git@github.com:${repo}.git`].includes(remote))throw new Error('Origin must exactly match the approved GitHub repository, without credentials');
+  const destination=await publicationDestination(root,repo);
   const body=await readResource(root,bodyPath),files=lines(await git(root,['diff','--name-only',`${base}...${head}`]));
   if(!files.length)throw new Error('No changes against origin/main');
-  const manifest={repo,branch,head,base,files,title,body:body.bytes.toString('utf8'),draft:true};
+  const historyFiles=[...new Set(lines(await git(root,['log','--format=','--name-only',`${base}..${head}`])))].sort();
+  if(historyFiles.some(path=>!files.includes(path)))throw new Error('Branch history contains files absent from the final diff; review isolated history before publishing');
+  const commits=lines(await git(root,['rev-list','--reverse',`${base}..${head}`]));
+  const manifest={repo,branch,head,base,files,historyFiles,commits,title,body:body.bytes.toString('utf8'),draft:true,...destination};
   const previewId=digest(JSON.stringify(manifest));
   if(!publish)return {published:false,previewId,...manifest};
   if(approve!==previewId)throw new Error('Explicit remote approval must match previewId');
@@ -65,7 +93,10 @@ export async function publishPr({root='.',repo,bodyPath,title='Review validated 
   if(remoteMain.split(/\s/)[0]!==base)throw new Error('Remote main changed; fetch/review again');
   const existing=JSON.parse(await transport(gh,['pr','list','--repo',repo,'--head',branch,'--base','main','--state','open','--json','url,isDraft,isCrossRepository'],root));
   if(existing.length>1||existing.some(p=>!p.isDraft||p.isCrossRepository))throw new Error('Unexpected existing non-draft/cross-repository PR; manual review required');
-  await transport('git',['-c','core.hooksPath=/dev/null','-c','push.followTags=false','-c','protocol.ext.allow=never','push','origin',`HEAD:refs/heads/${branch}`],root);
+  const current=await publishPr({root,repo,bodyPath,title,gh});
+  if(current.previewId!==previewId)throw new Error('Publication inputs changed during remote preflight; review again');
+  // Pin the approved object even if another process moves HEAD after this check.
+  await transport('git',['-c','core.hooksPath=/dev/null','-c','push.followTags=false','-c','protocol.ext.allow=never','push','origin',`${head}:refs/heads/${branch}`],root);
   let url=existing[0]?.url;
   {
     const dir=await mkdtemp(join(tmpdir(),'zeroloc-pr-')),file=join(dir,'body.md');

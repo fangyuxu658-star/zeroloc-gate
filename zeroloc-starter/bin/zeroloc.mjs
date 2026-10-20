@@ -43,6 +43,7 @@ async function main() {
   const args = process.argv.slice(2);
   if (args.includes('--help') || args.length === 0) { console.log(help); return; }
   if(args.includes('--dry-run')&&(args.includes('--write')||args.includes('--prepare')||args.includes('--publish')))throw new Error('Conflicting dry-run and mutation flags');
+  if(args[0]==='recover'&&args.includes('--dry-run'))throw new Error('recover does not support --dry-run; no files changed. Inspect the recovery record before approving restoration.');
   if(['pr-prepare','pr-publish'].includes(args[0])) {
     const {preparePr,publishPr}=await import('../src/pull-request.mjs');
     const root=option(args,'--root')??'.';

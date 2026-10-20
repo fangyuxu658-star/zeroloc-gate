@@ -1,0 +1,46 @@
+
+> next-i18next-example-simple@1.0.0 build
+> next build
+
+▲ Next.js 16.4.2 (Turbopack)
+warn  - experimental.esmExternals is disabled
+⚠ The "experimental.esmExternals" option has been modified. experimental.esmExternals is not recommended to be modified as it may disrupt module resolution. It should be removed from your next.config.js.
+⚠ Warning: Next.js ignored package-lock.json in C:\Users\15084 because it is outside the current Git repository (C:\Users\15084\Documents\ChatGPT\本地化开源项目\.review-external\next-app).
+ To use this directory, set `turbopack.root` in your Next.js config.
+
+✓ Running next.config.js took 198ms
+- Experiments (use with caution):
+  ⨯ esmExternals
+
+  Running TypeScript ...
+  Finished TypeScript in 7.5s ...
+  Creating an optimized production build ...
+⨯ You are using configuration and/or tools that are not yet
+supported by Next.js with Turbopack:
+
+
+- Unsupported Next.js configuration option(s) (next.config.js)
+  Turbopack will ignore the following configuration options:
+    - experimental.esmExternals
+
+
+⚠ Learn more about how to configure Turbopack with Next.js:
+https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack
+✓ Compiled successfully in 2.4s
+  Collecting page data using 6 workers ...
+  Generating static pages using 6 workers (0/6) ...
+  Generating static pages using 6 workers (1/6)
+  Generating static pages using 6 workers (2/6)
+  Generating static pages using 6 workers (4/6)
+✓ Generating static pages using 6 workers (6/6) in 3.3s
+  Finalizing page optimization ...
+
+Route (pages)
+┌ ● /
+├   /_app
+├ ○ /404
+└ ƒ /second-page
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses getStaticProps)
+ƒ  (Dynamic)  server-rendered on demand

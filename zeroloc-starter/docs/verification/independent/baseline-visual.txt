@@ -1,0 +1,24 @@
+
+> zeroloc-gate@0.2.0-dev.0 test:visual
+> node qa/run.mjs --all-browsers
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+browserType.launch: Executable doesn't exist at C:\Users\15084\AppData\Local\Packages\sandbox.{aba142fc-bd52-4c8a-adcd-4792fa9ed5c0}\AC\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     npx playwright install                                 ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+    at visualQA (C:\Users\15084\Documents\ChatGPT\本地化开源项目\zeroloc-starter\src\checks\visual.mjs:22:44)
+    at async file:///C:/Users/15084/Documents/ChatGPT/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/zeroloc-starter/qa/run.mjs:9:14 {
+  log: [],
+  name: 'Error'
+}
+
+Node.js v25.2.0
