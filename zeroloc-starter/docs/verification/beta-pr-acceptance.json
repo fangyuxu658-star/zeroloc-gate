@@ -1,0 +1,145 @@
+{
+  "scope": "PR acceptance snapshots; latest normal PR head checks remain authoritative",
+  "baseline": "4a64f6d6350ed5e80c1738ffa145a8dba46da66f",
+  "normal": {
+    "number": 1,
+    "url": "https://github.com/fangyuxu658-star/zeroloc-gate/pull/1",
+    "runUrl": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349812116",
+    "headSha": "8817f1b2f4ea4beecd01f6122783dca098f3468f",
+    "conclusion": "success"
+  },
+  "negative": {
+    "number": 2,
+    "url": "https://github.com/fangyuxu658-star/zeroloc-gate/pull/2",
+    "runUrl": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349987984",
+    "headSha": "4a8ef0ef10c17d715fc80f93ab16d667bf7a8f1b",
+    "conclusion": "failure",
+    "closed": true
+  },
+  "normalJobs": [
+    {
+      "name": "regression (ubuntu-latest, 24)",
+      "conclusion": "success",
+      "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349812116/job/118391082237"
+    },
+    {
+      "name": "regression (windows-latest, 24)",
+      "conclusion": "success",
+      "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349812116/job/118391082580"
+    },
+    {
+      "name": "regression (ubuntu-latest, 22)",
+      "conclusion": "success",
+      "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349812116/job/118391082622"
+    },
+    {
+      "name": "visual",
+      "conclusion": "success",
+      "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349812116/job/118391082635"
+    },
+    {
+      "name": "regression (windows-latest, 22)",
+      "conclusion": "success",
+      "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349812116/job/118391082673"
+    }
+  ],
+  "negativeJobs": [
+    {
+      "name": "visual",
+      "conclusion": "success",
+      "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349987984/job/118391654292"
+    },
+    {
+      "name": "regression (windows-latest, 24)",
+      "conclusion": "cancelled",
+      "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349987984/job/118391654607"
+    },
+    {
+      "name": "regression (ubuntu-latest, 24)",
+      "conclusion": "failure",
+      "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349987984/job/118391654635"
+    },
+    {
+      "name": "regression (ubuntu-latest, 22)",
+      "conclusion": "cancelled",
+      "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349987984/job/118391654727"
+    },
+    {
+      "name": "regression (windows-latest, 22)",
+      "conclusion": "cancelled",
+      "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349987984/job/118391654779"
+    }
+  ],
+  "local": {
+    "node": "25.2.0 (CI covers 22/24)",
+    "regression": {
+      "tests": 21,
+      "pass": 21,
+      "fail": 0
+    },
+    "visual": {
+      "cases": 12,
+      "passed": true,
+      "negativeFixtureCaught": true
+    },
+    "licenses": {
+      "lockedPackages": 107,
+      "unreviewedExpressions": 0
+    },
+    "audit": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "sbom": {
+      "format": "CycloneDX",
+      "components": 96
+    }
+  },
+  "negativeCli": {
+    "exitCode": 1,
+    "issue": {
+      "level": "error",
+      "code": "PLACEHOLDER_MISMATCH",
+      "locale": "examples/locales/de.json",
+      "key": "app.greeting",
+      "message": "Expected [name], got []"
+    },
+    "ciLog": "Run npm test: passes good example catalogs failed at test/check.test.mjs:33; exit 1. CI assertion does not print the catalog key; direct CLI JSON supplies the precise key and variable."
+  },
+  "security": {
+    "tokenDefault": "read",
+    "canApproveReviews": false,
+    "repoSecrets": 0,
+    "environments": 0,
+    "mainProtected": false,
+    "rulesets": [],
+    "checkApp": {
+      "slug": "github-actions",
+      "id": 15368
+    },
+    "actualForkTest": "not run; same-repository PRs are not fork evidence",
+    "serverMergeBlocking": "not enforced or verified; no protection configured"
+  },
+  "remoteMutations": {
+    "normalDraftCreated": true,
+    "negativeDraftCreatedAndClosed": true,
+    "merged": false,
+    "mainChanged": false,
+    "tagCreated": false,
+    "releaseCreated": false,
+    "protectionChanged": false
+  },
+  "localRawArtifactSha256": {
+    "normal-full.log": "3741e2400372e0e10695ed82cfa069f95f9e6b3cf56b1ca7c69ddd66e85ab1c5",
+    "negative-failed.log": "84b29d8f53832ea8a7b04304f37b8ea4aafed96ef224c745805ae2e7e2fdb487",
+    "local-tests.txt": "a94e1769956c84cd852f4d4a677337ebf4400b017f0f3a1abfc4470ead5e1be7",
+    "local-visual.txt": "92f96ed8035ccc8e7b4285bea483bd9ed40e315833232552cb2d6261f63a300a",
+    "npm-audit.json": "a34a2f4933e88071a9b792c04c3a7b606558075044c7e5069a1efa7d18ae2f4f",
+    "sbom.cdx.json": "191bd2cf9f881131272ede48bc497947ef0998ff406976443684697a97b0b76b"
+  },
+  "limitations": "Hashes bind retained ignored raw artifacts; raw machine logs are not published. Secret scans are heuristic and not an absolute guarantee."
+}

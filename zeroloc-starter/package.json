@@ -8,7 +8,7 @@
     "zeroloc": "./bin/zeroloc.mjs"
   },
   "scripts": {
-    "test": "node --test",
+    "test": "node --test \"test/*.test.mjs\"",
     "check:example": "node bin/zeroloc.mjs check --source examples/locales/en.json --targets examples/locales/de.json,examples/locales/fr.json,examples/locales/ja.json",
     "check:json": "node bin/zeroloc.mjs check --source examples/locales/en.json --targets examples/locales/de.json,examples/locales/fr.json,examples/locales/ja.json --format json",
     "test:visual": "node qa/run.mjs",

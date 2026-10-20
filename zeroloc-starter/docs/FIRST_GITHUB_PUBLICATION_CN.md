@@ -1,5 +1,7 @@
 # 首次 GitHub 开源发布：v0.1.0-beta.1
 
+> 本文件保留首次创建时的计划/审查记录；仓库与首次 push 已完成。本轮 PR 验收的当前状态以 [BETA_RELEASE_ACCEPTANCE_CN.md](BETA_RELEASE_ACCEPTANCE_CN.md) 和 [STATUS](../STATUS.md) 为准。
+
 ## 必须保持的授权边界
 
 目标仓库：`fangyuxu658-star/zeroloc-gate`，public，MIT；默认分支拟为 main。gh 认证与 API 已核实真实 login=`fangyuxu658-star`、id=`234267204`；同名仓库查询未发现已有仓库。当前等待用户最后批准创建和初次 push，登录不等于发布授权。下面的登录命令保留作复现参考，无需重复登录。
