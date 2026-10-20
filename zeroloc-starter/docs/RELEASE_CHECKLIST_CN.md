@@ -1,6 +1,6 @@
 # v0.1.0-beta.1 release checklist
 
-功能冻结；无合并、main 写入、远端规则修改或发布授权。项目 package 保持 private=true，发布目标为 GitHub pre-release，不是 npm 或 v0.2。
+功能冻结；本轮已授权仅 PR #1 的 Ready/Squash Merge，Ready 成功，合并被 Invalid email address 阻塞。其他 PR 合并、直接 main 写入、规则修改和 Tag/Release 均未授权。项目 package 保持 private=true，目标为 GitHub pre-release，不是 npm 或 v0.2。当前本地收尾记录见 [RELEASE_CLOSEOUT_CN.md](RELEASE_CLOSEOUT_CN.md)。
 
 ## 已有基础
 
@@ -15,7 +15,8 @@
 - [x] [负例 Draft PR #2](https://github.com/fangyuxu658-star/zeroloc-gate/pull/2)；[故意失败 CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349987984)：failure。移除合成德语 greeting 的 name 后，直接 CLI 退出 1 并定位 app.greeting / PLACEHOLDER_MISMATCH；远端检查失败。PR 已关闭且未合并，合成错误未进入 main。
 - [ ] 外部 fork PR：需要不同贡献者/真实 fork 场景，目前未运行，不能勾选。
 - [ ] main 的必要检查/PR 保护：目前未启用；配置方案已准备，待独立批准。
-- [ ] 批准并合并正常 PR（本任务禁止合并）；负例永不合并。
+- [x] 用户批准 PR #1 转 Ready/Squash Merge，已转 Ready；最终 PR CI 5/5。
+- [ ] 使用有效公开作者地址完成 PR #1 Squash Merge；负例永不合并。
 - [ ] 合并后重新核对 main 的 commit、完整 CI、公开内容和附件摘要。
 
 ## 发布前人工批准

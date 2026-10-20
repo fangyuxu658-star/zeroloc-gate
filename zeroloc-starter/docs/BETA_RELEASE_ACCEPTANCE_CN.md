@@ -1,5 +1,7 @@
 # Beta release engineering acceptance
 
+> 以下是前轮验收历史记录；后续用户已授权 PR #1 的 Ready/Squash Merge。Ready 已完成，合并因 GitHub 作者邮箱校验失败而未执行成功。最新研发日志见 [RELEASE_CLOSEOUT_CN.md](RELEASE_CLOSEOUT_CN.md)，不能将以下“未授权合并”作为当前权限状态。
+
 目标 v0.1.0-beta.1；基线 4a64f6d6350ed5e80c1738ffa145a8dba46da66f；仓库 [fangyuxu658-star/zeroloc-gate](https://github.com/fangyuxu658-star/zeroloc-gate)。维护者仅授权两个指定测试分支/两个 Draft PR、相关修复与验证、关闭负例和更新文档；没有合并、main 修改、tag/Release 或规则设置授权。
 
 ## 研发日志与真实证据

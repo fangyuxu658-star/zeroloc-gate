@@ -1,5 +1,7 @@
 # ZeroLoc Gate v0.1.0-beta.1
 
+> Closeout update (local draft, not on main): PR #1 is Ready. Its final head 4de289b46f695ecbc446cdef9ffd63897fd84fe9 passed [all five checks](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39350314338). The authorized squash merge was rejected by GitHub with Invalid email address. Main is still the initial baseline; no post-merge main CI, tag or Release exists. Final release target SHA remains unset. See [closeout record](RELEASE_CLOSEOUT_CN.md). Do not publish until this blocker is resolved and the resulting main passes CI.
+
 **Pre-release draft — not published.** Repository: [fangyuxu658-star/zeroloc-gate](https://github.com/fangyuxu658-star/zeroloc-gate). Initial main commit: 4a64f6d6350ed5e80c1738ffa145a8dba46da66f; [first main CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39347428254) passed all five jobs. The validation PR must be reviewed/merged and its resulting main revalidated before choosing the final release commit. No tag or Release has been created.
 
 ZeroLoc Gate is a local-first localization quality gate for nested JSON string catalogs. This beta provides deterministic checks and reviewable adapter output. It does not guarantee translation meaning or apply translation patches automatically.

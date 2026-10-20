@@ -1,5 +1,7 @@
 # main protection proposal — NOT APPLIED
 
+Latest read-only eligibility check confirms public repository, admin permission, rulesets=[] and effective rules=[]. This repository type supports Rulesets under [GitHub's documented availability](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/creating-rulesets-for-a-repository). Proposed API body: [main-ruleset.proposed.json](verification/main-ruleset.proposed.json); detailed approval boundary: [closeout record](RELEASE_CLOSEOUT_CN.md). The active field is proposed only; nothing has been applied. Zero mandatory approvals and no last-push/CODEOWNER requirement allow a sole maintainer to use the PR/CI process.
+
 Public repository: https://github.com/fangyuxu658-star/zeroloc-gate . Current read-only API results: `main.protected=false`, rulesets `[]`. Successful/failed CI has been exercised; server-enforced merge blocking has **not** been enabled or verified.
 
 The public repository exposes protection/ruleset read endpoints. This account can inspect them, but no write experiment was performed. Availability in the GitHub settings UI and successful read-back must be checked when the owner approves applying protection.

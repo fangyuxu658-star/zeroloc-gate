@@ -1,0 +1,32 @@
+{
+  "version": "v0.1.0-beta.1",
+  "pr": 1,
+  "reviewedHead": "4de289b46f695ecbc446cdef9ffd63897fd84fe9",
+  "reviewedCI": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39350314338",
+  "reviewedJobs": "5/5 success",
+  "ready": true,
+  "squashMergeSucceeded": false,
+  "mergeError": "GraphQL: Invalid email address (mergePullRequest)",
+  "mainSha": "4a64f6d6350ed5e80c1738ffa145a8dba46da66f",
+  "postMergeCI": null,
+  "releaseTargetSha": null,
+  "rulesetApplied": false,
+  "tagCreated": false,
+  "releaseCreated": false,
+  "localTests": {
+    "tests": 21,
+    "passed": 21,
+    "licensePackages": 107,
+    "auditVulnerabilities": 0
+  },
+  "rulesetEligibility": {
+    "visibility": "public",
+    "admin": true,
+    "existingRulesets": 0,
+    "effectiveRules": 0,
+    "writeTestPerformed": false
+  },
+  "blockingInput": "Confirm GitHub email privacy and actual noreply address; never send a private email",
+  "decision": "NO-GO",
+  "scope": "Local closeout snapshot only; not merged or published"
+}

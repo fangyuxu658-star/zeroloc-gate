@@ -1,5 +1,7 @@
 # ZeroLoc beta verification status
 
+> 收尾最新状态：用户已授权 PR #1 合并，PR 已转 Ready；Squash Merge 被 GitHub 以 Invalid email address 拒绝，尚未合并。最终 PR head 4de289b46f695ecbc446cdef9ffd63897fd84fe9 的 [CI 5/5 成功](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39350314338)；main 仍为下述基线，合并后 main CI 未发生。规则、Tag、Release 均未创建。详见 [收尾日志与待确认事项](docs/RELEASE_CLOSEOUT_CN.md)。此更新只在本地文档分支，未入 main。
+
 目标 v0.1.0-beta.1；功能冻结，只做验收和文档修正。仓库：[fangyuxu658-star/zeroloc-gate](https://github.com/fangyuxu658-star/zeroloc-gate)。main 基线 4a64f6d6350ed5e80c1738ffa145a8dba46da66f；本分支未合并，未直接修改 main，也未创建 tag/Release。
 
 ## Fully verified
