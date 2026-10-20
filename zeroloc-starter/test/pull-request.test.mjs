@@ -48,6 +48,14 @@ test('Git clean filters cannot change approved translation bytes during preparat
   await assert.rejects(preparePr({root,reportPath:'report.json'}),/filter/);
   await assert.rejects(readFile(join(root,'.git/filter-executed')),e=>e.code==='ENOENT');
 }));
+
+test('Git baseline duplicate names cannot conceal an earlier human translation',()=>fixture(async({root,git})=>{
+  const applied=await readFile(join(root,'de.json'));
+  await writeFile(join(root,'de.json'),'{"greeting":"Human translation","greeting":""}');
+  await git('add','de.json');await git('commit','-m','Ambiguous historical baseline');
+  await writeFile(join(root,'de.json'),applied);
+  await assert.rejects(preparePr({root,reportPath:'report.json'}),/Duplicate/);
+}));
 test('remote preparation is offline by default; approved publish only pushes topic branch and creates Draft, never merges',()=>fixture(async({root,git})=>{
   const local=await preparePr({root,reportPath:'report.json'});await preparePr({root,reportPath:'report.json',prepare:true,approve:local.previewId});
   await writeFile(join(root,'body.md'),'Synthetic human review body');

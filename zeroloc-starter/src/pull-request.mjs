@@ -31,12 +31,14 @@ async function assertNoGitTransforms(root,files) {
     if(!['unspecified','unset'].includes(attributes[i+2]))throw new Error('Git filter/encoding/ident transforms are unsupported for approved PR files');
   }
 }
-async function blobDigest(root,ref) {
+async function readBlob(root,ref) {
   try {
     const {stdout}=await exec('git',['-c','core.hooksPath=/dev/null','cat-file','blob',ref],{cwd:root,encoding:'buffer',windowsHide:true,timeout:60000,maxBuffer:3*1024*1024});
-    return digest(stdout);
+    if(stdout.length>2*1024*1024)throw new Error('Git resource exceeds 2 MiB');
+    return stdout;
   } catch {throw new Error('Cannot verify staged PR bytes');}
 }
+const blobDigest=async(root,ref)=>digest(await readBlob(root,ref));
 export function prBody(report) {
   return `Translation candidates for human review\n\nChanged: ${report.plan.changed.join(', ')}\nFiles: ${report.plan.target}\nReason: fill only empty/missing translations; preserve human text.\nPlan: ${report.plan.planId}\nStructural check: passed. Quality risks: ${report.plan.quality.issues.filter(i=>i.level!=='info').map(i=>i.code).join(', ')||'none detected (heuristics only)'}\nValidation: ${JSON.stringify(report.validation.checks.map(c=>({kind:c.kind,passed:c.passed,exitCode:c.exitCode,cases:c.cases,timedOut:c.timedOut})))}\n\nSemantic quality and screenshots require human review. Never auto-merge.\n`;
 }
@@ -46,7 +48,7 @@ export async function preparePr({root='.',reportPath,branch,prepare=false,approv
   if(report.type!=='safe-apply'||report.applied!==true||report.passed!==true||report.validation?.passed!==true||!Array.isArray(report.validation.checks)||!report.validation.checks.some(c=>c.kind==='unit'&&c.passed)) throw new Error('Successful applied validation report with unit tests required');
   const source=await readResource(root,plan.source),target=await readResource(root,plan.target);
   if(source.sha256!==plan.sourceSha256||target.sha256!==plan.resultSha256)throw new Error('Stale PR resources');
-  const baseline=flattenMessages(JSON.parse(await git(root,['show',`HEAD:${plan.target}`]))),current=flattenMessages(parseJson(target.bytes));
+  const baseline=flattenMessages(parseJson(await readBlob(root,`HEAD:${plan.target}`))),current=flattenMessages(parseJson(target.bytes));
   if(Object.entries(baseline).some(([key,value])=>value.trim()&&current[key]!==value))throw new Error('PR would overwrite non-empty human translation in Git baseline');
   const actualChanged=Object.keys(current).filter(key=>current[key]!==baseline[key]).sort();
   if(!Array.isArray(plan.changed)||JSON.stringify([...plan.changed].sort())!==JSON.stringify(actualChanged))throw new Error('Report changed-key list does not match Git baseline');
