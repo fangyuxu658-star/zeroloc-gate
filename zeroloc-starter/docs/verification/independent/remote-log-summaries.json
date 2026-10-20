@@ -1,0 +1,58 @@
+{
+  "head": "6ffeb8bb6c22916c43c6ae8866117973fc6b9b13",
+  "runId": 39477670058,
+  "jobs": [
+    {
+      "job": "visual",
+      "summary": [
+        "2026-10-20T18:47:18.3991236Z PASS: 12 browser/locale/viewport cases; negative fixture caught overflow and unnamed button.",
+        "2026-10-20T18:47:18.6541933Z Workflow acceptance: success (local HTTP stub)",
+        "2026-10-20T18:47:27.8686091Z Workflow acceptance: unit-failure (local HTTP stub)",
+        "2026-10-20T18:47:28.0238136Z Workflow acceptance: ui-failure (local HTTP stub)",
+        "2026-10-20T18:47:29.1487628Z Workflow acceptance: timeout (local HTTP stub)",
+        "2026-10-20T18:47:29.6672043Z Workflow acceptance: conflict (local HTTP stub)",
+        "2026-10-20T18:47:33.6593981Z {\"observed\":{\"http\":0,\"websocket\":0,\"serviceWorker\":0},\"redirectRejected\":true}",
+        "2026-10-20T18:47:33.6608891Z   \"crossOriginHttpHits\": 0,",
+        "2026-10-20T18:47:33.6609162Z   \"websocketUpgradeHits\": 0,",
+        "2026-10-20T18:47:33.6609460Z   \"serviceWorkerScriptHits\": 0,",
+        "2026-10-20T18:47:33.6609746Z   \"redirectRejected\": true,"
+      ]
+    },
+    {
+      "job": "regression (ubuntu-latest, 24)",
+      "summary": [
+        "2026-10-20T18:46:38.6392063Z ℹ tests 56",
+        "2026-10-20T18:46:38.6393011Z ℹ pass 56",
+        "2026-10-20T18:46:38.6393752Z ℹ fail 0",
+        "2026-10-20T18:46:38.6395012Z ℹ skipped 0"
+      ]
+    },
+    {
+      "job": "regression (ubuntu-latest, 22)",
+      "summary": [
+        "2026-10-20T18:46:38.8323950Z # tests 56",
+        "2026-10-20T18:46:38.8326239Z # pass 56",
+        "2026-10-20T18:46:38.8326388Z # fail 0",
+        "2026-10-20T18:46:38.8326703Z # skipped 0"
+      ]
+    },
+    {
+      "job": "regression (windows-latest, 24)",
+      "summary": [
+        "2026-10-20T18:46:58.5567473Z ℹ tests 56",
+        "2026-10-20T18:46:58.5567875Z ℹ pass 55",
+        "2026-10-20T18:46:58.5568031Z ℹ fail 0",
+        "2026-10-20T18:46:58.5568367Z ℹ skipped 1"
+      ]
+    },
+    {
+      "job": "regression (windows-latest, 22)",
+      "summary": [
+        "2026-10-20T18:47:08.0853418Z # tests 56",
+        "2026-10-20T18:47:08.0854037Z # pass 55",
+        "2026-10-20T18:47:08.0854302Z # fail 0",
+        "2026-10-20T18:47:08.0854892Z # skipped 1"
+      ]
+    }
+  ]
+}
