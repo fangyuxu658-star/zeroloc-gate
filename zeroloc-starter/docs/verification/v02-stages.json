@@ -98,7 +98,15 @@
     "format": "CycloneDX",
     "components": 101
   },
-  "ci": "See latest Draft PR Checks for this branch; local tests are not evidence of Windows/Linux Node22/24 remote runs.",
+  "ci": {
+    "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39383958891",
+    "testedCommit": "031c7e9c1383765b1bbe4a84887d66c139c8b07a",
+    "conclusion": "success",
+    "jobs": 5,
+    "testsPerRegressionJob": 41,
+    "pr": "https://github.com/fangyuxu658-star/zeroloc-gate/pull/6",
+    "note": "Latest follow-up commit requires its own PR checks."
+  },
   "limitations": [
     "Single target per transaction; no cross-file database atomicity or guaranteed power-loss directory durability",
     "No hostile same-user filesystem/approved-test OS sandbox",

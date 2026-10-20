@@ -42,3 +42,9 @@ CI runs the same real React app against a clearly labelled local HTTP protocol s
 Fresh npm audit:0 vulnerabilities;112 locked license entries; local CycloneDX:101 installed components. Dependency/platform counts differ by installation, not licence inventory scope. Dev metadata0.2.0-dev.0 is not a release or tag.
 
 Final security regression: approved filenames beginning with -- are passed as checked absolute Node test entrypoints, never CLI flags. A path resolver/Promise callback naming collision found during validation was fixed; full41/41 and five real-model scenarios were rerun successfully.
+
+## Remote Draft PR acceptance
+
+[Draft PR #6](https://github.com/fangyuxu658-star/zeroloc-gate/pull/6) was created using the actual new CLI, after offline preview and exact publication approval. [First remote CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39383958891) passed5/5 on 031c7e9c1383765b1bbe4a84887d66c139c8b07a: Windows/Linux Node22/24 each41/41; visual retained12 cases and ran the five-scenario React workflow with8 success UI cases. CI uses an explicit protocol stub, not a real model. Check the latest PR head checks after follow-up changes.
+
+Final report hardening: callback/filesystem exceptions after replacement are represented by fixed failure codes, preventing arbitrary private exception text from entering public apply reports. A synthetic private-marker regression verifies exact rollback and redaction. Main remains bcb542a, ruleset25455995 Active/no bypass, unchanged five checks. No merge or release.

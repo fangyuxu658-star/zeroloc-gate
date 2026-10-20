@@ -44,6 +44,8 @@ test('validation failure restores exact bytes; concurrent edit is retained rathe
   const original=await readFile(join(o.root,'de.json'));const plan=await planApply(o);
   const failed=await applyProposal({...o,write:true,approve:plan.planId,validate:async()=>({passed:false})});
   assert.equal(failed.rolledBack,true);assert.deepEqual(await readFile(join(o.root,'de.json')),original);
+  const redacted=await applyProposal({...o,write:true,approve:plan.planId,validate:async()=>{throw new Error('synthetic-private-marker');}});
+  assert.equal(redacted.rolledBack,true);assert.equal(redacted.error,'AUTOMATED_VALIDATION_FAILED');assert.equal(JSON.stringify(redacted).includes('synthetic-private-marker'),false);assert.deepEqual(await readFile(join(o.root,'de.json')),original);
   const edited='{"human":"External edit"}';
   const conflict=await applyProposal({...o,write:true,approve:plan.planId,validate:async()=>{await writeFile(join(o.root,'de.json'),edited);return {passed:false};}});
   assert.equal(conflict.rollbackConflict,true);assert.equal(await readFile(join(o.root,'de.json'),'utf8'),edited);

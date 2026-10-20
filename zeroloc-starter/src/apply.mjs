@@ -67,7 +67,7 @@ export async function applyProposal(options) {
   const targetPath=await guardedPath(root,plan.target),lock=targetPath+'.zeroloc.lock';
   await durableNew(lock,jsonBytes({planId:plan.planId,pid:process.pid}));
   const token=randomUUID(),backup=plan.target+`.zeroloc-${token}.bak`,journal=plan.target+`.zeroloc-${token}.recovery.json`;
-  let committed=false,validation=null;
+  let committed=false,validation=null,failureCode='POST_APPLY_CHECK_FAILED';
   try {
     const original=await readResource(root,plan.target);
     if(original.sha256!==plan.targetSha256 || (await readResource(root,plan.source)).sha256!==plan.sourceSha256) throw new Error('CONFLICT: resources changed after review');
@@ -76,7 +76,9 @@ export async function applyProposal(options) {
     await atomicReplace(root,plan.target,jsonBytes(plan.candidate),plan.targetSha256);committed=true;
     const current=parseJson((await readResource(root,plan.target)).bytes);
     if(compareCatalogs(flattenMessages(parseJson((await readResource(root,plan.source)).bytes)),flattenMessages(current),plan.target,plan.messageFormat).some(i=>i.level==='error')) throw new Error('Post-apply structure failed');
+    failureCode='AUTOMATED_VALIDATION_FAILED';
     if(validate) { validation=await validate(plan); if(validation?.passed!==true) throw new Error('Automated validation failed'); }
+    failureCode='RESOURCE_CHANGED_DURING_VALIDATION';
     if((await readResource(root,plan.target)).sha256!==plan.resultSha256 || (await readResource(root,plan.source)).sha256!==plan.sourceSha256) throw new Error('CONFLICT: resources changed during validation');
     return {type:'safe-apply',schemaVersion:1,passed:true,applied:true,dryRun:false,rolledBack:false,plan,backup,journal,validation,requiresHumanReview:true};
   } catch(error) {
@@ -89,7 +91,7 @@ export async function applyProposal(options) {
       } catch {rollbackConflict=true;}
     }
     if(!committed) throw error;
-    return {type:'safe-apply',schemaVersion:1,passed:false,applied:false,rolledBack,rollbackConflict,error:error.message,plan,backup,journal,validation,requiresHumanReview:true};
+    return {type:'safe-apply',schemaVersion:1,passed:false,applied:false,rolledBack,rollbackConflict,error:failureCode,plan,backup,journal,validation,requiresHumanReview:true};
   } finally {await unlink(lock);}
 }
 

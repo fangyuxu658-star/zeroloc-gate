@@ -20,3 +20,5 @@ The existing four Windows/Linux Node22/24 regression jobs and visual job retain 
 Review priorities: filesystem transaction/recovery boundaries, approved-test trust, exact approval binding and remote mutation guardrails. Language detection/length/terminology are heuristic risks, not semantic quality guarantees. Transactions cover one JSON target, not cross-file ACID or guaranteed power-loss durability. Approved tests and imports are trusted project code, not an OS sandbox. Current acceptance covers one SSR application and one installed small local model; broader independent security/application testing remains required before a v0.2 release.
 
 Draft for human review only. No automatic merge, main write, Ruleset weakening, tag, release, npm publication or paid API usage.
+
+First actual remote CI: https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39383958891 (5/5 at 031c7e9c1383765b1bbe4a84887d66c139c8b07a; four matrix jobs each41/41, plus original12 UI cases and new five-scenario application workflow). Latest follow-up head must pass its own checks. Final redaction regression prevents private callback exceptions in public reports.

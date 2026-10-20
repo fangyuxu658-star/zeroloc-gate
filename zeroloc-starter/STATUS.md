@@ -9,6 +9,10 @@ Published beta: [v0.1.0-beta.1](https://github.com/fangyuxu658-star/zeroloc-gate
 - Real Ollama0.40.6/qwen2.5:0.5b -> real React/i18next -> structural/quality -> explicit apply -> real Node/unit UI validation -> local PR preparation. Success, unit/UI failure, timeout and conflict all verified; double-browser8-case acceptance passed.
 - 112 locked license expressions and original notices; fresh audit0 vulnerabilities; current installed CycloneDX inventory. New libraries pinned/MIT, franc upstream license supplement recorded.
 
+## Verified remote acceptance
+
+[Draft PR #6](https://github.com/fangyuxu658-star/zeroloc-gate/pull/6): [CI run](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39383958891) passed5/5 at 031c7e9c1383765b1bbe4a84887d66c139c8b07a; four Windows/Linux Node22/24 jobs each41/41, plus old12-case and new real-app UI/workflow checks. Follow-up heads must pass their own latest checks. Main and Active Ruleset remain unchanged.
+
 ## Partially verified / required review
 
 - Remote Windows/Linux Node22/24 verification is determined by the latest Draft PR Checks, not this local status file. Current development PR must pass all five protected checks before any separately approved merge.
