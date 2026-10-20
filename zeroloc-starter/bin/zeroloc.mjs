@@ -30,6 +30,12 @@ function option(args, name) {
 async function main() {
   const args = process.argv.slice(2);
   if (args.includes('--help') || args.length === 0) { console.log(help); return; }
+  if(['pr-prepare','pr-publish'].includes(args[0])) {
+    const {preparePr,publishPr}=await import('../src/pull-request.mjs');
+    const root=option(args,'--root')??'.';
+    const result=args[0]==='pr-prepare'?await preparePr({root,reportPath:option(args,'--report'),branch:option(args,'--branch'),prepare:args.includes('--prepare'),approve:option(args,'--approve')}):await publishPr({root,repo:option(args,'--repo'),bodyPath:option(args,'--body'),title:option(args,'--title'),publish:args.includes('--publish'),approve:option(args,'--approve'),gh:option(args,'--gh')??'gh'});
+    console.log(JSON.stringify(result,null,2));return;
+  }
   if(args[0]==='quality') {
     const {readResource,parseJson}=await import('../src/safe-files.mjs');
     const {checkQuality}=await import('../src/quality.mjs');
