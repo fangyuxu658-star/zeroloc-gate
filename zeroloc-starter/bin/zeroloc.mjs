@@ -46,7 +46,10 @@ async function main() {
     else {
       const proposal=parseJson((await readResource(root,option(args,'--proposal'))).bytes);
       const policy=option(args,'--policy')?parseJson((await readResource(root,option(args,'--policy'))).bytes):{};
-      result=await applyProposal({root,source:option(args,'--source'),target:option(args,'--target'),proposal,policy,targetLocale:option(args,'--target-locale')??proposal.targetLocale,messageFormat:option(args,'--message-format')??proposal.messageFormat,bindLegacy:args.includes('--bind-legacy'),write:args.includes('--write'),approve:option(args,'--approve')});
+      const validator=option(args,'--validation-config')?await (await import('../src/validation.mjs')).configuredValidator({root,configPath:option(args,'--validation-config'),approval:option(args,'--allow-validation')}):null;
+      if(args.includes('--write')&&!validator)throw new Error('--validation-config is required for writes');
+      if(args.includes('--write')&&validator)validator.assertApproved();
+      result=await applyProposal({root,source:option(args,'--source'),target:option(args,'--target'),proposal,policy,validationBinding:validator?.binding??null,validate:validator?plan=>validator.run(plan):undefined,targetLocale:option(args,'--target-locale')??proposal.targetLocale,messageFormat:option(args,'--message-format')??proposal.messageFormat,bindLegacy:args.includes('--bind-legacy'),write:args.includes('--write'),approve:option(args,'--approve')});
     }
     console.log(JSON.stringify(result,null,2));if(result.passed===false)process.exitCode=1;return;
   }

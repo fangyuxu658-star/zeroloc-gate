@@ -12,7 +12,7 @@ export async function fixture(fn) {
   await writeFile(join(root,'en.json'),JSON.stringify({human:'Brand',app:{greeting:'Hello {{name}}'}}));
   await writeFile(join(root,'de.json'),'{"human":"Menschlich","app":{"greeting":""}}\n');
   const proposal=await translateFiles({sourcePath:join(root,'en.json'),targetPath:join(root,'de.json'),sourceLocale:'en',targetLocale:'de',messageFormat:'i18next',provider:{translate:async()=> 'Hallo {{name}}'},dryRun:false});
-  const options={root,source:'en.json',target:'de.json',proposal};
+  const options={root,source:'en.json',target:'de.json',proposal,validate:async()=>({passed:true,checks:[{kind:'unit',passed:true,harness:'trusted API callback'}]})};
   try {await fn(options);} finally {await rm(root,{recursive:true,force:true});}
 }
 test('safe apply defaults offline/dry-run, requires exact approval and preserves human translations',()=>fixture(async o=>{

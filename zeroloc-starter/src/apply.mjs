@@ -61,6 +61,7 @@ export async function applyProposal(options) {
   if(!write) return {type:'safe-apply',schemaVersion:1,applied:false,dryRun:true,plan};
   if(approve!==plan.planId) throw new Error('Explicit approval must match the current dry-run planId');
   if(!plan.quality.passed) throw new Error('Quality gate rejected candidate: '+JSON.stringify(plan.quality.issues));
+  if(typeof validate!=='function') throw new Error('Approved automated validation is required for writes');
   const targetPath=await guardedPath(root,plan.target),lock=targetPath+'.zeroloc.lock';
   await durableNew(lock,jsonBytes({planId:plan.planId,pid:process.pid}));
   const token=randomUUID(),backup=plan.target+`.zeroloc-${token}.bak`,journal=plan.target+`.zeroloc-${token}.recovery.json`;
