@@ -11,8 +11,8 @@
 
 ## 本次 PR 验收
 
-- [ ] 正常 Draft PR 正在准备；未将尚未运行的 PR CI 计为通过。
-- [ ] 负例 PR 尚未创建/验证，保持未验证。
+- [x] [正常 Draft PR #1](https://github.com/fangyuxu658-star/zeroloc-gate/pull/1)；[真实 PR CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349812116)：success，5/5 jobs 通过，4 个系统/Node 组合各 21/21，视觉 12 组通过。记录运行的 head=8817f1b2f4ea4beecd01f6122783dca098f3468f。
+- [x] [负例 Draft PR #2](https://github.com/fangyuxu658-star/zeroloc-gate/pull/2)；[故意失败 CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349987984)：failure。移除合成德语 greeting 的 name 后，直接 CLI 退出 1 并定位 app.greeting / PLACEHOLDER_MISMATCH；远端检查失败。PR 已关闭且未合并，合成错误未进入 main。
 - [ ] 外部 fork PR：需要不同贡献者/真实 fork 场景，目前未运行，不能勾选。
 - [ ] main 的必要检查/PR 保护：目前未启用；配置方案已准备，待独立批准。
 - [ ] 批准并合并正常 PR（本任务禁止合并）；负例永不合并。

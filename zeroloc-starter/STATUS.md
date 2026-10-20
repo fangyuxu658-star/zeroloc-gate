@@ -7,8 +7,8 @@
 - [首次 main GitHub CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39347428254) 5/5 jobs 成功：Ubuntu/Windows × Node 22/24 各 21/21；Linux Chromium/Firefox × 3 locales × 2 viewports 共 12 组通过，故意溢出/无名称按钮检出。
 - 下载核验四份 JSON/SARIF/SBOM，JSON 0 errors、SARIF 0 results；Linux 安装树 97 个组件、Windows 96 个，不混淆安装平台范围。
 - 格式门禁、i18next 真实提取、独立本地 HTTP provider 安全负例与真实 Ollama 0.40.6/qwen2.5:0.5b CPU E2E 已验证。原目标/人工字段未改，候选仍需人审。
-- 正常 Draft PR 正在准备；未将尚未运行的 PR CI 计为通过。
-- 负例 PR 尚未创建/验证，保持未验证。
+- [正常 Draft PR #1](https://github.com/fangyuxu658-star/zeroloc-gate/pull/1)；[真实 PR CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349812116)：success，5/5 jobs 通过，4 个系统/Node 组合各 21/21，视觉 12 组通过。记录运行的 head=8817f1b2f4ea4beecd01f6122783dca098f3468f。
+- [负例 Draft PR #2](https://github.com/fangyuxu658-star/zeroloc-gate/pull/2)；[故意失败 CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349987984)：failure。移除合成德语 greeting 的 name 后，直接 CLI 退出 1 并定位 app.greeting / PLACEHOLDER_MISMATCH；远端检查失败。PR 已关闭且未合并，合成错误未进入 main。
 - 核心 MIT、107 项锁定 npm 许可清单与原始声明已检查。现有 Actions SHA 固定、contents:read、无 secrets 引用、checkout 不保留凭证。
 
 ## Partially verified
