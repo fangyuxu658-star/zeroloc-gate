@@ -30,6 +30,18 @@ function option(args, name) {
 async function main() {
   const args = process.argv.slice(2);
   if (args.includes('--help') || args.length === 0) { console.log(help); return; }
+  if (args[0] === 'apply' || args[0] === 'recover') {
+    const { readResource, parseJson } = await import('../src/safe-files.mjs');
+    const { applyProposal, recoverApply } = await import('../src/apply.mjs');
+    const root=option(args,'--root')??'.';
+    let result;
+    if(args[0]==='recover') result=await recoverApply({root,journal:option(args,'--journal'),approve:option(args,'--approve')});
+    else {
+      const proposal=parseJson((await readResource(root,option(args,'--proposal'))).bytes);
+      result=await applyProposal({root,source:option(args,'--source'),target:option(args,'--target'),proposal,messageFormat:option(args,'--message-format')??proposal.messageFormat,bindLegacy:args.includes('--bind-legacy'),write:args.includes('--write'),approve:option(args,'--approve')});
+    }
+    console.log(JSON.stringify(result,null,2));if(result.passed===false)process.exitCode=1;return;
+  }
   if (args[0] === 'visual') {
     const { visualQA } = await import('../src/checks/visual.mjs');
     const result = await visualQA({url:option(args,'--url'),outputDir:option(args,'--output') ?? 'artifacts/visual'});
