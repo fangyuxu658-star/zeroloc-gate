@@ -23,4 +23,4 @@ npm run check:example
 
 公开仓库：[fangyuxu658-star/zeroloc-gate](https://github.com/fangyuxu658-star/zeroloc-gate)。当前交付采用“仓库根目录 + zeroloc-starter 子目录”布局，真正的 GitHub Actions 入口为根目录 [.github/workflows/ci.yml](.github/workflows/ci.yml)，已设置命令工作目录和 artifact 路径。不要只提交子目录而遗漏根 workflow。
 
-这是 beta 准备状态；只有 [STATUS.md](zeroloc-starter/STATUS.md) 明确列出的验证可作为展示依据。[正常 Draft PR #1](https://github.com/fangyuxu658-star/zeroloc-gate/pull/1) 已完成首轮 5/5 CI，最终提交以最新 Checks 为准；[负例 PR #2](https://github.com/fangyuxu658-star/zeroloc-gate/pull/2) 已按预期失败并关闭、未合并。合并、分支保护修改和 tag/Release 发布仍需分别确认。
+这是 beta 准备状态；只有 [STATUS.md](zeroloc-starter/STATUS.md) 明确列出的验证可作为展示依据。[已合并 PR #1](https://github.com/fangyuxu658-star/zeroloc-gate/pull/1) 已完成首轮 5/5 CI，最终提交以最新 Checks 为准；[负例 PR #2](https://github.com/fangyuxu658-star/zeroloc-gate/pull/2) 已按预期失败并关闭、未合并。合并、分支保护修改和 tag/Release 发布仍需分别确认。

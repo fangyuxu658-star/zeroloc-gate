@@ -1,30 +1,19 @@
 # v0.1.0-beta.1 release checklist
 
-功能冻结；本轮已授权仅 PR #1 的 Ready/Squash Merge，Ready 成功，合并被 Invalid email address 阻塞。其他 PR 合并、直接 main 写入、规则修改和 Tag/Release 均未授权。项目 package 保持 private=true，目标为 GitHub pre-release，不是 npm 或 v0.2。当前本地收尾记录见 [RELEASE_CLOSEOUT_CN.md](RELEASE_CLOSEOUT_CN.md)。
+Current verified main: d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a; [main CI 5/5](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284)，commit d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a. Feature freeze; no npm publish/new features/v0.2.
 
-## 已有基础
+- [x] PR #1 final diff/head/5 checks reviewed, Ready, authorized Squash Merge completed; public author/committer are noreply, signed by GitHub.
+- [x] Post-merge main independently passed all 5 jobs; four regression combinations each 21/21, visual 12 cases and negative fixture passed; reports/SBOM/screenshots downloaded.
+- [x] Negative PR #2 correctly failed and remains closed/unmerged.
+- [x] Local regression/example/license gate and fresh audit verified; 107 locked license entries, zero audit vulnerabilities. MIT/third-party notices preserved.
+- [x] Ruleset eligibility and exact API payload prepared; zero required approvals for sole maintainer; NOT applied.
+- [x] Release Notes/install/features/limitations/reproduction prepared, source/evidence/SBOM/notice/checksum assets prepared locally for current verified SHA; NOT uploaded.
+- [ ] Approve and merge the independent closeout documentation PR; only PR #1 was authorized to merge. Verify resulting main CI and rebuild all SHA-bound assets if target changes.
+- [ ] Approve/apply Ruleset and read back/verify enforcement, or explicitly accept no-protection risk.
+- [ ] External Fork dynamic test remains unrun; disclose rather than count same-repo PR as proof.
+- [ ] Accept known Windows default Firefox cache and small-model Continue/semantic limits.
+- [ ] Approve exact final SHA for v0.1.0-beta.1 Tag; create/push only then.
+- [ ] Separately approve GitHub Pre-release (not latest stable); upload approved assets and refresh audit at publication time.
+- [ ] Read back actual Tag/Release target and URLs after publication; current state is no Tag and no Release.
 
-- [x] 公开 MIT 仓库与 origin：[仓库](https://github.com/fangyuxu658-star/zeroloc-gate)；初始无父提交 4a64f6d6350ed5e80c1738ffa145a8dba46da66f，GitHub noreply 作者。
-- [x] [首次 main CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39347428254) 5/5；四个系统/Node 组合各 21/21，双浏览器 12 组与结构化 artifacts 已核验。
-- [x] 本地真实 Ollama、独立 Firefox 缓存及正负结构校验已记录，人工译文保留。
-- [x] 许可证/NOTICE/SBOM 和历史公开文件扫描已完成；此轮复核见验收日志。模型、工具、凭证、本机缓存不提交。
-
-## 本次 PR 验收
-
-- [x] [正常 Draft PR #1](https://github.com/fangyuxu658-star/zeroloc-gate/pull/1)；[真实 PR CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349812116)：success，5/5 jobs 通过，4 个系统/Node 组合各 21/21，视觉 12 组通过。记录运行的 head=8817f1b2f4ea4beecd01f6122783dca098f3468f。
-- [x] [负例 Draft PR #2](https://github.com/fangyuxu658-star/zeroloc-gate/pull/2)；[故意失败 CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349987984)：failure。移除合成德语 greeting 的 name 后，直接 CLI 退出 1 并定位 app.greeting / PLACEHOLDER_MISMATCH；远端检查失败。PR 已关闭且未合并，合成错误未进入 main。
-- [ ] 外部 fork PR：需要不同贡献者/真实 fork 场景，目前未运行，不能勾选。
-- [ ] main 的必要检查/PR 保护：目前未启用；配置方案已准备，待独立批准。
-- [x] 用户批准 PR #1 转 Ready/Squash Merge，已转 Ready；最终 PR CI 5/5。
-- [ ] 使用有效公开作者地址完成 PR #1 Squash Merge；负例永不合并。
-- [ ] 合并后重新核对 main 的 commit、完整 CI、公开内容和附件摘要。
-
-## 发布前人工批准
-
-- [ ] 维护者接受已知限制：小模型未译 Continue、默认 Windows 缓存、未测真实 fork；不得作语义/全面安全保证。
-- [ ] 启用拟定保护或明确接受未启用的合并风险；实际 read-back 证实前不标为 enabled。
-- [ ] 在最终经验证 main commit 上批准 v0.1.0-beta.1 tag 和 GitHub pre-release，非 latest stable。
-- [ ] 发布附件只有源码、SBOM、许可、脱敏验证摘要与 SHA-256；发布当天刷新 audit。无模型、运行时、私钥或原始本机日志。
-- [ ] 发布说明填最终 commit 与 Release URL；当前 Release Notes 仅为草稿。
-
-当前正式发布 **NO-GO**；测试通过不等于已获合并或发布授权。[完整验收日志](BETA_RELEASE_ACCEPTANCE_CN.md)。
+Engineering checks GO; publication execution NO-GO pending above approvals. [Full closeout log](RELEASE_CLOSEOUT_CN.md).

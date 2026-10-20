@@ -1,8 +1,6 @@
 # ZeroLoc Gate v0.1.0-beta.1
 
-> Closeout update (local draft, not on main): PR #1 is Ready. Its final head 4de289b46f695ecbc446cdef9ffd63897fd84fe9 passed [all five checks](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39350314338). The authorized squash merge was rejected by GitHub with Invalid email address. Main is still the initial baseline; no post-merge main CI, tag or Release exists. Final release target SHA remains unset. See [closeout record](RELEASE_CLOSEOUT_CN.md). Do not publish until this blocker is resolved and the resulting main passes CI.
-
-**Pre-release draft — not published.** Repository: [fangyuxu658-star/zeroloc-gate](https://github.com/fangyuxu658-star/zeroloc-gate). Initial main commit: 4a64f6d6350ed5e80c1738ffa145a8dba46da66f; [first main CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39347428254) passed all five jobs. The validation PR must be reviewed/merged and its resulting main revalidated before choosing the final release commit. No tag or Release has been created.
+**Pre-release draft — not published.** [Repository](https://github.com/fangyuxu658-star/zeroloc-gate). PR #1 was squash-merged into main at d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a; [post-merge main CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284) passed all five jobs. No tag or Release exists. This closeout documentation branch is not merged. If it is merged, refresh the final target SHA, require its new main CI and obtain explicit tag/release approval.
 
 ZeroLoc Gate is a local-first localization quality gate for nested JSON string catalogs. This beta provides deterministic checks and reviewable adapter output. It does not guarantee translation meaning or apply translation patches automatically.
 
@@ -26,19 +24,27 @@ Current publication-candidate results are recorded in [PUBLICATION_READINESS_CN.
 - Only nested UTF-8 JSON objects with string leaves are supported. No XLIFF, arrays, dotted/reserved keys, Paraglide extraction, Lingui or TMS integration.
 - ICU/i18next structure checks are not a general HTML sanitizer. Visual checks do not establish complete accessibility, pixel-baseline equality or semantic correctness.
 - Model rights must be reviewed independently. Runtime `check` is offline; dependency/browser/model installation requires network, and translation is an explicit local HTTP action.
-- Real Node 22/24 Linux/Windows and Linux browser CI passed on the initial main. An external fork event is still untested. Main has no branch protection/ruleset enforcement; a failing check alone is not proof that GitHub blocks merging.
+- Real Node 22/24 Linux/Windows and Linux browser CI passed on the post-merge main. An external fork event is still untested. Main has no branch protection/ruleset enforcement; a failing check alone is not proof that GitHub blocks merging.
 
-## Pull request acceptance
+## Release evidence
 
-[正常 Draft PR #1](https://github.com/fangyuxu658-star/zeroloc-gate/pull/1)；[真实 PR CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349812116)：success，5/5 jobs 通过，4 个系统/Node 组合各 21/21，视觉 12 组通过。记录运行的 head=8817f1b2f4ea4beecd01f6122783dca098f3468f。
-
-[负例 Draft PR #2](https://github.com/fangyuxu658-star/zeroloc-gate/pull/2)；[故意失败 CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349987984)：failure。移除合成德语 greeting 的 name 后，直接 CLI 退出 1 并定位 app.greeting / PLACEHOLDER_MISMATCH；远端检查失败。PR 已关闭且未合并，合成错误未进入 main。
-
-See [acceptance log](BETA_RELEASE_ACCEPTANCE_CN.md) for exact run/head evidence, limitations and pending approvals. Use the latest normal PR Checks after documentation updates.
+- [PR #1](https://github.com/fangyuxu658-star/zeroloc-gate/pull/1): final head 4de289b, [PR CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39350314338) 5/5; merged via squash.
+- [Main CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284): Ubuntu/Windows x Node 22/24, each 21/21; visual Chromium/Firefox x 3 locales x 2 viewports, 12 passed; negative overflow/accessibility fixture caught. Four JSON/SARIF pairs have zero errors/results; Linux SBOM 97 / Windows 96 components; 13 screenshots reviewed.
+- [Negative PR #2](https://github.com/fangyuxu658-star/zeroloc-gate/pull/2): [CI failed as intended](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39349987984), closed without merge. Direct CLI exit 1 identifies app.greeting / missing name.
+- 107 locked package license expressions reviewed; main audit found zero vulnerabilities. Public commit scan found no secrets; scans are heuristic. See [closeout evidence](RELEASE_CLOSEOUT_CN.md).
 
 ## Try the beta
 
-Clone https://github.com/fangyuxu658-star/zeroloc-gate.git, enter `zeroloc-starter/`, then run:
+With Node.js 22 or later and npm, clone the repository. For this verified candidate (the future tag has not been created):
+
+```sh
+git clone https://github.com/fangyuxu658-star/zeroloc-gate.git
+cd zeroloc-gate
+git checkout d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a
+cd zeroloc-starter
+```
+
+Then run:
 
 ```sh
 npm ci --ignore-scripts
@@ -47,3 +53,15 @@ npm run check:example
 ```
 
 See [README](../README.md) for extraction, translation and visual QA commands. This GitHub beta keeps `package.json` private to prevent unintended npm publication. Publish as a GitHub **pre-release**, not the latest stable release.
+
+## Reproduce extended verification
+
+```sh
+npm run licenses:check
+npm audit --audit-level=high
+npm sbom --sbom-format cyclonedx
+npx --no-install playwright install --with-deps chromium firefox
+npm run test:visual -- --all-browsers
+```
+
+Windows isolated-cache and opt-in Ollama setup: [environment instructions](STABILIZATION_ENVIRONMENT_CN.md). The release archive, if approved, contains source and notices only; install dependencies separately. Four CI SBOMs describe their exact OS/Node installations.

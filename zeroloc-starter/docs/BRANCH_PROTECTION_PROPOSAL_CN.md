@@ -23,4 +23,4 @@ Proposed settings for `main` (owner approval required):
 
 After approval, open repository **Settings → Rules → Rulesets** (or **Branches → Branch protection rules**), select `main`, and apply the above requirements. Do not create overlapping legacy rules and rulesets without reviewing their combined effects. Read back the resulting configuration and verify a ready-for-review synthetic failure cannot merge; a Draft PR alone cannot prove required-check enforcement. Never merge the negative fixture. If GitHub denies the setting because of plan/permissions, record the exact limitation and require explicit acceptance of the remaining merge risk.
 
-No protection, settings, merge, tag or Release was changed by this acceptance task.
+Only PR #1 was authorized and squash-merged. No protection/settings/tag/Release was changed.

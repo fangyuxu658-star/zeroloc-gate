@@ -1,38 +1,34 @@
 # v0.1.0-beta.1 release closeout
 
-## 当前真实状态
+## 已完成的真实操作
 
-- PR #1 的最终 head 为 `4de289b46f695ecbc446cdef9ffd63897fd84fe9`；[最终 PR CI](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39350314338) 5/5 成功。最终 diff 13 文件，仅文档/证据与 npm test 发现范围修复；产品源码、lockfile、workflow 无变更。
-- 用户已单独授权 PR #1 转 Ready、Squash Merge。Ready 成功；合并 API 以 `Invalid email address` 拒绝指定 noreply 作者地址，**未合并**。没有尝试可能暴露私人邮箱的默认作者地址。
-- gh 已认证 fangyuxu658-star；当前 token 没有读取账户邮箱所需 scope。需要维护者在 GitHub Settings → Emails 确认 Keep my email addresses private 和实际 noreply 地址；不索取或发布私人邮箱。
-- main 仍为 `4a64f6d6350ed5e80c1738ffa145a8dba46da66f`；合并后的 main CI 尚不存在，不能将 PR CI 或首次 main CI 冒充该结果。负例 PR #2 CLOSED、mergedAt=null。
-- 本分支仅为本地收尾草案，未合并入 main。规则、Tag、Release 均未创建。
+1. 重新检查 PR #1 的 13 个文件 diff、最终 head 4de289b46f695ecbc446cdef9ffd63897fd84fe9 及 [五项 PR Checks](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39350314338)，均通过；产品源码、lockfile、workflow 未改。
+2. PR #1 转 Ready。首次显式 --author-email 请求被 GitHub GraphQL 拒绝：Invalid email address (mergePullRequest)。当时未合并；未传 committer 参数。此错误不能证明 noreply 拼写错误。
+3. 用户确认邮箱隐私与阻止邮箱泄露均开启，官方 noreply 与原参数相同。按 GitHub 官方默认作者流程省略显式 authorEmail，锁定同一 head 使用 gh pr merge --squash 成功，不重复相同失败请求。内部邮箱校验拒绝原因未获 GitHub 服务端解释；可以确认的是显式参数被拒绝、默认隐私流程成功，不能断言账号邮箱有误。
+4. [PR #1](https://github.com/fangyuxu658-star/zeroloc-gate/pull/1) 于 2026-10-20T02:01:50Z 合并为 d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a，单父提交 4a64f6d6350ed5e80c1738ffa145a8dba46da66f。作者 234267204+fangyuxu658-star@users.noreply.github.com；committer GitHub / noreply@github.com；verification=true，未暴露私人邮箱。代码树与已审核 head 相同。
+5. 等待独立 [main CI 5/5](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284)，commit d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a，全部成功。四个系统/Node 组合各 21/21，视觉 12 组与负例通过；报告 JSON/SARIF 全部零问题，Linux SBOM 97 / Windows 96，13 张截图下载核验。没有用 PR CI 冒充 main CI。
+6. 负例 PR #2 仍关闭、未合并；没有删除分支。没有直接 push main、修改设置、创建 Tag/Release、运行付费云 API。
 
-## 本轮复核与限制
+## 证据和复核
 
-本地 npm test 21/21；check:example 0 errors/0 warnings；licenses:check 核对 107 项锁定依赖，无未审许可表达式；npm audit 所有级别共 0 vulnerabilities；CycloneDX 重新生成。公开 main/正常分支三项提交 Gitleaks 无发现；正常分支作者均为 GitHub noreply。发布目标确定后必须对实际 main SHA 和公开附件再扫一遍。
+[版本验收 JSON](verification/release-closeout.json) 保存实际 main/run/jobs、作者和签名、安全配置、许可/audit 与待批准项。前轮 [PR 验收日志](BETA_RELEASE_ACCEPTANCE_CN.md) 保留历史，不以其旧的未授权/未合并措辞覆盖本次结果。
 
-原始 Firefox 缓存限制、独立缓存替代方案、小模型未译 Continue、结构不代表语义质量、真实外部 Fork 尚未动态验证，继续保留在 STATUS/Release Notes。没有开发新功能或启动 v0.2。
+本地回归 21/21、示例 0 errors/0 warnings、107 项锁定依赖许可通过，npm audit 各级总计 0；main CI 再次执行同类检查并通过。公开 main 历史 Gitleaks 无发现；发布附件与文档分支将另行扫描。启发式秘密扫描不能保证发现所有未知秘密。
 
-## 待批准 Ruleset（未应用）
+## 待批准的 Ruleset
 
-仓库只读 API 确认 public、当前账号 admin=true、allow_squash_merge=true；rulesets=[]、effective rules=[]。GitHub 官方文档说明公开仓库可用 Rulesets，包括 Free。读接口成功不替代实际设置后的 read-back 和拒绝测试。
+仓库 public、当前账号 admin=true、allow_squash_merge=true；rulesets=[]、effective rules=[]。公开仓库支持 Rulesets；未用写设置实验来验证权限。规则 JSON：[main-ruleset.proposed.json](verification/main-ruleset.proposed.json)。仅 main；active 为拟定值；无 bypass；要求 PR、仅 Squash、讨论解决、0 个强制批准、无 CODEOWNER/最后推送者额外批准；四个 regression 加 visual 绑定 github-actions app ID 15368，strict 基于最新 main；禁止删除/强推。不启用 restrict updates、签名或合并队列等额外门槛，单维护者可完成 PR/CI 流程。
 
-规则 JSON：[main-ruleset.proposed.json](verification/main-ruleset.proposed.json)。仅 refs/heads/main；启用 active；无 bypass；要求 PR、仅 Squash、讨论解决、0 个强制批准、无 CODEOWNER/最后推送者额外批准。必要检查为 Ubuntu/Windows × Node 22/24 四项 regression 加 visual，绑定 github-actions app ID 15368，strict 要求基于最新 main；禁止删除和强推。不启用 restrict updates、签名或合并队列等可能增加单人维护门槛的额外规则。
+规则未应用，CI 失败的服务端合并阻断未验证。批准后创建规则、读回配置并进行非合并式拒绝验证；负例永不合并。
 
-批准后才调用规则创建 API；随后读回配置，并验证失败检查不可合并。JSON 中 active 是拟定值，不表示已生效。
+来源：[GitHub 邮箱隐私](https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address)、[Ruleset 可用性](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/creating-rulesets-for-a-repository)、[Rules API](https://docs.github.com/en/rest/repos/rules)。
 
-来源：[Ruleset 可用性与创建](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/creating-rulesets-for-a-repository)、[Rules API 字段](https://docs.github.com/en/rest/repos/rules)、[提交邮箱隐私](https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address)。
+## 发布准备与批准边界
 
-## 发布候选与后续门禁
+目标 v0.1.0-beta.1，标题 ZeroLoc Gate v0.1.0-beta.1，GitHub Pre-release、非 latest stable；package private=true，不发 npm。安装、功能、限制、复现见 [Release Notes](RELEASE_NOTES_v0.1.0-beta.1.md)。当前已验证代码候选是 d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a。本轮收尾文档在独立 Draft PR 供审阅，未授权合并；若批准合并文档 PR，最终 Tag 必须改为新 resulting main SHA，并等其完整 5/5 CI 后再批准，禁止打在本地未合并分支上。
 
-目标 Tag：v0.1.0-beta.1（尚未创建）；Release 标题：ZeroLoc Gate v0.1.0-beta.1；类型：GitHub Pre-release，非 latest stable；npm package 保持 private=true。发布正文见 [Release Notes](RELEASE_NOTES_v0.1.0-beta.1.md)，包含安装命令、能力、限制和历史 CI；最终正文必须回填合并后的真实 main SHA/CI。
+已准备本地源码归档、四平台/Node 的 CI SBOM、MIT/第三方声明、脱敏摘要和 SHA-256；没有模型、运行时、私钥、node_modules 或原始机器日志。附件精确绑定目前候选 SHA，目标变动必须重建。
 
-1. 有效 noreply 配置确认后，重新锁定 PR #1 head 和五项检查，完成已授权 Squash Merge。
-2. 等待合并后的 main CI 完整 5/5；任何失败即停止发布并报告。
-3. 在 main 派生的文档分支更新 STATUS、验收记录和 Release Notes。其他 PR 合并没有授权；如需文档 PR 合并必须单独批准，不直接 push main。
-4. 规则方案单独批准后才应用，或者由维护者明确接受未启用风险。
-5. 对最终候选 commit 复核敏感信息、MIT/第三方声明、audit、SBOM 和全部 CI，准备源码、SBOM、许可、脱敏摘要与 SHA-256，排除模型/工具/本机原始日志。
-6. 明确批准精确 commit 的 Tag 与 GitHub Pre-release 后才创建；当前没有执行 git tag、push tag 或 gh release create。
+剩余批准：文档 PR 的合并；上述 Ruleset 应用（或明确接受当前无保护风险）；精确最终 commit 的 Tag 创建；GitHub Pre-release 发布。规则、Tag 和 Release 分开确认，本任务未执行。
 
-当前 **NO-GO**：Squash Merge 尚未完成，合并后 main CI 未验证，规则和发布动作未获批准。不能据此草稿声称正式发布已就绪。
+工程检查 **GO**，发布执行 **NO-GO（待批准）**。残余风险：真实 Fork 未测、Windows 默认缓存、小模型漏译与结构不代表语义；均继续披露。无新功能、无 v0.2。

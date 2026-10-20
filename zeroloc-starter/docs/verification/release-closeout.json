@@ -1,32 +1,91 @@
 {
   "version": "v0.1.0-beta.1",
+  "scope": "Verified main snapshot; closeout documentation PR not merged",
   "pr": 1,
   "reviewedHead": "4de289b46f695ecbc446cdef9ffd63897fd84fe9",
   "reviewedCI": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39350314338",
-  "reviewedJobs": "5/5 success",
-  "ready": true,
-  "squashMergeSucceeded": false,
-  "mergeError": "GraphQL: Invalid email address (mergePullRequest)",
-  "mainSha": "4a64f6d6350ed5e80c1738ffa145a8dba46da66f",
-  "postMergeCI": null,
-  "releaseTargetSha": null,
+  "squashMergeSucceeded": true,
+  "mergedAt": "2026-10-20T02:01:50Z",
+  "mainSha": "d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a",
+  "postMergeCI": {
+    "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "visual",
+        "conclusion": "success",
+        "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284/job/118412968802"
+      },
+      {
+        "name": "regression (ubuntu-latest, 22)",
+        "conclusion": "success",
+        "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284/job/118412968968"
+      },
+      {
+        "name": "regression (windows-latest, 24)",
+        "conclusion": "success",
+        "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284/job/118412968991"
+      },
+      {
+        "name": "regression (windows-latest, 22)",
+        "conclusion": "success",
+        "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284/job/118412969084"
+      },
+      {
+        "name": "regression (ubuntu-latest, 24)",
+        "conclusion": "success",
+        "url": "https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39356683284/job/118412969148"
+      }
+    ]
+  },
+  "identity": {
+    "author": {
+      "date": "2026-10-20T02:01:50Z",
+      "email": "234267204+fangyuxu658-star@users.noreply.github.com",
+      "name": "fangyuxu658-star"
+    },
+    "committer": {
+      "date": "2026-10-20T02:01:50Z",
+      "email": "noreply@github.com",
+      "name": "GitHub"
+    },
+    "parents": [
+      "4a64f6d6350ed5e80c1738ffa145a8dba46da66f"
+    ],
+    "sha": "d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a",
+    "verification": true
+  },
+  "previousFailure": {
+    "message": "GraphQL: Invalid email address (mergePullRequest)",
+    "explicitAuthorEmail": "234267204+fangyuxu658-star@users.noreply.github.com",
+    "committerParameterSent": false,
+    "resolution": "User confirmed GitHub privacy; omitted explicit authorEmail, default official squash merge succeeded. Internal server validation reason unknown."
+  },
+  "releaseCodeCandidateSha": "d498d4aae8e9a6f22a8e350ed6cc7325c1cfcd2a",
+  "finalPublicationTarget": "Reconfirm after documentation PR merge and resulting main CI",
   "rulesetApplied": false,
   "tagCreated": false,
   "releaseCreated": false,
-  "localTests": {
-    "tests": 21,
-    "passed": 21,
-    "licensePackages": 107,
-    "auditVulnerabilities": 0
+  "security": {
+    "defaultToken": "read",
+    "canApproveReviews": false,
+    "repoSecrets": 0,
+    "environments": 0,
+    "rulesets": [],
+    "effectiveRules": [],
+    "forkDynamicTest": "not run"
   },
-  "rulesetEligibility": {
-    "visibility": "public",
-    "admin": true,
-    "existingRulesets": 0,
-    "effectiveRules": 0,
-    "writeTestPerformed": false
+  "licenses": {
+    "lockedPackages": 107,
+    "unreviewed": 0
   },
-  "blockingInput": "Confirm GitHub email privacy and actual noreply address; never send a private email",
-  "decision": "NO-GO",
-  "scope": "Local closeout snapshot only; not merged or published"
+  "audit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "decision": "Engineering GO; publication NO-GO pending approvals"
 }
