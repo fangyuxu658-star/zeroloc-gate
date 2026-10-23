@@ -10,6 +10,7 @@
 - **归因**：同浏览器、同视口对照源/目标页面。相同缺陷标为 `pre-existing`；仅目标出现且源无环境问题标为 `localization-introduced`；资源阻断标为 `environment`；源受限制时新缺陷标为 `undetermined`。这是观测归因，不是严格因果证明。任何上述 error 都阻止交付，原有缺陷不豁免。
 - **Visual Repair Agent**：根据 `CONTENT_ESCAPE` 的祖先/子项几何和 CSS 类定位根因。当前只生成一种受限候选：唯一简单类规则中 `height: Npx` 改为 `min-height: Npx; height: auto`。只操作显式列出的 CSS，保留其他声明，不生成 shell、JS、隐藏/删除内容或放宽网络策略。尚不自动改 JSX/TSX，也不提供任意 CSS 重写。
 - **事务与重试**：复用 v0.2 `guardedPath/readResource/durableNew/atomicReplace`、摘要批准、独占锁、私有备份和条件回滚机制。候选在新副本中应用，单测及完整视觉矩阵都成功才保留。部分改善也撤回；重复候选不重试，总尝试次数 1–3，整体时间 1–300 秒。回滚冲突或清锁异常立即停止并保留现场。
+- 自有进程清理共享同一次关闭等待，避免超时/验证收尾重复清理死进程。清理另有 5 秒安全截止；不能确认退出时报告 `PROCESS_CLEANUP_FAILED` 和自有 PID，阻止交付并要求处理现场。
 - **Semantic Review Agent**：保留结构、未翻译、术语/品牌、语言/长度检查；新增尾部空白、悬空标点、重复标点、替代字符及制表/回车异常风险。`Hallo {{name}}, ` 会失败并生成 `Hallo {{name}}` 的可审核候选。候选必须保留格式签名；不以模型分数证明语义正确。
 - **语义修正衔接 Safe Apply**：`semantic-proposal` 审核尚未应用的来源绑定 proposal，输出独立修订 envelope 和新 Safe Apply 预览。实际写入继续使用 v0.2 的精确 plan/config 批准、备份与回滚，拒绝已有非空人工译文覆盖。对资源中已有人工文本只建议修正并阻断，不能以“自主”名义偷偷覆盖。
 - **Review / Deliver**：成功运行仍停在 Review，需独立的当前 `reviewId`。交付再次检查源文件、隔离结果、完整浏览器矩阵、单测、截图摘要及受限修复规则；修改后授权失效。`repair-prepare` 还需新的本地准备批准，在全新的 Git checkout 中仅提交 CSS 和公开审核摘要。原项目的文件、HEAD、分支和 index 不变。没有有效 patch、失败、缺证据或语义待处理时拒绝准备。
@@ -55,6 +56,8 @@ export async function start({root, originRoot}) {
 ```
 
 `validation.json` 使用原 v0.2 格式，必须包含至少一个经过 SHA-256 绑定的 `.test.mjs`，只设置 unitTests；视觉由 repair 独立强制运行。所有测试入口、应用源码/资源、配置和 adapter 都列入 files。拒绝目录穿越、链接/硬链接、私密路径、重复清单项，限制最多 512 个文件、单文件 2 MiB、总计 16 MiB。大应用需要维护者提供覆盖目标页面的可信清单/适配器；超限显式失败，不作部分成功。
+
+源/目标语言必须使用不同 URL，浏览器和视口都必须互不重复；重复填写不能算多语言/多视口覆盖。
 
 ```sh
 # 以下命令从 ZeroLoc 安装目录执行，PROJECT 为可信项目；默认预览不执行代码。

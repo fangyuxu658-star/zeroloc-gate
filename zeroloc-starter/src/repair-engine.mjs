@@ -18,7 +18,9 @@ export async function planRepair({root='.',configPath}) {
   if(!known(config,['schemaVersion','files','cssFiles','server','validation','visual','semantic','maxAttempts','timeoutMs'])||config.schemaVersion!==1||!Array.isArray(config.files)||config.files.length<1||config.files.length>512||new Set(config.files).size!==config.files.length||!Array.isArray(config.cssFiles)||config.cssFiles.length>8||!Number.isInteger(config.maxAttempts)||config.maxAttempts<1||config.maxAttempts>3||!Number.isInteger(config.timeoutMs)||config.timeoutMs<1000||config.timeoutMs>300000)throw new Error('Invalid bounded repair configuration');
   if(!known(config.server,['path','sha256'])||!config.server.path?.endsWith('.mjs')||!known(config.visual,['sourcePath','targetPath','sourceText','targetText','browsers','viewports']))throw new Error('Approved server and exact locale routes required');
   for(const key of ['sourcePath','targetPath'])if(typeof config.visual[key]!=='string'||!config.visual[key].startsWith('/')||config.visual[key].startsWith('//')||/[\\\x00-\x20]/.test(config.visual[key])||new URL(config.visual[key],'http://127.0.0.1').origin!=='http://127.0.0.1')throw new Error('Unsafe locale route');
+  if(new URL(config.visual.sourcePath,'http://127.0.0.1').href===new URL(config.visual.targetPath,'http://127.0.0.1').href)throw new Error('Distinct source and target locale routes required');
   if(['sourceText','targetText'].some(k=>typeof config.visual[k]!=='string'||!config.visual[k].trim())||!Array.isArray(config.visual.browsers)||config.visual.browsers.length<2||new Set(config.visual.browsers).size!==config.visual.browsers.length||config.visual.browsers.some(b=>!['chromium','firefox','webkit'].includes(b))||!Array.isArray(config.visual.viewports)||config.visual.viewports.length<2||config.visual.viewports.length>4||config.visual.viewports.some(v=>!known(v,['width','height'])||!Number.isInteger(v.width)||!Number.isInteger(v.height)||v.width<100||v.width>4096||v.height<100||v.height>4096))throw new Error('Two browsers/viewports and rendered language assertions required');
+  if(new Set(config.visual.viewports.map(v=>`${v.width}x${v.height}`)).size!==config.visual.viewports.length)throw new Error('Duplicate viewports cannot establish distinct coverage');
   const required=[config.server.path,config.validation,...config.cssFiles];
   if(config.semantic){if(!known(config.semantic,['source','target','targetLocale','messageFormat','policy']))throw new Error('Invalid semantic configuration');required.push(config.semantic.source,config.semantic.target);}
   if(required.some(p=>!config.files.includes(p))||config.cssFiles.some(p=>!p.endsWith('.css')))throw new Error('All inputs must be in explicit copy manifest');
@@ -37,21 +39,35 @@ export async function planRepair({root='.',configPath}) {
   return {...manifest,planId:hash(manifest),executionId:hash({files,server:config.server,validation:validator.binding}),dryRun:true,requiresHumanReview:true};
 }
 
-function stop(child) {
-  if(!child.pid)return Promise.resolve();
-  return new Promise(r=>{
-    child.once('close',r);
-    if(process.platform==='win32')execFile(join(process.env.SystemRoot??'C:\\Windows','System32','taskkill.exe'),['/PID',String(child.pid),'/T','/F'],{windowsHide:true},()=>r());
+const stopOperations=new WeakMap();
+export function stopRepairProcess(child) {
+  // A signal-terminated child keeps exitCode=null. Waiting for another close
+  // after it has already closed leaves an unsettled promise (Node exit 13).
+  // Also avoid signaling a dead child's potentially reused PID.
+  if(stopOperations.has(child))return stopOperations.get(child);
+  if(!child.pid||child.exitCode!==null||child.signalCode!==null)return Promise.resolve();
+  const operation=new Promise((resolve,reject)=>{
+    const finish=()=>{clearTimeout(timer);resolve();};
+    const timer=setTimeout(()=>{
+      child.removeListener('close',finish);
+      if(child.exitCode!==null||child.signalCode!==null){resolve();return;}
+      const error=new Error('Owned process cleanup failed');error.code='PROCESS_CLEANUP_FAILED';error.pid=child.pid;reject(error);
+    },5000);
+    child.once('close',finish);
+    // taskkill's own callback can precede Node's child-close event. It is not
+    // evidence that the target has closed; concurrent callers share this wait.
+    if(process.platform==='win32')execFile(join(process.env.SystemRoot??'C:\\Windows','System32','taskkill.exe'),['/PID',String(child.pid),'/T','/F'],{windowsHide:true},()=>{});
     else {try{process.kill(-child.pid,'SIGKILL');}catch{child.kill('SIGKILL');}}
-    if(child.exitCode!==null)r();
   });
+  stopOperations.set(child,operation);return operation;
 }
 async function startServer({copy,originRoot,config,signal,output:logDir}) {
   if((await readResource(copy,config.server.path)).sha256!==config.server.sha256)throw new Error('Server adapter changed');
   const env=Object.fromEntries(['PATH','Path','SystemRoot','SYSTEMROOT','TEMP','TMP','TMPDIR','PLAYWRIGHT_BROWSERS_PATH'].filter(k=>process.env[k]!==undefined).map(k=>[k,process.env[k]]));
   env.NEXT_TELEMETRY_DISABLED='1';
   const child=spawn(process.execPath,[fileURLToPath(new URL('./repair-server-worker.mjs',import.meta.url)),join(copy,config.server.path),copy,originRoot],{cwd:copy,env,shell:false,windowsHide:true,detached:process.platform!=='win32',stdio:['ignore','pipe','pipe']});
-  const abort=()=>{void stop(child);};signal.addEventListener('abort',abort,{once:true});
+  // close()/the startup catch awaits the same cleanup promise and reports any failure.
+  const abort=()=>{void stopRepairProcess(child).catch(()=>{});};signal.addEventListener('abort',abort,{once:true});
   let output='',bytes=0,log='';
   for(const stream of [child.stdout,child.stderr])stream.on('data',b=>{if(log.length<1048576)log+=b.toString();});
   const saveLog=async()=>{await mkdir(logDir,{recursive:true});await writeFile(join(logDir,'adapter.private.log'),log,{mode:0o600});};
@@ -70,8 +86,8 @@ async function startServer({copy,originRoot,config,signal,output:logDir}) {
       });
       if(signal.aborted)finish(reject,new Error('Repair deadline exceeded'));
     });
-    return {url,async close(){signal.removeEventListener('abort',abort);await stop(child);await saveLog();}};
-  }catch(e){signal.removeEventListener('abort',abort);await stop(child);await saveLog();throw e;}
+    return {url,async close(){signal.removeEventListener('abort',abort);await stopRepairProcess(child);await saveLog();}};
+  }catch(e){signal.removeEventListener('abort',abort);await stopRepairProcess(child);await saveLog();throw e;}
 }
 
 async function capture({copy,originRoot,config,output,signal}) {
@@ -135,7 +151,7 @@ export async function runRepair({root='.',configPath,run=false,approve,allowExec
     if(!report.passed)report.stopReason??='UNRESOLVED_DEFECTS';
     event('Verify',report.passed?'passed':'blocked');
     if(report.passed){event('Review','required');report.reviewId=hash({planId:plan.planId,patches:report.patches,unit:report.unit,before:report.before,after:report.after});}
-  }catch{report.passed=false;report.stopReason=controller.signal.aborted?'DEADLINE_EXCEEDED':'EXECUTION_FAILED';event(report.stage,'blocked');}
+  }catch(error){report.passed=false;report.stopReason=error?.code==='PROCESS_CLEANUP_FAILED'?'PROCESS_CLEANUP_FAILED':controller.signal.aborted?'DEADLINE_EXCEEDED':'EXECUTION_FAILED';if(error?.code==='PROCESS_CLEANUP_FAILED'){report.ownedProcessMayStillBeRunning=true;report.ownedProcessId=error.pid;}event(report.stage,'blocked');}
   finally {
     clearTimeout(timer);
     report.integrityIssues=[];

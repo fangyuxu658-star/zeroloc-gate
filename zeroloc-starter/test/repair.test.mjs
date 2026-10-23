@@ -7,7 +7,9 @@ import { cssCandidates, applyCssCandidate, recoverCssRepair } from '../src/visua
 import { reviewSemantics, reviewTranslationProposal } from '../src/semantic-review.mjs';
 import { applyProposal } from '../src/apply.mjs';
 import { compareVisualRuns } from '../src/checks/dom.mjs';
-import { planRepair, runRepair, reviewRepair } from '../src/repair-engine.mjs';
+import { planRepair, runRepair, reviewRepair, stopRepairProcess } from '../src/repair-engine.mjs';
+import { spawn } from 'node:child_process';
+import { once } from 'node:events';
 import { digest } from '../src/safe-files.mjs';
 
 test('SEM-01 catches Hallo name dangling punctuation without claiming semantic correctness',()=>{
@@ -94,11 +96,20 @@ test('repair preview executes no adapter or tests and binds all files, config an
   await assert.rejects(runRepair({...options,run:true,approve:plan.planId,allowExecution:plan.executionId}));
 });
 test('repair config rejects scope escape, reduced coverage, executable hooks and changed adapter',async()=>{
-  for(const mutate of [c=>c.files.push('../escape'),c=>c.visual.browsers=['chromium'],c=>c.visual.sourcePath='//evil.example',c=>c.maxAttempts=4,c=>c.command='npm run evil',c=>c.server.sha256='0'.repeat(64)]) {
+  for(const mutate of [c=>c.files.push('../escape'),c=>c.visual.browsers=['chromium'],c=>c.visual.sourcePath='//evil.example',c=>c.visual.targetPath=c.visual.sourcePath,c=>c.visual.viewports=[c.visual.viewports[0],c.visual.viewports[0]],c=>c.maxAttempts=4,c=>c.command='npm run evil',c=>c.server.sha256='0'.repeat(64)]) {
     const {root,config}=await project();mutate(config);await writeFile(join(root,'repair.json'),JSON.stringify(config));
     await assert.rejects(planRepair({root,configPath:'repair.json'}));
   }
 });
 test('unverified or failed repair can never produce a draft delivery manifest',async()=>{
   for(const report of [{},{type:'repair-run',passed:false},{type:'repair-run',passed:true,stage:'Review',unit:{passed:false},after:{passed:true}}])await assert.rejects(reviewRepair({report,approve:'fake'}));
+});
+test('timeout cleanup is idempotent after a real child has exited by signal', {timeout:10000}, async()=>{
+  const child=spawn(process.execPath,['-e','setInterval(()=>{},1000)'],{detached:process.platform!=='win32',windowsHide:true,stdio:'ignore'});
+  await once(child,'spawn');let timer;
+  try {
+    await stopRepairProcess(child);
+    assert.ok(child.exitCode!==null||child.signalCode!==null);
+    await Promise.race([stopRepairProcess(child),new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('Second cleanup waited for an already-emitted close')),1000);})]);
+  }finally{clearTimeout(timer);await stopRepairProcess(child);}
 });
