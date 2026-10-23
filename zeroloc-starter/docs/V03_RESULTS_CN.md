@@ -35,4 +35,10 @@
 
 ## 远端状态
 
-待本分支 Draft PR 创建后，以最终提交的实际 GitHub Checks 和下方记录为准。必须四个 Windows/Linux Node22/24 回归及 visual 全部成功；失败会修复并重新等待，不拿旧 head 的绿色作替代。PR 只指向 `codex/v0.2-safe-apply`，不合并、不改 PR #6、不改 main、不发布 Release。
+[Draft PR #7](https://github.com/fangyuxu658-star/zeroloc-gate/pull/7) 已创建并回读确认：`draft:true`，base 为 `codex/v0.2-safe-apply`，base SHA `7295075`。GitHub 连接器创建时返回 `must be a collaborator`，随后使用本机既有认证 CLI 成功；未调整仓库权限或更换基础分支。
+
+代码提交 `d1c32be35330ce28998e7113d422ab3a1f3fb2cb` 的 [实际 CI 39887314998](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/39887314998) **5/5 success**：[机器快照](verification/v03/remote-code-ci.json)、[实际日志摘录](verification/v03/remote-ci-log-summary.txt)。Linux Node22/24 各 68 passed/0 skipped；Windows Node22/24 各 67 passed/1 POSIX-only skipped。visual 的既有矩阵、工作流/网络对抗、几何回归、固定上游安装、React 成功/Next 阻断、修复回滚、语义阻断、超时场景全部执行成功。Next 阻断是预期的负例，不能解读为其页面视觉已通过。
+
+随后仅补充本验收记录和扫描/CI证据，不修改可执行代码、依赖、测试或工作流；收尾提交仍需通过自己的 [最新 Checks](https://github.com/fangyuxu658-star/zeroloc-gate/pull/7/checks)，不能拿旧 head 的绿色作替代。PR #6 仍为 open/Ready/unmerged，head 未变；本地 main `4a64f6d`、origin/main `bcb542a` 未变。没有合并、main 写入、Release/tag、npm 发布或付费服务。
+
+首次代码提交的全部历史 diff（相对 v0.2）经 Gitleaks 扫描，无泄漏；[扫描记录](verification/v03/gitleaks-history.txt)。报告不是独立安全审计或真人语言签字，原安全边界继续保留。
