@@ -5,7 +5,7 @@
   "serialNumber": "urn:uuid:***",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-10-20T06:50:17.727Z",
+    "timestamp": "2026-10-23T01:47:40.597Z",
     "lifecycles": [
       {
         "phase": "build"
@@ -19,13 +19,13 @@
       }
     ],
     "component": {
-      "bom-ref": "zeroloc-gate@0.2.0-dev.0",
+      "bom-ref": "zeroloc-gate@0.3.0-dev.0",
       "type": "library",
       "name": "zeroloc-starter",
-      "version": "0.2.0-dev.0",
+      "version": "0.3.0-dev.0",
       "scope": "required",
       "description": "Local-first localization quality gate with optional ecosystem adapters",
-      "purl": "pkg:npm/zeroloc-gate@0.2.0-dev.0",
+      "purl": "pkg:npm/zeroloc-gate@0.3.0-dev.0",
       "properties": [
         {
           "name": "cdx:npm:package:private",
@@ -3601,7 +3601,7 @@
   ],
   "dependencies": [
     {
-      "ref": "zeroloc-gate@0.2.0-dev.0",
+      "ref": "zeroloc-gate@0.3.0-dev.0",
       "dependsOn": [
         "@formatjs/icu-messageformat-parser@3.5.21",
         "fast-json-patch@3.1.1",

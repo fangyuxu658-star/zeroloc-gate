@@ -11,6 +11,14 @@ Usage:
   node bin/zeroloc.mjs extract --project <dir> --locales en,de --dry-run
   node bin/zeroloc.mjs translate --provider ollama --model <installed-local-model> --source <en.json> --target <de.json> --source-locale en --target-locale de --message-format i18next --dry-run
   node bin/zeroloc.mjs visual --url http://127.0.0.1:4173 --output artifacts/visual
+  node bin/zeroloc.mjs semantic --root <project> --source en.json --target de.json --target-locale de
+  node bin/zeroloc.mjs semantic-proposal --root <project> --source en.json --target de.json --proposal proposal.json
+  node bin/zeroloc.mjs repair --root <project> --config repair.json
+  node bin/zeroloc.mjs repair <same options> --run --approve <planId> --allow-execution <executionId>
+  node bin/zeroloc.mjs repair-review --root <project> --report <report.json> --approve <reviewId>
+  node bin/zeroloc.mjs repair-prepare --root <git-root> --report <report.json> --review-approve <reviewId> --base <base-branch>
+  node bin/zeroloc.mjs repair-prepare <same options> --prepare --approve <previewId>
+  node bin/zeroloc.mjs repair-recover --root <isolated-copy> --journal <repair-recovery.json> --approve <current-sha256>
   node bin/zeroloc.mjs quality --source en.json --target de.json --target-locale de --message-format i18next
   node bin/zeroloc.mjs apply --root <project> --source en.json --target de.json --proposal proposal.json --validation-config validation.json
   node bin/zeroloc.mjs apply <same options> --write --approve <planId> --allow-validation <config-sha256>
@@ -42,12 +50,52 @@ function option(args, name) {
 async function main() {
   const args = process.argv.slice(2);
   if (args.includes('--help') || args.length === 0) { console.log(help); return; }
-  if(args.includes('--dry-run')&&(args.includes('--write')||args.includes('--prepare')||args.includes('--publish')))throw new Error('Conflicting dry-run and mutation flags');
+  if(args.includes('--dry-run')&&(args.includes('--write')||args.includes('--prepare')||args.includes('--publish')||args.includes('--run')))throw new Error('Conflicting dry-run and mutation flags');
+  if(args[0]==='repair') {
+    const {runRepair}=await import('../src/repair-engine.mjs');
+    if(option(args,'--output'))throw new Error('Repair always writes a new private temporary directory; see the returned output path');
+    const result=await runRepair({root:option(args,'--root')??'.',configPath:option(args,'--config'),run:args.includes('--run'),approve:option(args,'--approve'),allowExecution:option(args,'--allow-execution')});
+    console.log(JSON.stringify(result,null,2));if(result.passed===false)process.exitCode=1;return;
+  }
+  if(args[0]==='repair-review') {
+    const {readFile}=await import('node:fs/promises');
+    const {parseJson}=await import('../src/safe-files.mjs');
+    const {reviewRepair}=await import('../src/repair-engine.mjs');
+    const result=await reviewRepair({root:option(args,'--root')??'.',report:parseJson(await readFile(option(args,'--report'))),approve:option(args,'--approve')});
+    console.log(JSON.stringify(result,null,2));return;
+  }
+  if(args[0]==='repair-prepare') {
+    const {readFile}=await import('node:fs/promises');
+    const {parseJson}=await import('../src/safe-files.mjs');
+    const {prepareRepairPr}=await import('../src/pull-request.mjs');
+    const result=await prepareRepairPr({root:option(args,'--root')??'.',report:parseJson(await readFile(option(args,'--report'))),reviewApproval:option(args,'--review-approve'),baseBranch:option(args,'--base')??'main',prepare:args.includes('--prepare'),approve:option(args,'--approve')});
+    console.log(JSON.stringify(result,null,2));return;
+  }
+  if(args[0]==='semantic') {
+    const {readResource,parseJson}=await import('../src/safe-files.mjs');
+    const {reviewSemantics}=await import('../src/semantic-review.mjs');
+    const root=option(args,'--root')??'.',load=async p=>parseJson((await readResource(root,p)).bytes);
+    const result=reviewSemantics({source:await load(option(args,'--source')),target:await load(option(args,'--target')),targetLocale:option(args,'--target-locale'),messageFormat:option(args,'--message-format')??'i18next',policy:option(args,'--policy')?await load(option(args,'--policy')):{}});
+    console.log(JSON.stringify(result,null,2));if(!result.passed)process.exitCode=1;return;
+  }
   if(args[0]==='recover'&&args.includes('--dry-run'))throw new Error('recover does not support --dry-run; no files changed. Inspect the recovery record before approving restoration.');
+  if(args[0]==='repair-recover') {
+    if(args.includes('--dry-run'))throw new Error('repair-recover does not support --dry-run; inspect recovery record before approving');
+    const {recoverCssRepair}=await import('../src/visual-repair.mjs');
+    const result=await recoverCssRepair({root:option(args,'--root')??'.',journal:option(args,'--journal'),approve:option(args,'--approve')});
+    console.log(JSON.stringify(result,null,2));if(!result.passed)process.exitCode=1;return;
+  }
+  if(args[0]==='semantic-proposal') {
+    const {readResource,parseJson}=await import('../src/safe-files.mjs');
+    const {reviewTranslationProposal}=await import('../src/semantic-review.mjs');
+    const root=option(args,'--root')??'.';
+    const result=await reviewTranslationProposal({root,source:option(args,'--source'),target:option(args,'--target'),proposal:parseJson((await readResource(root,option(args,'--proposal'))).bytes)});
+    console.log(JSON.stringify(result,null,2));return;
+  }
   if(['pr-prepare','pr-publish'].includes(args[0])) {
     const {preparePr,publishPr}=await import('../src/pull-request.mjs');
     const root=option(args,'--root')??'.';
-    const result=args[0]==='pr-prepare'?await preparePr({root,reportPath:option(args,'--report'),branch:option(args,'--branch'),prepare:args.includes('--prepare'),approve:option(args,'--approve')}):await publishPr({root,repo:option(args,'--repo'),bodyPath:option(args,'--body'),title:option(args,'--title'),publish:args.includes('--publish'),approve:option(args,'--approve'),gh:option(args,'--gh')??'gh'});
+    const result=args[0]==='pr-prepare'?await preparePr({root,reportPath:option(args,'--report'),branch:option(args,'--branch'),prepare:args.includes('--prepare'),approve:option(args,'--approve')}):await publishPr({root,repo:option(args,'--repo'),bodyPath:option(args,'--body'),title:option(args,'--title'),baseBranch:option(args,'--base')??'main',publish:args.includes('--publish'),approve:option(args,'--approve'),gh:option(args,'--gh')??'gh'});
     console.log(JSON.stringify(result,null,2));return;
   }
   if(args[0]==='quality') {

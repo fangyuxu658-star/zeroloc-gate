@@ -1,8 +1,10 @@
 # ZeroLoc Gate
 
-Local-first、MIT、免费自部署的本地化质量门禁与可审核翻译自动化。已发布 [v0.1.0-beta.1](https://github.com/fangyuxu658-star/zeroloc-gate/releases/tag/v0.1.0-beta.1)；本分支是未发布的 **v0.2开发版**，基于受保护main，未自动合并或发布。
+Local-first、MIT、免费自部署的本地化质量门禁与可审核翻译自动化。已发布 [v0.1.0-beta.1](https://github.com/fangyuxu658-star/zeroloc-gate/releases/tag/v0.1.0-beta.1)；本分支是未发布的 **v0.3 修复引擎开发版**，从 v0.2 独立开发，未自动合并或发布。
 
 - [核心用法与v0.1兼容命令](zeroloc-starter/README.md)
+- [v0.3 可执行修复链路与安全边界](zeroloc-starter/docs/V03_REPAIR_ENGINE_CN.md)
+- [v0.3 真实应用、失败场景和前后截图](zeroloc-starter/docs/V03_RESULTS_CN.md)
 - [v0.2 Safe Apply、验证授权、恢复、PR CLI](zeroloc-starter/docs/V02_SAFE_APPLY_CN.md)
 - [各阶段真实测试与模型验收](zeroloc-starter/docs/V02_ENGINEERING_CN.md)
 - [当前状态与限制](zeroloc-starter/STATUS.md)

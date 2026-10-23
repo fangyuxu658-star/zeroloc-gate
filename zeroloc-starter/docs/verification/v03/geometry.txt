@@ -1,0 +1,5 @@
+
+> zeroloc-gate@0.3.0-dev.0 test:repair:geometry
+> node qa/repair-visual-cases.mjs
+
+PASS: both browsers detect overlap, clipping, occlusion and layout shift; clean nested text is not an overlap

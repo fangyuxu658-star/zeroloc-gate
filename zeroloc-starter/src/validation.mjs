@@ -34,10 +34,11 @@ export async function configuredValidator({root='.',configPath,approval}) {
   if(config.ui && (Object.keys(config.ui).some(k=>!['url','browsers','locales','viewports'].includes(k))||!Array.isArray(config.ui.browsers)||config.ui.browsers.length<1||config.ui.browsers.length>3||!Array.isArray(config.ui.locales)||config.ui.locales.length<1||config.ui.locales.length>10||!Array.isArray(config.ui.viewports)||config.ui.viewports.length<1||config.ui.viewports.length>4)) throw new Error('Invalid UI validation');
   if(config.ui)visualOrigin(config.ui.url);
   const binding=file.sha256;
-  return {binding,assertApproved(){if(approval!==binding)throw new Error('Explicit --allow-validation must match config SHA-256');},async run(plan){
+  return {binding,assertApproved(){if(approval!==binding)throw new Error('Explicit --allow-validation must match config SHA-256');},async run(plan,{signal}={}){
     this.assertApproved();
     if((await readResource(root,configPath)).sha256!==binding) throw new Error('Validation configuration changed');
     const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),config.timeoutMs);const checks=[];
+    const abort=()=>controller.abort();signal?.addEventListener('abort',abort,{once:true});if(signal?.aborted)abort();
     try {
       for(const test of config.unitTests){
         if((await readResource(root,test.path)).sha256!==test.sha256) throw new Error('Validation script changed');
@@ -54,6 +55,6 @@ export async function configuredValidator({root='.',configPath,approval}) {
         } catch {checks.push({kind:'ui',passed:false,timedOut:controller.signal.aborted,error:'UI_VALIDATION_FAILED'});}
       }
       return {passed:checks.length>0&&checks.every(c=>c.passed)&&!controller.signal.aborted,checks,configSha256:binding,planId:plan.planId};
-    } finally {clearTimeout(timer);}
+    } finally {clearTimeout(timer);signal?.removeEventListener('abort',abort);}
   }};
 }

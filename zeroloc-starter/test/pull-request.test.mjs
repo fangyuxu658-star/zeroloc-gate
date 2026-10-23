@@ -68,3 +68,20 @@ test('remote preparation is offline by default; approved publish only pushes top
   assert.ok(calls.some(c=>c.args.includes('--draft')));assert.ok(calls.every(c=>!c.args.includes('merge')&&!c.args.includes('--admin')&&!c.args.includes('--force')));
   const report=JSON.parse(await readFile(join(root,'report.json'),'utf8'));assert.equal(report.passed,true);
 }));
+
+test('publication binds an explicit topic base and never falls back to main',()=>fixture(async({root,git})=>{
+  const local=await preparePr({root,reportPath:'report.json'});await preparePr({root,reportPath:'report.json',prepare:true,approve:local.previewId});
+  const base=await git('rev-parse','origin/main'),baseBranch='codex/v0.2-safe-apply';
+  await git('update-ref',`refs/remotes/origin/${baseBranch}`,base);await writeFile(join(root,'body.md'),'Synthetic topic-base review');
+  const calls=[],transport=async(exe,args)=>{calls.push(args);if(args.includes('ls-remote'))return `${base}\trefs/heads/${baseBranch}`;if(args.includes('list'))return '[]';if(args.includes('create'))return 'https://github.com/example/fixture/pull/2';return '';};
+  const options={root,repo:'example/fixture',bodyPath:'body.md',baseBranch,transport};
+  const preview=await publishPr(options);assert.equal(calls.length,0);
+  await assert.rejects(publishPr({...options,baseBranch:'main',publish:true,approve:preview.previewId}),/approval/);
+  await publishPr({...options,publish:true,approve:preview.previewId});
+  assert.ok(calls.some(a=>a.includes(`refs/heads/${baseBranch}`)));
+  for(const a of calls.filter(a=>a.includes('--base')))assert.equal(a[a.indexOf('--base')+1],baseBranch);
+  calls.length=0;
+  const unsupported={...options,transport:async(exe,a)=>{calls.push(a);if(a.includes('ls-remote'))return `${base}\trefs/heads/${baseBranch}`;if(a.includes('list'))throw new Error('GitHub base unavailable');return '';}};
+  await assert.rejects(publishPr({...unsupported,publish:true,approve:preview.previewId}));
+  assert.ok(!calls.some(a=>a.includes('push')||a.includes('create')));
+}));

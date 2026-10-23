@@ -18,12 +18,15 @@ await new Promise(r=>app.listen(0,'127.0.0.1',r));
 try {
   const url=`http://127.0.0.1:${app.address().port}`;
   const result=await visualQA({url,outputDir:'artifacts/independent-network',browsers:['chromium','firefox'],locales:['en'],viewports:[{width:375,height:812}]});
-  assert.equal(result.passed,true);
+  // Security interception succeeds, but the visual run is incomplete when an
+  // application requested a blocked resource. Do not silently label it green.
+  assert.equal(result.passed,false);
+  assert.ok(result.runs.every(r=>r.findings.some(f=>f.code==='RESOURCE_BLOCKED'&&f.category==='environment')));
   let redirectRejected=false;
   try {await visualQA({url:url+'/redirect',outputDir:'artifacts/independent-network-redirect',locales:['en'],viewports:[{width:375,height:812}]});}catch{redirectRejected=true;}
   console.log(JSON.stringify({observed:hits,redirectRejected}));
   assert.equal(redirectRejected,true);
   assert.deepEqual(hits,{http:0,websocket:0,serviceWorker:0});
-  const report={passed:true,browsers:['chromium','firefox'],crossOriginHttpHits:hits.http,websocketUpgradeHits:hits.websocket,serviceWorkerScriptHits:hits.serviceWorker,redirectRejected:true,limitations:'Browser request interception is defense in depth, not an OS network sandbox. Approved Node tests retain filesystem/network capabilities.'};
-  await mkdir(resolve('docs/verification/independent'),{recursive:true});await writeFile(resolve('docs/verification/independent/network.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+  const report={passed:true,visualPassed:false,restrictionRecorded:true,browsers:['chromium','firefox'],crossOriginHttpHits:hits.http,websocketUpgradeHits:hits.websocket,serviceWorkerScriptHits:hits.serviceWorker,redirectRejected:true,limitations:'Browser request interception is defense in depth, not an OS network sandbox. Approved Node tests retain filesystem/network capabilities.'};
+  await mkdir(resolve('artifacts/independent-network'),{recursive:true});await writeFile(resolve('artifacts/independent-network/network.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{for(const server of [app,foreign]){server.closeAllConnections();await new Promise(r=>server.close(r));}}

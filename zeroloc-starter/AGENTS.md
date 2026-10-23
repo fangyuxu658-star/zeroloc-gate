@@ -1,5 +1,7 @@
 # Coding Agent Notes for ZeroLoc Gate
 
+Current user-authorized work: v0.3 repair engine on `codex/v0.3-repair-engine`, based on v0.2 `7295075`, Draft PR base `codex/v0.2-safe-apply`. Keep PR #6/main unchanged. See docs/V03_REPAIR_ENGINE_CN.md and V03_RESULTS_CN.md. Preserve exact plan/execution/review/local-prepare/remote-publish consent, bounded CSS rules, isolated copies, all failure evidence and existing safety checks. Do not claim DOM heuristics prove pixels/semantics or that copy isolation is an OS sandbox.
+
 Mission: Open, local-first infrastructure that reduces repetitive localization workflow without external accounts.
 
 Current scope: Nested JSON string catalogs; deterministic checks, explicit ICU/i18next parsing, optional extraction/local translation/visual QA adapters. See docs/IMPLEMENTATION_RESULTS_CN.md for actual verification limits.

@@ -59,10 +59,28 @@ jobs:
       - run: npm run test:visual -- --all-browsers
       - run: npm run test:workflow
       - run: npm run test:network
+      - run: npm run test:repair:geometry
+      - name: Install pinned real React and Next examples (explicit test setup)
+        run: npm run test:repair:setup
+      - name: Repair success and blocked upstream regression
+        run: npm run test:repair -- --react-root artifacts/repair-upstream/react --next-root artifacts/repair-upstream/next
+      - name: Failed repair must roll back
+        run: npm run test:repair -- --only react --scenario unit-failure --react-root artifacts/repair-upstream/react
+      - name: Semantic risk and timeout must stop delivery
+        run: |
+          npm run test:repair -- --only react --scenario semantic-block --react-root artifacts/repair-upstream/react
+          npm run test:repair -- --only react --scenario timeout --react-root artifacts/repair-upstream/react
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         if: always()
         with:
           name: visual-findings
-          path: zeroloc-starter/artifacts/
+          path: |
+            zeroloc-starter/artifacts/visual*/**
+            zeroloc-starter/artifacts/workflow-e2e/**
+            zeroloc-starter/artifacts/independent-network/**
+            zeroloc-starter/artifacts/repair-geometry/**
+            zeroloc-starter/artifacts/repair-real-apps/*-evidence/**
+            zeroloc-starter/artifacts/repair-real-apps/*.json
+            zeroloc-starter/artifacts/repair-upstream/provenance.json
           retention-days: 7
 

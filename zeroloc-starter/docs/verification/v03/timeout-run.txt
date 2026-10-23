@@ -1,0 +1,2 @@
+{"id":"react","passed":false,"stopReason":"DEADLINE_EXCEEDED","attempts":0,"output":"<private-temporary-evidence>"}
+PASS: real upstream application expectations, original-byte preservation, explicit review and SEM-01 regression

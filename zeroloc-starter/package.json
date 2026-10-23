@@ -1,6 +1,6 @@
 {
   "name": "zeroloc-gate",
-  "version": "0.2.0-dev.0",
+  "version": "0.3.0-dev.0",
   "private": true,
   "description": "Local-first localization quality gate with optional ecosystem adapters",
   "type": "module",
@@ -14,6 +14,9 @@
     "test:visual": "node qa/run.mjs",
     "test:workflow": "node qa/workflow-e2e.mjs",
     "test:network": "node qa/independent-network.mjs",
+    "test:repair:setup": "node qa/setup-repair-apps.mjs",
+    "test:repair": "node qa/repair-real-apps.mjs",
+    "test:repair:geometry": "node qa/repair-visual-cases.mjs",
     "demo": "node demo/server.mjs",
     "licenses": "node scripts/licenses.mjs",
     "licenses:check": "node scripts/licenses.mjs --check",
