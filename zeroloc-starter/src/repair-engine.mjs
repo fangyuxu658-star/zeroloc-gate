@@ -1,10 +1,10 @@
 import { mkdtemp, mkdir, writeFile, readFile, realpath } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnRepairProcess, stopRepairProcess } from './process-ownership.mjs';
 export { stopRepairProcess } from './process-ownership.mjs';
 import { compareInteractions } from './checks/interactions.mjs';
+import { repairIsolation } from './repair-isolation.mjs';
 import { readResource, parseJson, digest, jsonBytes, resourcePath } from './safe-files.mjs';
 import { configuredValidator } from './validation.mjs';
 import { reviewSemantics } from './semantic-review.mjs';
@@ -36,8 +36,9 @@ export async function planRepair({root='.',configPath}) {
   const validation=parseJson((await readResource(root,config.validation)).bytes);
   if(validation.ui)throw new Error('Use repair visual routes; validation is unit-only plus mandatory independent visual verification');
   if(validation.unitTests.some(t=>!config.files.includes(t.path)))throw new Error('Tests must be copied');
-  const engineBinding=hash(await Promise.all(['./repair-engine.mjs','./visual-repair.mjs','./semantic-review.mjs','./checks/dom.mjs','./checks/paint-dom.mjs','./checks/interactions.mjs','./process-ownership.mjs','./process-supervisor.py','./checks/visual.mjs','./repair-server-worker.mjs','./validation.mjs'].map(async path=>digest(await readFile(new URL(path,import.meta.url))))));
-  const manifest={schemaVersion:1,engineBinding,allowedRepairRules:['fixed-height-to-min-height/v1'],rootBinding:digest(root),configPath,configSha256:input.sha256,config,files,validationBinding:validator.binding};
+  const engineBinding=hash(await Promise.all(['./repair-engine.mjs','./repair-isolation.mjs','./visual-repair.mjs','./semantic-review.mjs','./checks/dom.mjs','./checks/paint-dom.mjs','./checks/interactions.mjs','./process-ownership.mjs','./process-supervisor.py','./checks/visual.mjs','./repair-server-worker.mjs','./validation.mjs'].map(async path=>digest(await readFile(new URL(path,import.meta.url))))));
+  const isolation=(await repairIsolation(root)).plan;
+  const manifest={schemaVersion:1,engineBinding,isolation,allowedRepairRules:['fixed-height-to-min-height/v1'],rootBinding:digest(root),configPath,configSha256:input.sha256,config,files,validationBinding:validator.binding};
   return {...manifest,planId:hash(manifest),executionId:hash({files,server:config.server,validation:validator.binding}),dryRun:true,requiresHumanReview:true};
 }
 
@@ -91,7 +92,9 @@ export async function runRepair({root='.',configPath,run=false,approve,allowExec
   root=await realpath(root);
   // Windows runners can expose TEMP through an 8.3 alias. Canonicalize before
   // giving framework servers their root; real-path files must share that root.
-  const directory=await realpath(await mkdtemp(join(tmpdir(),'zeroloc-repair-'))),copy=join(directory,'project'),output=join(directory,'evidence');
+  const isolation=await repairIsolation(root);
+  if(JSON.stringify(isolation.plan)!==JSON.stringify(plan.isolation))throw new Error('Isolation placement changed after approval');
+  const directory=await realpath(await mkdtemp(join(isolation.parent,plan.isolation.placement==='project-sibling'?'.zeroloc-repair-':'zeroloc-repair-'))),copy=join(directory,'project'),output=join(directory,'evidence');
   await mkdir(copy,{recursive:true});await mkdir(dirname(output),{recursive:true});await mkdir(output);
   for(const file of plan.files) {
     const current=await readResource(root,file.path);if(current.sha256!==file.sha256)throw new Error('Input changed after approval');
@@ -101,7 +104,7 @@ export async function runRepair({root='.',configPath,run=false,approve,allowExec
   const report={type:'repair-run',schemaVersion:1,planId:plan.planId,plan,copy,output,passed:false,stage:'Detect',events:[],attempts:[],patches:[],requiresHumanReview:true,remotePublished:false};
   const event=(stage,status)=>{report.stage=stage;report.events.push({stage,status});};
   try {
-    const validator=await configuredValidator({root:copy,configPath:config.validation,approval:plan.validationBinding});
+    const validator=await configuredValidator({root:copy,configPath:config.validation,approval:plan.validationBinding,ownedProcesses:true});
     report.before=await capture({copy,originRoot:root,config,output:join(output,'before'),signal:controller.signal});
     event('Detect','completed');event('Diagnose','completed');
     if(config.semantic) {
@@ -125,6 +128,7 @@ export async function runRepair({root='.',configPath,run=false,approve,allowExec
         return {passed:unit.passed&&verified.passed&&interactions.passed,unit,visual:verified,interactions};
       }});
       report.attempts.push({candidateId:candidate.candidateId,path:candidate.path,diagnosis:candidate.diagnosis,before:candidate.before,after:candidate.after,...result});
+      if(result.processCleanupFailed){report.stopReason='PROCESS_CLEANUP_FAILED';report.ownedProcessMayStillBeRunning=true;report.ownedProcessId=result.ownedProcessId;event('Repair','blocked');return report;}
       if(result.passed){report.patches.push({path:candidate.path,selector:candidate.selector,candidateId:candidate.candidateId,beforeSha256:candidate.beforeSha256,resultSha256:candidate.resultSha256,before:candidate.before,after:candidate.after});current=verified;}
       else if(result.rollbackConflict||result.lockCleanupFailed){report.stopReason='ROLLBACK_CONFLICT';event('Repair','blocked');return report;}
     }

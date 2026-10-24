@@ -10,7 +10,7 @@
 | P1-02 实色遮罩漏报 | 同报告 opaquePassive、partial 误通过 | 区分浏览器绘制顺序和点击命中。临时构造样式表只调整 pointer-events 以观察原绘制顺序，finally 恢复；多点采样输出覆盖比例。另用 Playwright trial click 验证可达性，并在可信框架用例实际点击、检查计数。空白实色层即使 pointer-events:none 仍报遮挡；无填充的装饰边框通过。无法可靠观察绘制顺序时报告环境错误并阻断。 |
 | P2-01 修复丢失滚动 | `before/scroll.json`：修复被接受，但 clientHeight 增至 scrollHeight，实际 scrollTop 从 30 变为 0 | 不把正常 auto/scroll 的裁剪误诊为内容逃逸，且只从明确的作者固定高度生成候选。候选规则拒绝滚动声明/已观测滚动容器。独立前后交互门禁保留 overflow、两轴尺寸、位置、程序滚动和实际 wheel。共享类测试中，单元/视觉均通过的候选仍因 `SCROLL_CONTRACT_LOST` 拒绝，并按原字节回滚。review 阶段重新比较交互证据。 |
 | P2-02 透明祖先误报 | geometry 的 transparentAncestor 被误报 | 有效 opacity 沿祖先相乘，同时检查 display/content-visibility；visibility 按实际子元素计算，保留 visibility:visible 覆盖隐藏祖先的真实异常。文字与滚动裁剪采用祖先可见区域。透明、display:none、visibility:hidden 负例和可见覆盖正例均跨浏览器执行。 |
-| P2-03 Linux 遗留后代 | `before/process-v22.23.3.json`、`process-v24.22.0.json`：父进程正常退出后后代仍存活 | Linux 由 stdlib Python subreaper 保持所有权，收养孤儿并实际 kill/reap；通过私有管道请求停止，信号用 pidfd 绑定内核身份，并重新核对后代关系。既不按进程名匹配，也不向已经退出的裸 PID/进程组发信号。并发/重复清理共用结果；无法证明清理成功时报告 PROCESS_CLEANUP_FAILED。真实子进程测试包含父正常退出、超时、引擎父进程被杀、孙进程、重复清理、无关哨兵存活及 ESRCH（不能把僵尸算已清理）。 |
+| P2-03 Linux 遗留后代 | `before/process-v22.23.3.json`、`process-v24.22.0.json`：父进程正常退出后后代仍存活 | Linux 由 stdlib Python subreaper 保持所有权，收养孤儿并实际 kill/reap；适配器和 v0.3 修复专用单元验证均经过监督，单元结果接受前也必须完成回收。通过私有管道请求停止，信号用 pidfd 绑定内核身份，并重新核对后代关系。既不按进程名匹配，也不向已经退出的裸 PID/进程组发信号。并发/重复清理共用结果；无法证明清理成功时报告 PROCESS_CLEANUP_FAILED。真实测试包含父正常退出、超时、引擎父进程被杀、脱离会话的孙进程、单元测试留下的真实后代、重复清理、无关哨兵存活及 ESRCH（不能把僵尸算已清理）。v0.2 默认验证入口行为保留。 |
 
 证据目录：[verification/v03-audit-remediation](verification/v03-audit-remediation)。JSON、截图、候选差异、回滚及平台回归输出由 `qa/export-audit-evidence.mjs` 从实际产物导出；私有临时路径已移除，原始产物仍保存在本机 artifacts。截图用于人工审核，程序通过与否以实际断言及报告为准。
 
@@ -22,9 +22,13 @@
 
 真实 React 原移动按钮/正文重叠继续自动修复成功；独立单元失败场景必须撤回。原 Next 页面已有的质量和离线外部资源错误继续阻断，不能以审查测试页通过代替原应用通过。P1 覆盖及不满足受限规则的 UI 不会擅自生成修改来制造通过。
 
-本地已保存的结果：Linux Node 22.23.3/24.22.0 各 77 项通过；Windows 同版本各 72 项通过、5 项平台专用跳过（4 项 Linux 进程测试和 1 项 POSIX 文件模式测试）。新增几何矩阵 14×2 浏览器×2 视口全部符合预期；真实框架为 112 次区域断言，均检查英语/德语往返及滚动功能。最新框架本地证据使用 Windows Node 24.22.0；仍需独立核验目标 Node 22/24 的完整远端视觉矩阵。81 张导出截图有逐文件 SHA-256 清单。
+本地回归结果保存在 `after/linux-node*.txt` 和 `after/windows-node*.txt`。新增几何矩阵 14×2 浏览器×2 视口全部符合预期；真实框架为 112 次区域断言，均检查英语/德语往返及滚动功能。最新框架本地证据使用 Windows Node 24.22.0；仍需独立核验目标 Node 22/24 的完整远端视觉矩阵。移动及宽视口的导出截图均有逐文件 SHA-256 清单。
 
 同次远端 Windows Node22/24 真实应用在首次捕获前退出，原报告缺少定位信息。新增有界私有启动/执行日志；仅可信 CI 用例在失败时显示它们，生产报告和交付清单仍不含应用堆栈。隔离 TEMP 路径在传给框架之前调用 realpath，避免 Windows 8.3 别名与框架真实文件路径不一致；新增实际失败适配器的路径及阻断回归。该远端失败另存 `after/ci-failure-windows-40052029797.txt`，是否完全解决以随后当前 head 的真实 CI 为准。
+
+后续 [40053067490](https://github.com/fangyuxu658-star/zeroloc-gate/actions/runs/40053067490) 证实 Windows React 修复通过，同时诊断出 Next 在 C 盘副本引用 D 盘依赖时生成 `./D:/...` Webpack 路径的真实错误。Windows 跨卷场景现使用项目父目录内独立的 `.zeroloc-repair-*` 同卷副本；不会改写原项目文件。副本位置及父目录指纹纳入默认预览和精确授权，父目录必须私有、可信且可写；无法创建时失败关闭。普通同卷及 Linux 仍用规范化的 OS 临时目录。本地真实 Vite 临时目录别名验证另存 `after/windows-temp-alias.txt`。新增跨卷选择回归保留原检查，完整框架行为以最终 CI 为准。
+
+该运行 Windows Node22 的原工作流还出现正常按钮可达性失败。动作检查仍要求 Playwright 实际可见、稳定、启用且能命中；有界等待从 1 秒调整为 3 秒，并记录具体失败类别，不使用 force 或忽略遮挡。所有实色/透明拦截遮罩反例继续必须失败。失败原文分别保存在 `after/ci-failure-next-cross-volume-40053067490.txt` 和 `after/ci-failure-actionability-40053067490.txt`。
 
 | 实际修复前 | 验证后的隔离副本 |
 | --- | --- |

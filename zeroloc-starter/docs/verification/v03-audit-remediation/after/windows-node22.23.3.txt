@@ -2,471 +2,489 @@ TAP version 13
 # Subtest: actual CLI preview -> independent config consent -> exact write approval; conflicting flags fail
 ok 1 - actual CLI preview -> independent config consent -> exact write approval; conflicting flags fail
   ---
-  duration_ms: 2113.2064
+  duration_ms: 2133.7381
   type: 'test'
   ...
 # Subtest: safe apply defaults offline/dry-run, requires exact approval and preserves human translations
 ok 2 - safe apply defaults offline/dry-run, requires exact approval and preserves human translations
   ---
-  duration_ms: 159.4692
+  duration_ms: 154.2861
   type: 'test'
   ...
 # Subtest: stale source, target bytes and invalid root tests fail before writing
 ok 3 - stale source, target bytes and invalid root tests fail before writing
   ---
-  duration_ms: 36.885
+  duration_ms: 27.7057
   type: 'test'
   ...
 # Subtest: rejects destructive RFC operations, prototype pollution, human overwrite and invalid candidates
 ok 4 - rejects destructive RFC operations, prototype pollution, human overwrite and invalid candidates
   ---
-  duration_ms: 44.8549
+  duration_ms: 46.8041
   type: 'test'
   ...
 # Subtest: validation failure restores exact bytes; concurrent edit is retained rather than clobbered
 ok 5 - validation failure restores exact bytes; concurrent edit is retained rather than clobbered
   ---
-  duration_ms: 352.5704
+  duration_ms: 368.8152
   type: 'test'
   ...
 # Subtest: symlinks and hardlink aliases are rejected
 ok 6 - symlinks and hardlink aliases are rejected
   ---
-  duration_ms: 31.4608
+  duration_ms: 34.605
   type: 'test'
   ...
 # Subtest: legacy root-test proposals require explicit review-time binding
 ok 7 - legacy root-test proposals require explicit review-time binding
   ---
-  duration_ms: 45.1037
+  duration_ms: 35.8795
   type: 'test'
   ...
 # Subtest: missing nested parents apply safely, target formatting edits invalidate proposal, stale locks are retained
 ok 8 - missing nested parents apply safely, target formatting edits invalidate proposal, stale locks are retained
   ---
-  duration_ms: 208.0411
+  duration_ms: 193.1486
   type: 'test'
   ...
 # Subtest: P2-01 scroll declarations and observed scroll containers never generate height repairs
 ok 9 - P2-01 scroll declarations and observed scroll containers never generate height repairs
   ---
-  duration_ms: 4.0229
+  duration_ms: 4.5315
+  type: 'test'
+  ...
+# Subtest: Windows cross-volume isolation is a separate same-volume sibling, never the project itself
+ok 10 - Windows cross-volume isolation is a separate same-volume sibling, never the project itself
+  ---
+  duration_ms: 0.6443
   type: 'test'
   ...
 # Subtest: P2-01 shared-class side effects reject missing or nonfunctional scroll evidence
-ok 10 - P2-01 shared-class side effects reject missing or nonfunctional scroll evidence
+ok 11 - P2-01 shared-class side effects reject missing or nonfunctional scroll evidence
   ---
-  duration_ms: 1.2735
+  duration_ms: 1.3967
   type: 'test'
   ...
 # Subtest: P2-03 real Linux descendants cleaned after parent normal exit; unrelated process survives
-ok 11 - P2-03 real Linux descendants cleaned after parent normal exit; unrelated process survives # SKIP
+ok 12 - P2-03 real Linux descendants cleaned after parent normal exit; unrelated process survives # SKIP
   ---
-  duration_ms: 0.3649
+  duration_ms: 0.5373
   type: 'test'
   ...
 # Subtest: P2-03 real Linux descendants cleaned after parent timeout; unrelated process survives
-ok 12 - P2-03 real Linux descendants cleaned after parent timeout; unrelated process survives # SKIP
+ok 13 - P2-03 real Linux descendants cleaned after parent timeout; unrelated process survives # SKIP
   ---
-  duration_ms: 0.1744
+  duration_ms: 0.2092
   type: 'test'
   ...
 # Subtest: P2-03 unowned already-exited process fails closed without signalling a reusable PID
-ok 13 - P2-03 unowned already-exited process fails closed without signalling a reusable PID # SKIP
+ok 14 - P2-03 unowned already-exited process fails closed without signalling a reusable PID # SKIP
   ---
-  duration_ms: 0.1477
+  duration_ms: 0.1566
   type: 'test'
   ...
 # Subtest: P2-03 cleanup refuses an unregistered live process and leaves it alive
-ok 14 - P2-03 cleanup refuses an unregistered live process and leaves it alive
+ok 15 - P2-03 cleanup refuses an unregistered live process and leaves it alive
   ---
-  duration_ms: 50.1632
+  duration_ms: 44.946
   type: 'test'
   ...
 # Subtest: P2-03 engine parent death closes ownership channel and still reaps real descendants
-ok 15 - P2-03 engine parent death closes ownership channel and still reaps real descendants # SKIP
+ok 16 - P2-03 engine parent death closes ownership channel and still reaps real descendants # SKIP
   ---
-  duration_ms: 0.2605
+  duration_ms: 0.3216
+  type: 'test'
+  ...
+# Subtest: P2-03 repair unit validator reaps a real detached descendant before accepting success
+ok 17 - P2-03 repair unit validator reaps a real detached descendant before accepting success # SKIP
+  ---
+  duration_ms: 0.6879
   type: 'test'
   ...
 # Subtest: nested JSON keys are flattened
-ok 16 - nested JSON keys are flattened
+ok 18 - nested JSON keys are flattened
   ---
-  duration_ms: 3.4149
+  duration_ms: 3.952
   type: 'test'
   ...
 # Subtest: i18next and simple ICU placeholders are detected
-ok 17 - i18next and simple ICU placeholders are detected
+ok 19 - i18next and simple ICU placeholders are detected
   ---
-  duration_ms: 0.6033
+  duration_ms: 0.6258
   type: 'test'
   ...
 # Subtest: detects missing, empty, placeholder mismatch and extra keys
-ok 18 - detects missing, empty, placeholder mismatch and extra keys
+ok 20 - detects missing, empty, placeholder mismatch and extra keys
   ---
-  duration_ms: 1.669
+  duration_ms: 1.3613
   type: 'test'
   ...
 # Subtest: rejects unsupported JSON shapes instead of ignoring them
-ok 19 - rejects unsupported JSON shapes instead of ignoring them
+ok 21 - rejects unsupported JSON shapes instead of ignoring them
   ---
-  duration_ms: 3.1436
+  duration_ms: 1.273
   type: 'test'
   ...
 # Subtest: passes good example catalogs
-ok 20 - passes good example catalogs
+ok 22 - passes good example catalogs
   ---
-  duration_ms: 18.7725
+  duration_ms: 17.7818
   type: 'test'
   ...
 # Subtest: strict-extra turns extra-key warning into gate failure
-ok 21 - strict-extra turns extra-key warning into gate failure
+ok 23 - strict-extra turns extra-key warning into gate failure
   ---
-  duration_ms: 2.7558
+  duration_ms: 2.9498
   type: 'test'
   ...
 # Subtest: real pinned i18next extraction returns catalog and diff without writing
-ok 22 - real pinned i18next extraction returns catalog and diff without writing
+ok 24 - real pinned i18next extraction returns catalog and diff without writing
   ---
-  duration_ms: 2820.3508
+  duration_ms: 2847.6566
   type: 'test'
   ...
 # Subtest: unknown, ambiguous and Paraglide projects fail explicitly
-ok 23 - unknown, ambiguous and Paraglide projects fail explicitly
+ok 25 - unknown, ambiguous and Paraglide projects fail explicitly
   ---
-  duration_ms: 32.5252
+  duration_ms: 25.07
   type: 'test'
   ...
 # Subtest: invalid source produces a failure, never a partial successful extraction
-ok 24 - invalid source produces a failure, never a partial successful extraction
+ok 26 - invalid source produces a failure, never a partial successful extraction
   ---
-  duration_ms: 2185.662
+  duration_ms: 2241.3063
   type: 'test'
   ...
 # Subtest: ICU nested plural/select, quoting, tags and locale plural categories
-ok 25 - ICU nested plural/select, quoting, tags and locale plural categories
+ok 27 - ICU nested plural/select, quoting, tags and locale plural categories
   ---
-  duration_ms: 7.5649
+  duration_ms: 6.0731
   type: 'test'
   ...
 # Subtest: ICU rejects missing other, broken syntax, mixed placeholders and tags
-ok 26 - ICU rejects missing other, broken syntax, mixed placeholders and tags
+ok 28 - ICU rejects missing other, broken syntax, mixed placeholders and tags
   ---
-  duration_ms: 1.7453
+  duration_ms: 2.5968
   type: 'test'
   ...
 # Subtest: ICU detects missing variables, changed argument roles and missing tags
-ok 27 - ICU detects missing variables, changed argument roles and missing tags
+ok 29 - ICU detects missing variables, changed argument roles and missing tags
   ---
-  duration_ms: 0.7923
+  duration_ms: 0.8664
   type: 'test'
   ...
 # Subtest: explicit syntax, nested catalogs, empty values and invalid source
-ok 28 - explicit syntax, nested catalogs, empty values and invalid source
+ok 30 - explicit syntax, nested catalogs, empty values and invalid source
   ---
-  duration_ms: 2.7207
+  duration_ms: 2.9799
   type: 'test'
   ...
 # Subtest: publish rejects alternate, multiple and rewritten push destinations before transport
-ok 29 - publish rejects alternate, multiple and rewritten push destinations before transport
+ok 31 - publish rejects alternate, multiple and rewritten push destinations before transport
   ---
-  duration_ms: 8308.9319
+  duration_ms: 8842.2249
   type: 'test'
   ...
 # Subtest: publish refuses a commit introduced during remote preflight; no unreviewed HEAD is pushed
-ok 30 - publish refuses a commit introduced during remote preflight; no unreviewed HEAD is pushed
+ok 32 - publish refuses a commit introduced during remote preflight; no unreviewed HEAD is pushed
   ---
-  duration_ms: 9562.6495
+  duration_ms: 9109.4936
   type: 'test'
   ...
 # Subtest: atomic replacement preserves POSIX access mode on apply and byte restoration
-ok 31 - atomic replacement preserves POSIX access mode on apply and byte restoration # SKIP
+ok 33 - atomic replacement preserves POSIX access mode on apply and byte restoration # SKIP
   ---
-  duration_ms: 0.3147
+  duration_ms: 0.2559
   type: 'test'
   ...
 # Subtest: JSON Patch adversarial sequences cannot erase parent objects or overwrite human text
-ok 32 - JSON Patch adversarial sequences cannot erase parent objects or overwrite human text
+ok 34 - JSON Patch adversarial sequences cannot erase parent objects or overwrite human text
   ---
-  duration_ms: 77.7511
+  duration_ms: 61.1748
   type: 'test'
   ...
 # Subtest: unsafe paths, linked backups, corrupt recovery and occupied locks preserve original evidence
-ok 33 - unsafe paths, linked backups, corrupt recovery and occupied locks preserve original evidence
+ok 35 - unsafe paths, linked backups, corrupt recovery and occupied locks preserve original evidence
   ---
-  duration_ms: 134.2761
+  duration_ms: 120.2244
   type: 'test'
   ...
 # Subtest: source-retention quality gate recognizes invisible padding without blocking normal joined scripts
-ok 34 - source-retention quality gate recognizes invisible padding without blocking normal joined scripts
+ok 36 - source-retention quality gate recognizes invisible padding without blocking normal joined scripts
   ---
-  duration_ms: 2.0986
+  duration_ms: 1.5705
   type: 'test'
   ...
 # Subtest: duplicate JSON names, including escaped aliases, cannot conceal a human translation
-ok 35 - duplicate JSON names, including escaped aliases, cannot conceal a human translation
+ok 37 - duplicate JSON names, including escaped aliases, cannot conceal a human translation
   ---
-  duration_ms: 45.6444
+  duration_ms: 33.217
   type: 'test'
   ...
 # Subtest: two real processes coordinate through the lock; loser cannot modify files or remove winner lock
-ok 36 - two real processes coordinate through the lock; loser cannot modify files or remove winner lock
+ok 38 - two real processes coordinate through the lock; loser cannot modify files or remove winner lock
   ---
-  duration_ms: 707.8173
+  duration_ms: 627.6856
   type: 'test'
   ...
 # Subtest: process death after replacement retains backup/journal/lock; explicit recovery restores exact CRLF bytes
-ok 37 - process death after replacement retains backup/journal/lock; explicit recovery restores exact CRLF bytes
+ok 39 - process death after replacement retains backup/journal/lock; explicit recovery restores exact CRLF bytes
   ---
-  duration_ms: 408.8235
+  duration_ms: 374.6705
   type: 'test'
   ...
 # Subtest: validation trust boundary includes transitive imports; entrypoint hashes alone are not a sandbox
-ok 38 - validation trust boundary includes transitive imports; entrypoint hashes alone are not a sandbox
+ok 40 - validation trust boundary includes transitive imports; entrypoint hashes alone are not a sandbox
   ---
-  duration_ms: 362.1262
+  duration_ms: 375.2401
   type: 'test'
   ...
 # Subtest: lock cleanup failure returns the applied state and recovery evidence instead of masking it
-ok 39 - lock cleanup failure returns the applied state and recovery evidence instead of masking it
+ok 41 - lock cleanup failure returns the applied state and recovery evidence instead of masking it
   ---
-  duration_ms: 73.4052
+  duration_ms: 67.8096
   type: 'test'
   ...
 # Subtest: recover --dry-run cannot restore a resource even with a valid approval hash
-ok 40 - recover --dry-run cannot restore a resource even with a valid approval hash
+ok 42 - recover --dry-run cannot restore a resource even with a valid approval hash
   ---
-  duration_ms: 247.0662
+  duration_ms: 239.8167
   type: 'test'
   ...
 # Subtest: publish rejects unrelated files hidden by add-then-delete commits in branch history
-ok 41 - publish rejects unrelated files hidden by add-then-delete commits in branch history
+ok 43 - publish rejects unrelated files hidden by add-then-delete commits in branch history
   ---
-  duration_ms: 5472.5336
+  duration_ms: 5017.9164
   type: 'test'
   ...
 # Subtest: license gate accepts reviewed expressions and rejects copyleft service code or unknown licenses
-ok 42 - license gate accepts reviewed expressions and rejects copyleft service code or unknown licenses
+ok 44 - license gate accepts reviewed expressions and rejects copyleft service code or unknown licenses
   ---
-  duration_ms: 2.524
+  duration_ms: 2.6286
   type: 'test'
   ...
 # Subtest: local PR preview is inert; explicit approval creates only dedicated branch/expected commit, hooks disabled
-ok 43 - local PR preview is inert; explicit approval creates only dedicated branch/expected commit, hooks disabled
+ok 45 - local PR preview is inert; explicit approval creates only dedicated branch/expected commit, hooks disabled
   ---
-  duration_ms: 9246.8162
+  duration_ms: 10181.1514
   type: 'test'
   ...
 # Subtest: unrelated staged or tracked changes never enter a prepared PR
-ok 44 - unrelated staged or tracked changes never enter a prepared PR
+ok 46 - unrelated staged or tracked changes never enter a prepared PR
   ---
-  duration_ms: 2473.2795
+  duration_ms: 2671.6885
   type: 'test'
   ...
 # Subtest: Git clean filters cannot change approved translation bytes during preparation
-ok 45 - Git clean filters cannot change approved translation bytes during preparation
+ok 47 - Git clean filters cannot change approved translation bytes during preparation
   ---
-  duration_ms: 3301.4786
+  duration_ms: 2767.6009
   type: 'test'
   ...
 # Subtest: Git baseline duplicate names cannot conceal an earlier human translation
-ok 46 - Git baseline duplicate names cannot conceal an earlier human translation
+ok 48 - Git baseline duplicate names cannot conceal an earlier human translation
   ---
-  duration_ms: 2880.3265
+  duration_ms: 2346.738
   type: 'test'
   ...
 # Subtest: remote preparation is offline by default; approved publish only pushes topic branch and creates Draft, never merges
-ok 47 - remote preparation is offline by default; approved publish only pushes topic branch and creates Draft, never merges
+ok 49 - remote preparation is offline by default; approved publish only pushes topic branch and creates Draft, never merges
   ---
-  duration_ms: 14883.6075
+  duration_ms: 13721.6004
   type: 'test'
   ...
 # Subtest: publication binds an explicit topic base and never falls back to main
-ok 48 - publication binds an explicit topic base and never falls back to main
+ok 50 - publication binds an explicit topic base and never falls back to main
   ---
-  duration_ms: 16580.8963
+  duration_ms: 15110.9067
   type: 'test'
   ...
 # Subtest: untranslated candidates fail; explicit brands/proper-name/source retention exemptions are narrow
-ok 49 - untranslated candidates fail; explicit brands/proper-name/source retention exemptions are narrow
+ok 51 - untranslated candidates fail; explicit brands/proper-name/source retention exemptions are narrow
   ---
-  duration_ms: 7.9083
+  duration_ms: 5.7181
   type: 'test'
   ...
 # Subtest: literal terminology and placeholder requirements are independently enforced
-ok 50 - literal terminology and placeholder requirements are independently enforced
+ok 52 - literal terminology and placeholder requirements are independently enforced
   ---
-  duration_ms: 0.9147
+  duration_ms: 3.5199
   type: 'test'
   ...
 # Subtest: statistical language and length warnings are reported without claiming semantic accuracy
-ok 51 - statistical language and length warnings are reported without claiming semantic accuracy
+ok 53 - statistical language and length warnings are reported without claiming semantic accuracy
   ---
-  duration_ms: 4.8391
+  duration_ms: 5.029
   type: 'test'
   ...
 # Subtest: ICU plural/tag structures still use FormatJS, exemptions do not bypass structural checks
-ok 52 - ICU plural/tag structures still use FormatJS, exemptions do not bypass structural checks
+ok 54 - ICU plural/tag structures still use FormatJS, exemptions do not bypass structural checks
   ---
-  duration_ms: 7.3038
+  duration_ms: 6.6737
   type: 'test'
   ...
 # Subtest: real React/i18next source-change -> missing key -> approved apply -> rendered translation, preserves human title
-ok 53 - real React/i18next source-change -> missing key -> approved apply -> rendered translation, preserves human title
+ok 55 - real React/i18next source-change -> missing key -> approved apply -> rendered translation, preserves human title
   ---
-  duration_ms: 313.5549
+  duration_ms: 308.1635
   type: 'test'
   ...
 # Subtest: real CLI success and failure gates with parseable JSON and SARIF
-ok 54 - real CLI success and failure gates with parseable JSON and SARIF
+ok 56 - real CLI success and failure gates with parseable JSON and SARIF
   ---
-  duration_ms: 850.3136
+  duration_ms: 833.0371
   type: 'test'
   ...
 # Subtest: rejects prototype-related keys without polluting object prototypes
-ok 55 - rejects prototype-related keys without polluting object prototypes
+ok 57 - rejects prototype-related keys without polluting object prototypes
   ---
-  duration_ms: 0.8134
+  duration_ms: 0.9636
   type: 'test'
   ...
 # Subtest: SEM-01 catches Hallo name dangling punctuation without claiming semantic correctness
-ok 56 - SEM-01 catches Hallo name dangling punctuation without claiming semantic correctness
+ok 58 - SEM-01 catches Hallo name dangling punctuation without claiming semantic correctness
   ---
-  duration_ms: 6.7676
+  duration_ms: 7.4708
   type: 'test'
   ...
 # Subtest: semantic review retains untranslated, terminology and structural gates and reports formatting
-ok 57 - semantic review retains untranslated, terminology and structural gates and reports formatting
+ok 59 - semantic review retains untranslated, terminology and structural gates and reports formatting
   ---
-  duration_ms: 1.8393
+  duration_ms: 2.0467
   type: 'test'
   ...
 # Subtest: source versus localized attribution preserves original errors and surfaces layout changes
-ok 58 - source versus localized attribution preserves original errors and surfaces layout changes
+ok 60 - source versus localized attribution preserves original errors and surfaces layout changes
   ---
-  duration_ms: 0.8518
+  duration_ms: 0.9996
   type: 'test'
   ...
 # Subtest: CSS candidates are limited to diagnosed existing simple fixed-height rules
-ok 59 - CSS candidates are limited to diagnosed existing simple fixed-height rules
+ok 61 - CSS candidates are limited to diagnosed existing simple fixed-height rules
   ---
-  duration_ms: 2.9441
+  duration_ms: 5.8181
   type: 'test'
   ...
 # Subtest: semantic proposal corrections reuse provenance-bound Safe Apply and cannot overwrite human text
-ok 60 - semantic proposal corrections reuse provenance-bound Safe Apply and cannot overwrite human text
+ok 62 - semantic proposal corrections reuse provenance-bound Safe Apply and cannot overwrite human text
   ---
-  duration_ms: 157.3756
+  duration_ms: 136.4867
   type: 'test'
   ...
 # Subtest: failed CSS verification rolls back exact CRLF bytes and retains recovery evidence
-ok 61 - failed CSS verification rolls back exact CRLF bytes and retains recovery evidence
+ok 63 - failed CSS verification rolls back exact CRLF bytes and retains recovery evidence
   ---
-  duration_ms: 95.8009
+  duration_ms: 72.8161
+  type: 'test'
+  ...
+# Subtest: fatal cleanup failure remains explicit after exact CSS rollback
+ok 64 - fatal cleanup failure remains explicit after exact CSS rollback
+  ---
+  duration_ms: 67.981
   type: 'test'
   ...
 # Subtest: successful isolated CSS transaction requires exact approval and supports exact recovery
-ok 62 - successful isolated CSS transaction requires exact approval and supports exact recovery
+ok 65 - successful isolated CSS transaction requires exact approval and supports exact recovery
   ---
-  duration_ms: 102.3079
+  duration_ms: 86.4038
   type: 'test'
   ...
 # Subtest: CSS candidates reject tampering, stale bytes, and preserve concurrent edits on failure
-ok 63 - CSS candidates reject tampering, stale bytes, and preserve concurrent edits on failure
+ok 66 - CSS candidates reject tampering, stale bytes, and preserve concurrent edits on failure
   ---
-  duration_ms: 65.8649
+  duration_ms: 62.8696
   type: 'test'
   ...
 # Subtest: repair preview executes no adapter or tests and binds all files, config and independent execution consent
-ok 64 - repair preview executes no adapter or tests and binds all files, config and independent execution consent
+ok 67 - repair preview executes no adapter or tests and binds all files, config and independent execution consent
   ---
-  duration_ms: 129.0421
+  duration_ms: 116.0923
   type: 'test'
   ...
 # Subtest: repair config rejects scope escape, reduced coverage, executable hooks and changed adapter
-ok 65 - repair config rejects scope escape, reduced coverage, executable hooks and changed adapter
+ok 68 - repair config rejects scope escape, reduced coverage, executable hooks and changed adapter
   ---
-  duration_ms: 218.854
+  duration_ms: 207.9591
   type: 'test'
   ...
 # Subtest: isolated execution uses canonical filesystem paths even when its real adapter fails
-ok 66 - isolated execution uses canonical filesystem paths even when its real adapter fails
+ok 69 - isolated execution uses canonical filesystem paths even when its real adapter fails
   ---
-  duration_ms: 314.8338
+  duration_ms: 314.1006
   type: 'test'
   ...
 # Subtest: unverified or failed repair can never produce a draft delivery manifest
-ok 67 - unverified or failed repair can never produce a draft delivery manifest
+ok 70 - unverified or failed repair can never produce a draft delivery manifest
   ---
-  duration_ms: 1.2861
+  duration_ms: 1.2499
   type: 'test'
   ...
 # Subtest: timeout cleanup is idempotent after a real child has exited by signal
-ok 68 - timeout cleanup is idempotent after a real child has exited by signal
+ok 71 - timeout cleanup is idempotent after a real child has exited by signal
   ---
-  duration_ms: 820.2315
+  duration_ms: 891.4613
   type: 'test'
   ...
 # Subtest: dry-run stays offline; real local HTTP candidates produce patch and preserve human text
-ok 69 - dry-run stays offline; real local HTTP candidates produce patch and preserve human text
+ok 72 - dry-run stays offline; real local HTTP candidates produce patch and preserve human text
   ---
-  duration_ms: 218.5899
+  duration_ms: 216.4208
   type: 'test'
   ...
 # Subtest: rejects external origins, cloud models, mismatched variables and HTML payloads
-ok 70 - rejects external origins, cloud models, mismatched variables and HTML payloads
+ok 73 - rejects external origins, cloud models, mismatched variables and HTML payloads
   ---
-  duration_ms: 26.9119
+  duration_ms: 31.3579
   type: 'test'
   ...
 # Subtest: validates source syntax even when every target message already has human text
-ok 71 - validates source syntax even when every target message already has human text
+ok 74 - validates source syntax even when every target message already has human text
   ---
-  duration_ms: 34.9468
+  duration_ms: 34.1519
   type: 'test'
   ...
 # Subtest: redirects fail with redacted errors instead of contacting an external origin
-ok 72 - redirects fail with redacted errors instead of contacting an external origin
+ok 75 - redirects fail with redacted errors instead of contacting an external origin
   ---
-  duration_ms: 15.7377
+  duration_ms: 27.5161
   type: 'test'
   ...
 # Subtest: hung local HTTP server is timed out; oversized and malformed responses are rejected
-ok 73 - hung local HTTP server is timed out; oversized and malformed responses are rejected
+ok 76 - hung local HTTP server is timed out; oversized and malformed responses are rejected
   ---
-  duration_ms: 100.8673
+  duration_ms: 100.5513
   type: 'test'
   ...
 # Subtest: only exact configured/approved scripts run; passing unit validation accepts the candidate
-ok 74 - only exact configured/approved scripts run; passing unit validation accepts the candidate
+ok 77 - only exact configured/approved scripts run; passing unit validation accepts the candidate
   ---
-  duration_ms: 638.226
+  duration_ms: 632.526
   type: 'test'
   ...
 # Subtest: failed and timed-out unit validation restore exact pre-apply bytes
-ok 75 - failed and timed-out unit validation restore exact pre-apply bytes
+ok 78 - failed and timed-out unit validation restore exact pre-apply bytes
   ---
-  duration_ms: 1673.0617
+  duration_ms: 1680.8672
   type: 'test'
   ...
 # Subtest: configuration cannot request a shell/build hook or silently change approved tests
-ok 76 - configuration cannot request a shell/build hook or silently change approved tests
+ok 79 - configuration cannot request a shell/build hook or silently change approved tests
   ---
-  duration_ms: 75.4214
+  duration_ms: 78.9157
   type: 'test'
   ...
 # Subtest: approved entrypoint filenames cannot become Node CLI flags
-ok 77 - approved entrypoint filenames cannot become Node CLI flags
+ok 80 - approved entrypoint filenames cannot become Node CLI flags
   ---
-  duration_ms: 400.0515
+  duration_ms: 401.0933
   type: 'test'
   ...
-1..77
-# tests 77
+1..80
+# tests 80
 # suites 0
-# pass 72
+# pass 74
 # fail 0
 # cancelled 0
-# skipped 5
+# skipped 6
 # todo 0
-# duration_ms 50166.8542
+# duration_ms 47647.4472

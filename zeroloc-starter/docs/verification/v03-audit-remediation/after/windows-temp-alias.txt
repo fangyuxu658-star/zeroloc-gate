@@ -1,0 +1,2 @@
+{"id":"react","passed":true,"attempts":1,"output":"C:\\Users\\15084\\Documents\\ChatGPT\\本地化开源项目\\zeroloc-starter\\.local-tools\\temp-alias-3gSZO4\\actual\\zeroloc-repair-i2gYJ3\\evidence"}
+PASS: real upstream application expectations, original-byte preservation, explicit review and SEM-01 regression

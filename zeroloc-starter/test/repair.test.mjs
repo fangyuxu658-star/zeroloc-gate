@@ -65,6 +65,13 @@ test('failed CSS verification rolls back exact CRLF bytes and retains recovery e
   assert.equal(result.passed,false);assert.equal(result.rolledBack,true);assert.equal(await readFile(join(root,'app.css'),'utf8'),text);
   assert.equal(await readFile(join(root,result.backup),'utf8'),text);
 });
+
+test('fatal cleanup failure remains explicit after exact CSS rollback',async()=>{
+  const {root,text,candidate}=await cssFixture();
+  const result=await applyCssCandidate({root,candidate,approve:candidate.candidateId,verify:async()=>{throw Object.assign(new Error('cleanup failed'),{code:'PROCESS_CLEANUP_FAILED',pid:process.pid});}});
+  assert.equal(result.passed,false);assert.equal(result.processCleanupFailed,true);assert.equal(result.rolledBack,true);
+  assert.equal(result.ownedProcessId,process.pid);assert.equal(await readFile(join(root,'app.css'),'utf8'),text);
+});
 test('successful isolated CSS transaction requires exact approval and supports exact recovery',async()=>{
   const {root,text,candidate}=await cssFixture();
   await assert.rejects(applyCssCandidate({root,candidate,approve:'wrong',verify:async()=>({passed:true})}));

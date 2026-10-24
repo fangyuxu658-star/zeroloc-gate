@@ -1,0 +1,66 @@
+##[group]Run npm run test:repair -- --react-root artifacts/repair-upstream/react --next-root artifacts/repair-upstream/next
+2026-10-24T02:18:09.1093042Z [36;1mnpm run test:repair -- --react-root artifacts/repair-upstream/react --next-root artifacts/repair-upstream/next[0m
+2026-10-24T02:18:09.1145262Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-24T02:18:09.1145576Z ##[endgroup]
+2026-10-24T02:18:09.5910695Z
+2026-10-24T02:18:09.5911204Z > zeroloc-gate@0.3.0-dev.0 test:repair
+2026-10-24T02:18:09.5911708Z > node qa/repair-real-apps.mjs --react-root artifacts/repair-upstream/react --next-root artifacts/repair-upstream/next
+2026-10-24T02:18:09.5912002Z
+2026-10-24T02:19:14.8077795Z {"id":"react","passed":true,"attempts":1,"output":"C:\\Users\\runneradmin\\AppData\\Local\\Temp\\zeroloc-repair-bY8tJ1\\evidence"}
+2026-10-24T02:19:18.6511227Z node:internal/modules/run_main:107
+2026-10-24T02:19:18.6511642Z     triggerUncaughtException(
+2026-10-24T02:19:18.6512058Z     ^
+2026-10-24T02:19:18.6512183Z
+2026-10-24T02:19:18.6512514Z AssertionError [ERR_ASSERTION]: Initial real capture blocked: EXECUTION_FAILED
+2026-10-24T02:19:18.6512982Z Error: Test page failed to load
+2026-10-24T02:19:18.6513445Z     at visualQA (file:///D:/a/zeroloc-gate/zeroloc-gate/zeroloc-starter/src/checks/visual.mjs:48:38)
+2026-10-24T02:19:18.6514031Z     at async capture (file:///D:/a/zeroloc-gate/zeroloc-gate/zeroloc-starter/src/repair-engine.mjs:79:18)
+2026-10-24T02:19:18.6514643Z     at async runRepair (file:///D:/a/zeroloc-gate/zeroloc-gate/zeroloc-starter/src/repair-engine.mjs:105:19)
+2026-10-24T02:19:18.6515275Z     at async file:///D:/a/zeroloc-gate/zeroloc-gate/zeroloc-starter/qa/repair-real-apps.mjs:69:16
+2026-10-24T02:19:18.6516325Z [32mwarn  -[39m experimental.esmExternals is disabled
+2026-10-24T02:19:18.6517033Z ⚠ The "experimental.esmExternals" option has been modified. experimental.esmExternals is not recommended to be modified as it may disrupt module resolution. It should be removed from your next.config.js.
+2026-10-24T02:19:18.6517589Z ✓ Running next.config.js took 19ms
+2026-10-24T02:19:18.6517803Z   Using tsconfig file: ./tsconfig.json
+2026-10-24T02:19:18.6518142Z {"zerolocServer":"http://127.0.0.1:62782"}
+2026-10-24T02:19:18.6518476Z Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\DumpStack.log.tmp'
+2026-10-24T02:19:18.6518880Z Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\pagefile.sys'
+2026-10-24T02:19:18.6520119Z ⨯ Module not found: Error: Can't resolve './D:/a/zeroloc-gate/zeroloc-gate/zeroloc-starter/artifacts/repair-upstream/next/node_modules/next/dist/client/next-dev.js' in 'C:\Users\runneradmin\AppData\Local\Temp\zeroloc-repair-TMrEIb\project'
+2026-10-24T02:19:18.6521138Z Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\DumpStack.log.tmp'
+2026-10-24T02:19:18.6521795Z Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\pagefile.sys'
+2026-10-24T02:19:18.6523005Z ⨯ Module not found: Error: Can't resolve './D:/a/zeroloc-gate/zeroloc-gate/zeroloc-starter/artifacts/repair-upstream/next/node_modules/next/dist/client/next-dev.js' in 'C:\Users\runneradmin\AppData\Local\Temp\zeroloc-repair-TMrEIb\project'
+2026-10-24T02:19:18.6523899Z ⨯ Error: ENOENT: no such file or directory, open 'C:\Users\runneradmin\AppData\Local\Temp\zeroloc-repair-TMrEIb\project\.next\dev\fallback-build-manifest.json'
+2026-10-24T02:19:18.6524329Z     at ignore-listed frames {
+2026-10-24T02:19:18.6524520Z   errno: -4058,
+2026-10-24T02:19:18.6524680Z   code: 'ENOENT',
+2026-10-24T02:19:18.6524852Z   syscall: 'open',
+2026-10-24T02:19:18.6525206Z   path: 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\zeroloc-repair-TMrEIb\\project\\.next\\dev\\fallback-build-manifest.json'
+2026-10-24T02:19:18.6525556Z }
+2026-10-24T02:19:18.6527680Z Error: ENOENT: no such file or directory, open 'C:\Users\runneradmin\AppData\Local\Temp\zeroloc-repair-TMrEIb\project\.next\dev\fallback-build-manifest.json'
+2026-10-24T02:19:18.6528442Z     at ignore-listed frames {
+2026-10-24T02:19:18.6528715Z   errno: -4058,
+2026-10-24T02:19:18.6529115Z   code: 'ENOENT',
+2026-10-24T02:19:18.6529336Z   syscall: 'open',
+2026-10-24T02:19:18.6529879Z   path: 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\zeroloc-repair-TMrEIb\\project\\.next\\dev\\fallback-build-manifest.json'
+2026-10-24T02:19:18.6530408Z }
+2026-10-24T02:19:18.6531056Z Error: ENOENT: no such file or directory, open 'C:\Users\runneradmin\AppData\Local\Temp\zeroloc-repair-TMrEIb\project\.next\dev\fallback-build-manifest.json'
+2026-10-24T02:19:18.6531648Z     at ignore-listed frames {
+2026-10-24T02:19:18.6531882Z   errno: -4058,
+2026-10-24T02:19:18.6532094Z   code: 'ENOENT',
+2026-10-24T02:19:18.6532305Z   syscall: 'open',
+2026-10-24T02:19:18.6532802Z   path: 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\zeroloc-repair-TMrEIb\\project\\.next\\dev\\fallback-build-manifest.json'
+2026-10-24T02:19:18.6533321Z }
+2026-10-24T02:19:18.6533522Z  GET / 500 in 1081ms
+2026-10-24T02:19:18.6533741Z  GET / 500 in 1081ms
+2026-10-24T02:19:18.6533882Z
+2026-10-24T02:19:18.6534160Z     at file:///D:/a/zeroloc-gate/zeroloc-gate/zeroloc-starter/qa/repair-real-apps.mjs:80:203 {
+2026-10-24T02:19:18.6534591Z   generatedMessage: false,
+2026-10-24T02:19:18.6534867Z   code: 'ERR_ASSERTION',
+2026-10-24T02:19:18.6535105Z   actual: undefined,
+2026-10-24T02:19:18.6535336Z   expected: undefined,
+2026-10-24T02:19:18.6535629Z   operator: 'fail',
+2026-10-24T02:19:18.6535847Z   diff: 'simple'
+2026-10-24T02:19:18.6536058Z }
+2026-10-24T02:19:18.6536175Z
+2026-10-24T02:19:18.6536256Z Node.js v24.22.1
+2026-10-24T02:19:18.6971148Z ##[error]Process completed with exit code 1.
+2026-10-24T02:19:18.7159731Z

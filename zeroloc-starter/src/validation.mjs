@@ -5,27 +5,32 @@ import { join, basename, resolve as resolvePath } from 'node:path';
 import { createHash } from 'node:crypto';
 import { readResource, parseJson, digest } from './safe-files.mjs';
 import { visualQA, visualOrigin } from './checks/visual.mjs';
+import { spawnRepairProcess, stopRepairProcess } from './process-ownership.mjs';
 
 function stop(child) {
   if(!child.pid)return;
   if(process.platform==='win32') execFile(join(process.env.SystemRoot??'C:\\Windows','System32','taskkill.exe'),['/PID',String(child.pid),'/T','/F'],{windowsHide:true},()=>{});
   else {try{process.kill(-child.pid,'SIGKILL');}catch{child.kill('SIGKILL');}}
 }
-async function unitTest(root,file,signal) {
+async function unitTest(root,file,signal,ownedProcesses=false) {
   return new Promise(resolve=>{
     const env=Object.fromEntries(['PATH','Path','SystemRoot','SYSTEMROOT','TEMP','TMP','TMPDIR'].filter(k=>process.env[k]!==undefined).map(k=>[k,process.env[k]]));
-    const child=spawn(process.execPath,['--test',resolvePath(root,file)],{cwd:root,env,shell:false,windowsHide:true,detached:process.platform!=='win32',stdio:['ignore','pipe','pipe']});
+    const supervised=ownedProcesses&&process.platform==='linux';
+    const child=(supervised?spawnRepairProcess:spawn)(process.execPath,['--test',resolvePath(root,file)],{cwd:root,env,shell:false,windowsHide:true,detached:process.platform!=='win32',stdio:['ignore','pipe','pipe']});
+    let workerCode=null,cleanup;
+    const requestStop=()=>{if(!supervised){stop(child);return;}cleanup??=stopRepairProcess(child).then(()=>done(workerCode,workerCode===null,true),()=>done(null,true,false));};
     const hash=createHash('sha256');let size=0,limited=false;
-    for(const stream of [child.stdout,child.stderr])stream.on('data',chunk=>{size+=chunk.length;if(size<=1048576)hash.update(chunk);else{limited=true;stop(child);}});
-    const abort=()=>stop(child);signal.addEventListener('abort',abort,{once:true});if(signal.aborted)abort();
+    for(const stream of [child.stdout,child.stderr])stream.on('data',chunk=>{size+=chunk.length;if(size<=1048576)hash.update(chunk);else{limited=true;requestStop();}});
+    const abort=()=>requestStop();signal.addEventListener('abort',abort,{once:true});if(signal.aborted)abort();
     let finished=false;
-    const done=(exitCode,error=false)=>{if(finished)return;finished=true;signal.removeEventListener('abort',abort);resolve({kind:'unit',file,passed:!error&&exitCode===0&&!signal.aborted&&!limited,exitCode,timedOut:signal.aborted,outputLimited:limited,outputSha256:hash.digest('hex')});};
-    child.once('error',()=>done(null,true));child.once('close',code=>done(code));
+    const done=(exitCode,error=false,processTreeCleaned)=>{if(finished)return;finished=true;signal.removeEventListener('abort',abort);resolve({kind:'unit',file,passed:!error&&exitCode===0&&!signal.aborted&&!limited,exitCode,timedOut:signal.aborted,outputLimited:limited,outputSha256:hash.digest('hex'),...(supervised?{processTreeCleaned,error:processTreeCleaned?undefined:'PROCESS_CLEANUP_FAILED',...(processTreeCleaned?{}:{ownedProcessId:child.pid})}:{})});};
+    if(supervised){child.once('workerExit',code=>{workerCode=code;requestStop();});child.once('close',()=>requestStop());child.once('error',()=>requestStop());}
+    else{child.once('error',()=>done(null,true));child.once('close',code=>done(code));}
   });
 }
 
 /** JSON only. Consent binds config bytes; declared Node test entrypoints bind script bytes. No shell/build hooks. */
-export async function configuredValidator({root='.',configPath,approval}) {
+export async function configuredValidator({root='.',configPath,approval,ownedProcesses=false}) {
   const file=await readResource(root,configPath),config=parseJson(file.bytes);
   if(config.schemaVersion!==1||Object.keys(config).some(k=>!['schemaVersion','timeoutMs','unitTests','ui'].includes(k))||!Number.isInteger(config.timeoutMs)||config.timeoutMs<50||config.timeoutMs>120000||!Array.isArray(config.unitTests)||!config.unitTests.length||config.unitTests.length>16) throw new Error('Invalid validation configuration');
   for(const test of config.unitTests) {
@@ -42,7 +47,8 @@ export async function configuredValidator({root='.',configPath,approval}) {
     try {
       for(const test of config.unitTests){
         if((await readResource(root,test.path)).sha256!==test.sha256) throw new Error('Validation script changed');
-        const result=await unitTest(root,test.path,controller.signal);checks.push(result);
+        const result=await unitTest(root,test.path,controller.signal,ownedProcesses);checks.push(result);
+        if(result.processTreeCleaned===false)throw Object.assign(new Error('Repair unit process cleanup failed'),{code:'PROCESS_CLEANUP_FAILED',pid:result.ownedProcessId,check:result});
         if(!result.passed) return {passed:false,checks,configSha256:binding};
         if((await readResource(root,test.path)).sha256!==test.sha256) throw new Error('Validation script changed during execution');
       }

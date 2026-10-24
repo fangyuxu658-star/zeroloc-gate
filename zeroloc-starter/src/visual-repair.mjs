@@ -45,14 +45,14 @@ export async function applyCssCandidate({root,candidate,approve,verify}) {
     verification=await verify();
     if(verification?.passed!==true||(await readResource(root,candidate.path)).sha256!==candidate.resultSha256)throw new Error('Verification failed or resource changed');
     outcome={passed:true,applied:true,rolledBack:false,backup,journal,verification};
-  } catch {
+  } catch(error) {
     let rolledBack=false,rollbackConflict=false;
     if(applied)try {
       const saved=await readResource(root,backup);
       if(saved.sha256!==original.sha256)throw new Error('Backup changed');
       await atomicReplace(root,candidate.path,saved.bytes,candidate.resultSha256);rolledBack=true;
     }catch{rollbackConflict=true;}
-    outcome={passed:false,applied:applied&&!rolledBack,rolledBack,rollbackConflict,backup,journal,verification:verification??{passed:false,error:'VERIFIER_FAILED'},error:'CSS_VERIFICATION_FAILED'};
+    outcome={passed:false,applied:applied&&!rolledBack,rolledBack,rollbackConflict,backup,journal,verification:verification??{passed:false,error:error?.code==='PROCESS_CLEANUP_FAILED'?'PROCESS_CLEANUP_FAILED':'VERIFIER_FAILED',...(error?.check?{unitCheck:error.check}:{})},error:'CSS_VERIFICATION_FAILED',...(error?.code==='PROCESS_CLEANUP_FAILED'?{processCleanupFailed:true,ownedProcessId:error.pid}:{})};
   } finally {
     try{if((await readResource(root,lock)).sha256!==digest(lockBytes))throw new Error('Lock changed');await unlink(await guardedPath(root,lock));}
     catch{if(outcome){outcome.passed=false;outcome.lockCleanupFailed=true;}}

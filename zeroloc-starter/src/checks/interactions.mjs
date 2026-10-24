@@ -9,12 +9,19 @@ export async function probeInteractions(page,dom) {
     if(dom.controls.length>64||dom.scrolls.length>32)findings.push({code:'INTERACTION_COVERAGE_LIMIT',level:'error',category:'environment'});
     for(const control of dom.controls.slice(0,64)) {
       if(control.disabled){controls.push({...control,disabled:true});continue;}
-      let actionable=true;
-      try {await page.locator(control.selector).click({trial:true,timeout:1000});}
-      catch {actionable=false;findings.push({code:'CONTROL_NOT_ACTIONABLE',selector:control.selector,level:'error'});}
+      let actionable=true,failureReason;
+      // Permit browser cold-frame readiness, while requiring the same actual
+      // visibility/stability/hit-target conditions. Never force a click.
+      const actionTimeoutMs=3000;
+      try {await page.locator(control.selector).click({trial:true,timeout:actionTimeoutMs});}
+      catch(error) {
+        actionable=false;const message=String(error?.message??'');
+        failureReason=message.includes('intercepts pointer events')?'POINTER_INTERCEPTED':message.includes('not stable')?'ELEMENT_UNSTABLE':message.includes('not visible')?'ELEMENT_NOT_VISIBLE':message.includes('not enabled')?'ELEMENT_DISABLED':'ACTIONABILITY_UNVERIFIED';
+        findings.push({code:'CONTROL_NOT_ACTIONABLE',selector:control.selector,reason:failureReason,timeoutMs:actionTimeoutMs,level:'error'});
+      }
       const observation=await page.evaluate(inspectDOM,{focusSelector:control.selector});
       findings.push(...observation.findings);
-      controls.push({selector:control.selector,actionable,paintPassed:!observation.findings.length});
+      controls.push({selector:control.selector,actionable,paintPassed:!observation.findings.length,...(failureReason?{failureReason}:{})});
     }
     for(const region of dom.scrolls.slice(0,32)) {
       const locator=page.locator(region.selector);
