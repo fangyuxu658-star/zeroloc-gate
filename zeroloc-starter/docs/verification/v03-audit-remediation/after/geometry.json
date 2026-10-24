@@ -1,6 +1,6 @@
 {
   "baseline": false,
-  "node": "v25.2.0",
+  "node": "v24.22.0",
   "platform": "win32",
   "passed": true,
   "results": [
@@ -17,7 +17,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/nested",
+          "url": "http://127.0.0.1:58381/nested",
           "languageVerified": false,
           "screenshot": "chromium-en-375x812.png",
           "findings": [],
@@ -119,7 +119,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/nested",
+          "url": "http://127.0.0.1:58381/nested",
           "languageVerified": false,
           "screenshot": "chromium-en-1280x800.png",
           "findings": [],
@@ -221,7 +221,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/nested",
+          "url": "http://127.0.0.1:58381/nested",
           "languageVerified": false,
           "screenshot": "firefox-en-375x812.png",
           "findings": [],
@@ -323,7 +323,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/nested",
+          "url": "http://127.0.0.1:58381/nested",
           "languageVerified": false,
           "screenshot": "firefox-en-1280x800.png",
           "findings": [],
@@ -421,6 +421,422 @@
       ]
     },
     {
+      "name": "wrappedNested",
+      "expectedPassed": true,
+      "actualPassed": true,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:58381/wrappedNested",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 79.875,
+                "left": 8,
+                "top": 79.875,
+                "right": 158,
+                "bottom": 133.875,
+                "width": 150,
+                "height": 54
+              },
+              "text": "Visible nested text and a normal link which wraps across lines."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 57.265625,
+                "y": 79.875,
+                "left": 57.265625,
+                "top": 79.875,
+                "right": 130.578125,
+                "bottom": 96.875,
+                "width": 73.3125,
+                "height": 17
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 97.875,
+                "left": 8,
+                "top": 97.875,
+                "right": 136.421875,
+                "bottom": 132.875,
+                "width": 128.421875,
+                "height": 35
+              },
+              "text": "a normal link which wraps across lines"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 149.875,
+                "left": 8,
+                "top": 149.875,
+                "right": 77.359375,
+                "bottom": 170.875,
+                "width": 69.359375,
+                "height": 21
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              },
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:58381/wrappedNested",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 79.875,
+                "left": 8,
+                "top": 79.875,
+                "right": 158,
+                "bottom": 133.875,
+                "width": 150,
+                "height": 54
+              },
+              "text": "Visible nested text and a normal link which wraps across lines."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 57.265625,
+                "y": 79.875,
+                "left": 57.265625,
+                "top": 79.875,
+                "right": 130.578125,
+                "bottom": 96.875,
+                "width": 73.3125,
+                "height": 17
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 97.875,
+                "left": 8,
+                "top": 97.875,
+                "right": 136.421875,
+                "bottom": 132.875,
+                "width": 128.421875,
+                "height": 35
+              },
+              "text": "a normal link which wraps across lines"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 149.875,
+                "left": 8,
+                "top": 149.875,
+                "right": 77.359375,
+                "bottom": 170.875,
+                "width": 69.359375,
+                "height": 21
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              },
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:58381/wrappedNested",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 80.86666870117188,
+                "left": 8,
+                "top": 80.86666870117188,
+                "right": 158,
+                "bottom": 134.86666870117188,
+                "width": 150,
+                "height": 54
+              },
+              "text": "Visible nested text and a normal link which wraps across lines."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 57.28334045410156,
+                "y": 81.36666870117188,
+                "left": 57.28334045410156,
+                "top": 81.36666870117188,
+                "right": 130.61666870117188,
+                "bottom": 98.36666870117188,
+                "width": 73.33332824707031,
+                "height": 17
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 99.36666870117188,
+                "left": 8,
+                "top": 99.36666870117188,
+                "right": 136.43333435058594,
+                "bottom": 134.36666870117188,
+                "width": 128.43333435058594,
+                "height": 35
+              },
+              "text": "a normal link which wraps across lines"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 150.86666870117188,
+                "left": 8,
+                "top": 150.86666870117188,
+                "right": 72.06666564941406,
+                "bottom": 172.86666870117188,
+                "width": 64.06666564941406,
+                "height": 22
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              },
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:58381/wrappedNested",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 80.86666870117188,
+                "left": 8,
+                "top": 80.86666870117188,
+                "right": 158,
+                "bottom": 134.86666870117188,
+                "width": 150,
+                "height": 54
+              },
+              "text": "Visible nested text and a normal link which wraps across lines."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 57.28334045410156,
+                "y": 81.36666870117188,
+                "left": 57.28334045410156,
+                "top": 81.36666870117188,
+                "right": 130.61666870117188,
+                "bottom": 98.36666870117188,
+                "width": 73.33332824707031,
+                "height": 17
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 99.36666870117188,
+                "left": 8,
+                "top": 99.36666870117188,
+                "right": 136.43333435058594,
+                "bottom": 134.36666870117188,
+                "width": 128.43333435058594,
+                "height": 35
+              },
+              "text": "a normal link which wraps across lines"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 150.86666870117188,
+                "left": 8,
+                "top": 150.86666870117188,
+                "right": 72.06666564941406,
+                "bottom": 172.86666870117188,
+                "width": 64.06666564941406,
+                "height": 22
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              },
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        }
+      ]
+    },
+    {
       "name": "ancestor",
       "finding": "P1-01",
       "expectedPassed": false,
@@ -434,7 +850,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/ancestor",
+          "url": "http://127.0.0.1:58381/ancestor",
           "languageVerified": false,
           "screenshot": "chromium-en-375x812.png",
           "findings": [
@@ -554,7 +970,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/ancestor",
+          "url": "http://127.0.0.1:58381/ancestor",
           "languageVerified": false,
           "screenshot": "chromium-en-1280x800.png",
           "findings": [
@@ -674,7 +1090,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/ancestor",
+          "url": "http://127.0.0.1:58381/ancestor",
           "languageVerified": false,
           "screenshot": "firefox-en-375x812.png",
           "findings": [
@@ -794,7 +1210,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/ancestor",
+          "url": "http://127.0.0.1:58381/ancestor",
           "languageVerified": false,
           "screenshot": "firefox-en-1280x800.png",
           "findings": [
@@ -923,7 +1339,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/descendant",
+          "url": "http://127.0.0.1:58381/descendant",
           "languageVerified": false,
           "screenshot": "chromium-en-375x812.png",
           "findings": [
@@ -1023,7 +1439,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/descendant",
+          "url": "http://127.0.0.1:58381/descendant",
           "languageVerified": false,
           "screenshot": "chromium-en-1280x800.png",
           "findings": [
@@ -1123,7 +1539,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/descendant",
+          "url": "http://127.0.0.1:58381/descendant",
           "languageVerified": false,
           "screenshot": "firefox-en-375x812.png",
           "findings": [
@@ -1223,7 +1639,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/descendant",
+          "url": "http://127.0.0.1:58381/descendant",
           "languageVerified": false,
           "screenshot": "firefox-en-1280x800.png",
           "findings": [
@@ -1332,7 +1748,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/opaquePassive",
+          "url": "http://127.0.0.1:58381/opaquePassive",
           "languageVerified": false,
           "screenshot": "chromium-en-375x812.png",
           "findings": [
@@ -1451,7 +1867,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/opaquePassive",
+          "url": "http://127.0.0.1:58381/opaquePassive",
           "languageVerified": false,
           "screenshot": "chromium-en-1280x800.png",
           "findings": [
@@ -1570,7 +1986,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/opaquePassive",
+          "url": "http://127.0.0.1:58381/opaquePassive",
           "languageVerified": false,
           "screenshot": "firefox-en-375x812.png",
           "findings": [
@@ -1689,7 +2105,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/opaquePassive",
+          "url": "http://127.0.0.1:58381/opaquePassive",
           "languageVerified": false,
           "screenshot": "firefox-en-1280x800.png",
           "findings": [
@@ -1817,7 +2233,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/opaqueBlocking",
+          "url": "http://127.0.0.1:58381/opaqueBlocking",
           "languageVerified": false,
           "screenshot": "chromium-en-375x812.png",
           "findings": [
@@ -1946,7 +2362,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/opaqueBlocking",
+          "url": "http://127.0.0.1:58381/opaqueBlocking",
           "languageVerified": false,
           "screenshot": "chromium-en-1280x800.png",
           "findings": [
@@ -2075,7 +2491,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/opaqueBlocking",
+          "url": "http://127.0.0.1:58381/opaqueBlocking",
           "languageVerified": false,
           "screenshot": "firefox-en-375x812.png",
           "findings": [
@@ -2204,7 +2620,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/opaqueBlocking",
+          "url": "http://127.0.0.1:58381/opaqueBlocking",
           "languageVerified": false,
           "screenshot": "firefox-en-1280x800.png",
           "findings": [
@@ -2342,7 +2758,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/partial",
+          "url": "http://127.0.0.1:58381/partial",
           "languageVerified": false,
           "screenshot": "chromium-en-375x812.png",
           "findings": [
@@ -2459,7 +2875,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/partial",
+          "url": "http://127.0.0.1:58381/partial",
           "languageVerified": false,
           "screenshot": "chromium-en-1280x800.png",
           "findings": [
@@ -2576,7 +2992,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/partial",
+          "url": "http://127.0.0.1:58381/partial",
           "languageVerified": false,
           "screenshot": "firefox-en-375x812.png",
           "findings": [
@@ -2693,7 +3109,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/partial",
+          "url": "http://127.0.0.1:58381/partial",
           "languageVerified": false,
           "screenshot": "firefox-en-1280x800.png",
           "findings": [
@@ -2818,7 +3234,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/decoration",
+          "url": "http://127.0.0.1:58381/decoration",
           "languageVerified": false,
           "screenshot": "chromium-en-375x812.png",
           "findings": [],
@@ -2875,7 +3291,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/decoration",
+          "url": "http://127.0.0.1:58381/decoration",
           "languageVerified": false,
           "screenshot": "chromium-en-1280x800.png",
           "findings": [],
@@ -2932,7 +3348,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/decoration",
+          "url": "http://127.0.0.1:58381/decoration",
           "languageVerified": false,
           "screenshot": "firefox-en-375x812.png",
           "findings": [],
@@ -2989,7 +3405,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/decoration",
+          "url": "http://127.0.0.1:58381/decoration",
           "languageVerified": false,
           "screenshot": "firefox-en-1280x800.png",
           "findings": [],
@@ -3055,7 +3471,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/transparentAncestor",
+          "url": "http://127.0.0.1:58381/transparentAncestor",
           "languageVerified": false,
           "screenshot": "chromium-en-375x812.png",
           "findings": [],
@@ -3090,7 +3506,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/transparentAncestor",
+          "url": "http://127.0.0.1:58381/transparentAncestor",
           "languageVerified": false,
           "screenshot": "chromium-en-1280x800.png",
           "findings": [],
@@ -3125,7 +3541,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/transparentAncestor",
+          "url": "http://127.0.0.1:58381/transparentAncestor",
           "languageVerified": false,
           "screenshot": "firefox-en-375x812.png",
           "findings": [],
@@ -3160,7 +3576,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/transparentAncestor",
+          "url": "http://127.0.0.1:58381/transparentAncestor",
           "languageVerified": false,
           "screenshot": "firefox-en-1280x800.png",
           "findings": [],
@@ -3203,7 +3619,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/displayHidden",
+          "url": "http://127.0.0.1:58381/displayHidden",
           "languageVerified": false,
           "screenshot": "chromium-en-375x812.png",
           "findings": [],
@@ -3238,7 +3654,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/displayHidden",
+          "url": "http://127.0.0.1:58381/displayHidden",
           "languageVerified": false,
           "screenshot": "chromium-en-1280x800.png",
           "findings": [],
@@ -3273,7 +3689,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/displayHidden",
+          "url": "http://127.0.0.1:58381/displayHidden",
           "languageVerified": false,
           "screenshot": "firefox-en-375x812.png",
           "findings": [],
@@ -3308,7 +3724,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/displayHidden",
+          "url": "http://127.0.0.1:58381/displayHidden",
           "languageVerified": false,
           "screenshot": "firefox-en-1280x800.png",
           "findings": [],
@@ -3351,7 +3767,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/visibilityHidden",
+          "url": "http://127.0.0.1:58381/visibilityHidden",
           "languageVerified": false,
           "screenshot": "chromium-en-375x812.png",
           "findings": [],
@@ -3386,7 +3802,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/visibilityHidden",
+          "url": "http://127.0.0.1:58381/visibilityHidden",
           "languageVerified": false,
           "screenshot": "chromium-en-1280x800.png",
           "findings": [],
@@ -3421,7 +3837,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/visibilityHidden",
+          "url": "http://127.0.0.1:58381/visibilityHidden",
           "languageVerified": false,
           "screenshot": "firefox-en-375x812.png",
           "findings": [],
@@ -3456,7 +3872,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/visibilityHidden",
+          "url": "http://127.0.0.1:58381/visibilityHidden",
           "languageVerified": false,
           "screenshot": "firefox-en-1280x800.png",
           "findings": [],
@@ -3500,7 +3916,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/visibleOverride",
+          "url": "http://127.0.0.1:58381/visibleOverride",
           "languageVerified": false,
           "screenshot": "chromium-en-375x812.png",
           "findings": [
@@ -3604,7 +4020,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/visibleOverride",
+          "url": "http://127.0.0.1:58381/visibleOverride",
           "languageVerified": false,
           "screenshot": "chromium-en-1280x800.png",
           "findings": [
@@ -3708,7 +4124,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/visibleOverride",
+          "url": "http://127.0.0.1:58381/visibleOverride",
           "languageVerified": false,
           "screenshot": "firefox-en-375x812.png",
           "findings": [
@@ -3812,7 +4228,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/visibleOverride",
+          "url": "http://127.0.0.1:58381/visibleOverride",
           "languageVerified": false,
           "screenshot": "firefox-en-1280x800.png",
           "findings": [
@@ -3925,7 +4341,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/legalScroll",
+          "url": "http://127.0.0.1:58381/legalScroll",
           "languageVerified": false,
           "screenshot": "chromium-en-375x812.png",
           "findings": [],
@@ -4035,7 +4451,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/legalScroll",
+          "url": "http://127.0.0.1:58381/legalScroll",
           "languageVerified": false,
           "screenshot": "chromium-en-1280x800.png",
           "findings": [],
@@ -4145,7 +4561,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/legalScroll",
+          "url": "http://127.0.0.1:58381/legalScroll",
           "languageVerified": false,
           "screenshot": "firefox-en-375x812.png",
           "findings": [],
@@ -4255,7 +4671,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/legalScroll",
+          "url": "http://127.0.0.1:58381/legalScroll",
           "languageVerified": false,
           "screenshot": "firefox-en-1280x800.png",
           "findings": [],
@@ -4374,7 +4790,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/transparentBlocking",
+          "url": "http://127.0.0.1:58381/transparentBlocking",
           "languageVerified": false,
           "screenshot": "chromium-en-375x812.png",
           "findings": [
@@ -4441,7 +4857,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/transparentBlocking",
+          "url": "http://127.0.0.1:58381/transparentBlocking",
           "languageVerified": false,
           "screenshot": "chromium-en-1280x800.png",
           "findings": [
@@ -4508,7 +4924,7 @@
             "width": 375,
             "height": 812
           },
-          "url": "http://127.0.0.1:56129/transparentBlocking",
+          "url": "http://127.0.0.1:58381/transparentBlocking",
           "languageVerified": false,
           "screenshot": "firefox-en-375x812.png",
           "findings": [
@@ -4575,7 +4991,7 @@
             "width": 1280,
             "height": 800
           },
-          "url": "http://127.0.0.1:56129/transparentBlocking",
+          "url": "http://127.0.0.1:58381/transparentBlocking",
           "languageVerified": false,
           "screenshot": "firefox-en-1280x800.png",
           "findings": [

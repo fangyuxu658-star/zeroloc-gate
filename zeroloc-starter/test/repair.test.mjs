@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, writeFile, readFile } from 'node:fs/promises';
+import { mkdtemp, writeFile, readFile, realpath } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { cssCandidates, applyCssCandidate, recoverCssRepair } from '../src/visual-repair.mjs';
@@ -101,6 +101,13 @@ test('repair config rejects scope escape, reduced coverage, executable hooks and
     const {root,config}=await project();mutate(config);await writeFile(join(root,'repair.json'),JSON.stringify(config));
     await assert.rejects(planRepair({root,configPath:'repair.json'}));
   }
+});
+
+test('isolated execution uses canonical filesystem paths even when its real adapter fails',async()=>{
+  const {root}=await project(),options={root,configPath:'repair.json'},plan=await planRepair(options);
+  const report=await runRepair({...options,run:true,approve:plan.planId,allowExecution:plan.executionId});
+  assert.equal(report.passed,false);assert.equal(report.copy,await realpath(report.copy));assert.equal(report.output,await realpath(report.output));
+  assert.ok(report.stopReason);assert.deepEqual(report.integrityIssues,[]);
 });
 test('unverified or failed repair can never produce a draft delivery manifest',async()=>{
   for(const report of [{},{type:'repair-run',passed:false},{type:'repair-run',passed:true,stage:'Review',unit:{passed:false},after:{passed:true}}])await assert.rejects(reviewRepair({report,approve:'fake'}));

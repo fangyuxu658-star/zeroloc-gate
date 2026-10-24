@@ -89,7 +89,9 @@ export async function runRepair({root='.',configPath,run=false,approve,allowExec
   const plan=await planRepair({root,configPath});if(!run)return plan;
   if(approve!==plan.planId||allowExecution!==plan.executionId)throw new Error('Exact repair plan and trusted execution approvals required');
   root=await realpath(root);
-  const directory=await mkdtemp(join(tmpdir(),'zeroloc-repair-')),copy=join(directory,'project'),output=join(directory,'evidence');
+  // Windows runners can expose TEMP through an 8.3 alias. Canonicalize before
+  // giving framework servers their root; real-path files must share that root.
+  const directory=await realpath(await mkdtemp(join(tmpdir(),'zeroloc-repair-'))),copy=join(directory,'project'),output=join(directory,'evidence');
   await mkdir(copy,{recursive:true});await mkdir(dirname(output),{recursive:true});await mkdir(output);
   for(const file of plan.files) {
     const current=await readResource(root,file.path);if(current.sha256!==file.sha256)throw new Error('Input changed after approval');
@@ -135,7 +137,7 @@ export async function runRepair({root='.',configPath,run=false,approve,allowExec
     if(!report.passed)report.stopReason??='UNRESOLVED_DEFECTS';
     event('Verify',report.passed?'passed':'blocked');
     if(report.passed){event('Review','required');report.reviewId=hash({planId:plan.planId,patches:report.patches,unit:report.unit,before:report.before,after:report.after});}
-  }catch(error){report.passed=false;report.stopReason=error?.code==='PROCESS_CLEANUP_FAILED'?'PROCESS_CLEANUP_FAILED':controller.signal.aborted?'DEADLINE_EXCEEDED':'EXECUTION_FAILED';if(error?.code==='PROCESS_CLEANUP_FAILED'){report.ownedProcessMayStillBeRunning=true;report.ownedProcessId=error.pid;}event(report.stage,'blocked');}
+  }catch(error){await writeFile(join(output,'execution.private.log'),String(error?.stack??error).slice(0,16384),{mode:0o600});report.passed=false;report.stopReason=error?.code==='PROCESS_CLEANUP_FAILED'?'PROCESS_CLEANUP_FAILED':controller.signal.aborted?'DEADLINE_EXCEEDED':'EXECUTION_FAILED';if(error?.code==='PROCESS_CLEANUP_FAILED'){report.ownedProcessMayStillBeRunning=true;report.ownedProcessId=error.pid;}event(report.stage,'blocked');}
   finally {
     clearTimeout(timer);
     report.integrityIssues=[];

@@ -1,5 +1,6 @@
 export const auditFixtures={
   nested:{html:'<p>Visible original <strong>nested text</strong> and <a href="#">a normal link</a>.</p><button>Continue</button>',bad:false},
+  wrappedNested:{html:'<p style="width:150px">Visible <strong>nested text</strong> and <a href="#">a normal link which wraps across lines</a>.</p><button>Continue</button>',bad:false},
   ancestor:{html:'<p style="position:relative;font-size:24px">Visible original text<span style="position:absolute;left:0;top:0;background:white">Covering child text</span></p>',bad:true,finding:'P1-01'},
   descendant:{html:'<p style="position:relative;font-size:24px"><span style="position:absolute;left:0;top:0">Covered child text</span>Covering parent text</p>',bad:true,finding:'P1-01'},
   opaquePassive:{html:'<button id="target" style="position:absolute;top:100px;width:180px;height:50px">Continue</button><div style="position:absolute;left:0;top:95px;width:220px;height:70px;background:white;pointer-events:none"></div>',bad:true,finding:'P1-02'},

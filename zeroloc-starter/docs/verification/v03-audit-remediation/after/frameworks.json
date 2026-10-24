@@ -1,5 +1,5 @@
 {
-  "node": "v25.2.0",
+  "node": "v24.22.0",
   "platform": "win32",
   "passed": true,
   "results": [
@@ -76,6 +76,75 @@
       "id": "react",
       "browser": "chromium",
       "width": 375,
+      "name": "wrappedNested",
+      "expectedDefect": false,
+      "detected": false,
+      "findings": [],
+      "english": [],
+      "pagePassed": true,
+      "pageFindings": [],
+      "englishPageFindings": [],
+      "interactions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [],
+        "findings": [],
+        "complete": true
+      },
+      "englishInteractions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [],
+        "findings": [],
+        "complete": true
+      },
+      "actualClick": null,
+      "languageRoundtrip": true
+    },
+    {
+      "id": "react",
+      "browser": "chromium",
+      "width": 375,
       "name": "ancestor",
       "expectedDefect": true,
       "detected": true,
@@ -2043,6 +2112,75 @@
       "id": "react",
       "browser": "chromium",
       "width": 1280,
+      "name": "wrappedNested",
+      "expectedDefect": false,
+      "detected": false,
+      "findings": [],
+      "english": [],
+      "pagePassed": true,
+      "pageFindings": [],
+      "englishPageFindings": [],
+      "interactions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [],
+        "findings": [],
+        "complete": true
+      },
+      "englishInteractions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [],
+        "findings": [],
+        "complete": true
+      },
+      "actualClick": null,
+      "languageRoundtrip": true
+    },
+    {
+      "id": "react",
+      "browser": "chromium",
+      "width": 1280,
       "name": "ancestor",
       "expectedDefect": true,
       "detected": true,
@@ -4010,6 +4148,75 @@
       "id": "react",
       "browser": "firefox",
       "width": 375,
+      "name": "wrappedNested",
+      "expectedDefect": false,
+      "detected": false,
+      "findings": [],
+      "english": [],
+      "pagePassed": true,
+      "pageFindings": [],
+      "englishPageFindings": [],
+      "interactions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [],
+        "findings": [],
+        "complete": true
+      },
+      "englishInteractions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [],
+        "findings": [],
+        "complete": true
+      },
+      "actualClick": null,
+      "languageRoundtrip": true
+    },
+    {
+      "id": "react",
+      "browser": "firefox",
+      "width": 375,
       "name": "ancestor",
       "expectedDefect": true,
       "detected": true,
@@ -5971,6 +6178,75 @@
         "complete": true
       },
       "actualClick": true,
+      "languageRoundtrip": true
+    },
+    {
+      "id": "react",
+      "browser": "firefox",
+      "width": 1280,
+      "name": "wrappedNested",
+      "expectedDefect": false,
+      "detected": false,
+      "findings": [],
+      "english": [],
+      "pagePassed": true,
+      "pageFindings": [],
+      "englishPageFindings": [],
+      "interactions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [],
+        "findings": [],
+        "complete": true
+      },
+      "englishInteractions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [],
+        "findings": [],
+        "complete": true
+      },
+      "actualClick": null,
       "languageRoundtrip": true
     },
     {
@@ -8016,6 +8292,153 @@
         "complete": true
       },
       "actualClick": true,
+      "languageRoundtrip": true
+    },
+    {
+      "id": "next",
+      "browser": "chromium",
+      "width": 375,
+      "name": "wrappedNested",
+      "expectedDefect": false,
+      "detected": false,
+      "findings": [],
+      "english": [],
+      "pagePassed": false,
+      "pageFindings": [
+        {
+          "code": "PAGE_OVERFLOW",
+          "selector": "html",
+          "level": "error"
+        }
+      ],
+      "englishPageFindings": [
+        {
+          "code": "PAGE_OVERFLOW",
+          "selector": "html",
+          "level": "error"
+        }
+      ],
+      "interactions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [
+          {
+            "selector": "body",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "scrollHeight": 812,
+            "scrollWidth": 375,
+            "clientHeight": 812,
+            "clientWidth": 359,
+            "scrollTop": 0,
+            "scrollLeft": 0,
+            "axes": {
+              "y": {
+                "range": 0,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              },
+              "x": {
+                "range": 16,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              }
+            },
+            "restored": true
+          }
+        ],
+        "findings": [],
+        "complete": true
+      },
+      "englishInteractions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [
+          {
+            "selector": "body",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "scrollHeight": 812,
+            "scrollWidth": 375,
+            "clientHeight": 812,
+            "clientWidth": 359,
+            "scrollTop": 0,
+            "scrollLeft": 0,
+            "axes": {
+              "y": {
+                "range": 0,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              },
+              "x": {
+                "range": 16,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              }
+            },
+            "restored": true
+          }
+        ],
+        "findings": [],
+        "complete": true
+      },
+      "actualClick": null,
       "languageRoundtrip": true
     },
     {
@@ -10981,6 +11404,153 @@
         "complete": true
       },
       "actualClick": true,
+      "languageRoundtrip": true
+    },
+    {
+      "id": "next",
+      "browser": "chromium",
+      "width": 1280,
+      "name": "wrappedNested",
+      "expectedDefect": false,
+      "detected": false,
+      "findings": [],
+      "english": [],
+      "pagePassed": false,
+      "pageFindings": [
+        {
+          "code": "PAGE_OVERFLOW",
+          "selector": "html",
+          "level": "error"
+        }
+      ],
+      "englishPageFindings": [
+        {
+          "code": "PAGE_OVERFLOW",
+          "selector": "html",
+          "level": "error"
+        }
+      ],
+      "interactions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [
+          {
+            "selector": "body",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "scrollHeight": 812,
+            "scrollWidth": 1280,
+            "clientHeight": 812,
+            "clientWidth": 1264,
+            "scrollTop": 0,
+            "scrollLeft": 0,
+            "axes": {
+              "y": {
+                "range": 0,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              },
+              "x": {
+                "range": 16,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              }
+            },
+            "restored": true
+          }
+        ],
+        "findings": [],
+        "complete": true
+      },
+      "englishInteractions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [
+          {
+            "selector": "body",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "scrollHeight": 812,
+            "scrollWidth": 1280,
+            "clientHeight": 812,
+            "clientWidth": 1264,
+            "scrollTop": 0,
+            "scrollLeft": 0,
+            "axes": {
+              "y": {
+                "range": 0,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              },
+              "x": {
+                "range": 16,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              }
+            },
+            "restored": true
+          }
+        ],
+        "findings": [],
+        "complete": true
+      },
+      "actualClick": null,
       "languageRoundtrip": true
     },
     {
@@ -13952,6 +14522,153 @@
       "id": "next",
       "browser": "firefox",
       "width": 375,
+      "name": "wrappedNested",
+      "expectedDefect": false,
+      "detected": false,
+      "findings": [],
+      "english": [],
+      "pagePassed": false,
+      "pageFindings": [
+        {
+          "code": "PAGE_OVERFLOW",
+          "selector": "html",
+          "level": "error"
+        }
+      ],
+      "englishPageFindings": [
+        {
+          "code": "PAGE_OVERFLOW",
+          "selector": "html",
+          "level": "error"
+        }
+      ],
+      "interactions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [
+          {
+            "selector": "body",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "scrollHeight": 812,
+            "scrollWidth": 375,
+            "clientHeight": 812,
+            "clientWidth": 359,
+            "scrollTop": 0,
+            "scrollLeft": 0,
+            "axes": {
+              "y": {
+                "range": 0,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              },
+              "x": {
+                "range": 16,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              }
+            },
+            "restored": true
+          }
+        ],
+        "findings": [],
+        "complete": true
+      },
+      "englishInteractions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [
+          {
+            "selector": "body",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "scrollHeight": 812,
+            "scrollWidth": 375,
+            "clientHeight": 812,
+            "clientWidth": 359,
+            "scrollTop": 0,
+            "scrollLeft": 0,
+            "axes": {
+              "y": {
+                "range": 0,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              },
+              "x": {
+                "range": 16,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              }
+            },
+            "restored": true
+          }
+        ],
+        "findings": [],
+        "complete": true
+      },
+      "actualClick": null,
+      "languageRoundtrip": true
+    },
+    {
+      "id": "next",
+      "browser": "firefox",
+      "width": 375,
       "name": "ancestor",
       "expectedDefect": true,
       "detected": true,
@@ -16911,6 +17628,153 @@
         "complete": true
       },
       "actualClick": true,
+      "languageRoundtrip": true
+    },
+    {
+      "id": "next",
+      "browser": "firefox",
+      "width": 1280,
+      "name": "wrappedNested",
+      "expectedDefect": false,
+      "detected": false,
+      "findings": [],
+      "english": [],
+      "pagePassed": false,
+      "pageFindings": [
+        {
+          "code": "PAGE_OVERFLOW",
+          "selector": "html",
+          "level": "error"
+        }
+      ],
+      "englishPageFindings": [
+        {
+          "code": "PAGE_OVERFLOW",
+          "selector": "html",
+          "level": "error"
+        }
+      ],
+      "interactions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [
+          {
+            "selector": "body",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "scrollHeight": 812,
+            "scrollWidth": 1280,
+            "clientHeight": 812,
+            "clientWidth": 1264,
+            "scrollTop": 0,
+            "scrollLeft": 0,
+            "axes": {
+              "y": {
+                "range": 0,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              },
+              "x": {
+                "range": 16,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              }
+            },
+            "restored": true
+          }
+        ],
+        "findings": [],
+        "complete": true
+      },
+      "englishInteractions": {
+        "controls": [
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > button:nth-of-type(2)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          },
+          {
+            "selector": "body > div:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > button:nth-of-type(1)",
+            "actionable": true,
+            "paintPassed": true
+          }
+        ],
+        "scrolls": [
+          {
+            "selector": "body",
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "scrollHeight": 812,
+            "scrollWidth": 1280,
+            "clientHeight": 812,
+            "clientWidth": 1264,
+            "scrollTop": 0,
+            "scrollLeft": 0,
+            "axes": {
+              "y": {
+                "range": 0,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              },
+              "x": {
+                "range": 16,
+                "initial": 0,
+                "programmatic": false,
+                "programmaticPosition": 0,
+                "wheel": false,
+                "wheelBefore": 0,
+                "wheelAfter": 0
+              }
+            },
+            "restored": true
+          }
+        ],
+        "findings": [],
+        "complete": true
+      },
+      "actualClick": null,
       "languageRoundtrip": true
     },
     {

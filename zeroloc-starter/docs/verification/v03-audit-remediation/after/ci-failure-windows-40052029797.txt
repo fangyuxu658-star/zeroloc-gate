@@ -1,0 +1,25 @@
+##[group]Run npm run test:repair -- --react-root artifacts/repair-upstream/react --next-root artifacts/repair-upstream/next
+2026-10-24T02:03:41.7199752Z [36;1mnpm run test:repair -- --react-root artifacts/repair-upstream/react --next-root artifacts/repair-upstream/next[0m
+2026-10-24T02:03:41.7251130Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-24T02:03:41.7251389Z ##[endgroup]
+2026-10-24T02:03:42.2128984Z
+2026-10-24T02:03:42.2129548Z > zeroloc-gate@0.3.0-dev.0 test:repair
+2026-10-24T02:03:42.2130078Z > node qa/repair-real-apps.mjs --react-root artifacts/repair-upstream/react --next-root artifacts/repair-upstream/next
+2026-10-24T02:03:42.2130386Z
+2026-10-24T02:03:43.7353032Z node:internal/modules/run_main:107
+2026-10-24T02:03:43.7354514Z     triggerUncaughtException(
+2026-10-24T02:03:43.7354804Z     ^
+2026-10-24T02:03:43.7354914Z
+2026-10-24T02:03:43.7355524Z AssertionError [ERR_ASSERTION]: Catch the previously missed real mobile button/body overlap
+2026-10-24T02:03:43.7356212Z     at file:///D:/a/zeroloc-gate/zeroloc-gate/zeroloc-starter/qa/repair-real-apps.mjs:84:12 {
+2026-10-24T02:03:43.7356506Z   generatedMessage: false,
+2026-10-24T02:03:43.7356686Z   code: 'ERR_ASSERTION',
+2026-10-24T02:03:43.7356856Z   actual: undefined,
+2026-10-24T02:03:43.7357016Z   expected: true,
+2026-10-24T02:03:43.7357169Z   operator: '==',
+2026-10-24T02:03:43.7357311Z   diff: 'simple'
+2026-10-24T02:03:43.7357429Z }
+2026-10-24T02:03:43.7357492Z
+2026-10-24T02:03:43.7357537Z Node.js v24.22.1
+2026-10-24T02:03:43.8015241Z ##[error]Process completed with exit code 1.
+2026-10-24T02:03:43.8202828Z

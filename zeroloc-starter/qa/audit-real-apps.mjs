@@ -41,9 +41,11 @@ for(const id of ['react','next']) {
      await page.getByRole('heading',{name:'Hello Ada',exact:true}).waitFor();
      await page.locator('#audit-de').click();await page.getByRole('heading',{name:'Hallo Ada',exact:true}).waitFor();
      const dom=await page.evaluate(inspectDOM),interactions=await probeInteractions(page,dom);
+     if(name==='legalScroll')assert.ok(interactions.scrolls.some(r=>r.axes.y.range>2&&r.axes.y.programmatic&&r.axes.y.wheel&&r.restored),'Framework region must actually scroll and restore its position');
      // Preserve and report the FULL page gate, including inherited upstream
      // Next overflow. Separately assert the controlled section's exact oracle.
      const fixtureDom=await page.evaluate(inspectDOM,{focusSelector:'main > section'}),findings=[...fixtureDom.findings,...interactions.findings];
+     if(name==='wrappedNested')assert.ok(fixtureDom.layout.some(entry=>entry.text==='a normal link which wraps across lines'&&entry.box.height>25),'Actual framework link must wrap');
      const directory=join(output,id,browserName,String(width),name);await mkdir(directory,{recursive:true});
      await page.screenshot({path:join(directory,'before.png'),fullPage:true});
      let actualClick=null;
@@ -55,6 +57,7 @@ for(const id of ['react','next']) {
      await page.locator('#audit-en').click();await page.getByRole('heading',{name:'Hello Ada',exact:true}).waitFor();
      const english=await page.evaluate(inspectDOM,{focusSelector:'main > section'}),englishPage=await page.evaluate(inspectDOM);
      const englishInteractions=await probeInteractions(page,englishPage);english.findings.push(...englishInteractions.findings);
+     if(name==='legalScroll')assert.ok(englishInteractions.scrolls.some(r=>r.axes.y.range>2&&r.axes.y.programmatic&&r.axes.y.wheel&&r.restored),'English region must preserve actual scrolling');
      await page.screenshot({path:join(directory,'after-language-roundtrip.png'),fullPage:true});
      const pageFindings=[...dom.findings,...interactions.findings];
      const result={id,browser:browserName,width,name,expectedDefect:fixture.bad,detected:findings.length>0,findings,english:english.findings,pagePassed:!pageFindings.length,pageFindings,englishPageFindings:[...englishPage.findings,...englishInteractions.findings],interactions,englishInteractions,actualClick,languageRoundtrip:true};

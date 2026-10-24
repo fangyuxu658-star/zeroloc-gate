@@ -80,6 +80,14 @@
     "sha256": "fca3492bcc4321bb8f1ab1b05621e4a05258e6d4c5364dfd9fcd6dc7b597d9c5"
   },
   {
+    "path": "after/wrappedNested-chromium.png",
+    "sha256": "14a7b44fda38ee339097759ffcfa590d540d1e1e9adc0cb3d8dd4a41e31de4c2"
+  },
+  {
+    "path": "after/wrappedNested-firefox.png",
+    "sha256": "87259e6054cc743e5735272ad0ae6b4743e70bfa8335a9af3e0470117cfe9113"
+  },
+  {
     "path": "after/shared-class-before-chromium.png",
     "sha256": "912ec2e6107574cb04515b587ef1fdc59438c4b8124737937433ed360a0614e7"
   },
@@ -221,7 +229,7 @@
   },
   {
     "path": "after/next-opaqueBlocking-after-language-roundtrip-chromium.png",
-    "sha256": "0a95a2706ffbaa12e8ff40895d91c282681a1727a90357d7dc9f984a8931d4f3"
+    "sha256": "7d194f88c6d65014502887683867177c46e659e13882a1e29bb2962cec4af6f5"
   },
   {
     "path": "after/next-decoration-before-chromium.png",
@@ -237,7 +245,7 @@
   },
   {
     "path": "after/next-transparentAncestor-after-language-roundtrip-chromium.png",
-    "sha256": "f6644c6c4e5bb7441994c567c5eec8108091ad937e7c9d3e766da01f13046af4"
+    "sha256": "b08bd91d33200a5820e5823f55485c30591ecad087f64caedc98af443945aaa4"
   },
   {
     "path": "after/next-legalScroll-before-chromium.png",
@@ -245,7 +253,7 @@
   },
   {
     "path": "after/next-legalScroll-after-language-roundtrip-chromium.png",
-    "sha256": "9373f0b00c48cc347964fe14acf5554fe809280b11f164728666a5f936343cb1"
+    "sha256": "10f2860fd978a78dba5b45d664661464d40da9a2cd7621571ed99c9175b1e0ad"
   },
   {
     "path": "after/next-ancestor-before-firefox.png",

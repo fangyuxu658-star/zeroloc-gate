@@ -1,0 +1,27 @@
+##[group]Run node qa/audit-visual.mjs
+2026-10-24T01:57:48.6361420Z [36;1mnode qa/audit-visual.mjs[0m
+2026-10-24T01:57:48.6361688Z [36;1mnode qa/audit-scroll.mjs[0m
+2026-10-24T01:57:48.6361983Z [36;1mnode qa/audit-scroll.mjs --shared-class[0m
+2026-10-24T01:57:48.6423612Z shell: /usr/bin/bash -e {0}
+2026-10-24T01:57:48.6423884Z ##[endgroup]
+2026-10-24T01:59:06.0576699Z {"baseline":false,"correct":["ancestor","descendant","opaquePassive","opaqueBlocking","partial","decoration","transparentAncestor","displayHidden","visibilityHidden","visibleOverride","legalScroll","transparentBlocking"],"incorrect":["nested"],"output":"/home/runner/work/zeroloc-gate/zeroloc-gate/zeroloc-starter/artifacts/audit-remediation/after"}
+2026-10-24T01:59:06.0607976Z node:internal/modules/run_main:123
+2026-10-24T01:59:06.0608584Z     triggerUncaughtException(
+2026-10-24T01:59:06.0608861Z     ^
+2026-10-24T01:59:06.0609062Z
+2026-10-24T01:59:06.0617823Z AssertionError [ERR_ASSERTION]: [{"name":"nested","findings":[[],[],[{"code":"DOM_OVERLAP","selector":"body > main:nth-of-type(1) > p:nth-of-type(1)","other":"body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)","box":{"x":8,"y":82.86666870117188,"left":8,"top":82.86666870117188,"right":135.43333435058594,"bottom":101.86666870117188,"width":127.43333435058594,"height":19},"otherBox":{"x":8,"y":82.86666870117188,"left":8,"top":82.86666870117188,"right":347.316650390625,"bottom":120.86666870117188,"width":339.316650390625,"height":38},"intersection":{"width":127.43333435058594,"height":19},"kinds":["text","control"],"level":"error"},{"code":"DOM_OVERLAP","selector":"body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)","other":"body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)","box":{"x":135.43333435058594,"y":81.86666870117188,"left":135.43333435058594,"top":81.86666870117188,"right":235.0500030517578,"bottom":101.86666870117188,"width":99.61666870117188,"height":20},"otherBox":{"x":8,"y":82.86666870117188,"left":8,"top":82.86666870117188,"right":347.316650390625,"bottom":120.86666870117188,"width":339.316650390625,"height":38},"intersection":{"width":99.61666870117188,"height":19},"kinds":["text","control"],"level":"error"}],[]]}]
+2026-10-24T01:59:06.0624603Z
+2026-10-24T01:59:06.0624777Z false !== true
+2026-10-24T01:59:06.0624972Z
+2026-10-24T01:59:06.0625564Z     at file:///home/runner/work/zeroloc-gate/zeroloc-gate/zeroloc-starter/qa/audit-visual.mjs:21:23 {
+2026-10-24T01:59:06.0626394Z   generatedMessage: false,
+2026-10-24T01:59:06.0626803Z   code: 'ERR_ASSERTION',
+2026-10-24T01:59:06.0627345Z   actual: false,
+2026-10-24T01:59:06.0627660Z   expected: true,
+2026-10-24T01:59:06.0628010Z   operator: 'strictEqual',
+2026-10-24T01:59:06.0628387Z   diff: 'simple'
+2026-10-24T01:59:06.0628690Z }
+2026-10-24T01:59:06.0628861Z
+2026-10-24T01:59:06.0628995Z Node.js v22.23.3
+2026-10-24T01:59:06.0763835Z ##[error]Process completed with exit code 1.
+2026-10-24T01:59:06.0888715Z

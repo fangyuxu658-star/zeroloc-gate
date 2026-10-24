@@ -14,6 +14,7 @@ try {
     const result=await visualQA({url:`http://127.0.0.1:${server.address().port}/${name}`,exactUrl:true,browsers:['chromium','firefox'],locales:['en'],viewports:[{width:375,height:812},{width:1280,height:800}],outputDir:join(output,name)});
     results.push({name,finding:fixture.finding,expectedPassed:!fixture.bad,actualPassed:result.passed,correct:result.passed===!fixture.bad,runs:result.runs});
     if(!baseline)for(const run of result.runs)for(const code of fixture.expectedCodes??[])assert.ok(run.findings.some(f=>f.code===code),`${name}/${run.browser}/${run.viewport.width}: missing ${code}`);
+    if(name==='wrappedNested')for(const run of result.runs)assert.ok(run.layout.some(entry=>entry.text==='a normal link which wraps across lines'&&entry.box.height>25),'The negative link must actually wrap across lines');
   }
   const summary={baseline,node:process.version,platform:process.platform,passed:results.every(r=>r.correct),results};
   await writeFile(join(output,'summary.json'),JSON.stringify(summary,null,2)+'\n');

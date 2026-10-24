@@ -14,7 +14,7 @@ for(const stage of ['before','after']) {
  const scroll=await read(`artifacts/audit-remediation/${stage}/scroll-oracle.json`);
  await json(`${stage}/scroll.json`,{baseline:scroll.baseline,reportPassed:scroll.reportPassed,readyForDraft:scroll.delivery?.readyForDraft??false,results:scroll.results,patches:scroll.patches});
  for(const browser of ['chromium','firefox'])for(const side of ['before','after'])await image(`${stage}/scroll-${side}-${browser}.png`,`artifacts/audit-remediation/${stage}/scroll-${side}-${browser}.png`);
- for(const name of ['ancestor','opaquePassive','transparentAncestor'])for(const browser of ['chromium','firefox'])await image(`${stage}/${name}-${browser}.png`,`artifacts/audit-remediation/${stage}/${name}/${browser}-en-375x812.png`);
+ for(const name of ['ancestor','opaquePassive','transparentAncestor',...(stage==='after'?['wrappedNested']:[])])for(const browser of ['chromium','firefox'])await image(`${stage}/${name}-${browser}.png`,`artifacts/audit-remediation/${stage}/${name}/${browser}-en-375x812.png`);
 }
 for(const version of ['22.23.3','24.22.0']) {
  await json(`before/process-v${version}.json`,await read(`artifacts/audit-remediation/before/process-v${version}.json`));

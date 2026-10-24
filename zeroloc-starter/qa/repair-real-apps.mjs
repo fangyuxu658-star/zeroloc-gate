@@ -75,6 +75,9 @@ for(const [id,upstream] of Object.entries(roots)) {
   const reportFile=`${id}-${scenario}-report.json`;
   await writeFile(join(output,reportFile),jsonBytes(report));
   assert.deepEqual(await readFile(join(root,css)),original,'Original files must remain unchanged');
+  // Only this maintainer-owned CI fixture surfaces private startup logs.
+  // Production reports and exported delivery metadata remain redacted.
+  if(scenario!=='timeout'&&!report.before){const diagnostic=await Promise.all(['execution.private.log','before/adapter.private.log'].map(p=>readFile(join(report.output,p),'utf8').catch(()=>'')));assert.fail(`Initial real capture blocked: ${report.stopReason}\n${diagnostic.join('\n').slice(0,20000)}`);}
   if(scenario!=='normal') {
     assert.equal(report.passed,false);await assert.rejects(reviewRepair({root,report,approve:'fake'}));
     if(scenario==='unit-failure'){assert.ok(report.attempts.some(a=>a.rolledBack));assert.ok(report.attempts.length<=config.maxAttempts);assert.equal(await readFile(join(report.copy,css),'utf8'),original.toString());}

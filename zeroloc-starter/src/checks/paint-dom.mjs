@@ -33,7 +33,9 @@ export function inspectDOM({focusSelector}={}) {
       layout.push({selector:id,box:box(r),text:el.textContent.slice(0,200)});
       if(el.scrollWidth>el.clientWidth+2&&el.clientWidth>0&&!['auto','scroll'].includes(s.overflowX))emit({code:'TEXT_OVERFLOW',selector:id,box:box(r)});
       if(el.scrollHeight>el.clientHeight+2&&el.clientHeight>0&&['hidden','clip'].includes(s.overflowY))emit({code:'TEXT_CLIPPED',selector:id,box:box(r)});
-      if(control)atoms.push({el,selector:id,rect:clip(r,el),kind:'control'});
+      // Inline links can occupy multiple line fragments. Their bounding union
+      // includes unrelated text between lines and is not painted/clickable area.
+      if(control)for(const fragment of el.getClientRects())atoms.push({el,selector:id,rect:clip(fragment,el),kind:'control'});
       if(alpha(s.color)>0)for(const node of textNodes){const range=document.createRange();range.selectNodeContents(node);for(const rect of range.getClientRects()){const painted=clip(rect,el,true);if(painted.width>2&&painted.height>2)atoms.push({el,node,selector:id,rect:painted,kind:'text'});}}
       for(let parent=el.parentElement;parent&&parent!==document.body;parent=parent.parentElement) {
         const p=parent.getBoundingClientRect(),ps=getComputedStyle(parent);
