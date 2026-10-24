@@ -1,0 +1,54 @@
+{
+  "baseline": true,
+  "reportPassed": true,
+  "readyForDraft": true,
+  "results": [
+    {
+      "stage": "before",
+      "browser": "chromium",
+      "overflow": "auto",
+      "scrollHeight": 127,
+      "clientHeight": 60,
+      "initial": 0,
+      "actual": 30
+    },
+    {
+      "stage": "after",
+      "browser": "chromium",
+      "overflow": "auto",
+      "scrollHeight": 127,
+      "clientHeight": 127,
+      "initial": 0,
+      "actual": 0
+    },
+    {
+      "stage": "before",
+      "browser": "firefox",
+      "overflow": "auto",
+      "scrollHeight": 118,
+      "clientHeight": 60,
+      "initial": 0,
+      "actual": 30
+    },
+    {
+      "stage": "after",
+      "browser": "firefox",
+      "overflow": "auto",
+      "scrollHeight": 118,
+      "clientHeight": 118,
+      "initial": 0,
+      "actual": 0
+    }
+  ],
+  "patches": [
+    {
+      "path": "app.css",
+      "selector": ".scroll",
+      "candidateId": "75068905d6677ca16c3fa6472b158989d2581dae6526100a5dffb60a39f9986a",
+      "beforeSha256": "cbe9d99bd239dfd4bbc68f62c4ec9191ef5f2c0218b11bddabdf1205e044c2c1",
+      "resultSha256": "1659f989f4e588533e482bd04653175f8059a38f598406a76507ff0c7fcacc7d",
+      "before": ".scroll {height:60px;overflow-y:auto;width:300px}",
+      "after": ".scroll {min-height: 60px; height: auto;overflow-y:auto;width:300px}"
+    }
+  ]
+}

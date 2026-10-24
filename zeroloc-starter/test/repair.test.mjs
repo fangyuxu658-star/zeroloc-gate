@@ -9,6 +9,7 @@ import { applyProposal } from '../src/apply.mjs';
 import { compareVisualRuns } from '../src/checks/dom.mjs';
 import { planRepair, runRepair, reviewRepair, stopRepairProcess } from '../src/repair-engine.mjs';
 import { spawn } from 'node:child_process';
+import { spawnRepairProcess } from '../src/process-ownership.mjs';
 import { once } from 'node:events';
 import { digest } from '../src/safe-files.mjs';
 
@@ -105,7 +106,7 @@ test('unverified or failed repair can never produce a draft delivery manifest',a
   for(const report of [{},{type:'repair-run',passed:false},{type:'repair-run',passed:true,stage:'Review',unit:{passed:false},after:{passed:true}}])await assert.rejects(reviewRepair({report,approve:'fake'}));
 });
 test('timeout cleanup is idempotent after a real child has exited by signal', {timeout:10000}, async()=>{
-  const child=spawn(process.execPath,['-e','setInterval(()=>{},1000)'],{detached:process.platform!=='win32',windowsHide:true,stdio:'ignore'});
+  const child=spawnRepairProcess(process.execPath,['-e','setInterval(()=>{},1000)'],{detached:process.platform!=='win32',windowsHide:true,stdio:'ignore'});
   await once(child,'spawn');let timer;
   try {
     await stopRepairProcess(child);

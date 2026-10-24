@@ -45,14 +45,19 @@ jobs:
           retention-days: 7
 
   visual:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [22, 24]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
-          node-version: 24
+          node-version: ${{ matrix.node }}
           package-manager-cache: false
       - run: npm ci --ignore-scripts
       - run: npx --no-install playwright install --with-deps chromium firefox
@@ -60,10 +65,17 @@ jobs:
       - run: npm run test:workflow
       - run: npm run test:network
       - run: npm run test:repair:geometry
+      - name: Independent audit geometry, click and scroll regressions
+        run: |
+          node qa/audit-visual.mjs
+          node qa/audit-scroll.mjs
+          node qa/audit-scroll.mjs --shared-class
       - name: Install pinned real React and Next examples (explicit test setup)
         run: npm run test:repair:setup
       - name: Repair success and blocked upstream regression
         run: npm run test:repair -- --react-root artifacts/repair-upstream/react --next-root artifacts/repair-upstream/next
+      - name: Audit cases in real React/Vite and Next with actual language and button interactions
+        run: node qa/audit-real-apps.mjs
       - name: Failed repair must roll back
         run: npm run test:repair -- --only react --scenario unit-failure --react-root artifacts/repair-upstream/react
       - name: Semantic risk and timeout must stop delivery
@@ -73,7 +85,7 @@ jobs:
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         if: always()
         with:
-          name: visual-findings
+          name: visual-findings-${{ matrix.os }}-node${{ matrix.node }}
           path: |
             zeroloc-starter/artifacts/visual*/**
             zeroloc-starter/artifacts/workflow-e2e/**
@@ -82,5 +94,9 @@ jobs:
             zeroloc-starter/artifacts/repair-real-apps/*-evidence/**
             zeroloc-starter/artifacts/repair-real-apps/*.json
             zeroloc-starter/artifacts/repair-upstream/provenance.json
+            zeroloc-starter/artifacts/audit-remediation/after/**
+            zeroloc-starter/artifacts/audit-frameworks/summary.json
+            zeroloc-starter/artifacts/audit-frameworks/react/**
+            zeroloc-starter/artifacts/audit-frameworks/next/**
           retention-days: 7
 

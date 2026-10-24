@@ -9,9 +9,11 @@ export function cssCandidates({path,text,findings}) {
   const candidates=[];
   for(const finding of findings) {
     if(finding.code!=='CONTENT_ESCAPE'||!/^\.[A-Za-z_][\w-]*$/.test(finding.cssSelector??''))continue;
+    if(['auto','scroll'].includes(finding.overflow))continue;
     const rules=[...text.matchAll(/([^{}]+)\{([^{}]*)\}/g)].filter(m=>m[1].trim()===finding.cssSelector);
     if(rules.length!==1)continue;
     const rule=rules[0],heights=[...rule[2].matchAll(/(?:^|;)\s*height\s*:\s*(\d+(?:\.\d+)?px)\s*(?=;|$)/g)];
+    if(/(?:^|;)\s*overflow(?:-[xy])?\s*:\s*[^;]*(?:auto|scroll)/i.test(rule[2]))continue;
     if(heights.length!==1||[...rule[2].matchAll(/(?:^|;)\s*height\s*:/g)].length!==1||/min-height|!important|\/\*/.test(rule[0]))continue;
     const before=rule[0],after=before.replace(/([;{]\s*)height\s*:\s*(\d+(?:\.\d+)?px)/,'$1min-height: $2; height: auto');
     const result=text.slice(0,rule.index)+after+text.slice(rule.index+before.length);

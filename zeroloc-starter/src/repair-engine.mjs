@@ -2,7 +2,9 @@ import { mkdtemp, mkdir, writeFile, readFile, realpath } from 'node:fs/promises'
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { spawn, execFile } from 'node:child_process';
+import { spawnRepairProcess, stopRepairProcess } from './process-ownership.mjs';
+export { stopRepairProcess } from './process-ownership.mjs';
+import { compareInteractions } from './checks/interactions.mjs';
 import { readResource, parseJson, digest, jsonBytes, resourcePath } from './safe-files.mjs';
 import { configuredValidator } from './validation.mjs';
 import { reviewSemantics } from './semantic-review.mjs';
@@ -34,38 +36,16 @@ export async function planRepair({root='.',configPath}) {
   const validation=parseJson((await readResource(root,config.validation)).bytes);
   if(validation.ui)throw new Error('Use repair visual routes; validation is unit-only plus mandatory independent visual verification');
   if(validation.unitTests.some(t=>!config.files.includes(t.path)))throw new Error('Tests must be copied');
-  const engineBinding=hash(await Promise.all(['./repair-engine.mjs','./visual-repair.mjs','./semantic-review.mjs','./checks/dom.mjs','./checks/visual.mjs','./repair-server-worker.mjs','./validation.mjs'].map(async path=>digest(await readFile(new URL(path,import.meta.url))))));
+  const engineBinding=hash(await Promise.all(['./repair-engine.mjs','./visual-repair.mjs','./semantic-review.mjs','./checks/dom.mjs','./checks/paint-dom.mjs','./checks/interactions.mjs','./process-ownership.mjs','./process-supervisor.py','./checks/visual.mjs','./repair-server-worker.mjs','./validation.mjs'].map(async path=>digest(await readFile(new URL(path,import.meta.url))))));
   const manifest={schemaVersion:1,engineBinding,allowedRepairRules:['fixed-height-to-min-height/v1'],rootBinding:digest(root),configPath,configSha256:input.sha256,config,files,validationBinding:validator.binding};
   return {...manifest,planId:hash(manifest),executionId:hash({files,server:config.server,validation:validator.binding}),dryRun:true,requiresHumanReview:true};
 }
 
-const stopOperations=new WeakMap();
-export function stopRepairProcess(child) {
-  // A signal-terminated child keeps exitCode=null. Waiting for another close
-  // after it has already closed leaves an unsettled promise (Node exit 13).
-  // Also avoid signaling a dead child's potentially reused PID.
-  if(stopOperations.has(child))return stopOperations.get(child);
-  if(!child.pid||child.exitCode!==null||child.signalCode!==null)return Promise.resolve();
-  const operation=new Promise((resolve,reject)=>{
-    const finish=()=>{clearTimeout(timer);resolve();};
-    const timer=setTimeout(()=>{
-      child.removeListener('close',finish);
-      if(child.exitCode!==null||child.signalCode!==null){resolve();return;}
-      const error=new Error('Owned process cleanup failed');error.code='PROCESS_CLEANUP_FAILED';error.pid=child.pid;reject(error);
-    },5000);
-    child.once('close',finish);
-    // taskkill's own callback can precede Node's child-close event. It is not
-    // evidence that the target has closed; concurrent callers share this wait.
-    if(process.platform==='win32')execFile(join(process.env.SystemRoot??'C:\\Windows','System32','taskkill.exe'),['/PID',String(child.pid),'/T','/F'],{windowsHide:true},()=>{});
-    else {try{process.kill(-child.pid,'SIGKILL');}catch{child.kill('SIGKILL');}}
-  });
-  stopOperations.set(child,operation);return operation;
-}
 async function startServer({copy,originRoot,config,signal,output:logDir}) {
   if((await readResource(copy,config.server.path)).sha256!==config.server.sha256)throw new Error('Server adapter changed');
   const env=Object.fromEntries(['PATH','Path','SystemRoot','SYSTEMROOT','TEMP','TMP','TMPDIR','PLAYWRIGHT_BROWSERS_PATH'].filter(k=>process.env[k]!==undefined).map(k=>[k,process.env[k]]));
   env.NEXT_TELEMETRY_DISABLED='1';
-  const child=spawn(process.execPath,[fileURLToPath(new URL('./repair-server-worker.mjs',import.meta.url)),join(copy,config.server.path),copy,originRoot],{cwd:copy,env,shell:false,windowsHide:true,detached:process.platform!=='win32',stdio:['ignore','pipe','pipe']});
+  const child=spawnRepairProcess(process.execPath,[fileURLToPath(new URL('./repair-server-worker.mjs',import.meta.url)),join(copy,config.server.path),copy,originRoot],{cwd:copy,env,shell:false,windowsHide:true,detached:process.platform!=='win32',stdio:['ignore','pipe','pipe']});
   // close()/the startup catch awaits the same cleanup promise and reports any failure.
   const abort=()=>{void stopRepairProcess(child).catch(()=>{});};signal.addEventListener('abort',abort,{once:true});
   let output='',bytes=0,log='';
@@ -77,6 +57,8 @@ async function startServer({copy,originRoot,config,signal,output:logDir}) {
       const finish=(fn,value)=>{clearTimeout(timer);fn(value);};
       child.once('error',()=>finish(reject,new Error('Adapter launch failed')));
       child.once('exit',()=>finish(reject,new Error('Adapter exited before ready')));
+      child.once('workerExit',()=>finish(reject,new Error('Adapter worker exited before ready')));
+      child.once('ownershipFailure',()=>finish(reject,new Error('Adapter ownership failed')));
       signal.addEventListener('abort',()=>finish(reject,new Error('Repair deadline exceeded')),{once:true});
       child.stderr.on('data',b=>{bytes+=b.length;if(bytes>1048576)finish(reject,new Error('Adapter output limit'));});
       child.stdout.on('data',b=>{
@@ -137,7 +119,8 @@ export async function runRepair({root='.',configPath,run=false,approve,allowExec
         const unit=await validator.run({planId:plan.planId},{signal:controller.signal});
         verified=await capture({copy,originRoot:root,config,output:join(output,`attempt-${attempt+1}`),signal:controller.signal});
         // Strict: all real checks pass; a partial improvement is rolled back.
-        return {passed:unit.passed&&verified.passed,unit,visual:verified};
+        const interactions=compareInteractions(current,verified);
+        return {passed:unit.passed&&verified.passed&&interactions.passed,unit,visual:verified,interactions};
       }});
       report.attempts.push({candidateId:candidate.candidateId,path:candidate.path,diagnosis:candidate.diagnosis,before:candidate.before,after:candidate.after,...result});
       if(result.passed){report.patches.push({path:candidate.path,selector:candidate.selector,candidateId:candidate.candidateId,beforeSha256:candidate.beforeSha256,resultSha256:candidate.resultSha256,before:candidate.before,after:candidate.after});current=verified;}
@@ -147,7 +130,8 @@ export async function runRepair({root='.',configPath,run=false,approve,allowExec
     report.unit=await validator.run({planId:plan.planId},{signal:controller.signal});
     report.after=await capture({copy,originRoot:root,config,output:join(output,'after'),signal:controller.signal});
     report.layoutDelta={source:report.after.source.runs.map((r,i)=>compareVisualRuns(report.before.source.runs[i],r).layoutChanges),target:report.after.target.runs.map((r,i)=>compareVisualRuns(report.before.target.runs[i],r).layoutChanges)};
-    report.passed=report.unit.passed&&report.after.passed&&!report.stopReason&&!controller.signal.aborted;
+    report.interactions=compareInteractions(report.before,report.after);
+    report.passed=report.unit.passed&&report.after.passed&&report.interactions.passed&&!report.stopReason&&!controller.signal.aborted;
     if(!report.passed)report.stopReason??='UNRESOLVED_DEFECTS';
     event('Verify',report.passed?'passed':'blocked');
     if(report.passed){event('Review','required');report.reviewId=hash({planId:plan.planId,patches:report.patches,unit:report.unit,before:report.before,after:report.after});}
@@ -172,6 +156,7 @@ export async function reviewRepair({root='.',report,approve}) {
   const id=hash({planId:report.planId,patches:report.patches,unit:report.unit,before:report.before,after:report.after});
   if(!report.reviewId||id!==report.reviewId||approve!==id)throw new Error('Separate exact review approval required');
   const current=await planRepair({root,configPath:report.plan.configPath});if(current.planId!==report.planId)throw new Error('Stale original inputs');
+  if(!compareInteractions(report.before,report.after).passed)throw new Error('Interaction regression blocks delivery');
   const count=current.config.visual.browsers.length*current.config.visual.viewports.length;
   for(const side of ['source','target'])if(report.after[side]?.passed!==true||report.after[side]?.runs?.length!==count||report.after[side].runs.some(r=>!r.languageVerified||r.findings.some(f=>f.level==='error')))throw new Error('Incomplete or failed real visual matrix');
   if(!report.unit.checks?.length||report.unit.checks.some(c=>!c.passed)||report.unit.configSha256!==current.validationBinding||report.unit.planId!==current.planId)throw new Error('Incomplete unit evidence');

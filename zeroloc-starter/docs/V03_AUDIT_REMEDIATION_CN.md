@@ -1,0 +1,57 @@
+# v0.3 独立审查修复记录
+
+本次只更新 Draft PR #7 的 `codex/v0.3-repair-engine`，基础仍为 `codex/v0.2-safe-apply`。修复前基线为 `194a1dc4af0705bf494b1e8ddaa4c53759a02be2`。先在未修改核心代码时逐项复现五个发现，再修改实现。PR #6、main 和 Release 不在本次写入范围。
+
+## 发现与根因修复
+
+| 发现 | 基线证据 | 实现与回归 |
+| --- | --- | --- |
+| P1-01 父子文字覆盖漏报 | `before/geometry.json` 的 ancestor、descendant 在两浏览器和两视口漏报 | 每个直接文本节点建立 Range，比较真实文字矩形；只排除控件自身标签的重复几何，不再整体跳过父子关系。`audit-visual.mjs`、`audit-real-apps.mjs` 同时验证异常父子覆盖及正常 strong/link 嵌套。 |
+| P1-02 实色遮罩漏报 | 同报告 opaquePassive、partial 误通过 | 区分浏览器绘制顺序和点击命中。临时构造样式表只调整 pointer-events 以观察原绘制顺序，finally 恢复；多点采样输出覆盖比例。另用 Playwright trial click 验证可达性，并在可信框架用例实际点击、检查计数。空白实色层即使 pointer-events:none 仍报遮挡；无填充的装饰边框通过。无法可靠观察绘制顺序时报告环境错误并阻断。 |
+| P2-01 修复丢失滚动 | `before/scroll.json`：修复被接受，但 clientHeight 增至 scrollHeight，实际 scrollTop 从 30 变为 0 | 不把正常 auto/scroll 的裁剪误诊为内容逃逸，且只从明确的作者固定高度生成候选。候选规则拒绝滚动声明/已观测滚动容器。独立前后交互门禁保留 overflow、两轴尺寸、位置、程序滚动和实际 wheel。共享类测试中，单元/视觉均通过的候选仍因 `SCROLL_CONTRACT_LOST` 拒绝，并按原字节回滚。review 阶段重新比较交互证据。 |
+| P2-02 透明祖先误报 | geometry 的 transparentAncestor 被误报 | 有效 opacity 沿祖先相乘，同时检查 display/content-visibility；visibility 按实际子元素计算，保留 visibility:visible 覆盖隐藏祖先的真实异常。文字与滚动裁剪采用祖先可见区域。透明、display:none、visibility:hidden 负例和可见覆盖正例均跨浏览器执行。 |
+| P2-03 Linux 遗留后代 | `before/process-v22.23.3.json`、`process-v24.22.0.json`：父进程正常退出后后代仍存活 | Linux 由 stdlib Python subreaper 保持所有权，收养孤儿并实际 kill/reap；通过私有管道请求停止，信号用 pidfd 绑定内核身份，并重新核对后代关系。既不按进程名匹配，也不向已经退出的裸 PID/进程组发信号。并发/重复清理共用结果；无法证明清理成功时报告 PROCESS_CLEANUP_FAILED。真实子进程测试包含父正常退出、超时、引擎父进程被杀、孙进程、重复清理、无关哨兵存活及 ESRCH（不能把僵尸算已清理）。 |
+
+证据目录：[verification/v03-audit-remediation](verification/v03-audit-remediation)。JSON、截图、候选差异、回滚及平台回归输出由 `qa/export-audit-evidence.mjs` 从实际产物导出；私有临时路径已移除，原始产物仍保存在本机 artifacts。截图用于人工审核，程序通过与否以实际断言及报告为准。
+
+## 真实应用与执行
+
+沿用已锁定的 react-i18next Vite 和 next-i18next Next Pages Router 上游，普通页面仍执行原 v0.3 完整修复流程。另在隔离副本添加框架页面承载 13 组审查正反例，验证 Chromium/Firefox × 375/1280、实际德语/英语往返及按钮点击。Next 使用该项目支持的 locale 路由切换；最初仅调用 changeLanguage 的测试适配失败已记录，未删除语言断言。其全局 CSS 原有的整页溢出仍记录为阻断，审查区域的正反例单独断言，不能把区域通过解释为整页通过。失败断言及截图保留为 harness-failure。上游原文件摘要前后保持一致，依赖仍为显式可信安装。
+
+真实 React 原移动按钮/正文重叠继续自动修复成功；独立单元失败场景必须撤回。原 Next 页面已有的质量和离线外部资源错误继续阻断，不能以审查测试页通过代替原应用通过。P1 覆盖及不满足受限规则的 UI 不会擅自生成修改来制造通过。
+
+本地已保存的结果：Linux Node 22.23.3/24.22.0 各 76 项通过；Windows 同版本各 71 项通过、5 项平台专用跳过（4 项 Linux 进程测试和 1 项 POSIX 文件模式测试）。新增几何矩阵 13×2 浏览器×2 视口全部符合预期；真实框架为 104 次区域断言，均检查英语/德语往返。框架本地证据使用 Windows Node 25.2.0，不能替代目标 Node 22/24 的远端视觉矩阵。79 张导出截图有逐文件 SHA-256 清单。
+
+| 实际修复前 | 验证后的隔离副本 |
+| --- | --- |
+| ![React 移动按钮正文重叠](verification/v03-audit-remediation/after/react-repair-before-chromium.png) | ![受限 CSS 修复后](verification/v03-audit-remediation/after/react-repair-after-chromium.png) |
+
+共享类的 candidate 截图看似正常，但滚动已丧失，因此拒绝并回滚；其 before/candidate/rollback 三阶段截图和指标均保留。P1 遮挡案例的语言往返截图仍显示缺陷，表示检测阻断证据，并非宣称已自动修好这些页面。
+
+```sh
+npm ci --ignore-scripts
+npm test
+npx --no-install playwright install --with-deps chromium firefox
+node qa/audit-visual.mjs
+node qa/audit-scroll.mjs
+node qa/audit-scroll.mjs --shared-class
+# 显式联网安装已锁定上游（需新的安装目录，沿用原 setup 约束）
+npm run test:repair:setup
+node qa/audit-real-apps.mjs
+npm run test:repair -- --react-root artifacts/repair-upstream/react --next-root artifacts/repair-upstream/next
+npm run test:repair -- --only react --scenario unit-failure --react-root artifacts/repair-upstream/react
+npm run test:repair -- --only react --scenario semantic-block --react-root artifacts/repair-upstream/react
+npm run test:repair -- --only react --scenario timeout --react-root artifacts/repair-upstream/react
+```
+
+`--record-baseline` 和 `audit-process-baseline.mjs` 仅用于上述历史版本；修复后普通命令断言所有新增预期。不要在修复后重新生成并覆盖历史失败证据。
+
+CI 将既有四组 Windows/Linux × Node 22/24 回归保留，并把视觉工作扩为同样四组矩阵；均执行 Chromium 和 Firefox、原门禁、全部新增审查用例、真实框架及回滚/语义/超时场景。只读 GitHub 权限及固定 action 摘要保留。远端结果应查看 [PR #7 当前提交的检查](https://github.com/fangyuxu658-star/zeroloc-gate/pull/7/checks)，本地结果不替代远端结果。
+
+## 保留的边界
+
+- 默认预览、精确计划/执行/审核授权、v0.2 Safe Apply、备份、CAS 回滚及人工译文保护均保留；没有付费服务或远端模型调用。语义正确性仍为 unproven，`Hallo {{name}}, ` 回归继续执行。
+- 仅可信、独占的隔离测试目录。适配器、Node 测试和共享依赖有同用户权限，目录复制和浏览器限制不是 OS 沙箱。滚动探针会触发实际 scroll/wheel 事件；通用点击采用 trial，不触发业务提交，真实点击仅用于可信测试页面。
+- Linux 运行需要 `python3`、subreaper、pidfd_open/pidfd_send_signal 能力，启动时检查；缺失时失败关闭，不退回裸 PID 杀进程。测试不承诺抵抗同权限恶意代码、监督进程被 SIGKILL、系统崩溃或无法中断的内核任务。Windows 沿用对本次仍存活子进程的 taskkill /T，已退出且无所有权的进程拒绝猜测清理。
+- 绘制检测仍有边界：多点采样不是逐像素证明；canvas、伪元素、背景图、Shadow DOM、跨源 iframe、复杂混合/滤镜、细小未采样覆盖及全部有意层叠没有完整建模。完全透明负例和正常边框通过不代表所有装饰都已覆盖；新增透明但拦截点击的遮罩必须阻断。控件 64、滚动区 32、DOM 5000、原子 800 超限均产生阻断性环境报告。
+- 滚动契约使用同浏览器/视口/语言的稳定 DOM 路径匹配。结构变化会保守阻断；动态列表、滚动吸附和自定义手势还需要应用专用断言。不会将模型评分或一张截图当成语义/视觉正确性的证明。

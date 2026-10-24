@@ -1,0 +1,626 @@
+{
+  "passed": false,
+  "stopReason": "UNRESOLVED_DEFECTS",
+  "patches": [],
+  "attempts": [
+    {
+      "candidateId": "e45e5a8ddddb78e9df2fc2ad83947be4e17fe4402929b3c222d9e0a901ab199b",
+      "before": ".box {height:60px;width:300px}",
+      "after": ".box {min-height: 60px; height: auto;width:300px}",
+      "passed": false,
+      "rolledBack": true,
+      "rollbackConflict": false,
+      "unitPassed": true,
+      "visualPassed": true,
+      "interactions": {
+        "passed": false,
+        "findings": [
+          {
+            "code": "SCROLL_CONTRACT_LOST",
+            "side": "source",
+            "browser": "chromium",
+            "viewport": {
+              "width": 375,
+              "height": 812
+            },
+            "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+            "axis": "y",
+            "before": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 60,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 58,
+                  "initial": 0,
+                  "programmatic": true,
+                  "programmaticPosition": 30,
+                  "wheel": true,
+                  "wheelBefore": 0,
+                  "wheelAfter": 30
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            },
+            "after": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 118,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            }
+          },
+          {
+            "code": "SCROLL_CONTRACT_LOST",
+            "side": "source",
+            "browser": "chromium",
+            "viewport": {
+              "width": 1280,
+              "height": 800
+            },
+            "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+            "axis": "y",
+            "before": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 60,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 58,
+                  "initial": 0,
+                  "programmatic": true,
+                  "programmaticPosition": 30,
+                  "wheel": true,
+                  "wheelBefore": 0,
+                  "wheelAfter": 30
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            },
+            "after": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 118,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            }
+          },
+          {
+            "code": "SCROLL_CONTRACT_LOST",
+            "side": "source",
+            "browser": "firefox",
+            "viewport": {
+              "width": 375,
+              "height": 812
+            },
+            "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+            "axis": "y",
+            "before": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 60,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 58,
+                  "initial": 0,
+                  "programmatic": true,
+                  "programmaticPosition": 30,
+                  "wheel": true,
+                  "wheelBefore": 0,
+                  "wheelAfter": 30
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            },
+            "after": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 118,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            }
+          },
+          {
+            "code": "SCROLL_CONTRACT_LOST",
+            "side": "source",
+            "browser": "firefox",
+            "viewport": {
+              "width": 1280,
+              "height": 800
+            },
+            "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+            "axis": "y",
+            "before": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 60,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 58,
+                  "initial": 0,
+                  "programmatic": true,
+                  "programmaticPosition": 30,
+                  "wheel": true,
+                  "wheelBefore": 0,
+                  "wheelAfter": 30
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            },
+            "after": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 118,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            }
+          },
+          {
+            "code": "SCROLL_CONTRACT_LOST",
+            "side": "target",
+            "browser": "chromium",
+            "viewport": {
+              "width": 375,
+              "height": 812
+            },
+            "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+            "axis": "y",
+            "before": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 60,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 58,
+                  "initial": 0,
+                  "programmatic": true,
+                  "programmaticPosition": 30,
+                  "wheel": true,
+                  "wheelBefore": 0,
+                  "wheelAfter": 30
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            },
+            "after": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 118,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            }
+          },
+          {
+            "code": "SCROLL_CONTRACT_LOST",
+            "side": "target",
+            "browser": "chromium",
+            "viewport": {
+              "width": 1280,
+              "height": 800
+            },
+            "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+            "axis": "y",
+            "before": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 60,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 58,
+                  "initial": 0,
+                  "programmatic": true,
+                  "programmaticPosition": 30,
+                  "wheel": true,
+                  "wheelBefore": 0,
+                  "wheelAfter": 30
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            },
+            "after": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 118,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            }
+          },
+          {
+            "code": "SCROLL_CONTRACT_LOST",
+            "side": "target",
+            "browser": "firefox",
+            "viewport": {
+              "width": 375,
+              "height": 812
+            },
+            "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+            "axis": "y",
+            "before": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 60,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 58,
+                  "initial": 0,
+                  "programmatic": true,
+                  "programmaticPosition": 30,
+                  "wheel": true,
+                  "wheelBefore": 0,
+                  "wheelAfter": 30
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            },
+            "after": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 118,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            }
+          },
+          {
+            "code": "SCROLL_CONTRACT_LOST",
+            "side": "target",
+            "browser": "firefox",
+            "viewport": {
+              "width": 1280,
+              "height": 800
+            },
+            "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+            "axis": "y",
+            "before": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 60,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 58,
+                  "initial": 0,
+                  "programmatic": true,
+                  "programmaticPosition": 30,
+                  "wheel": true,
+                  "wheelBefore": 0,
+                  "wheelAfter": 30
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            },
+            "after": {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(2)",
+              "overflowX": "auto",
+              "overflowY": "auto",
+              "scrollHeight": 118,
+              "scrollWidth": 300,
+              "clientHeight": 118,
+              "clientWidth": 300,
+              "scrollTop": 0,
+              "scrollLeft": 0,
+              "axes": {
+                "y": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                },
+                "x": {
+                  "range": 0,
+                  "initial": 0,
+                  "programmatic": false,
+                  "programmaticPosition": 0,
+                  "wheel": false,
+                  "wheelBefore": 0,
+                  "wheelAfter": 0
+                }
+              },
+              "restored": true
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "finalInteractions": {
+    "passed": true,
+    "findings": []
+  }
+}

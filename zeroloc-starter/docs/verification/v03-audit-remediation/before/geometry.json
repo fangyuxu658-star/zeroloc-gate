@@ -1,0 +1,2884 @@
+{
+  "baseline": true,
+  "node": "v25.2.0",
+  "platform": "win32",
+  "passed": false,
+  "results": [
+    {
+      "name": "nested",
+      "expectedPassed": true,
+      "actualPassed": true,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/nested",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 359,
+                "height": 37,
+                "right": 367,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 79.875,
+                "width": 359,
+                "height": 18,
+                "right": 367,
+                "bottom": 97.875
+              },
+              "text": "Visible original nested text and a normal link."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 111.03125,
+                "y": 79.875,
+                "width": 73.3125,
+                "height": 17,
+                "right": 184.34375,
+                "bottom": 96.875
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 215.453125,
+                "y": 79.875,
+                "width": 85.3125,
+                "height": 17,
+                "right": 300.765625,
+                "bottom": 96.875
+              },
+              "text": "a normal link"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 113.875,
+                "width": 69.359375,
+                "height": 21,
+                "right": 77.359375,
+                "bottom": 134.875
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/nested",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 1264,
+                "height": 37,
+                "right": 1272,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 79.875,
+                "width": 1264,
+                "height": 18,
+                "right": 1272,
+                "bottom": 97.875
+              },
+              "text": "Visible original nested text and a normal link."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 111.03125,
+                "y": 79.875,
+                "width": 73.3125,
+                "height": 17,
+                "right": 184.34375,
+                "bottom": 96.875
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 215.453125,
+                "y": 79.875,
+                "width": 85.3125,
+                "height": 17,
+                "right": 300.765625,
+                "bottom": 96.875
+              },
+              "text": "a normal link"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 113.875,
+                "width": 69.359375,
+                "height": 21,
+                "right": 77.359375,
+                "bottom": 134.875
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/nested",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 359,
+                "height": 38,
+                "right": 367,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 80.86666870117188,
+                "width": 359,
+                "height": 18,
+                "right": 367,
+                "bottom": 98.86666870117188
+              },
+              "text": "Visible original nested text and a normal link."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 111.06666564941406,
+                "y": 81.36666870117188,
+                "width": 73.33332824707031,
+                "height": 17,
+                "right": 184.39999389648438,
+                "bottom": 98.36666870117188
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 215.5,
+                "y": 81.36666870117188,
+                "width": 85.33332824707031,
+                "height": 17,
+                "right": 300.8333282470703,
+                "bottom": 98.36666870117188
+              },
+              "text": "a normal link"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 114.86666870117188,
+                "width": 64.06666564941406,
+                "height": 22,
+                "right": 72.06666564941406,
+                "bottom": 136.86666870117188
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/nested",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 1264,
+                "height": 38,
+                "right": 1272,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 80.86666870117188,
+                "width": 1264,
+                "height": 18,
+                "right": 1272,
+                "bottom": 98.86666870117188
+              },
+              "text": "Visible original nested text and a normal link."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 111.06666564941406,
+                "y": 81.36666870117188,
+                "width": 73.33332824707031,
+                "height": 17,
+                "right": 184.39999389648438,
+                "bottom": 98.36666870117188
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 215.5,
+                "y": 81.36666870117188,
+                "width": 85.33332824707031,
+                "height": 17,
+                "right": 300.8333282470703,
+                "bottom": 98.36666870117188
+              },
+              "text": "a normal link"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 114.86666870117188,
+                "width": 64.06666564941406,
+                "height": 22,
+                "right": 72.06666564941406,
+                "bottom": 136.86666870117188
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": []
+        }
+      ]
+    },
+    {
+      "name": "ancestor",
+      "finding": "P1-01",
+      "expectedPassed": false,
+      "actualPassed": true,
+      "correct": false,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/ancestor",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 359,
+                "height": 37,
+                "right": 367,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "width": 359,
+                "height": 27,
+                "right": 367,
+                "bottom": 109.4375
+              },
+              "text": "Visible original textCovering child text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "width": 185.296875,
+                "height": 27,
+                "right": 193.296875,
+                "bottom": 109.4375
+              },
+              "text": "Covering child text"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/ancestor",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 1264,
+                "height": 37,
+                "right": 1272,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "width": 1264,
+                "height": 27,
+                "right": 1272,
+                "bottom": 109.4375
+              },
+              "text": "Visible original textCovering child text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "width": 185.296875,
+                "height": 27,
+                "right": 193.296875,
+                "bottom": 109.4375
+              },
+              "text": "Covering child text"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/ancestor",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 359,
+                "height": 38,
+                "right": 367,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "width": 359,
+                "height": 28,
+                "right": 367,
+                "bottom": 111.43333435058594
+              },
+              "text": "Visible original textCovering child text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "width": 185.28334045410156,
+                "height": 28,
+                "right": 193.28334045410156,
+                "bottom": 111.43333435058594
+              },
+              "text": "Covering child text"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/ancestor",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 1264,
+                "height": 38,
+                "right": 1272,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "width": 1264,
+                "height": 28,
+                "right": 1272,
+                "bottom": 111.43333435058594
+              },
+              "text": "Visible original textCovering child text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "width": 185.28334045410156,
+                "height": 28,
+                "right": 193.28334045410156,
+                "bottom": 111.43333435058594
+              },
+              "text": "Covering child text"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "descendant",
+      "finding": "P1-01",
+      "expectedPassed": false,
+      "actualPassed": true,
+      "correct": false,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/descendant",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 359,
+                "height": 37,
+                "right": 367,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "width": 359,
+                "height": 27,
+                "right": 367,
+                "bottom": 109.4375
+              },
+              "text": "Covered child textCovering parent text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "width": 177.28125,
+                "height": 27,
+                "right": 185.28125,
+                "bottom": 109.4375
+              },
+              "text": "Covered child text"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/descendant",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 1264,
+                "height": 37,
+                "right": 1272,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "width": 1264,
+                "height": 27,
+                "right": 1272,
+                "bottom": 109.4375
+              },
+              "text": "Covered child textCovering parent text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "width": 177.28125,
+                "height": 27,
+                "right": 185.28125,
+                "bottom": 109.4375
+              },
+              "text": "Covered child text"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/descendant",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 359,
+                "height": 38,
+                "right": 367,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "width": 359,
+                "height": 28,
+                "right": 367,
+                "bottom": 111.43333435058594
+              },
+              "text": "Covered child textCovering parent text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "width": 177.26666259765625,
+                "height": 28,
+                "right": 185.26666259765625,
+                "bottom": 111.43333435058594
+              },
+              "text": "Covered child text"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/descendant",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 1264,
+                "height": 38,
+                "right": 1272,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "width": 1264,
+                "height": 28,
+                "right": 1272,
+                "bottom": 111.43333435058594
+              },
+              "text": "Covered child textCovering parent text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "width": 177.26666259765625,
+                "height": 28,
+                "right": 185.26666259765625,
+                "bottom": 111.43333435058594
+              },
+              "text": "Covered child text"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "opaquePassive",
+      "finding": "P1-02",
+      "expectedPassed": false,
+      "actualPassed": true,
+      "correct": false,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/opaquePassive",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 359,
+                "height": 37,
+                "right": 367,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/opaquePassive",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 1264,
+                "height": 37,
+                "right": 1272,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/opaquePassive",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 359,
+                "height": 38,
+                "right": 367,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/opaquePassive",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 1264,
+                "height": 38,
+                "right": 1272,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "opaqueBlocking",
+      "finding": "P1-02",
+      "expectedPassed": false,
+      "actualPassed": false,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/opaqueBlocking",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 359,
+                "height": 37,
+                "right": 367,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/opaqueBlocking",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 1264,
+                "height": 37,
+                "right": 1272,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/opaqueBlocking",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 359,
+                "height": 38,
+                "right": 367,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/opaqueBlocking",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 1264,
+                "height": 38,
+                "right": 1272,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "partial",
+      "finding": "P1-02",
+      "expectedPassed": false,
+      "actualPassed": true,
+      "correct": false,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/partial",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 359,
+                "height": 37,
+                "right": 367,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/partial",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 1264,
+                "height": 37,
+                "right": 1272,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/partial",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 359,
+                "height": 38,
+                "right": 367,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/partial",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 1264,
+                "height": 38,
+                "right": 1272,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": []
+        }
+      ]
+    },
+    {
+      "name": "decoration",
+      "expectedPassed": true,
+      "actualPassed": true,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/decoration",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 359,
+                "height": 37,
+                "right": 367,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/decoration",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 1264,
+                "height": 37,
+                "right": 1272,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/decoration",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 359,
+                "height": 38,
+                "right": 367,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/decoration",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 1264,
+                "height": 38,
+                "right": 1272,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 180,
+                "height": 50,
+                "right": 188,
+                "bottom": 150
+              },
+              "text": "Continue"
+            }
+          ],
+          "manualReview": [
+            "color-contrast"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "transparentAncestor",
+      "finding": "P2-02",
+      "expectedPassed": true,
+      "actualPassed": false,
+      "correct": false,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/transparentAncestor",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "width": 123.953125,
+                "height": 17,
+                "right": 131.953125,
+                "bottom": 133
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 100,
+                "width": 104.9375,
+                "height": 21,
+                "right": 112.9375,
+                "bottom": 121
+              },
+              "intersection": {
+                "width": 104.9375,
+                "height": 5
+              },
+              "kinds": [
+                "text",
+                "control"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 359,
+                "height": 37,
+                "right": 367,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "width": 123.953125,
+                "height": 18,
+                "right": 131.953125,
+                "bottom": 134
+              },
+              "text": "Invisible paragraph"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 104.9375,
+                "height": 21,
+                "right": 112.9375,
+                "bottom": 121
+              },
+              "text": "Invisible button"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/transparentAncestor",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "width": 123.953125,
+                "height": 17,
+                "right": 131.953125,
+                "bottom": 133
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 100,
+                "width": 104.9375,
+                "height": 21,
+                "right": 112.9375,
+                "bottom": 121
+              },
+              "intersection": {
+                "width": 104.9375,
+                "height": 5
+              },
+              "kinds": [
+                "text",
+                "control"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 1264,
+                "height": 37,
+                "right": 1272,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "width": 123.953125,
+                "height": 18,
+                "right": 131.953125,
+                "bottom": 134
+              },
+              "text": "Invisible paragraph"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 104.9375,
+                "height": 21,
+                "right": 112.9375,
+                "bottom": 121
+              },
+              "text": "Invisible button"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/transparentAncestor",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116.5,
+                "width": 123.98333740234375,
+                "height": 17,
+                "right": 131.98333740234375,
+                "bottom": 133.5
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 100,
+                "width": 102.78334045410156,
+                "height": 22,
+                "right": 110.78334045410156,
+                "bottom": 122
+              },
+              "intersection": {
+                "width": 102.78334045410156,
+                "height": 5.5
+              },
+              "kinds": [
+                "text",
+                "control"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 359,
+                "height": 38,
+                "right": 367,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "width": 123.98333740234375,
+                "height": 18,
+                "right": 131.98333740234375,
+                "bottom": 134
+              },
+              "text": "Invisible paragraph"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 102.78334045410156,
+                "height": 22,
+                "right": 110.78334045410156,
+                "bottom": 122
+              },
+              "text": "Invisible button"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/transparentAncestor",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116.5,
+                "width": 123.98333740234375,
+                "height": 17,
+                "right": 131.98333740234375,
+                "bottom": 133.5
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 100,
+                "width": 102.78334045410156,
+                "height": 22,
+                "right": 110.78334045410156,
+                "bottom": 122
+              },
+              "intersection": {
+                "width": 102.78334045410156,
+                "height": 5.5
+              },
+              "kinds": [
+                "text",
+                "control"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 1264,
+                "height": 38,
+                "right": 1272,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "width": 123.98333740234375,
+                "height": 18,
+                "right": 131.98333740234375,
+                "bottom": 134
+              },
+              "text": "Invisible paragraph"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 102.78334045410156,
+                "height": 22,
+                "right": 110.78334045410156,
+                "bottom": 122
+              },
+              "text": "Invisible button"
+            }
+          ],
+          "manualReview": []
+        }
+      ]
+    },
+    {
+      "name": "displayHidden",
+      "expectedPassed": true,
+      "actualPassed": true,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/displayHidden",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 359,
+                "height": 37,
+                "right": 367,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/displayHidden",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 1264,
+                "height": 37,
+                "right": 1272,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/displayHidden",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 359,
+                "height": 38,
+                "right": 367,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/displayHidden",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 1264,
+                "height": 38,
+                "right": 1272,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            }
+          ],
+          "manualReview": []
+        }
+      ]
+    },
+    {
+      "name": "visibilityHidden",
+      "expectedPassed": true,
+      "actualPassed": true,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/visibilityHidden",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 359,
+                "height": 37,
+                "right": 367,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/visibilityHidden",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 1264,
+                "height": 37,
+                "right": 1272,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/visibilityHidden",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 359,
+                "height": 38,
+                "right": 367,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/visibilityHidden",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 1264,
+                "height": 38,
+                "right": 1272,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            }
+          ],
+          "manualReview": []
+        }
+      ]
+    },
+    {
+      "name": "visibleOverride",
+      "finding": "P2-02",
+      "expectedPassed": false,
+      "actualPassed": false,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/visibleOverride",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "width": 97.234375,
+                "height": 17,
+                "right": 105.234375,
+                "bottom": 133
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 100,
+                "width": 95.796875,
+                "height": 21,
+                "right": 103.796875,
+                "bottom": 121
+              },
+              "intersection": {
+                "width": 95.796875,
+                "height": 5
+              },
+              "kinds": [
+                "text",
+                "control"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 359,
+                "height": 37,
+                "right": 367,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "width": 97.234375,
+                "height": 18,
+                "right": 105.234375,
+                "bottom": 134
+              },
+              "text": "Visible overlap"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 95.796875,
+                "height": 21,
+                "right": 103.796875,
+                "bottom": 121
+              },
+              "text": "Visible button"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/visibleOverride",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "width": 97.234375,
+                "height": 17,
+                "right": 105.234375,
+                "bottom": 133
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 100,
+                "width": 95.796875,
+                "height": 21,
+                "right": 103.796875,
+                "bottom": 121
+              },
+              "intersection": {
+                "width": 95.796875,
+                "height": 5
+              },
+              "kinds": [
+                "text",
+                "control"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 1264,
+                "height": 37,
+                "right": 1272,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "width": 97.234375,
+                "height": 18,
+                "right": 105.234375,
+                "bottom": 134
+              },
+              "text": "Visible overlap"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 95.796875,
+                "height": 21,
+                "right": 103.796875,
+                "bottom": 121
+              },
+              "text": "Visible button"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/visibleOverride",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116.5,
+                "width": 97.26666259765625,
+                "height": 17,
+                "right": 105.26666259765625,
+                "bottom": 133.5
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 100,
+                "width": 91.86666870117188,
+                "height": 22,
+                "right": 99.86666870117188,
+                "bottom": 122
+              },
+              "intersection": {
+                "width": 91.86666870117188,
+                "height": 5.5
+              },
+              "kinds": [
+                "text",
+                "control"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 359,
+                "height": 38,
+                "right": 367,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "width": 97.26666259765625,
+                "height": 18,
+                "right": 105.26666259765625,
+                "bottom": 134
+              },
+              "text": "Visible overlap"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 91.86666870117188,
+                "height": 22,
+                "right": 99.86666870117188,
+                "bottom": 122
+              },
+              "text": "Visible button"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/visibleOverride",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116.5,
+                "width": 97.26666259765625,
+                "height": 17,
+                "right": 105.26666259765625,
+                "bottom": 133.5
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 100,
+                "width": 91.86666870117188,
+                "height": 22,
+                "right": 99.86666870117188,
+                "bottom": 122
+              },
+              "intersection": {
+                "width": 91.86666870117188,
+                "height": 5.5
+              },
+              "kinds": [
+                "text",
+                "control"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 1264,
+                "height": 38,
+                "right": 1272,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "width": 97.26666259765625,
+                "height": 18,
+                "right": 105.26666259765625,
+                "bottom": 134
+              },
+              "text": "Visible overlap"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "width": 91.86666870117188,
+                "height": 22,
+                "right": 99.86666870117188,
+                "bottom": 122
+              },
+              "text": "Visible button"
+            }
+          ],
+          "manualReview": []
+        }
+      ]
+    },
+    {
+      "name": "legalScroll",
+      "finding": "P2-01",
+      "expectedPassed": true,
+      "actualPassed": false,
+      "correct": false,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/legalScroll",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [
+            {
+              "code": "CONTENT_ESCAPE",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "child": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "cssSelector": ".scroll",
+              "box": {
+                "x": 8,
+                "y": 79.875,
+                "width": 300,
+                "height": 60,
+                "right": 308,
+                "bottom": 139.875
+              },
+              "content": {
+                "x": 8,
+                "y": 129.875,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 147.875
+              },
+              "computedHeight": "60px",
+              "overflow": "auto",
+              "level": "error"
+            },
+            {
+              "code": "TEXT_CLIPPED",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 129.875,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 147.875
+              },
+              "level": "error"
+            },
+            {
+              "code": "TEXT_CLIPPED",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(3)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 163.875,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 181.875
+              },
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 359,
+                "height": 37,
+                "right": 367,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 95.875,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 113.875
+              },
+              "text": "First legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "box": {
+                "x": 8,
+                "y": 129.875,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 147.875
+              },
+              "text": "Second legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(3)",
+              "box": {
+                "x": 8,
+                "y": 163.875,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 181.875
+              },
+              "text": "Third legal scroll row"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/legalScroll",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [
+            {
+              "code": "CONTENT_ESCAPE",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "child": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "cssSelector": ".scroll",
+              "box": {
+                "x": 8,
+                "y": 79.875,
+                "width": 300,
+                "height": 60,
+                "right": 308,
+                "bottom": 139.875
+              },
+              "content": {
+                "x": 8,
+                "y": 129.875,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 147.875
+              },
+              "computedHeight": "60px",
+              "overflow": "auto",
+              "level": "error"
+            },
+            {
+              "code": "TEXT_CLIPPED",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 129.875,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 147.875
+              },
+              "level": "error"
+            },
+            {
+              "code": "TEXT_CLIPPED",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(3)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 163.875,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 181.875
+              },
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "width": 1264,
+                "height": 37,
+                "right": 1272,
+                "bottom": 58.4375
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 95.875,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 113.875
+              },
+              "text": "First legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "box": {
+                "x": 8,
+                "y": 129.875,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 147.875
+              },
+              "text": "Second legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(3)",
+              "box": {
+                "x": 8,
+                "y": 163.875,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 181.875
+              },
+              "text": "Third legal scroll row"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:61283/legalScroll",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [
+            {
+              "code": "CONTENT_ESCAPE",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "child": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "cssSelector": ".scroll",
+              "box": {
+                "x": 8,
+                "y": 80.86666870117188,
+                "width": 300,
+                "height": 60,
+                "right": 308,
+                "bottom": 140.86666870117188
+              },
+              "content": {
+                "x": 8,
+                "y": 130.86666870117188,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 148.86666870117188
+              },
+              "computedHeight": "60px",
+              "overflow": "auto",
+              "level": "error"
+            },
+            {
+              "code": "TEXT_CLIPPED",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 130.86666870117188,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 148.86666870117188
+              },
+              "level": "error"
+            },
+            {
+              "code": "TEXT_CLIPPED",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(3)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 164.86666870117188,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 182.86666870117188
+              },
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 359,
+                "height": 38,
+                "right": 367,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 96.86666870117188,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 114.86666870117188
+              },
+              "text": "First legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "box": {
+                "x": 8,
+                "y": 130.86666870117188,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 148.86666870117188
+              },
+              "text": "Second legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(3)",
+              "box": {
+                "x": 8,
+                "y": 164.86666870117188,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 182.86666870117188
+              },
+              "text": "Third legal scroll row"
+            }
+          ],
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:61283/legalScroll",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [
+            {
+              "code": "CONTENT_ESCAPE",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "child": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "cssSelector": ".scroll",
+              "box": {
+                "x": 8,
+                "y": 80.86666870117188,
+                "width": 300,
+                "height": 60,
+                "right": 308,
+                "bottom": 140.86666870117188
+              },
+              "content": {
+                "x": 8,
+                "y": 130.86666870117188,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 148.86666870117188
+              },
+              "computedHeight": "60px",
+              "overflow": "auto",
+              "level": "error"
+            },
+            {
+              "code": "TEXT_CLIPPED",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 130.86666870117188,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 148.86666870117188
+              },
+              "level": "error"
+            },
+            {
+              "code": "TEXT_CLIPPED",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(3)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 164.86666870117188,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 182.86666870117188
+              },
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "width": 1264,
+                "height": 38,
+                "right": 1272,
+                "bottom": 59.43333435058594
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 96.86666870117188,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 114.86666870117188
+              },
+              "text": "First legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "box": {
+                "x": 8,
+                "y": 130.86666870117188,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 148.86666870117188
+              },
+              "text": "Second legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(3)",
+              "box": {
+                "x": 8,
+                "y": 164.86666870117188,
+                "width": 300,
+                "height": 18,
+                "right": 308,
+                "bottom": 182.86666870117188
+              },
+              "text": "Third legal scroll row"
+            }
+          ],
+          "manualReview": []
+        }
+      ]
+    }
+  ]
+}

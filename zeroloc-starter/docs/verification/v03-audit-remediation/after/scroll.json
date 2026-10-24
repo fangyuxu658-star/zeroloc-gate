@@ -1,0 +1,44 @@
+{
+  "baseline": false,
+  "reportPassed": true,
+  "readyForDraft": true,
+  "results": [
+    {
+      "stage": "before",
+      "browser": "chromium",
+      "overflow": "auto",
+      "scrollHeight": 127,
+      "clientHeight": 60,
+      "initial": 0,
+      "actual": 30
+    },
+    {
+      "stage": "after",
+      "browser": "chromium",
+      "overflow": "auto",
+      "scrollHeight": 127,
+      "clientHeight": 60,
+      "initial": 0,
+      "actual": 30
+    },
+    {
+      "stage": "before",
+      "browser": "firefox",
+      "overflow": "auto",
+      "scrollHeight": 118,
+      "clientHeight": 60,
+      "initial": 0,
+      "actual": 30
+    },
+    {
+      "stage": "after",
+      "browser": "firefox",
+      "overflow": "auto",
+      "scrollHeight": 118,
+      "clientHeight": 60,
+      "initial": 0,
+      "actual": 30
+    }
+  ],
+  "patches": []
+}
