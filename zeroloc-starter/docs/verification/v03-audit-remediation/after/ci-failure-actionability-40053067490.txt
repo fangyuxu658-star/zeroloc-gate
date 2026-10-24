@@ -1,0 +1,29 @@
+##[group]Run npm run test:workflow
+2026-10-24T02:14:57.8344354Z [36;1mnpm run test:workflow[0m
+2026-10-24T02:14:57.8446517Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-24T02:14:57.8446977Z ##[endgroup]
+2026-10-24T02:14:58.5756146Z
+2026-10-24T02:14:58.5756927Z > zeroloc-gate@0.3.0-dev.0 test:workflow
+2026-10-24T02:14:58.5757955Z > node qa/workflow-e2e.mjs
+2026-10-24T02:14:58.5758217Z
+2026-10-24T02:14:58.7810357Z Workflow acceptance: success (local HTTP stub)
+2026-10-24T02:15:11.7545901Z node:internal/modules/run_main:123
+2026-10-24T02:15:11.7546674Z     triggerUncaughtException(
+2026-10-24T02:15:11.7549217Z     ^
+2026-10-24T02:15:11.7549684Z
+2026-10-24T02:15:11.7568283Z AssertionError [ERR_ASSERTION]: {"type":"safe-apply","schemaVersion":1,"passed":false,"applied":false,"rolledBack":true,"rollbackConflict":false,"error":"AUTOMATED_VALIDATION_FAILED","plan":{"source":"locales/en.json","target":"locales/de.json","messageFormat":"i18next","targetLocale":"de","policy":{"allowSourceKeys":[],"allowedSourceTexts":[],"brands":[],"terms":[],"minLengthRatio":0.25,"maxLengthRatio":4,"blockWarnings":false},"validationBinding":"3c7e06d5f6f9019824e93fb129904997fb54f62f635125f00a331c43c4c7b2b7","rootBinding":"ba73691692e2eeca62b4365f8ffe2466c1462aa6301d70a1a9dda66a1740828b","sourceSha256":"32cb2f1898c8047764691a4dbbb395d2eb4c78585c805af39ca06a71fa8c250c","targetSha256":"193c470d9efdc9f323b60c5b0d4b8946a5d30084ec703b2379137c0bf725592a","resultSha256":"65985e651cb3adc2da2fcd39b2613268c2fc2c59c50cf2a513e806f6674109b6","patch":[{"op":"test","path":"","value":{"app":{"title":"Mein Arbeitsbereich"}}},{"op":"add","path":"/app/newGreeting","value":"Hallo {{name}}"}],"planId":"674051f544100c136adf15c4a88d0993600bf9119bb27490ec88292bc574db0e","candidate":{"app":{"title":"Mein Arbeitsbereich","newGreeting":"Hallo {{name}}"}},"changed":["app.newGreeting"],"beforeIssues":[{"level":"error","code":"MISSING_KEY","locale":"locales/de.json","key":"app.newGreeting","message":"Translation key is missing"}],"issues":[],"quality":{"passed":true,"issues":[{"code":"LANGUAGE_INSUFFICIENT_EVIDENCE","level":"info","key":"app.newGreeting","locale":"de","message":"Short text: no reliable language inference; human review required","requiresHumanReview":true}],"requiresHumanReview":true,"limitations":"Literal/length/statistical heuristics can produce false positives and negatives; no semantic correctness guarantee.","policy":{"allowSourceKeys":[],"allowedSourceTexts":[],"brands":[],"terms":[],"minLengthRatio":0.25,"maxLengthRatio":4,"blockWarnings":false}},"legacyBound":false,"requiresHumanReview":true},"backup":"locales/de.json.zeroloc-d4f4c64d-4050-45bb-b442-8a228f219889.bak","journal":"locales/de.json.zeroloc-d4f4c64d-4050-45bb-b442-8a228f219889.recovery.json","validation":{"passed":false,"checks":[{"kind":"unit","file":"verify.test.mjs","passed":true,"exitCode":0,"timedOut":false,"outputLimited":false,"outputSha256":"b018afb3d45174bd83e545c8a4c7884db0157808256394d22d388d77f45af8c1"},{"kind":"ui","passed":false,"cases":8,"findings":[{"code":"CONTROL_NOT_ACTIONABLE","selector":"body > main:nth-of-type(1) > button:nth-of-type(1)","level":"error"}],"screenshots":[{"file":"chromium-en-375x812.png","sha256":"366c449a7524cf25b9ec4c5c23922b91f0f4002e7f42fd8f31be2236e1d8b7df"},{"file":"chromium-en-1280x800.png","sha256":"0723e9edf29931c17df9c7c96e1abcc864a5dea4cd91d6d25f6c4b01838457a2"},{"file":"chromium-de-375x812.png","sha256":"2db9a6b9eb00647e1fe889bc03b7828f049b5b8624e14d5b776421fedde71962"},{"file":"chromium-de-1280x800.png","sha256":"e042c7ac66cd667c2169da770ef3e977fefe86938043fe4c5dcbe946ce9a44f4"},{"file":"firefox-en-375x812.png","sha256":"df82e831ffd9188d0dc2f267a16061ac840819a9cbf56bd83ed4781d9fbbef31"},{"file":"firefox-en-1280x800.png","sha256":"23d4eb25a88818ec49b2fdc2b446dd8a00e979bc63973ed4d079d306c249585b"},{"file":"firefox-de-375x812.png","sha256":"1c0646e0572c2f1ce0d4f5b7cbbfc046a33d34dbad5713cee74f8573cd9e406a"},{"file":"firefox-de-1280x800.png","sha256":"3d500fc36c57ca09f8fe14330e394071b489753b7668b76ead6f8bf0d41c3ab8"}],"privateArtifactId":"zeroloc-validation-yX4beU"}],"configSha256":"3c7e06d5f6f9019824e93fb129904997fb54f62f635125f00a331c43c4c7b2b7","planId":"674051f544100c136adf15c4a88d0993600bf9119bb27490ec88292bc574db0e"},"requiresHumanReview":true}
+2026-10-24T02:15:11.7582972Z
+2026-10-24T02:15:11.7583120Z false !== true
+2026-10-24T02:15:11.7583343Z
+2026-10-24T02:15:11.7584253Z     at file:///D:/a/zeroloc-gate/zeroloc-gate/zeroloc-starter/qa/workflow-e2e.mjs:72:16 {
+2026-10-24T02:15:11.7584968Z   generatedMessage: false,
+2026-10-24T02:15:11.7585350Z   code: 'ERR_ASSERTION',
+2026-10-24T02:15:11.7586300Z   actual: false,
+2026-10-24T02:15:11.7586681Z   expected: true,
+2026-10-24T02:15:11.7586989Z   operator: 'strictEqual',
+2026-10-24T02:15:11.7587278Z   diff: 'simple'
+2026-10-24T02:15:11.7587521Z }
+2026-10-24T02:15:11.7587647Z
+2026-10-24T02:15:11.7587741Z Node.js v22.23.4
+2026-10-24T02:15:11.8062922Z ##[error]Process completed with exit code 1.
+2026-10-24T02:15:11.8332538Z

@@ -1,0 +1,22 @@
+visual	Semantic risk and timeout must stop delivery	﻿2026-10-23T02:47:58.3257760Z ##[group]Run npm run test:repair -- --only react --scenario semantic-block --react-root artifacts/repair-upstream/react
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:47:58.3258889Z ^[[36;1mnpm run test:repair -- --only react --scenario semantic-block --react-root artifacts/repair-upstream/react^[[0m
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:47:58.3259886Z ^[[36;1mnpm run test:repair -- --only react --scenario timeout --react-root artifacts/repair-upstream/react^[[0m
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:47:58.3323723Z shell: /usr/bin/bash -e {0}
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:47:58.3324117Z ##[endgroup]
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:47:58.4326606Z 
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:47:58.4327064Z > zeroloc-gate@0.3.0-dev.0 test:repair
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:47:58.4328418Z > node qa/repair-real-apps.mjs --only react --scenario semantic-block --react-root artifacts/repair-upstream/react
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:47:58.4329119Z 
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:48:11.5059721Z {"id":"react","passed":false,"stopReason":"SEMANTIC_REVIEW_REQUIRED","attempts":0,"output":"<private-temporary-evidence>"}
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:48:11.5064508Z PASS: real upstream application expectations, original-byte preservation, explicit review and SEM-01 regression
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:48:11.6336688Z 
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:48:11.6337409Z > zeroloc-gate@0.3.0-dev.0 test:repair
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:48:11.6338685Z > node qa/repair-real-apps.mjs --only react --scenario timeout --react-root artifacts/repair-upstream/react
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:48:11.6342313Z 
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:48:12.7827443Z Warning: Detected unsettled top-level await at file:///home/runner/work/zeroloc-gate/zeroloc-gate/zeroloc-starter/qa/repair-real-apps.mjs:69
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:48:12.7829261Z   const report=await runRepair({root,configPath:'repair.json',run:true,approve:plan.planId,allowExecution:plan.executionId});
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:48:12.7830375Z                ^
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:48:12.7830594Z 
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:48:12.7830605Z 
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:48:12.7830612Z 
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:48:12.8085903Z ##[error]Process completed with exit code 13.

@@ -3,7 +3,7 @@ import { promisify } from 'node:util';
 import { realpath, mkdtemp, writeFile, unlink, rmdir } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { readResource, parseJson, digest } from './safe-files.mjs';
+import { readResource, parseJson, digest, atomicReplace, jsonBytes } from './safe-files.mjs';
 import { checkQuality } from './quality.mjs';
 import { flattenMessages } from './check.mjs';
 const exec=promisify(execFile);
@@ -75,27 +75,29 @@ export async function preparePr({root='.',reportPath,branch,prepare=false,approv
 }
 
 /** No network until publish=true AND approval matches a current full preview. No merge endpoint exists. */
-export async function publishPr({root='.',repo,bodyPath,title='Review validated localization changes',publish=false,approve,gh='gh',transport=command}) {
+export async function publishPr({root='.',repo,bodyPath,title='Review validated localization changes',baseBranch='main',publish=false,approve,gh='gh',transport=command}) {
   root=await gitRoot(root);
   if(!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repo??'')||typeof title!=='string'||!title.trim()||title.length>160||/[\x00-\x1f]/.test(title))throw new Error('Invalid repository/title');
   const branch=branchName(await git(root,['branch','--show-current']));
+  if(baseBranch!=='main')branchName(baseBranch);
+  if(branch===baseBranch)throw new Error('PR head and base must differ');
   if(await git(root,['diff','--name-only'])||await git(root,['diff','--cached','--name-only']))throw new Error('Commit tracked changes before remote preview');
-  const head=await git(root,['rev-parse','HEAD']),base=await git(root,['rev-parse','refs/remotes/origin/main']);
+  const head=await git(root,['rev-parse','HEAD']),base=await git(root,['rev-parse',`refs/remotes/origin/${baseBranch}`]);
   const destination=await publicationDestination(root,repo);
   const body=await readResource(root,bodyPath),files=lines(await git(root,['diff','--name-only',`${base}...${head}`]));
-  if(!files.length)throw new Error('No changes against origin/main');
+  if(!files.length)throw new Error('No changes against approved base');
   const historyFiles=[...new Set(lines(await git(root,['log','--format=','--name-only',`${base}..${head}`])))].sort();
   if(historyFiles.some(path=>!files.includes(path)))throw new Error('Branch history contains files absent from the final diff; review isolated history before publishing');
   const commits=lines(await git(root,['rev-list','--reverse',`${base}..${head}`]));
-  const manifest={repo,branch,head,base,files,historyFiles,commits,title,body:body.bytes.toString('utf8'),draft:true,...destination};
+  const manifest={repo,branch,head,base,baseBranch,files,historyFiles,commits,title,body:body.bytes.toString('utf8'),draft:true,...destination};
   const previewId=digest(JSON.stringify(manifest));
   if(!publish)return {published:false,previewId,...manifest};
   if(approve!==previewId)throw new Error('Explicit remote approval must match previewId');
-  const remoteMain=await transport('git',['-c','core.hooksPath=/dev/null','ls-remote','origin','refs/heads/main'],root);
-  if(remoteMain.split(/\s/)[0]!==base)throw new Error('Remote main changed; fetch/review again');
-  const existing=JSON.parse(await transport(gh,['pr','list','--repo',repo,'--head',branch,'--base','main','--state','open','--json','url,isDraft,isCrossRepository'],root));
+  const remoteMain=await transport('git',['-c','core.hooksPath=/dev/null','ls-remote','origin',`refs/heads/${baseBranch}`],root);
+  if(remoteMain.split(/\s/)[0]!==base)throw new Error(`Remote ${baseBranch} changed; fetch/review again`);
+  const existing=JSON.parse(await transport(gh,['pr','list','--repo',repo,'--head',branch,'--base',baseBranch,'--state','open','--json','url,isDraft,isCrossRepository'],root));
   if(existing.length>1||existing.some(p=>!p.isDraft||p.isCrossRepository))throw new Error('Unexpected existing non-draft/cross-repository PR; manual review required');
-  const current=await publishPr({root,repo,bodyPath,title,gh});
+  const current=await publishPr({root,repo,bodyPath,title,baseBranch,gh});
   if(current.previewId!==previewId)throw new Error('Publication inputs changed during remote preflight; review again');
   // Pin the approved object even if another process moves HEAD after this check.
   await transport('git',['-c','core.hooksPath=/dev/null','-c','push.followTags=false','-c','protocol.ext.allow=never','push','origin',`${head}:refs/heads/${branch}`],root);
@@ -104,11 +106,56 @@ export async function publishPr({root='.',repo,bodyPath,title='Review validated 
     const dir=await mkdtemp(join(tmpdir(),'zeroloc-pr-')),file=join(dir,'body.md');
     try{
       await writeFile(file,body.bytes,{mode:0o600});
-      if(!url)url=await transport(gh,['pr','create','--repo',repo,'--base','main','--head',branch,'--draft','--title',title,'--body-file',file],root);
+      if(!url)url=await transport(gh,['pr','create','--repo',repo,'--base',baseBranch,'--head',branch,'--draft','--title',title,'--body-file',file],root);
       else await transport(gh,['pr','edit',url,'--repo',repo,'--title',title,'--body-file',file],root);
     }
     finally{await unlink(file);await rmdir(dir);}
   }
   if(!url?.startsWith(`https://github.com/${repo}/pull/`)||!/\/\d+$/.test(url))throw new Error('Unexpected PR response; branch may already be pushed, inspect before retrying');
-  return {published:true,previewId,repo,branch,head,draft:true,url};
+  return {published:true,previewId,repo,branch,head,baseBranch,draft:true,url};
+}
+
+/** Review → Deliver: build a local Git checkout from verified tracked input bytes.
+ * Never modifies the customer's checkout/index/branches and never contacts a remote. */
+export async function prepareRepairPr({root='.',report,reviewApproval,baseBranch='main',prepare=false,approve}) {
+  root=await gitRoot(root);if(baseBranch!=='main')branchName(baseBranch);
+  const {reviewRepair}=await import('./repair-engine.mjs');
+  const delivery=await reviewRepair({root,report,approve:reviewApproval});
+  if(!delivery.files.length)throw new Error('No repair patch to prepare');
+  const head=await git(root,['rev-parse','HEAD']);
+  for(const file of report.plan.files)if(await blobDigest(root,`${head}:${file.path}`)!==file.sha256)throw new Error('All approved repair inputs must match committed Git bytes');
+  const branch=branchName(`codex/zeroloc-repair-${report.planId.slice(0,16)}`),reportPath='zeroloc-repair-review.json';
+  // Do not place absolute private paths or raw application logs in a public commit.
+  const publicReport={schemaVersion:1,type:'reviewed-repair',planId:report.planId,reviewId:report.reviewId,engineBinding:report.plan.engineBinding,patches:report.patches,validation:{passed:report.unit.passed,checks:report.unit.checks},visual:{passed:report.after.passed,cases:report.after.target.runs.length,assertions:{source:report.plan.config.visual.sourceText,target:report.plan.config.visual.targetText}},screenshots:report.evidence.map(e=>({sha256:e.sha256})),requiresHumanReview:true,semanticCorrectness:'unproven'};
+  const bytes=jsonBytes(publicReport);
+  const manifest={head,baseBranch,branch,files:[...delivery.files.map(p=>p.path),reportPath],reportSha256:digest(bytes),reviewId:report.reviewId,draft:true};
+  const previewId=digest(JSON.stringify(manifest));
+  if(!prepare)return {prepared:false,...manifest,previewId};
+  if(approve!==previewId)throw new Error('Separate exact local repair PR preparation approval required');
+  if(await git(root,['rev-parse','HEAD'])!==head)throw new Error('Original Git head changed');
+  const parent=await mkdtemp(join(tmpdir(),'zeroloc-repair-pr-')),checkout=join(parent,'checkout');
+  await git(root,['clone','--no-local','--no-hardlinks','--no-checkout','--',root,checkout]);
+  await git(checkout,['checkout','--detach',head]);await git(checkout,['switch','-c',branch]);
+  await assertNoGitTransforms(checkout,manifest.files);
+  for(const patch of delivery.files) {
+    const result=await readResource(report.copy,patch.path);
+    if(result.sha256!==patch.resultSha256)throw new Error('Verified repair changed before preparation');
+    await atomicReplace(checkout,patch.path,result.bytes,patch.beforeSha256);
+  }
+  await writeFile(join(checkout,reportPath),bytes,{flag:'wx',mode:0o600});
+  await git(checkout,['add','--',...manifest.files]);
+  if(JSON.stringify(lines(await git(checkout,['diff','--cached','--name-only'])).sort())!==JSON.stringify([...manifest.files].sort()))throw new Error('Unexpected repair staged paths');
+  for(const patch of delivery.files)if(await blobDigest(checkout,`:${patch.path}`)!==patch.resultSha256)throw new Error('Staged repair bytes changed');
+  if(await blobDigest(checkout,`:${reportPath}`)!==digest(bytes))throw new Error('Staged report bytes changed');
+  await git(checkout,['-c','user.name=ZeroLoc Repair','-c','user.email=repair@zeroloc.invalid','commit','-m',`Review verified UI repair ${report.planId.slice(0,12)}`]);
+  // Reuse the source's explicitly configured remote when present. No network here.
+  const remotes=lines(await git(root,['remote']));
+  if(remotes.includes('origin')) {
+    const fetch=await git(root,['remote','get-url','origin']),push=lines(await git(root,['remote','get-url','--push','--all','origin']));
+    if(push.length!==1||push[0]!==fetch)throw new Error('Ambiguous source push destination; local prepared checkout retained');
+    await git(checkout,['remote','set-url','origin',fetch]);
+    const base=await git(root,['rev-parse',`refs/remotes/origin/${baseBranch}`]);
+    await git(checkout,['update-ref',`refs/remotes/origin/${baseBranch}`,base]);
+  }
+  return {prepared:true,...manifest,previewId,checkout,commit:await git(checkout,['rev-parse','HEAD']),remotePublished:false};
 }

@@ -1,0 +1,27 @@
+visual	Run npm run test:network	2026-10-23T02:03:01.0562539Z {"observed":{"http":0,"websocket":0,"serviceWorker":0},"redirectRejected":true}
+visual	Run npm run test:network	2026-10-23T02:03:01.0573720Z   "crossOriginHttpHits": 0,
+visual	Run npm run test:network	2026-10-23T02:03:01.0573966Z   "websocketUpgradeHits": 0,
+visual	Run npm run test:network	2026-10-23T02:03:01.0574204Z   "serviceWorkerScriptHits": 0,
+visual	Run npm run test:network	2026-10-23T02:03:01.0574516Z   "redirectRejected": true,
+visual	Run npm run test:repair:geometry	2026-10-23T02:03:16.4995511Z PASS: both browsers detect overlap, clipping, occlusion and layout shift; clean nested text is not an overlap
+visual	Repair success and blocked upstream regression	2026-10-23T02:03:55.1045579Z {"id":"react","passed":true,"attempts":1,"output":"<private-temporary-evidence>"}
+visual	Repair success and blocked upstream regression	2026-10-23T02:04:21.4868909Z {"id":"next","passed":false,"stopReason":"NO_SAFE_CANDIDATE","attempts":0,"output":"<private-temporary-evidence>"}
+visual	Repair success and blocked upstream regression	2026-10-23T02:04:21.4880258Z PASS: real upstream application expectations, original-byte preservation, explicit review and SEM-01 regression
+visual	Failed repair must roll back	2026-10-23T02:04:50.0855176Z {"id":"react","passed":false,"stopReason":"NO_SAFE_CANDIDATE","attempts":1,"output":"<private-temporary-evidence>"}
+visual	Failed repair must roll back	2026-10-23T02:04:50.0866639Z PASS: real upstream application expectations, original-byte preservation, explicit review and SEM-01 regression
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:04:59.9635509Z {"id":"react","passed":false,"stopReason":"SEMANTIC_REVIEW_REQUIRED","attempts":0,"output":"<private-temporary-evidence>"}
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:04:59.9638134Z PASS: real upstream application expectations, original-byte preservation, explicit review and SEM-01 regression
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:05:01.1405676Z {"id":"react","passed":false,"stopReason":"DEADLINE_EXCEEDED","attempts":0,"output":"<private-temporary-evidence>"}
+visual	Semantic risk and timeout must stop delivery	2026-10-23T02:05:01.1433207Z PASS: real upstream application expectations, original-byte preservation, explicit review and SEM-01 regression
+regression (windows-latest, 24)	Run npm test	2026-10-23T02:02:37.5812511Z ℹ tests 68
+regression (windows-latest, 24)	Run npm test	2026-10-23T02:02:37.5813133Z ℹ pass 67
+regression (windows-latest, 24)	Run npm test	2026-10-23T02:02:37.5814328Z ℹ skipped 1
+regression (windows-latest, 22)	Run npm test	2026-10-23T02:02:27.1276355Z # tests 68
+regression (windows-latest, 22)	Run npm test	2026-10-23T02:02:27.1276535Z # pass 67
+regression (windows-latest, 22)	Run npm test	2026-10-23T02:02:27.1276808Z # skipped 1
+regression (ubuntu-latest, 22)	Run npm test	2026-10-23T02:02:00.7927713Z # tests 68
+regression (ubuntu-latest, 22)	Run npm test	2026-10-23T02:02:00.7928062Z # pass 68
+regression (ubuntu-latest, 22)	Run npm test	2026-10-23T02:02:00.7928583Z # skipped 0
+regression (ubuntu-latest, 24)	Run npm test	2026-10-23T02:02:03.8080593Z ℹ tests 68
+regression (ubuntu-latest, 24)	Run npm test	2026-10-23T02:02:03.8081579Z ℹ pass 68
+regression (ubuntu-latest, 24)	Run npm test	2026-10-23T02:02:03.8082644Z ℹ skipped 0

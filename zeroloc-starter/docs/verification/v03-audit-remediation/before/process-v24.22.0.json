@@ -1,0 +1,13 @@
+{
+  "finding": "P2-03",
+  "node": "v24.22.0",
+  "platform": "linux",
+  "parentExit": 0,
+  "descendantSurvived": true,
+  "identity": {
+    "state": "R",
+    "group": 494,
+    "session": 494,
+    "start": "7405"
+  }
+}

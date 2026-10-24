@@ -1,0 +1,5097 @@
+{
+  "baseline": false,
+  "node": "v24.22.0",
+  "platform": "win32",
+  "passed": true,
+  "results": [
+    {
+      "name": "nested",
+      "expectedPassed": true,
+      "actualPassed": true,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/nested",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 79.875,
+                "left": 8,
+                "top": 79.875,
+                "right": 367,
+                "bottom": 97.875,
+                "width": 359,
+                "height": 18
+              },
+              "text": "Visible original nested text and a normal link."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 111.03125,
+                "y": 79.875,
+                "left": 111.03125,
+                "top": 79.875,
+                "right": 184.34375,
+                "bottom": 96.875,
+                "width": 73.3125,
+                "height": 17
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 215.453125,
+                "y": 79.875,
+                "left": 215.453125,
+                "top": 79.875,
+                "right": 300.765625,
+                "bottom": 96.875,
+                "width": 85.3125,
+                "height": 17
+              },
+              "text": "a normal link"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 113.875,
+                "left": 8,
+                "top": 113.875,
+                "right": 77.359375,
+                "bottom": 134.875,
+                "width": 69.359375,
+                "height": 21
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              },
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/nested",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 79.875,
+                "left": 8,
+                "top": 79.875,
+                "right": 1272,
+                "bottom": 97.875,
+                "width": 1264,
+                "height": 18
+              },
+              "text": "Visible original nested text and a normal link."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 111.03125,
+                "y": 79.875,
+                "left": 111.03125,
+                "top": 79.875,
+                "right": 184.34375,
+                "bottom": 96.875,
+                "width": 73.3125,
+                "height": 17
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 215.453125,
+                "y": 79.875,
+                "left": 215.453125,
+                "top": 79.875,
+                "right": 300.765625,
+                "bottom": 96.875,
+                "width": 85.3125,
+                "height": 17
+              },
+              "text": "a normal link"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 113.875,
+                "left": 8,
+                "top": 113.875,
+                "right": 77.359375,
+                "bottom": 134.875,
+                "width": 69.359375,
+                "height": 21
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              },
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/nested",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 80.86666870117188,
+                "left": 8,
+                "top": 80.86666870117188,
+                "right": 367,
+                "bottom": 98.86666870117188,
+                "width": 359,
+                "height": 18
+              },
+              "text": "Visible original nested text and a normal link."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 111.06666564941406,
+                "y": 81.36666870117188,
+                "left": 111.06666564941406,
+                "top": 81.36666870117188,
+                "right": 184.39999389648438,
+                "bottom": 98.36666870117188,
+                "width": 73.33332824707031,
+                "height": 17
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 215.5,
+                "y": 81.36666870117188,
+                "left": 215.5,
+                "top": 81.36666870117188,
+                "right": 300.8333282470703,
+                "bottom": 98.36666870117188,
+                "width": 85.33332824707031,
+                "height": 17
+              },
+              "text": "a normal link"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 114.86666870117188,
+                "left": 8,
+                "top": 114.86666870117188,
+                "right": 72.06666564941406,
+                "bottom": 136.86666870117188,
+                "width": 64.06666564941406,
+                "height": 22
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              },
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/nested",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 80.86666870117188,
+                "left": 8,
+                "top": 80.86666870117188,
+                "right": 1272,
+                "bottom": 98.86666870117188,
+                "width": 1264,
+                "height": 18
+              },
+              "text": "Visible original nested text and a normal link."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 111.06666564941406,
+                "y": 81.36666870117188,
+                "left": 111.06666564941406,
+                "top": 81.36666870117188,
+                "right": 184.39999389648438,
+                "bottom": 98.36666870117188,
+                "width": 73.33332824707031,
+                "height": 17
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 215.5,
+                "y": 81.36666870117188,
+                "left": 215.5,
+                "top": 81.36666870117188,
+                "right": 300.8333282470703,
+                "bottom": 98.36666870117188,
+                "width": 85.33332824707031,
+                "height": 17
+              },
+              "text": "a normal link"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 114.86666870117188,
+                "left": 8,
+                "top": 114.86666870117188,
+                "right": 72.06666564941406,
+                "bottom": 136.86666870117188,
+                "width": 64.06666564941406,
+                "height": 22
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              },
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        }
+      ]
+    },
+    {
+      "name": "wrappedNested",
+      "expectedPassed": true,
+      "actualPassed": true,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/wrappedNested",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 79.875,
+                "left": 8,
+                "top": 79.875,
+                "right": 158,
+                "bottom": 133.875,
+                "width": 150,
+                "height": 54
+              },
+              "text": "Visible nested text and a normal link which wraps across lines."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 57.265625,
+                "y": 79.875,
+                "left": 57.265625,
+                "top": 79.875,
+                "right": 130.578125,
+                "bottom": 96.875,
+                "width": 73.3125,
+                "height": 17
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 97.875,
+                "left": 8,
+                "top": 97.875,
+                "right": 136.421875,
+                "bottom": 132.875,
+                "width": 128.421875,
+                "height": 35
+              },
+              "text": "a normal link which wraps across lines"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 149.875,
+                "left": 8,
+                "top": 149.875,
+                "right": 77.359375,
+                "bottom": 170.875,
+                "width": 69.359375,
+                "height": 21
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              },
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/wrappedNested",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 79.875,
+                "left": 8,
+                "top": 79.875,
+                "right": 158,
+                "bottom": 133.875,
+                "width": 150,
+                "height": 54
+              },
+              "text": "Visible nested text and a normal link which wraps across lines."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 57.265625,
+                "y": 79.875,
+                "left": 57.265625,
+                "top": 79.875,
+                "right": 130.578125,
+                "bottom": 96.875,
+                "width": 73.3125,
+                "height": 17
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 97.875,
+                "left": 8,
+                "top": 97.875,
+                "right": 136.421875,
+                "bottom": 132.875,
+                "width": 128.421875,
+                "height": 35
+              },
+              "text": "a normal link which wraps across lines"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 149.875,
+                "left": 8,
+                "top": 149.875,
+                "right": 77.359375,
+                "bottom": 170.875,
+                "width": 69.359375,
+                "height": 21
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              },
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/wrappedNested",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 80.86666870117188,
+                "left": 8,
+                "top": 80.86666870117188,
+                "right": 158,
+                "bottom": 134.86666870117188,
+                "width": 150,
+                "height": 54
+              },
+              "text": "Visible nested text and a normal link which wraps across lines."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 57.28334045410156,
+                "y": 81.36666870117188,
+                "left": 57.28334045410156,
+                "top": 81.36666870117188,
+                "right": 130.61666870117188,
+                "bottom": 98.36666870117188,
+                "width": 73.33332824707031,
+                "height": 17
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 99.36666870117188,
+                "left": 8,
+                "top": 99.36666870117188,
+                "right": 136.43333435058594,
+                "bottom": 134.36666870117188,
+                "width": 128.43333435058594,
+                "height": 35
+              },
+              "text": "a normal link which wraps across lines"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 150.86666870117188,
+                "left": 8,
+                "top": 150.86666870117188,
+                "right": 72.06666564941406,
+                "bottom": 172.86666870117188,
+                "width": 64.06666564941406,
+                "height": 22
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              },
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/wrappedNested",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 80.86666870117188,
+                "left": 8,
+                "top": 80.86666870117188,
+                "right": 158,
+                "bottom": 134.86666870117188,
+                "width": 150,
+                "height": 54
+              },
+              "text": "Visible nested text and a normal link which wraps across lines."
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+              "box": {
+                "x": 57.28334045410156,
+                "y": 81.36666870117188,
+                "left": 57.28334045410156,
+                "top": 81.36666870117188,
+                "right": 130.61666870117188,
+                "bottom": 98.36666870117188,
+                "width": 73.33332824707031,
+                "height": 17
+              },
+              "text": "nested text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 99.36666870117188,
+                "left": 8,
+                "top": 99.36666870117188,
+                "right": 136.43333435058594,
+                "bottom": 134.36666870117188,
+                "width": 128.43333435058594,
+                "height": 35
+              },
+              "text": "a normal link which wraps across lines"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 150.86666870117188,
+                "left": 8,
+                "top": 150.86666870117188,
+                "right": 72.06666564941406,
+                "bottom": 172.86666870117188,
+                "width": 64.06666564941406,
+                "height": 22
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > a:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              },
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        }
+      ]
+    },
+    {
+      "name": "ancestor",
+      "finding": "P1-01",
+      "expectedPassed": false,
+      "actualPassed": false,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/ancestor",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 198.53125,
+                "bottom": 108.4375,
+                "width": 190.53125,
+                "height": 26
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 193.296875,
+                "bottom": 108.4375,
+                "width": 185.296875,
+                "height": 26
+              },
+              "intersection": {
+                "width": 185.296875,
+                "height": 26
+              },
+              "kinds": [
+                "text",
+                "text"
+              ],
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "kind": "text",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 198.53125,
+                "bottom": 108.4375,
+                "width": 190.53125,
+                "height": 26
+              },
+              "coveredSamples": 6,
+              "totalSamples": 6,
+              "coverage": 1,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 367,
+                "bottom": 109.4375,
+                "width": 359,
+                "height": 27
+              },
+              "text": "Visible original textCovering child text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 193.296875,
+                "bottom": 109.4375,
+                "width": 185.296875,
+                "height": 27
+              },
+              "text": "Covering child text"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/ancestor",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 198.53125,
+                "bottom": 108.4375,
+                "width": 190.53125,
+                "height": 26
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 193.296875,
+                "bottom": 108.4375,
+                "width": 185.296875,
+                "height": 26
+              },
+              "intersection": {
+                "width": 185.296875,
+                "height": 26
+              },
+              "kinds": [
+                "text",
+                "text"
+              ],
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "kind": "text",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 198.53125,
+                "bottom": 108.4375,
+                "width": 190.53125,
+                "height": 26
+              },
+              "coveredSamples": 6,
+              "totalSamples": 6,
+              "coverage": 1,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 1272,
+                "bottom": 109.4375,
+                "width": 1264,
+                "height": 27
+              },
+              "text": "Visible original textCovering child text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 193.296875,
+                "bottom": 109.4375,
+                "width": 185.296875,
+                "height": 27
+              },
+              "text": "Covering child text"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/ancestor",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 84.43333435058594,
+                "left": 8,
+                "top": 84.43333435058594,
+                "right": 198.5,
+                "bottom": 110.43333435058594,
+                "width": 190.5,
+                "height": 26
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 84.43333435058594,
+                "left": 8,
+                "top": 84.43333435058594,
+                "right": 193.28334045410156,
+                "bottom": 110.43333435058594,
+                "width": 185.28334045410156,
+                "height": 26
+              },
+              "intersection": {
+                "width": 185.28334045410156,
+                "height": 26
+              },
+              "kinds": [
+                "text",
+                "text"
+              ],
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "kind": "text",
+              "box": {
+                "x": 8,
+                "y": 84.43333435058594,
+                "left": 8,
+                "top": 84.43333435058594,
+                "right": 198.5,
+                "bottom": 110.43333435058594,
+                "width": 190.5,
+                "height": 26
+              },
+              "coveredSamples": 6,
+              "totalSamples": 6,
+              "coverage": 1,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "left": 8,
+                "top": 83.43333435058594,
+                "right": 367,
+                "bottom": 111.43333435058594,
+                "width": 359,
+                "height": 28
+              },
+              "text": "Visible original textCovering child text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "left": 8,
+                "top": 83.43333435058594,
+                "right": 193.28334045410156,
+                "bottom": 111.43333435058594,
+                "width": 185.28334045410156,
+                "height": 28
+              },
+              "text": "Covering child text"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/ancestor",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 84.43333435058594,
+                "left": 8,
+                "top": 84.43333435058594,
+                "right": 198.5,
+                "bottom": 110.43333435058594,
+                "width": 190.5,
+                "height": 26
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 84.43333435058594,
+                "left": 8,
+                "top": 84.43333435058594,
+                "right": 193.28334045410156,
+                "bottom": 110.43333435058594,
+                "width": 185.28334045410156,
+                "height": 26
+              },
+              "intersection": {
+                "width": 185.28334045410156,
+                "height": 26
+              },
+              "kinds": [
+                "text",
+                "text"
+              ],
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "kind": "text",
+              "box": {
+                "x": 8,
+                "y": 84.43333435058594,
+                "left": 8,
+                "top": 84.43333435058594,
+                "right": 198.5,
+                "bottom": 110.43333435058594,
+                "width": 190.5,
+                "height": 26
+              },
+              "coveredSamples": 6,
+              "totalSamples": 6,
+              "coverage": 1,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "left": 8,
+                "top": 83.43333435058594,
+                "right": 1272,
+                "bottom": 111.43333435058594,
+                "width": 1264,
+                "height": 28
+              },
+              "text": "Visible original textCovering child text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "left": 8,
+                "top": 83.43333435058594,
+                "right": 193.28334045410156,
+                "bottom": 111.43333435058594,
+                "width": 185.28334045410156,
+                "height": 28
+              },
+              "text": "Covering child text"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "descendant",
+      "finding": "P1-01",
+      "expectedPassed": false,
+      "actualPassed": false,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/descendant",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 205.28125,
+                "bottom": 108.4375,
+                "width": 197.28125,
+                "height": 26
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 185.28125,
+                "bottom": 108.4375,
+                "width": 177.28125,
+                "height": 26
+              },
+              "intersection": {
+                "width": 177.28125,
+                "height": 26
+              },
+              "kinds": [
+                "text",
+                "text"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 367,
+                "bottom": 109.4375,
+                "width": 359,
+                "height": 27
+              },
+              "text": "Covered child textCovering parent text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 185.28125,
+                "bottom": 109.4375,
+                "width": 177.28125,
+                "height": 27
+              },
+              "text": "Covered child text"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/descendant",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 205.28125,
+                "bottom": 108.4375,
+                "width": 197.28125,
+                "height": 26
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 185.28125,
+                "bottom": 108.4375,
+                "width": 177.28125,
+                "height": 26
+              },
+              "intersection": {
+                "width": 177.28125,
+                "height": 26
+              },
+              "kinds": [
+                "text",
+                "text"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 1272,
+                "bottom": 109.4375,
+                "width": 1264,
+                "height": 27
+              },
+              "text": "Covered child textCovering parent text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 82.4375,
+                "left": 8,
+                "top": 82.4375,
+                "right": 185.28125,
+                "bottom": 109.4375,
+                "width": 177.28125,
+                "height": 27
+              },
+              "text": "Covered child text"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/descendant",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 84.43333435058594,
+                "left": 8,
+                "top": 84.43333435058594,
+                "right": 205.26666259765625,
+                "bottom": 110.43333435058594,
+                "width": 197.26666259765625,
+                "height": 26
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 84.43333435058594,
+                "left": 8,
+                "top": 84.43333435058594,
+                "right": 185.26666259765625,
+                "bottom": 110.43333435058594,
+                "width": 177.26666259765625,
+                "height": 26
+              },
+              "intersection": {
+                "width": 177.26666259765625,
+                "height": 26
+              },
+              "kinds": [
+                "text",
+                "text"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "left": 8,
+                "top": 83.43333435058594,
+                "right": 367,
+                "bottom": 111.43333435058594,
+                "width": 359,
+                "height": 28
+              },
+              "text": "Covered child textCovering parent text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "left": 8,
+                "top": 83.43333435058594,
+                "right": 185.26666259765625,
+                "bottom": 111.43333435058594,
+                "width": 177.26666259765625,
+                "height": 28
+              },
+              "text": "Covered child text"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/descendant",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 84.43333435058594,
+                "left": 8,
+                "top": 84.43333435058594,
+                "right": 205.26666259765625,
+                "bottom": 110.43333435058594,
+                "width": 197.26666259765625,
+                "height": 26
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 84.43333435058594,
+                "left": 8,
+                "top": 84.43333435058594,
+                "right": 185.26666259765625,
+                "bottom": 110.43333435058594,
+                "width": 177.26666259765625,
+                "height": 26
+              },
+              "intersection": {
+                "width": 177.26666259765625,
+                "height": 26
+              },
+              "kinds": [
+                "text",
+                "text"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "left": 8,
+                "top": 83.43333435058594,
+                "right": 1272,
+                "bottom": 111.43333435058594,
+                "width": 1264,
+                "height": 28
+              },
+              "text": "Covered child textCovering parent text"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > p:nth-of-type(1) > span:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 83.43333435058594,
+                "left": 8,
+                "top": 83.43333435058594,
+                "right": 185.26666259765625,
+                "bottom": 111.43333435058594,
+                "width": 177.26666259765625,
+                "height": 28
+              },
+              "text": "Covered child text"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "opaquePassive",
+      "finding": "P1-02",
+      "expectedPassed": false,
+      "actualPassed": false,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/opaquePassive",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": false
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "OCCLUDED_CONTENT",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "kind": "control",
+                "box": {
+                  "x": 8,
+                  "y": 100,
+                  "left": 8,
+                  "top": 100,
+                  "right": 188,
+                  "bottom": 150,
+                  "width": 180,
+                  "height": 50
+                },
+                "coveredSamples": 15,
+                "totalSamples": 15,
+                "coverage": 1,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/opaquePassive",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": false
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "OCCLUDED_CONTENT",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "kind": "control",
+                "box": {
+                  "x": 8,
+                  "y": 100,
+                  "left": 8,
+                  "top": 100,
+                  "right": 188,
+                  "bottom": 150,
+                  "width": 180,
+                  "height": 50
+                },
+                "coveredSamples": 15,
+                "totalSamples": 15,
+                "coverage": 1,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/opaquePassive",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": false
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "OCCLUDED_CONTENT",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "kind": "control",
+                "box": {
+                  "x": 8,
+                  "y": 100,
+                  "left": 8,
+                  "top": 100,
+                  "right": 188,
+                  "bottom": 150,
+                  "width": 180,
+                  "height": 50
+                },
+                "coveredSamples": 15,
+                "totalSamples": 15,
+                "coverage": 1,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/opaquePassive",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": false
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "OCCLUDED_CONTENT",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "kind": "control",
+                "box": {
+                  "x": 8,
+                  "y": 100,
+                  "left": 8,
+                  "top": 100,
+                  "right": 188,
+                  "bottom": 150,
+                  "width": 180,
+                  "height": 50
+                },
+                "coveredSamples": 15,
+                "totalSamples": 15,
+                "coverage": 1,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "opaqueBlocking",
+      "finding": "P1-02",
+      "expectedPassed": false,
+      "actualPassed": false,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/opaqueBlocking",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            },
+            {
+              "code": "CONTROL_NOT_ACTIONABLE",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "reason": "POINTER_INTERCEPTED",
+              "timeoutMs": 3000,
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": false,
+                "paintPassed": false,
+                "failureReason": "POINTER_INTERCEPTED"
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "CONTROL_NOT_ACTIONABLE",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "reason": "POINTER_INTERCEPTED",
+                "timeoutMs": 3000,
+                "level": "error"
+              },
+              {
+                "code": "OCCLUDED_CONTENT",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "kind": "control",
+                "box": {
+                  "x": 8,
+                  "y": 100,
+                  "left": 8,
+                  "top": 100,
+                  "right": 188,
+                  "bottom": 150,
+                  "width": 180,
+                  "height": 50
+                },
+                "coveredSamples": 15,
+                "totalSamples": 15,
+                "coverage": 1,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/opaqueBlocking",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            },
+            {
+              "code": "CONTROL_NOT_ACTIONABLE",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "reason": "POINTER_INTERCEPTED",
+              "timeoutMs": 3000,
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": false,
+                "paintPassed": false,
+                "failureReason": "POINTER_INTERCEPTED"
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "CONTROL_NOT_ACTIONABLE",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "reason": "POINTER_INTERCEPTED",
+                "timeoutMs": 3000,
+                "level": "error"
+              },
+              {
+                "code": "OCCLUDED_CONTENT",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "kind": "control",
+                "box": {
+                  "x": 8,
+                  "y": 100,
+                  "left": 8,
+                  "top": 100,
+                  "right": 188,
+                  "bottom": 150,
+                  "width": 180,
+                  "height": 50
+                },
+                "coveredSamples": 15,
+                "totalSamples": 15,
+                "coverage": 1,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/opaqueBlocking",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            },
+            {
+              "code": "CONTROL_NOT_ACTIONABLE",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "reason": "POINTER_INTERCEPTED",
+              "timeoutMs": 3000,
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": false,
+                "paintPassed": false,
+                "failureReason": "POINTER_INTERCEPTED"
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "CONTROL_NOT_ACTIONABLE",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "reason": "POINTER_INTERCEPTED",
+                "timeoutMs": 3000,
+                "level": "error"
+              },
+              {
+                "code": "OCCLUDED_CONTENT",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "kind": "control",
+                "box": {
+                  "x": 8,
+                  "y": 100,
+                  "left": 8,
+                  "top": 100,
+                  "right": 188,
+                  "bottom": 150,
+                  "width": 180,
+                  "height": 50
+                },
+                "coveredSamples": 15,
+                "totalSamples": 15,
+                "coverage": 1,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/opaqueBlocking",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            },
+            {
+              "code": "CONTROL_NOT_ACTIONABLE",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "reason": "POINTER_INTERCEPTED",
+              "timeoutMs": 3000,
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 15,
+              "totalSamples": 15,
+              "coverage": 1,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": false,
+                "paintPassed": false,
+                "failureReason": "POINTER_INTERCEPTED"
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "CONTROL_NOT_ACTIONABLE",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "reason": "POINTER_INTERCEPTED",
+                "timeoutMs": 3000,
+                "level": "error"
+              },
+              {
+                "code": "OCCLUDED_CONTENT",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "kind": "control",
+                "box": {
+                  "x": 8,
+                  "y": 100,
+                  "left": 8,
+                  "top": 100,
+                  "right": 188,
+                  "bottom": 150,
+                  "width": 180,
+                  "height": 50
+                },
+                "coveredSamples": 15,
+                "totalSamples": 15,
+                "coverage": 1,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "partial",
+      "finding": "P1-02",
+      "expectedPassed": false,
+      "actualPassed": false,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/partial",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 6,
+              "totalSamples": 15,
+              "coverage": 0.4,
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 6,
+              "totalSamples": 15,
+              "coverage": 0.4,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": false
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "OCCLUDED_CONTENT",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "kind": "control",
+                "box": {
+                  "x": 8,
+                  "y": 100,
+                  "left": 8,
+                  "top": 100,
+                  "right": 188,
+                  "bottom": 150,
+                  "width": 180,
+                  "height": 50
+                },
+                "coveredSamples": 6,
+                "totalSamples": 15,
+                "coverage": 0.4,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/partial",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 6,
+              "totalSamples": 15,
+              "coverage": 0.4,
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 6,
+              "totalSamples": 15,
+              "coverage": 0.4,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": false
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "OCCLUDED_CONTENT",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "kind": "control",
+                "box": {
+                  "x": 8,
+                  "y": 100,
+                  "left": 8,
+                  "top": 100,
+                  "right": 188,
+                  "bottom": 150,
+                  "width": 180,
+                  "height": 50
+                },
+                "coveredSamples": 6,
+                "totalSamples": 15,
+                "coverage": 0.4,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/partial",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 6,
+              "totalSamples": 15,
+              "coverage": 0.4,
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 6,
+              "totalSamples": 15,
+              "coverage": 0.4,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": false
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "OCCLUDED_CONTENT",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "kind": "control",
+                "box": {
+                  "x": 8,
+                  "y": 100,
+                  "left": 8,
+                  "top": 100,
+                  "right": 188,
+                  "bottom": 150,
+                  "width": 180,
+                  "height": 50
+                },
+                "coveredSamples": 6,
+                "totalSamples": 15,
+                "coverage": 0.4,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/partial",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 6,
+              "totalSamples": 15,
+              "coverage": 0.4,
+              "level": "error"
+            },
+            {
+              "code": "OCCLUDED_CONTENT",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+              "kind": "control",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "coveredSamples": 6,
+              "totalSamples": 15,
+              "coverage": 0.4,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": false
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "OCCLUDED_CONTENT",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "other": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "kind": "control",
+                "box": {
+                  "x": 8,
+                  "y": 100,
+                  "left": 8,
+                  "top": 100,
+                  "right": 188,
+                  "bottom": 150,
+                  "width": 180,
+                  "height": 50
+                },
+                "coveredSamples": 6,
+                "totalSamples": 15,
+                "coverage": 0.4,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": []
+        }
+      ]
+    },
+    {
+      "name": "decoration",
+      "expectedPassed": true,
+      "actualPassed": true,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/decoration",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/decoration",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/decoration",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/decoration",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": [
+            "color-contrast"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "transparentAncestor",
+      "finding": "P2-02",
+      "expectedPassed": true,
+      "actualPassed": true,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/transparentAncestor",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/transparentAncestor",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/transparentAncestor",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/transparentAncestor",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        }
+      ]
+    },
+    {
+      "name": "displayHidden",
+      "expectedPassed": true,
+      "actualPassed": true,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/displayHidden",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/displayHidden",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/displayHidden",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/displayHidden",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        }
+      ]
+    },
+    {
+      "name": "visibilityHidden",
+      "expectedPassed": true,
+      "actualPassed": true,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/visibilityHidden",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/visibilityHidden",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/visibilityHidden",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/visibilityHidden",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        }
+      ]
+    },
+    {
+      "name": "visibleOverride",
+      "finding": "P2-02",
+      "expectedPassed": false,
+      "actualPassed": false,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/visibleOverride",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "left": 8,
+                "top": 116,
+                "right": 105.234375,
+                "bottom": 133,
+                "width": 97.234375,
+                "height": 17
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 103.796875,
+                "bottom": 121,
+                "width": 95.796875,
+                "height": 21
+              },
+              "intersection": {
+                "width": 95.796875,
+                "height": 5
+              },
+              "kinds": [
+                "text",
+                "control"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "left": 8,
+                "top": 116,
+                "right": 105.234375,
+                "bottom": 134,
+                "width": 97.234375,
+                "height": 18
+              },
+              "text": "Visible overlap"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 103.796875,
+                "bottom": 121,
+                "width": 95.796875,
+                "height": 21
+              },
+              "text": "Visible button"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/visibleOverride",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "left": 8,
+                "top": 116,
+                "right": 105.234375,
+                "bottom": 133,
+                "width": 97.234375,
+                "height": 17
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 103.796875,
+                "bottom": 121,
+                "width": 95.796875,
+                "height": 21
+              },
+              "intersection": {
+                "width": 95.796875,
+                "height": 5
+              },
+              "kinds": [
+                "text",
+                "control"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "left": 8,
+                "top": 116,
+                "right": 105.234375,
+                "bottom": 134,
+                "width": 97.234375,
+                "height": 18
+              },
+              "text": "Visible overlap"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 103.796875,
+                "bottom": 121,
+                "width": 95.796875,
+                "height": 21
+              },
+              "text": "Visible button"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/visibleOverride",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116.5,
+                "left": 8,
+                "top": 116.5,
+                "right": 105.26666259765625,
+                "bottom": 133.5,
+                "width": 97.26666259765625,
+                "height": 17
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 99.86666870117188,
+                "bottom": 122,
+                "width": 91.86666870117188,
+                "height": 22
+              },
+              "intersection": {
+                "width": 91.86666870117188,
+                "height": 5.5
+              },
+              "kinds": [
+                "text",
+                "control"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "left": 8,
+                "top": 116,
+                "right": 105.26666259765625,
+                "bottom": 134,
+                "width": 97.26666259765625,
+                "height": 18
+              },
+              "text": "Visible overlap"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 99.86666870117188,
+                "bottom": 122,
+                "width": 91.86666870117188,
+                "height": 22
+              },
+              "text": "Visible button"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/visibleOverride",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [
+            {
+              "code": "DOM_OVERLAP",
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "other": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116.5,
+                "left": 8,
+                "top": 116.5,
+                "right": 105.26666259765625,
+                "bottom": 133.5,
+                "width": 97.26666259765625,
+                "height": 17
+              },
+              "otherBox": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 99.86666870117188,
+                "bottom": 122,
+                "width": 91.86666870117188,
+                "height": 22
+              },
+              "intersection": {
+                "width": 91.86666870117188,
+                "height": 5.5
+              },
+              "kinds": [
+                "text",
+                "control"
+              ],
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 116,
+                "left": 8,
+                "top": 116,
+                "right": 105.26666259765625,
+                "bottom": 134,
+                "width": 97.26666259765625,
+                "height": 18
+              },
+              "text": "Visible overlap"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 99.86666870117188,
+                "bottom": 122,
+                "width": 91.86666870117188,
+                "height": 22
+              },
+              "text": "Visible button"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": true,
+                "paintPassed": true
+              }
+            ],
+            "scrolls": [],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        }
+      ]
+    },
+    {
+      "name": "legalScroll",
+      "finding": "P2-01",
+      "expectedPassed": true,
+      "actualPassed": true,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/legalScroll",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 95.875,
+                "left": 8,
+                "top": 95.875,
+                "right": 308,
+                "bottom": 113.875,
+                "width": 300,
+                "height": 18
+              },
+              "text": "First legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "box": {
+                "x": 8,
+                "y": 129.875,
+                "left": 8,
+                "top": 129.875,
+                "right": 308,
+                "bottom": 147.875,
+                "width": 300,
+                "height": 18
+              },
+              "text": "Second legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(3)",
+              "box": {
+                "x": 8,
+                "y": 163.875,
+                "left": 8,
+                "top": 163.875,
+                "right": 308,
+                "bottom": 181.875,
+                "width": 300,
+                "height": 18
+              },
+              "text": "Third legal scroll row"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [
+              {
+                "selector": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "overflowX": "auto",
+                "overflowY": "auto",
+                "scrollHeight": 118,
+                "scrollWidth": 300,
+                "clientHeight": 60,
+                "clientWidth": 300,
+                "scrollTop": 0,
+                "scrollLeft": 0,
+                "axes": {
+                  "y": {
+                    "range": 58,
+                    "initial": 0,
+                    "programmatic": true,
+                    "programmaticPosition": 30,
+                    "wheel": true,
+                    "wheelBefore": 0,
+                    "wheelAfter": 30
+                  },
+                  "x": {
+                    "range": 0,
+                    "initial": 0,
+                    "programmatic": false,
+                    "programmaticPosition": 0,
+                    "wheel": false,
+                    "wheelBefore": 0,
+                    "wheelAfter": 0
+                  }
+                },
+                "restored": true
+              }
+            ],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/legalScroll",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 95.875,
+                "left": 8,
+                "top": 95.875,
+                "right": 308,
+                "bottom": 113.875,
+                "width": 300,
+                "height": 18
+              },
+              "text": "First legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "box": {
+                "x": 8,
+                "y": 129.875,
+                "left": 8,
+                "top": 129.875,
+                "right": 308,
+                "bottom": 147.875,
+                "width": 300,
+                "height": 18
+              },
+              "text": "Second legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(3)",
+              "box": {
+                "x": 8,
+                "y": 163.875,
+                "left": 8,
+                "top": 163.875,
+                "right": 308,
+                "bottom": 181.875,
+                "width": 300,
+                "height": 18
+              },
+              "text": "Third legal scroll row"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [
+              {
+                "selector": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "overflowX": "auto",
+                "overflowY": "auto",
+                "scrollHeight": 118,
+                "scrollWidth": 300,
+                "clientHeight": 60,
+                "clientWidth": 300,
+                "scrollTop": 0,
+                "scrollLeft": 0,
+                "axes": {
+                  "y": {
+                    "range": 58,
+                    "initial": 0,
+                    "programmatic": true,
+                    "programmaticPosition": 30,
+                    "wheel": true,
+                    "wheelBefore": 0,
+                    "wheelAfter": 30
+                  },
+                  "x": {
+                    "range": 0,
+                    "initial": 0,
+                    "programmatic": false,
+                    "programmaticPosition": 0,
+                    "wheel": false,
+                    "wheelBefore": 0,
+                    "wheelAfter": 0
+                  }
+                },
+                "restored": true
+              }
+            ],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/legalScroll",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 96.86666870117188,
+                "left": 8,
+                "top": 96.86666870117188,
+                "right": 308,
+                "bottom": 114.86666870117188,
+                "width": 300,
+                "height": 18
+              },
+              "text": "First legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "box": {
+                "x": 8,
+                "y": 130.86666870117188,
+                "left": 8,
+                "top": 130.86666870117188,
+                "right": 308,
+                "bottom": 148.86666870117188,
+                "width": 300,
+                "height": 18
+              },
+              "text": "Second legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(3)",
+              "box": {
+                "x": 8,
+                "y": 164.86666870117188,
+                "left": 8,
+                "top": 164.86666870117188,
+                "right": 308,
+                "bottom": 182.86666870117188,
+                "width": 300,
+                "height": 18
+              },
+              "text": "Third legal scroll row"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [
+              {
+                "selector": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "overflowX": "auto",
+                "overflowY": "auto",
+                "scrollHeight": 118,
+                "scrollWidth": 300,
+                "clientHeight": 60,
+                "clientWidth": 300,
+                "scrollTop": 0,
+                "scrollLeft": 0,
+                "axes": {
+                  "y": {
+                    "range": 58,
+                    "initial": 0,
+                    "programmatic": true,
+                    "programmaticPosition": 30,
+                    "wheel": true,
+                    "wheelBefore": 0,
+                    "wheelAfter": 30
+                  },
+                  "x": {
+                    "range": 0,
+                    "initial": 0,
+                    "programmatic": false,
+                    "programmaticPosition": 0,
+                    "wheel": false,
+                    "wheelBefore": 0,
+                    "wheelAfter": 0
+                  }
+                },
+                "restored": true
+              }
+            ],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/legalScroll",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 96.86666870117188,
+                "left": 8,
+                "top": 96.86666870117188,
+                "right": 308,
+                "bottom": 114.86666870117188,
+                "width": 300,
+                "height": 18
+              },
+              "text": "First legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+              "box": {
+                "x": 8,
+                "y": 130.86666870117188,
+                "left": 8,
+                "top": 130.86666870117188,
+                "right": 308,
+                "bottom": 148.86666870117188,
+                "width": 300,
+                "height": 18
+              },
+              "text": "Second legal scroll row"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(3)",
+              "box": {
+                "x": 8,
+                "y": 164.86666870117188,
+                "left": 8,
+                "top": 164.86666870117188,
+                "right": 308,
+                "bottom": 182.86666870117188,
+                "width": 300,
+                "height": 18
+              },
+              "text": "Third legal scroll row"
+            }
+          ],
+          "interactions": {
+            "controls": [],
+            "scrolls": [
+              {
+                "selector": "body > main:nth-of-type(1) > div:nth-of-type(1)",
+                "overflowX": "auto",
+                "overflowY": "auto",
+                "scrollHeight": 118,
+                "scrollWidth": 300,
+                "clientHeight": 60,
+                "clientWidth": 300,
+                "scrollTop": 0,
+                "scrollLeft": 0,
+                "axes": {
+                  "y": {
+                    "range": 58,
+                    "initial": 0,
+                    "programmatic": true,
+                    "programmaticPosition": 30,
+                    "wheel": true,
+                    "wheelBefore": 0,
+                    "wheelAfter": 30
+                  },
+                  "x": {
+                    "range": 0,
+                    "initial": 0,
+                    "programmatic": false,
+                    "programmaticPosition": 0,
+                    "wheel": false,
+                    "wheelBefore": 0,
+                    "wheelAfter": 0
+                  }
+                },
+                "restored": true
+              }
+            ],
+            "findings": [],
+            "complete": true
+          },
+          "manualReview": []
+        }
+      ]
+    },
+    {
+      "name": "transparentBlocking",
+      "finding": "P2-02",
+      "expectedPassed": false,
+      "actualPassed": false,
+      "correct": true,
+      "runs": [
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/transparentBlocking",
+          "languageVerified": false,
+          "screenshot": "chromium-en-375x812.png",
+          "findings": [
+            {
+              "code": "CONTROL_NOT_ACTIONABLE",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "reason": "POINTER_INTERCEPTED",
+              "timeoutMs": 3000,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 367,
+                "bottom": 58.4375,
+                "width": 359,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": false,
+                "paintPassed": true,
+                "failureReason": "POINTER_INTERCEPTED"
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "CONTROL_NOT_ACTIONABLE",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "reason": "POINTER_INTERCEPTED",
+                "timeoutMs": 3000,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "chromium",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/transparentBlocking",
+          "languageVerified": false,
+          "screenshot": "chromium-en-1280x800.png",
+          "findings": [
+            {
+              "code": "CONTROL_NOT_ACTIONABLE",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "reason": "POINTER_INTERCEPTED",
+              "timeoutMs": 3000,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.4375,
+                "left": 8,
+                "top": 21.4375,
+                "right": 1272,
+                "bottom": 58.4375,
+                "width": 1264,
+                "height": 37
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": false,
+                "paintPassed": true,
+                "failureReason": "POINTER_INTERCEPTED"
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "CONTROL_NOT_ACTIONABLE",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "reason": "POINTER_INTERCEPTED",
+                "timeoutMs": 3000,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 375,
+            "height": 812
+          },
+          "url": "http://127.0.0.1:64276/transparentBlocking",
+          "languageVerified": false,
+          "screenshot": "firefox-en-375x812.png",
+          "findings": [
+            {
+              "code": "CONTROL_NOT_ACTIONABLE",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "reason": "POINTER_INTERCEPTED",
+              "timeoutMs": 3000,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 367,
+                "bottom": 59.43333435058594,
+                "width": 359,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": false,
+                "paintPassed": true,
+                "failureReason": "POINTER_INTERCEPTED"
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "CONTROL_NOT_ACTIONABLE",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "reason": "POINTER_INTERCEPTED",
+                "timeoutMs": 3000,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": []
+        },
+        {
+          "browser": "firefox",
+          "locale": "en",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "url": "http://127.0.0.1:64276/transparentBlocking",
+          "languageVerified": false,
+          "screenshot": "firefox-en-1280x800.png",
+          "findings": [
+            {
+              "code": "CONTROL_NOT_ACTIONABLE",
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "reason": "POINTER_INTERCEPTED",
+              "timeoutMs": 3000,
+              "level": "error"
+            }
+          ],
+          "layout": [
+            {
+              "selector": "body > main:nth-of-type(1) > h1:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 21.433334350585938,
+                "left": 8,
+                "top": 21.433334350585938,
+                "right": 1272,
+                "bottom": 59.43333435058594,
+                "width": 1264,
+                "height": 38
+              },
+              "text": "Review"
+            },
+            {
+              "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+              "box": {
+                "x": 8,
+                "y": 100,
+                "left": 8,
+                "top": 100,
+                "right": 188,
+                "bottom": 150,
+                "width": 180,
+                "height": 50
+              },
+              "text": "Continue"
+            }
+          ],
+          "interactions": {
+            "controls": [
+              {
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "actionable": false,
+                "paintPassed": true,
+                "failureReason": "POINTER_INTERCEPTED"
+              }
+            ],
+            "scrolls": [],
+            "findings": [
+              {
+                "code": "CONTROL_NOT_ACTIONABLE",
+                "selector": "body > main:nth-of-type(1) > button:nth-of-type(1)",
+                "reason": "POINTER_INTERCEPTED",
+                "timeoutMs": 3000,
+                "level": "error"
+              }
+            ],
+            "complete": true
+          },
+          "manualReview": []
+        }
+      ]
+    }
+  ]
+}

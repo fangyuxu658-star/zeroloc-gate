@@ -1,0 +1,19 @@
+
+> zeroloc-gate@0.3.0-dev.0 test:network
+> node qa/independent-network.mjs
+
+{"observed":{"http":0,"websocket":0,"serviceWorker":0},"redirectRejected":true}
+{
+  "passed": true,
+  "visualPassed": false,
+  "restrictionRecorded": true,
+  "browsers": [
+    "chromium",
+    "firefox"
+  ],
+  "crossOriginHttpHits": 0,
+  "websocketUpgradeHits": 0,
+  "serviceWorkerScriptHits": 0,
+  "redirectRejected": true,
+  "limitations": "Browser request interception is defense in depth, not an OS network sandbox. Approved Node tests retain filesystem/network capabilities."
+}

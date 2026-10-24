@@ -3,7 +3,9 @@
 
 本地优先的嵌套 JSON 本地化质量门禁。MIT 核心通过可替换适配器复用 FormatJS、i18next-cli、Ollama HTTP、Playwright 和 axe-core；不要求账号、凭证或托管服务。结构匹配不代表语义翻译正确。
 
-已发布 beta：[v0.1.0-beta.1](https://github.com/fangyuxu658-star/zeroloc-gate/releases/tag/v0.1.0-beta.1)。本分支为未发布的 **v0.2 Safe Apply 开发版**，参见 [新 CLI/授权/恢复说明](docs/V02_SAFE_APPLY_CN.md)、[真实验收](docs/V02_ENGINEERING_CN.md) 和 [STATUS](STATUS.md)。本地功能免费、自部署、无云端依赖；GitHub 仅为显式选择的远端适配器。
+已发布 beta：[v0.1.0-beta.1](https://github.com/fangyuxu658-star/zeroloc-gate/releases/tag/v0.1.0-beta.1)。本分支为未发布的 **v0.3 Repair Engine 开发版**，参见 [修复引擎/授权/限制](docs/V03_REPAIR_ENGINE_CN.md)、[测试与截图证据](docs/V03_RESULTS_CN.md)；原 [v0.2 Safe Apply](docs/V02_SAFE_APPLY_CN.md) 保持兼容。本地功能免费、自部署、无云端依赖；GitHub 仅为显式选择的远端适配器。
+
+PR #7 的五项独立审查修复、复现证据及新增测试见 [审查修复记录](docs/V03_AUDIT_REMEDIATION_CN.md)。Linux 修复执行现在需要具备 subreaper/pidfd 能力的 `python3`；缺失时明确阻断，默认预览不执行监督器。
 
 ## 初始化
 

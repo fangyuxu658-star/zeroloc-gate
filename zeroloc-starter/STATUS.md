@@ -1,4 +1,8 @@
-# ZeroLoc v0.2 development status
+# ZeroLoc v0.3 development status
+
+Independent audit remediation for PR #7: see [five findings, real regressions and limits](docs/V03_AUDIT_REMEDIATION_CN.md). Earlier CI numbers below describe the historical v0.3 head; current-head checks are linked from that remediation report.
+
+Current branch: `codex/v0.3-repair-engine`, from v0.2 head `7295075`, targeting `codex/v0.2-safe-apply`. See [executable repair engine](docs/V03_REPAIR_ENGINE_CN.md) and [current evidence](docs/V03_RESULTS_CN.md). This is unreleased 0.3.0-dev.0, MIT/local-first, preview by default. No PR #6/main mutation or merge/release authorization. The remaining v0.2 text below is historical status, not a claim about v0.3 CI.
 
 Published beta: [v0.1.0-beta.1](https://github.com/fangyuxu658-star/zeroloc-gate/releases/tag/v0.1.0-beta.1). This is an unmerged **0.2.0-dev.0** development branch, based on protected main bcb542a. No v0.2 release, no main writes, no automatic merge, no Ruleset weakening.
 

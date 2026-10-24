@@ -1,0 +1,6 @@
+
+> zeroloc-gate@0.3.0-dev.0 test:repair
+> node qa/repair-real-apps.mjs --only react --react-root artifacts/repair-upstream/react
+
+{"id":"react","passed":true,"attempts":1,"output":"<private-temporary-evidence>"}
+PASS: real upstream application expectations, original-byte preservation, explicit review and SEM-01 regression
